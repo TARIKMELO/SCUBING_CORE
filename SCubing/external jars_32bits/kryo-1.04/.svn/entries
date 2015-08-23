@@ -1,77 +1,0 @@
-8
-
-dir
-6
-https://tarik-pc/svn/GeoCubeRepository/GeoCube/external%20jars/kryo-1.04
-https://tarik-pc/svn/GeoCubeRepository
-
-
-
-2012-08-28T23:38:21.766376Z
-3
-Tarik
-
-
-svn:special svn:externals svn:needs-lock
-
-kryo-1.04.jar
-file
-
-
-
-
-2011-02-09T04:52:46.000000Z
-19752020b58d1438889dc8c8505f856e
-2012-08-28T23:38:21.766376Z
-3
-Tarik
-has-props
-
-kryo
-dir
-
-api
-dir
-
-asm-3.3.1.jar
-file
-
-
-
-
-2011-02-09T04:52:46.000000Z
-aca31321064509b850305caee845002f
-2012-08-28T23:38:21.766376Z
-3
-Tarik
-has-props
-
-reflectasm-1.01.jar
-file
-
-
-
-
-2011-02-09T04:52:46.000000Z
-20b3d891cae1280d513bfd87c0321a1e
-2012-08-28T23:38:21.766376Z
-3
-Tarik
-has-props
-
-onejar
-dir
-
-minlog-1.2.jar
-file
-
-
-
-
-2011-02-09T04:52:46.000000Z
-dec7251693e0bf61df347d9d247d654b
-2012-08-28T23:38:21.766376Z
-3
-Tarik
-has-props
-
