@@ -1,0 +1,145 @@
+8
+
+dir
+6
+https://tarik-pc/svn/GeoCubeRepository/GeoCube/external%20jars/kryo-1.04/kryo/src/com/esotericsoftware/kryo
+https://tarik-pc/svn/GeoCubeRepository
+
+
+
+2012-08-28T23:38:21.766376Z
+3
+Tarik
+
+
+svn:special svn:externals svn:needs-lock
+
+ObjectBuffer.java
+file
+
+
+
+
+2011-01-28T01:22:46.000000Z
+2bad73852128fbabe9894bde3d6d6615
+2012-08-28T23:38:21.766376Z
+3
+Tarik
+
+Context.java
+file
+
+
+
+
+2010-04-06T02:52:12.000000Z
+3805ee26df4e3a22667909c5712500af
+2012-08-28T23:38:21.766376Z
+3
+Tarik
+
+Kryo.java
+file
+
+
+
+
+2011-02-03T21:30:30.000000Z
+4f8f126702ae7f38d1d8b75066965ba4
+2012-08-28T23:38:21.766376Z
+3
+Tarik
+
+Optional.java
+file
+
+
+
+
+2010-10-10T22:11:40.000000Z
+0cf0ae946f2f9889e2b218cb94deb0be
+2012-08-28T23:38:21.766376Z
+3
+Tarik
+
+serialize
+dir
+
+CustomSerialization.java
+file
+
+
+
+
+2009-09-29T02:02:44.000000Z
+51755c50cb9b6cb3e7ec8661e84c412c
+2012-08-28T23:38:21.766376Z
+3
+Tarik
+
+Serializer.java
+file
+
+
+
+
+2010-10-09T23:14:48.000000Z
+b18d3abb446082d3ce53e887972973fb
+2012-08-28T23:38:21.766376Z
+3
+Tarik
+
+compress
+dir
+
+NotNull.java
+file
+
+
+
+
+2010-10-02T22:39:22.000000Z
+71bc6275bd4558c6f407938f67967cc9
+2012-08-28T23:38:21.766376Z
+3
+Tarik
+
+Compressor.java
+file
+
+
+
+
+2010-05-12T01:39:10.000000Z
+ddbf511ceeaa5f335ecb4cbbd3453836
+2012-08-28T23:38:21.766376Z
+3
+Tarik
+
+SerializationException.java
+file
+
+
+
+
+2010-08-16T23:18:00.000000Z
+200ce2aa405a6834d7918bd7a50189fd
+2012-08-28T23:38:21.766376Z
+3
+Tarik
+
+util
+dir
+
+DefaultSerializer.java
+file
+
+
+
+
+2010-03-26T02:30:56.000000Z
+8ebc1703d28c82d17f82dd2374c68d68
+2012-08-28T23:38:21.766376Z
+3
+Tarik
+

@@ -1,0 +1,167 @@
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/wms
+END
+IMapRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/wms/IMapRequest.java
+END
+WMSLayerEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/wms/WMSLayerEvent.java
+END
+WMS.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/wms/WMS.java
+END
+MapRegistry.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/wms/MapRegistry.java
+END
+WMSServiceException.java
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/wms/WMSServiceException.java
+END
+Configuration.java
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/wms/Configuration.java
+END
+WMSGetFeatureInfoRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/wms/WMSGetFeatureInfoRequest.java
+END
+WMSRequestFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/wms/WMSRequestFactory.java
+END
+WorldWindTiledLayerMapSource.java
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/wms/WorldWindTiledLayerMapSource.java
+END
+BasicMapRegistry.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/wms/BasicMapRegistry.java
+END
+WMSDataConfigurationUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/wms/WMSDataConfigurationUtils.java
+END
+WMSGetElevationsRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/wms/WMSGetElevationsRequest.java
+END
+HTTPRedirectRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/wms/HTTPRedirectRequest.java
+END
+WMSLayerEventListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/wms/WMSLayerEventListener.java
+END
+WMSDataFileStore.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/wms/WMSDataFileStore.java
+END
+WMSGetMapRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/wms/WMSGetMapRequest.java
+END
+WMSRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/wms/WMSRequest.java
+END
+WMSDataDiscoveryThread.java
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/wms/WMSDataDiscoveryThread.java
+END
+DataConfigurationMapSource.java
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/wms/DataConfigurationMapSource.java
+END
+AVListMapSource.java
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/wms/AVListMapSource.java
+END
+MapGenerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/wms/MapGenerator.java
+END
+BasicMapSourceFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/wms/BasicMapSourceFactory.java
+END
+WMSGetCapabilitiesRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/wms/WMSGetCapabilitiesRequest.java
+END
+WMSGetImageryListRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/wms/WMSGetImageryListRequest.java
+END
+WMSServer.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/wms/WMSServer.java
+END
+WMSDataConfigurationFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/wms/WMSDataConfigurationFilter.java
+END
+MapSource.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/wms/MapSource.java
+END

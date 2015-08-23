@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/tools/utm
+END
+UTMCoords.java
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/tools/utm/UTMCoords.java
+END
+LatLon2Utm.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/tools/utm/LatLon2Utm.java
+END
+Utm2LatLon.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/tools/utm/Utm2LatLon.java
+END
+UTMSector.java
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/tools/utm/UTMSector.java
+END
+UTMConverter.java
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/tools/utm/UTMConverter.java
+END

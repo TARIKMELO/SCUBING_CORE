@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/src/gw/layers
+END
+FeatureSelection.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/src/gw/layers/FeatureSelection.java
+END
+package-info.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/src/gw/layers/package-info.java
+END
+PointLayer.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/src/gw/layers/PointLayer.java
+END
+RasterLayer.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/src/gw/layers/RasterLayer.java
+END
+SimpleFeatureAnnotationLayer.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/src/gw/layers/SimpleFeatureAnnotationLayer.java
+END
+GridCoverageLayer.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/src/gw/layers/GridCoverageLayer.java
+END

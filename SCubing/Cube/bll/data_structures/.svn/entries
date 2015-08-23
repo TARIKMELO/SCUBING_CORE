@@ -1,0 +1,67 @@
+8
+
+dir
+6
+https://tarik-pc/svn/GeoCubeRepository/GeoCube/Cube/bll/data_structures
+https://tarik-pc/svn/GeoCubeRepository
+
+
+
+2012-08-28T23:38:21.766376Z
+3
+Tarik
+
+
+svn:special svn:externals svn:needs-lock
+
+ICubeSimple.java
+file
+
+
+
+
+2012-02-08T01:22:04.591320Z
+372256973030dbeb3645827b8414eea3
+2012-08-28T23:38:21.766376Z
+3
+Tarik
+
+CubeGrid.java
+file
+
+
+
+
+2012-02-08T01:17:34.414867Z
+f245558697d73c00dfe634b10701575f
+2012-08-28T23:38:21.766376Z
+3
+Tarik
+
+nodes
+dir
+
+CubeSimple.java
+file
+
+
+
+
+2012-03-05T00:21:09.536717Z
+fc98ab924709986659ffc15778307c49
+2012-08-28T23:38:21.766376Z
+3
+Tarik
+
+PerformCube.java
+file
+
+
+
+
+2012-03-18T16:16:58.694281Z
+6fe312bb0e69c63b1230b05fb1a93fab
+2012-08-28T23:38:21.766376Z
+3
+Tarik
+

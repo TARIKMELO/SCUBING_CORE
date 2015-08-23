@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/wms/formats
+END
+TiffImageFormatter.java
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/wms/formats/TiffImageFormatter.java
+END
+ImageFormatter.java
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/wms/formats/ImageFormatter.java
+END
+NonComposableImageFormatter.java
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/wms/formats/NonComposableImageFormatter.java
+END
+ImageTypes.java
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/wms/formats/ImageTypes.java
+END
+BufferedImageFormatter.java
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/wms/formats/BufferedImageFormatter.java
+END
+PNGImageFormatter.java
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/wms/formats/PNGImageFormatter.java
+END
+BILImageFormatter.java
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/wms/formats/BILImageFormatter.java
+END
+DataRasterFormatter.java
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/wms/formats/DataRasterFormatter.java
+END

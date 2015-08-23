@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/GeoCubeRepository/!svn/ver/4/GeoCube/Cube/presentation/layers
+END
+SimpleFeatureLayer.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/GeoCubeRepository/!svn/ver/4/GeoCube/Cube/presentation/layers/SimpleFeatureLayer.java
+END
+LayerFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/Cube/presentation/layers/LayerFactory.java
+END
+SimpleFeatureLayerSelectionMask.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/Cube/presentation/layers/SimpleFeatureLayerSelectionMask.java
+END
+Geom.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/Cube/presentation/layers/Geom.java
+END

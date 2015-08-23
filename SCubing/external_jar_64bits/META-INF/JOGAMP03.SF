@@ -1,0 +1,20 @@
+Signature-Version: 1.0
+SHA1-Digest-Manifest-Main-Attributes: 0sZbL90EAjVxcTASDaXfoEAtXZ4=
+Created-By: 1.6.0_45 (Sun Microsystems Inc.)
+SHA1-Digest-Manifest: SPn05CcCUVXH85eQlafoL4B/vhM=
+
+Name: jogl_mobile.dll
+SHA1-Digest: M8c6TIvAqXWEhK+KKdkxYgwy/ks=
+
+Name: newt.dll
+SHA1-Digest: OC2SE4oZNeQ+wmMuHyU/jdiaPpM=
+
+Name: jogl_desktop.dll
+SHA1-Digest: 76ugpxHuz2jmEKeTtC8Chu5PMEg=
+
+Name: nativewindow_awt.dll
+SHA1-Digest: Q+HgPdf3VJE1fKsu/Kg00JWVnXY=
+
+Name: nativewindow_win32.dll
+SHA1-Digest: IN1jDe2qjPawkjpPh17Tg6g5Lq8=
+

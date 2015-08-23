@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/src/gw/util
+END
+AnimationFile.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/src/gw/util/AnimationFile.java
+END
+TransformFailedException.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/src/gw/util/TransformFailedException.java
+END
+ShapeUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/src/gw/util/ShapeUtils.java
+END
+StyleUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/src/gw/util/StyleUtils.java
+END
+ColorBlend.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/src/gw/util/ColorBlend.java
+END
+package-info.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/src/gw/util/package-info.java
+END
+ProjectionNotFoundException.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/src/gw/util/ProjectionNotFoundException.java
+END
+StyleInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/src/gw/util/StyleInfo.java
+END
+ProjectionUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/src/gw/util/ProjectionUtils.java
+END

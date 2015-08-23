@@ -1,0 +1,64 @@
+8
+
+dir
+6
+https://tarik-pc/svn/GeoCubeRepository/GeoCube/external%20jars/testeWorldWind/wwind/schemas
+https://tarik-pc/svn/GeoCubeRepository
+
+
+
+2012-08-28T23:38:21.766376Z
+3
+Tarik
+
+
+svn:special svn:externals svn:needs-lock
+
+xAL.xsd
+file
+
+
+
+
+2011-07-18T14:12:36.000000Z
+fff8e51849e5d29dd0b735daacf29dc1
+2012-08-28T23:38:21.766376Z
+3
+Tarik
+
+kml22gx.xsd
+file
+
+
+
+
+2011-07-18T14:12:36.000000Z
+df96840748501246997bf5a71395890a
+2012-08-28T23:38:21.766376Z
+3
+Tarik
+
+atom-author-link.xsd
+file
+
+
+
+
+2011-07-18T14:12:36.000000Z
+8e02c6812893c3ab95d11777f68d7e1a
+2012-08-28T23:38:21.766376Z
+3
+Tarik
+
+ogckml22.xsd
+file
+
+
+
+
+2011-07-18T14:12:36.000000Z
+2ec8bcb160dd1559958abb4086b3feee
+2012-08-28T23:38:21.766376Z
+3
+Tarik
+

@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/src/gw/util
+END
+AnimationFile.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/src/gw/util/AnimationFile.java
+END
+TransformFailedException.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/src/gw/util/TransformFailedException.java
+END
+ShapeUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/src/gw/util/ShapeUtils.java
+END
+StyleUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/src/gw/util/StyleUtils.java
+END
+ColorBlend.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/src/gw/util/ColorBlend.java
+END
+package-info.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/src/gw/util/package-info.java
+END
+ProjectionNotFoundException.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/src/gw/util/ProjectionNotFoundException.java
+END
+WorldWindUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/src/gw/util/WorldWindUtils.java
+END
+GeoToolsUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/src/gw/util/GeoToolsUtils.java
+END
+StyleInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/src/gw/util/StyleInfo.java
+END
+ProjectionUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/src/gw/util/ProjectionUtils.java
+END

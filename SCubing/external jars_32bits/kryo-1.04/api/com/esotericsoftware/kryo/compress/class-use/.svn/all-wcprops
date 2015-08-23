@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/kryo-1.04/api/com/esotericsoftware/kryo/compress/class-use
+END
+ByteArrayCompressor.html
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/kryo-1.04/api/com/esotericsoftware/kryo/compress/class-use/ByteArrayCompressor.html
+END
+DeflateCompressor.html
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/kryo-1.04/api/com/esotericsoftware/kryo/compress/class-use/DeflateCompressor.html
+END
+DeflateCompressorTest.html
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/kryo-1.04/api/com/esotericsoftware/kryo/compress/class-use/DeflateCompressorTest.html
+END
+DeltaCompressor.html
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/kryo-1.04/api/com/esotericsoftware/kryo/compress/class-use/DeltaCompressor.html
+END
+DeltaCompressorTest.html
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/kryo-1.04/api/com/esotericsoftware/kryo/compress/class-use/DeltaCompressorTest.html
+END
+StreamCompressor.html
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/kryo-1.04/api/com/esotericsoftware/kryo/compress/class-use/StreamCompressor.html
+END
+StreamCompressorTest.html
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/kryo-1.04/api/com/esotericsoftware/kryo/compress/class-use/StreamCompressorTest.html
+END
+Delta.html
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/kryo-1.04/api/com/esotericsoftware/kryo/compress/class-use/Delta.html
+END
+DeltaTest.html
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/kryo-1.04/api/com/esotericsoftware/kryo/compress/class-use/DeltaTest.html
+END
+BlowfishCompressor.html
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/kryo-1.04/api/com/esotericsoftware/kryo/compress/class-use/BlowfishCompressor.html
+END

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/kryo-1.04/kryo/test/com/esotericsoftware/kryo/compress
+END
+DeflateCompressorTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/kryo-1.04/kryo/test/com/esotericsoftware/kryo/compress/DeflateCompressorTest.java
+END
+DeltaCompressorTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/kryo-1.04/kryo/test/com/esotericsoftware/kryo/compress/DeltaCompressorTest.java
+END
+StreamCompressorTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/kryo-1.04/kryo/test/com/esotericsoftware/kryo/compress/StreamCompressorTest.java
+END
+DeltaTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/kryo-1.04/kryo/test/com/esotericsoftware/kryo/compress/DeltaTest.java
+END

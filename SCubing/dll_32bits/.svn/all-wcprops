@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/dll
+END
+jogl_awt.dll
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/dll/jogl_awt.dll
+END
+gluegen-rt.dll
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/dll/gluegen-rt.dll
+END
+jogl.dll
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/dll/jogl.dll
+END
+WebView32.dll
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/dll/WebView32.dll
+END
+WebView64.dll
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/dll/WebView64.dll
+END
+jogl_cg.dll
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/dll/jogl_cg.dll
+END

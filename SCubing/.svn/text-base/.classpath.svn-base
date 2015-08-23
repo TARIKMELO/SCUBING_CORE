@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.maven.ide.eclipse.MAVEN2_CLASSPATH_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/Tarik/workspace/GeoCube/external jars/testeWorldWind/wwind/jogl.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="C:/Users/Tarik/workspace/GeoCube - Copy (7)/dll"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Tarik/workspace/GeoCube/external jars/testeWorldWind/wwind/worldwind.jar" sourcepath="D:/wwind/javadoc/gw">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/D:/wwind/doc/gov/nasa/worldwind/"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="C:/Users/Tarik/workspace/GeoCube - Copy (7)/dll"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Tarik/workspace/GeoCube/external jars/testeWorldWind/wwind/swing-layout-1.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Tarik/workspace/GeoCube/external jars/testeWorldWind/wwind/jws/webview-natives-windows.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Tarik/workspace/GeoCube/external jars/testeWorldWind/wwind/gdal.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Tarik/workspace/GeoCube/external jars/testeWorldWind/wwind/gluegen-rt.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Tarik/workspace/GeoCube/external jars/testeWorldWind/wwind/plugin.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Tarik/workspace/GeoCube/external jars/testeWorldWind/wwind/vpf-symbols.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Tarik/workspace/GeoCube/external jars/testeWorldWind/wwind/worldwindx.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/D:/wwind/doc/gov/nasa/worldwindx/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="Cube"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Users/Tarik/workspace/GeoCube/external jars/swt/swt.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Tarik/workspace/GeoCube/external jars/jai_imageio.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>

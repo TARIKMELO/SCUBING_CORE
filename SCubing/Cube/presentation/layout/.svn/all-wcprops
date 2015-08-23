@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/GeoCubeRepository/!svn/ver/6/GeoCube/Cube/presentation/layout
+END
+ApplicationTemplate.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/GeoCubeRepository/!svn/ver/4/GeoCube/Cube/presentation/layout/ApplicationTemplate.java
+END
+ConfigurationWindow.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/Cube/presentation/layout/ConfigurationWindow.java
+END
+AppPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/Cube/presentation/layout/AppPanel.java
+END
+CubeWindow.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/Cube/presentation/layout/CubeWindow.java
+END
+JProgressWindow.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/Cube/presentation/layout/JProgressWindow.java
+END
+MapFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/GeoCubeRepository/!svn/ver/4/GeoCube/Cube/presentation/layout/MapFrame.java
+END
+AttributeTable.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/Cube/presentation/layout/AttributeTable.java
+END
+LayerPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/GeoCubeRepository/!svn/ver/4/GeoCube/Cube/presentation/layout/LayerPanel.java
+END
+GoogleMapsPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/GeoCubeRepository/!svn/ver/6/GeoCube/Cube/presentation/layout/GoogleMapsPanel.java
+END
+BuildLayerWorkerThread.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/Cube/presentation/layout/BuildLayerWorkerThread.java
+END

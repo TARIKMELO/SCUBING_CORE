@@ -1,0 +1,100 @@
+8
+
+dir
+6
+https://tarik-pc/svn/GeoCubeRepository/GeoCube
+https://tarik-pc/svn/GeoCubeRepository
+
+
+
+2012-09-30T20:04:01.574123Z
+6
+Tarik
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+7af726a2-d65d-a849-afa7-224d2b70dac5
+
+.classpath
+file
+
+
+
+
+2012-08-24T18:34:23.755212Z
+a1e102e83b7f790eca24b6aefe96c398
+2012-08-28T23:38:21.766376Z
+3
+Tarik
+
+external jars
+dir
+
+CubeConfig.xml
+file
+7
+
+
+
+2012-12-14T00:29:57.384439Z
+d45e02df1bd4454da01913461058f782
+2013-01-07T23:19:27.967848Z
+7
+Tarik
+
+.project
+file
+
+
+
+
+2012-08-24T18:17:59.287635Z
+84c6f8312d3325a2bceb32d9d655fa26
+2012-08-28T23:38:21.766376Z
+3
+Tarik
+
+config
+dir
+
+target
+dir
+
+src
+dir
+
+pom.xml
+file
+
+
+
+
+2012-09-09T00:03:35.620068Z
+7d7941641fd6c55a04761790162e4869
+2012-09-30T20:01:55.783463Z
+4
+Tarik
+
+dll
+dir
+
+icons
+dir
+
+.settings
+dir
+
+Cube
+dir
+

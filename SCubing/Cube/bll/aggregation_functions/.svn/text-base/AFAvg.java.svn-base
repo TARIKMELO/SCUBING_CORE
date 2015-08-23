@@ -1,0 +1,16 @@
+package bll.aggregation_functions;
+
+public class AFAvg implements IAggFunction{
+
+	@Override
+	public Object updateMeasure(Object oldMeasure, Object oldMeasureTwo) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public String toString()
+	{
+		return "Avg";
+	}
+}

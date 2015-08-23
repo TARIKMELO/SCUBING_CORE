@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/kryo-1.04/api/com/esotericsoftware/kryo/class-use
+END
+DefaultSerializer.html
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/kryo-1.04/api/com/esotericsoftware/kryo/class-use/DefaultSerializer.html
+END
+KryoTestCase.html
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/kryo-1.04/api/com/esotericsoftware/kryo/class-use/KryoTestCase.html
+END
+KryoTest.HasDefaultSerializerAnnotationSerializer.html
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/kryo-1.04/api/com/esotericsoftware/kryo/class-use/KryoTest.HasDefaultSerializerAnnotationSerializer.html
+END
+KryoTest.html
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/kryo-1.04/api/com/esotericsoftware/kryo/class-use/KryoTest.html
+END
+Kryo.html
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/kryo-1.04/api/com/esotericsoftware/kryo/class-use/Kryo.html
+END
+Context.html
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/kryo-1.04/api/com/esotericsoftware/kryo/class-use/Context.html
+END
+Optional.html
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/kryo-1.04/api/com/esotericsoftware/kryo/class-use/Optional.html
+END
+KryoTest.HasDefaultSerializerAnnotation.html
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/kryo-1.04/api/com/esotericsoftware/kryo/class-use/KryoTest.HasDefaultSerializerAnnotation.html
+END
+NotNull.html
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/kryo-1.04/api/com/esotericsoftware/kryo/class-use/NotNull.html
+END
+Compressor.html
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/kryo-1.04/api/com/esotericsoftware/kryo/class-use/Compressor.html
+END
+SerializationException.html
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/kryo-1.04/api/com/esotericsoftware/kryo/class-use/SerializationException.html
+END
+KryoTest.HasPrivateConstructor.html
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/kryo-1.04/api/com/esotericsoftware/kryo/class-use/KryoTest.HasPrivateConstructor.html
+END
+ObjectBuffer.html
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/kryo-1.04/api/com/esotericsoftware/kryo/class-use/ObjectBuffer.html
+END
+KryoTest.HasPublicConstructor.html
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/kryo-1.04/api/com/esotericsoftware/kryo/class-use/KryoTest.HasPublicConstructor.html
+END
+Kryo.RegisteredClass.html
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/kryo-1.04/api/com/esotericsoftware/kryo/class-use/Kryo.RegisteredClass.html
+END
+Kryo.Listener.html
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/kryo-1.04/api/com/esotericsoftware/kryo/class-use/Kryo.Listener.html
+END
+CustomSerialization.html
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/kryo-1.04/api/com/esotericsoftware/kryo/class-use/CustomSerialization.html
+END
+Serializer.html
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/kryo-1.04/api/com/esotericsoftware/kryo/class-use/Serializer.html
+END

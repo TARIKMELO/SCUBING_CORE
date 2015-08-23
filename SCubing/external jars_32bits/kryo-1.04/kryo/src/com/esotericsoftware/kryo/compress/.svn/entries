@@ -1,0 +1,88 @@
+8
+
+dir
+6
+https://tarik-pc/svn/GeoCubeRepository/GeoCube/external%20jars/kryo-1.04/kryo/src/com/esotericsoftware/kryo/compress
+https://tarik-pc/svn/GeoCubeRepository
+
+
+
+2012-08-28T23:38:21.766376Z
+3
+Tarik
+
+
+svn:special svn:externals svn:needs-lock
+
+ByteArrayCompressor.java
+file
+
+
+
+
+2010-04-23T13:53:44.000000Z
+4faa84f61d4084d2502d7f7ca5d1da9f
+2012-08-28T23:38:21.766376Z
+3
+Tarik
+
+DeflateCompressor.java
+file
+
+
+
+
+2010-01-18T15:13:22.000000Z
+a8dd9dc074abb13732c435953f136ccb
+2012-08-28T23:38:21.766376Z
+3
+Tarik
+
+DeltaCompressor.java
+file
+
+
+
+
+2010-04-07T04:25:02.000000Z
+7f302fcc7b81a1b27bde8616f4686a0e
+2012-08-28T23:38:21.766376Z
+3
+Tarik
+
+StreamCompressor.java
+file
+
+
+
+
+2009-09-29T22:21:46.000000Z
+9e5bb483aa3a9ba234bc44b0acb1ae25
+2012-08-28T23:38:21.766376Z
+3
+Tarik
+
+Delta.java
+file
+
+
+
+
+2010-10-09T21:41:24.000000Z
+6938a9b18d9d67791f6e513e10fcfa67
+2012-08-28T23:38:21.766376Z
+3
+Tarik
+
+BlowfishCompressor.java
+file
+
+
+
+
+2009-09-27T22:36:14.000000Z
+92856442fb09087a3076e94fa636ecc4
+2012-08-28T23:38:21.766376Z
+3
+Tarik
+

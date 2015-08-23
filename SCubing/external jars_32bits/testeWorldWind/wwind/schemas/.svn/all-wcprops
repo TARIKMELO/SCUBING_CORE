@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/schemas
+END
+xAL.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/schemas/xAL.xsd
+END
+kml22gx.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/schemas/kml22gx.xsd
+END
+atom-author-link.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/schemas/atom-author-link.xsd
+END
+ogckml22.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/schemas/ogckml22.xsd
+END

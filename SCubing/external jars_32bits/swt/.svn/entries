@@ -1,0 +1,107 @@
+8
+
+dir
+6
+https://tarik-pc/svn/GeoCubeRepository/GeoCube/external%20jars/swt
+https://tarik-pc/svn/GeoCubeRepository
+
+
+
+2012-08-28T23:38:21.766376Z
+3
+Tarik
+
+
+svn:special svn:externals svn:needs-lock
+
+.classpath
+file
+
+
+
+
+2009-02-11T21:47:10.000000Z
+f7760612efa23d67033be3590520449a
+2012-08-28T23:38:21.766376Z
+3
+Tarik
+
+swt-3.4.2-win32-win32-x86.zip
+file
+
+
+
+
+2012-02-25T19:29:06.714947Z
+f9a0d087ac9f7a7ef893cb7b1c6d8962
+2012-08-28T23:38:21.766376Z
+3
+Tarik
+has-props
+
+.project
+file
+
+
+
+
+2009-02-11T21:47:10.000000Z
+3d418a04ff52d6550fc2dd174510baf3
+2012-08-28T23:38:21.766376Z
+3
+Tarik
+
+swt.jar
+file
+
+
+
+
+2009-02-11T21:47:08.000000Z
+8a508c1242e77a6631c85b01af773122
+2012-08-28T23:38:21.766376Z
+3
+Tarik
+has-props
+
+src.zip
+file
+
+
+
+
+2009-02-11T21:47:10.000000Z
+ff6bc6e8c3fb5bece5110883c6203470
+2012-08-28T23:38:21.766376Z
+3
+Tarik
+has-props
+
+about_files
+dir
+
+swt-debug.jar
+file
+
+
+
+
+2009-02-11T21:47:00.000000Z
+375ba4d61a66d03393e06f9cc5bcaef6
+2012-08-28T23:38:21.766376Z
+3
+Tarik
+has-props
+
+about.html
+file
+
+
+
+
+2009-02-11T21:47:10.000000Z
+48be9de5d55c3949e03ee19830a82eb3
+2012-08-28T23:38:21.766376Z
+3
+Tarik
+

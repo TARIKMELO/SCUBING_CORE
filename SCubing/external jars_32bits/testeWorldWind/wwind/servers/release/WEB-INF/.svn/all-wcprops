@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/release/WEB-INF
+END
+capabilities_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/release/WEB-INF/capabilities_template.xml
+END
+sample_capabilities_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/release/WEB-INF/sample_capabilities_template.xml
+END
+sample_config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/release/WEB-INF/sample_config.xml
+END
+sample_DataFileStore.xml
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/release/WEB-INF/sample_DataFileStore.xml
+END
+wms.config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/release/WEB-INF/wms.config.xml
+END
+wms.DataFileStore.xml
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/release/WEB-INF/wms.DataFileStore.xml
+END
+web.xml
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/release/WEB-INF/web.xml
+END
+sample_web.xml
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/release/WEB-INF/sample_web.xml
+END

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/applications/ogc
+END
+OGCUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/applications/ogc/OGCUtil.java
+END
+OGCWebService.java
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/applications/ogc/OGCWebService.java
+END
+OGCWebServiceOperation.java
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/applications/ogc/OGCWebServiceOperation.java
+END
+OGCRuntimeException.java
+K 25
+svn:wc:ra_dav:version-url
+V 159
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/external%20jars/testeWorldWind/wwind/servers/src/gov/nasa/worldwind/servers/applications/ogc/OGCRuntimeException.java
+END

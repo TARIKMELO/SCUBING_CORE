@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/Cube/dal/drivers
+END
+ResultSetText.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/Cube/dal/drivers/ResultSetText.java
+END
+TextFileWriter.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/Cube/dal/drivers/TextFileWriter.java
+END
+ShapeFileReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/Cube/dal/drivers/ShapeFileReader.java
+END
+CubeColumnsConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/Cube/dal/drivers/CubeColumnsConfig.java
+END
+TextFileReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/Cube/dal/drivers/TextFileReader.java
+END
+IResultSetText.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/Cube/dal/drivers/IResultSetText.java
+END
+IReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/Cube/dal/drivers/IReader.java
+END
+CubeColumn.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/Cube/dal/drivers/CubeColumn.java
+END
+ShapeFileUtilities.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/Cube/dal/drivers/ShapeFileUtilities.java
+END
+ShapeFileWriter.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/GeoCubeRepository/!svn/ver/3/GeoCube/Cube/dal/drivers/ShapeFileWriter.java
+END
