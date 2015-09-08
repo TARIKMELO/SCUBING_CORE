@@ -13,13 +13,13 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Tarik/workspace/GeoCube/external_jar_64bits/jogl-all-natives-windows-amd64.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Tarik/workspace/GeoCube/external_jar_64bits/worldwind.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Tarik/workspace/GeoCube/external_jar_64bits/worldwindx.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Tarik/workspace/GeoCube/external_jar_64bits/jogl-all.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Tarik/workspace/GeoCube/external_jar_64bits/swt/swt.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Tarik/workspace/GeoCube/external_jar_64bits/gdal.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Tarik/workspace/GeoCube/external_jar_64bits/gluegen-rt.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Tarik/workspace/GeoCube/external_jar_64bits/gluegen-rt-natives-windows-amd64.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Tarik/OneDrive/Mestrado/SCubing/external_jar_64bits/gdal.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Tarik/OneDrive/Mestrado/SCubing/external_jar_64bits/gluegen-rt.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Tarik/OneDrive/Mestrado/SCubing/external_jar_64bits/gluegen-rt-natives-windows-amd64.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Tarik/OneDrive/Mestrado/SCubing/external_jar_64bits/jogl-all.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Tarik/OneDrive/Mestrado/SCubing/external_jar_64bits/jogl-all-natives-windows-amd64.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Tarik/OneDrive/Mestrado/SCubing/external_jar_64bits/worldwind.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Tarik/OneDrive/Mestrado/SCubing/external_jar_64bits/worldwindx.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Tarik/OneDrive/Mestrado/SCubing/external_jar_64bits/swt/swt.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

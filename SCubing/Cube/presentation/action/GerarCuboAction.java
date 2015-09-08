@@ -65,6 +65,7 @@ public class GerarCuboAction extends AbstractAction {
      * @param ev the event (not used)
      */
    
+    //TODO: isolar isto aqui através de outra interface
     public void actionPerformed(ActionEvent ev) {
        
     	CubeWindow cubeWindow = new CubeWindow(MapFrame.getInstance().getSelectedLayerFeatureSource());
