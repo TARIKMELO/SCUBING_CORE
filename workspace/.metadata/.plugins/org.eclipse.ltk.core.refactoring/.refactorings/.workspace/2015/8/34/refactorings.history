@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;CodigoFonte_GeoCube&apos; to &apos;SCubing&apos;&#x0D;&#x0A;- Original element: &apos;CodigoFonte_GeoCube&apos;&#x0D;&#x0A;- Renamed element: &apos;CodigoFonte_GeoCube&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename Java project &apos;CodigoFonte_GeoCube&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=CodigoFonte_GeoCube" name="SCubing" references="true" stamp="1440216193326" version="1.0"/>
+</session>

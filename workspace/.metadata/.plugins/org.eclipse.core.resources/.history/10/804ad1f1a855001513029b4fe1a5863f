@@ -1,0 +1,272 @@
+/*
+Copyright (C) 2001, 2011 United States Government as represented by
+the Administrator of the National Aeronautics and Space Administration.
+All Rights Reserved.
+ */
+package presentation.layout;
+
+import gov.nasa.worldwind.WorldWindow;
+import gov.nasa.worldwind.layers.Layer;
+import gov.nasa.worldwindx.examples.LayerTreeUsage;
+import gov.nasa.worldwindx.examples.OnScreenLayerManager;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.Insets;
+import java.awt.event.ActionEvent;
+
+import javax.swing.AbstractAction;
+import javax.swing.BorderFactory;
+import javax.swing.BoxLayout;
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JToggleButton;
+import javax.swing.UIManager;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.TitledBorder;
+
+import presentation.action.ExportShapefileAction;
+import presentation.action.GerarCuboAction;
+import presentation.action.ShowAttributesAction;
+import presentation.action.ValidateGeometryAction;
+
+
+/**
+ * Panel to display a list of layers. A layer can be turned on or off by clicking a check box next to the layer name.
+ *
+ * @version $Id: LayerPanel.java 1 2011-07-16 23:22:47Z dcollins $
+ *
+ * @see LayerTreeUsage
+ * @see OnScreenLayerManager
+ */
+public class LayerPanel extends JPanel
+{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	protected JPanel layersPanel;
+	protected JPanel westPanel;
+	protected JScrollPane scrollPane;
+	protected Font defaultFont;
+
+	/**
+	 * Create a panel with the default size.
+	 *
+	 * @param wwd WorldWindow to supply the layer list.
+	 */
+	public LayerPanel(ApplicationTemplate.AppFrame appFrame)
+	{
+		// Make a panel at a default size.
+		super(new BorderLayout());
+		this.makePanel(appFrame, new Dimension(200, 400));
+		this.makeControlPanel();
+	}
+
+	/**
+	 * Create a panel with a size.
+	 *
+	 * @param wwd  WorldWindow to supply the layer list.
+	 * @param size Size of the panel.
+	 */
+	public LayerPanel(ApplicationTemplate.AppFrame appFrame, Dimension size)
+	{
+		// Make a panel at a specified size.
+
+		super(new BorderLayout());
+		this.makeControlPanel();
+		this.makePanel(appFrame, size);
+
+	}
+
+	protected void makePanel(ApplicationTemplate.AppFrame appFrame, Dimension size)
+	{
+		// Make and fill the panel holding the layer titles.
+		this.layersPanel = new JPanel(new GridLayout(0, 1, 0, 4));
+		this.layersPanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+		this.fill(appFrame);
+
+		// Must put the layer grid in a container to prevent scroll panel from stretching their vertical spacing.
+		JPanel dummyPanel = new JPanel(new BorderLayout());
+		dummyPanel.add(this.layersPanel, BorderLayout.NORTH);
+
+		// Put the name panel in a scroll bar.
+		this.scrollPane = new JScrollPane(dummyPanel);
+		this.scrollPane.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
+		if (size != null)
+			this.scrollPane.setPreferredSize(size);
+
+		// Add the scroll bar and name panel to a titled panel that will resize with the main window.
+		westPanel = new JPanel(new GridLayout(0, 1, 0, 10));
+		westPanel.setBorder(
+				new CompoundBorder(BorderFactory.createEmptyBorder(9, 9, 9, 9), new TitledBorder("Layers")));
+		westPanel.setToolTipText("Layers to Show");
+		westPanel.add(scrollPane);
+		this.add(westPanel, BorderLayout.CENTER);
+	}
+
+	JPanel buttonPanel;
+	protected void makeControlPanel()
+	{
+		JPanel panel = new JPanel();
+		panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
+		panel.setBorder(new CompoundBorder(BorderFactory.createEmptyBorder(0, 9, 9, 9),
+				new TitledBorder("Shapefiles")));
+
+		// Open shapefile buttons.
+		buttonPanel = new JPanel(new GridLayout(0, 1, 0, 5)); // nrows, ncols, hgap, vgap
+		buttonPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); // top, left, bottom, right
+		panel.add(buttonPanel);
+
+		JButton gerarCuboButton = new JButton(new GerarCuboAction(null));
+		gerarCuboButton.setText("Gerar Cubo...");
+		buttonPanel.add(gerarCuboButton);
+		gerarCuboButton.setEnabled(false);
+
+		JButton validateButton = new JButton(new ValidateGeometryAction());
+		validateButton.setText("Validar ShapeFile...");
+		buttonPanel.add(validateButton);
+		validateButton.setEnabled(false);
+
+		//JButton saveButton = new JButton(new SaveFileAction());
+		JButton saveButton = new JButton(new ExportShapefileAction(null));
+		saveButton.setText("Save ShapeFile...");
+		buttonPanel.add(saveButton);
+		saveButton.setEnabled(false);
+		panel.setEnabled(false);
+		this.add(panel, BorderLayout.SOUTH);
+
+	}
+
+	protected void fill(ApplicationTemplate.AppFrame appFrame)
+	{
+		
+		ButtonGroup buttonGroup = new ButtonGroup();
+		
+		// Fill the layers panel with the titles of all layers in the world window's current model.
+		for (Layer layer :appFrame.getWwd().getModel().getLayers())
+		{
+			
+			
+			
+			
+			/*if (layer instanceof SimpleFeatureLayer)
+			{*/
+			LayerAction action = new LayerAction(layer, appFrame.getWwd(), layer.isEnabled());
+			JCheckBox	jcb = new JCheckBox(action);  
+			jcb.setBackground(UIManager.getColor("Panel.background")); 
+			jcb.setMargin(new Insets(0,0,0,0));
+			jcb.setBorder(null);  
+			jcb.setSelected(action.selected);
+
+			JToggleButton labelTButton = new JToggleButton(new ShowAttributesAction(layer,appFrame,buttonPanel));  
+
+
+
+			//labelTButton.setFont(UIManager.getFont("Panel.font"));  
+			labelTButton.setMargin(new Insets(0,0,0,0));
+			labelTButton.setText(layer.getName());
+			//labelTButton.setBackground(UIManager.getColor("Panel.background"));  
+			labelTButton.setOpaque(false);
+			labelTButton.setBackground(Color.LIGHT_GRAY);
+			//labelTButton.setBackground(new java.awt.Color(153, 255, 255));
+			//labelTButton.setBackground(panel.getBackground());
+			//labelTButton.setFont(new java.awt.Font("Impact", 1, 48)); // NOI18N
+
+			//labelTButton.setForeground(new java.awt.Color(0, 102, 102));
+
+			labelTButton.setBorderPainted(false);
+
+			//label.setFocusable(true);
+			buttonGroup.add(labelTButton);
+			FlowLayout flowLayout = new FlowLayout(FlowLayout.LEFT);
+			flowLayout.setVgap(0);
+			flowLayout.setHgap(0);
+			JPanel panel = new JPanel(flowLayout); 
+			panel.setOpaque(false);  
+			panel.add(jcb);  
+			panel.add(labelTButton);  
+
+			if (defaultFont == null)
+			{
+				this.defaultFont = jcb.getFont();
+			}
+			
+
+			this.layersPanel.add(panel);
+			/*	}
+			else{
+
+				LayerAction action = new LayerAction(layer, wwd, layer.isEnabled());
+			JCheckBox jcb = new JCheckBox(action);
+			jcb.setSelected(action.selected);
+			this.layersPanel.add(jcb);
+			if (defaultFont == null)
+			{
+				this.defaultFont = jcb.getFont();
+			}*/
+
+
+		}
+	}
+
+	/**
+	 * Update the panel to match the layer list active in a WorldWindow.
+	 *
+	 * @param wwd WorldWindow that will supply the new layer list.
+	 */
+	public void update(ApplicationTemplate.AppFrame appFrame)
+	{
+		// Replace all the layer names in the layers panel with the names of the current layers.
+		this.layersPanel.removeAll();
+		this.fill(appFrame);
+		this.westPanel.revalidate();
+		this.westPanel.repaint();
+	}
+
+	@Override
+	public void setToolTipText(String string)
+	{
+		this.scrollPane.setToolTipText(string);
+	}
+
+	protected static class LayerAction extends AbstractAction
+	{
+		WorldWindow wwd;
+		private Layer layer;
+		private boolean selected;
+
+		public LayerAction(Layer layer, WorldWindow wwd, boolean selected)
+		{
+			//super(layer.getName());
+			this.wwd = wwd;
+			this.layer = layer;
+			this.selected = selected;
+			//this.layer.setEnabled(this.selected);
+		}
+
+		public void actionPerformed(ActionEvent actionEvent)
+		{
+			
+
+			// Simply enable or disable the layer based on its toggle button.
+			if (((JCheckBox) actionEvent.getSource()).isSelected())
+				this.layer.setEnabled(true);
+
+			else
+				this.layer.setEnabled(false);
+
+			wwd.redraw();
+		}
+	}
+
+
+
+}
