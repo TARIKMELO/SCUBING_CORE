@@ -37,12 +37,14 @@
 			<artifactId>gt-epsg-hsql</artifactId>
 			<version>${geotools.version}</version>
 		</dependency>
- <dependency>
-        <groupId>org.geotools.jdbc</groupId>
-        <artifactId>gt-jdbc-postgis</artifactId>
-        <version>${geotools.version}</version>
-    </dependency>
-  
+		<dependency>
+			<groupId>org.geotools.jdbc</groupId>
+			<artifactId>gt-jdbc-postgis</artifactId>
+			<version>${geotools.version}</version>
+		</dependency>
+
+
+
 
 		<dependency>
 			<groupId>xerces</groupId>
@@ -52,17 +54,17 @@
 
 
 
-    <dependency>
-      <groupId>org.geotools.xsd</groupId>
-      <artifactId>gt-xsd-core</artifactId>
-      <version>${geotools.version}</version>
-    </dependency>    
-  
-  	 <dependency>
-          <groupId>org.geotools.xsd</groupId>
-           <artifactId>gt-xsd-kml</artifactId>
-           <version>${geotools.version}</version>
-    </dependency>
+		<dependency>
+			<groupId>org.geotools.xsd</groupId>
+			<artifactId>gt-xsd-core</artifactId>
+			<version>${geotools.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.geotools.xsd</groupId>
+			<artifactId>gt-xsd-kml</artifactId>
+			<version>${geotools.version}</version>
+		</dependency>
 
 
 		<dependency>
@@ -75,22 +77,47 @@
 			<artifactId>gt-geotiff</artifactId>
 			<version>8.0-M2</version>
 		</dependency>
-	
+
 		<dependency>
 			<groupId>org.geotools</groupId>
 			<artifactId>gt-coverage</artifactId>
 			<version>8.0-M2</version>
 		</dependency>
-		
-		<dependency>  
-            <groupId>com.thoughtworks.xstream</groupId>  
-            <artifactId>xstream</artifactId>  
-            <version>1.4.2</version>  
-        </dependency>  
-		
-		
-	</dependencies>
 
+		<dependency>
+			<groupId>com.thoughtworks.xstream</groupId>
+			<artifactId>xstream</artifactId>
+			<version>1.4.2</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>gov.nasa</groupId>
+			<artifactId>worldwind</artifactId>
+			<version>2.0.0-986</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jogamp.gluegen</groupId>
+			<artifactId>gluegen-rt-main</artifactId>
+			<version>2.1.5-01</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jogamp.jogl</groupId>
+			<artifactId>jogl-all-main</artifactId>
+			<version>2.1.5-01</version>
+		</dependency>
+		<dependency>
+			<groupId>gov.nasa</groupId>
+			<artifactId>worldwindx</artifactId>
+			<version>2.0.0-986</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.swt.win32.win32</groupId>
+			<artifactId>x86</artifactId>
+			<version>3.3.0-v3346</version>
+		</dependency>
+	</dependencies>
 
 
 	<repositories>
@@ -107,8 +134,8 @@
 			</url>
 		</repository>
 	</repositories>
-	
-	
+
+
 
 
 </project>

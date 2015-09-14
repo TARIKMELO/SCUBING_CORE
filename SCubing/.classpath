@@ -2,24 +2,12 @@
 <classpath>
 	<classpathentry kind="con" path="org.maven.ide.eclipse.MAVEN2_CLASSPATH_CONTAINER"/>
 	<classpathentry kind="src" path="Cube"/>
-	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Tarik/OneDrive/Mestrado/SCubing/external_jar_64bits/gdal.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Tarik/OneDrive/Mestrado/SCubing/external_jar_64bits/gluegen-rt.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Tarik/OneDrive/Mestrado/SCubing/external_jar_64bits/gluegen-rt-natives-windows-amd64.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Tarik/OneDrive/Mestrado/SCubing/external_jar_64bits/jogl-all.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Tarik/OneDrive/Mestrado/SCubing/external_jar_64bits/jogl-all-natives-windows-amd64.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Tarik/OneDrive/Mestrado/SCubing/external_jar_64bits/worldwind.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Tarik/OneDrive/Mestrado/SCubing/external_jar_64bits/worldwindx.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Tarik/OneDrive/Mestrado/SCubing/external_jar_64bits/swt/swt.jar"/>
+	<classpathentry kind="lib" path="C:/Users/pb003260/OneDrive/Mestrado/SCubing/external_jar_64bits/libgeowind.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
