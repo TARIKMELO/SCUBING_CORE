@@ -47,7 +47,7 @@ public class BuildLayerWorkerThread extends Thread
 			{
 				String name = this.makeDisplayName(this.source);
 				layers.get(i).setName(i == 0 ? name : name + "-" + Integer.toString(i));
-				layers.get(i).setPickEnabled(true);
+				layers.get(i).setEnabled(false);
 			}
 
 			SwingUtilities.invokeLater(new Runnable()
@@ -84,9 +84,6 @@ public class BuildLayerWorkerThread extends Thread
 
 	protected List<Layer> makeShapefileLayers() throws MalformedURLException, IOException, FactoryException, TransformException
 	{
-
-
-
 		if (source instanceof  SimpleFeatureSource)
 		{
 			SimpleFeatureLayer layer = LayerFactory.fromFeatureSource((FeatureSource<SimpleFeatureType, SimpleFeature>) source,appFrame);

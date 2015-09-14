@@ -55,18 +55,17 @@ public class LayerFactory {
 
 	public static SimpleFeatureLayer fromFeatureSource(FeatureSource<SimpleFeatureType, SimpleFeature> featureSource, ApplicationTemplate.AppFrame window) throws IOException, MalformedURLException, FactoryException, TransformException {
 		Style s;
-//		try
-//		{
-//			s = StyleUtils.createStyle(featureSource.getSchema().getGeometryDescriptor().getType().getBinding(), featureSource.getSchema());
-//		}
-//		catch(Exception e)
-//		{
-//			e.printStackTrace();
-//			s = StyleUtils.createPolygonStyle();
-//		}
+		//		try
+		//		{
+		//			s = StyleUtils.createStyle(featureSource.getSchema().getGeometryDescriptor().getType().getBinding(), featureSource.getSchema());
+		//		}
+		//		catch(Exception e)
+		//		{
+		//			e.printStackTrace();
+		//			s = StyleUtils.createPolygonStyle();
+		//		}
 		//TODO: tirar esse teste
 		SimpleFeatureLayer simpleFeatureLayer = new SimpleFeatureLayer("Teste", featureSource, null, window);
-		simpleFeatureLayer.setPickEnabled(false);
 		return simpleFeatureLayer;
 	}
 

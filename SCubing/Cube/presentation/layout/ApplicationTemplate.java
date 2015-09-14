@@ -435,8 +435,7 @@ public class ApplicationTemplate
 				//int retVal = AppFrame.this.fc.showOpenDialog(this);
 				//if (retVal != JFileChooser.APPROVE_OPTION)
 				//	return;
-
-				//TODO: Adicionar por aquSi
+				
 				//FileDataStore store = FileDataStoreFinder.getDataStore(this.fc.getSelectedFile());
 				SimpleFeatureSource featureSource = store.getFeatureSource(store.getNames().get(0));
 				Thread t = new BuildLayerWorkerThread(featureSource, this);
