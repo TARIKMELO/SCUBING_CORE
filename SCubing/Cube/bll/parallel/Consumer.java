@@ -54,8 +54,7 @@ public class Consumer extends Thread{
 						//TODO: Jã parte do pressuposto que ta tudo certo caso a funãão de agregaãão seja espacial
 						if ((cubeColumns.get(measureTypeValue.getType()).getAggFunction() instanceof ISpatialAggFunction))
 						{
-							//TODO
-							//Atualizando a medida espacial
+						
 							featureBuilder = ShapeFileUtilities.generateVisualization(measureValue, featureBuilder, (ISpatialAggFunction)cubeColumns.get(measureTypeValue.getType()).getAggFunction() , source);
 						}
 						else

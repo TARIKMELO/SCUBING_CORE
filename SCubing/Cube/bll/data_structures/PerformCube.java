@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map.Entry;
 
+import javax.management.timer.TimerMBean;
+
 import org.geotools.data.FeatureSource;
 import org.opengis.feature.simple.SimpleFeature;
 import org.opengis.feature.simple.SimpleFeatureType;
@@ -24,22 +26,36 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 		//conectar
 		ShapeFileReader<DimensionTypeValue> shapeFileReader = new ShapeFileReader<DimensionTypeValue>(featureSource,cubeColumns);
 		IResultSetText<DimensionTypeValue> rs = shapeFileReader.getData();
+
+		//Cálculo do tempo de computação do cubo
+		long tempoInicial = System.currentTimeMillis();  
+
 		ICubeSimple<DimensionTypeValue> cube = createBaseCuboide(rs, cubeColumns);
 		//cubeGrid.performHierarchies(x,y,rs, shapeFileReader.getSource(),cubeColumns);
 		cube.generateAggregations();
-	    ResourceII<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource= cube.cubeToTable();
-	
+		ResourceII<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource= cube.cubeToTable();
+
+
+		//Cálculo do tempo de computação do cubo
+		long tempoFinal = System.currentTimeMillis();  
+		System.out.println("Tempo em milisegundos: "+ (tempoFinal - tempoInicial) );
+		System.out.println("Tempo em segundos: "+ (tempoFinal - tempoInicial) / 1000d);
+
 		ShapeFileWriter shapeFileWriter = new ShapeFileWriter(cubeColumns);
 		//FeatureSource sourceDesti = shapeFileWriter.insertCubeToSource(hashResult, shapeFileReader.getSource());
 		FeatureSource<SimpleFeatureType, SimpleFeature> sourceDesti = shapeFileWriter.insertCubeToSource(resource, shapeFileReader.getSource());
+
+
+
+
 		return sourceDesti;
 	}
 
 	public ICubeSimple<DimensionTypeValue> createBaseCuboide(IResultSetText<DimensionTypeValue> rs,HashMap<String, CubeColumn> cubeColumns )
 	{
 
-		//TODO: Olhar o padrao adapter para colocar o nome da coluna ao invãs do indice
-		//-1 por causa da coluna que ã a medida
+		//TODO: Olhar o padrao adapter para colocar o nome da coluna ao invés do indice
+		//-1 por causa da coluna que é a medida
 		ICubeSimple<DimensionTypeValue> cube = new CubeSimple<DimensionTypeValue>(cubeColumns,cubeColumns.size());
 
 
@@ -114,8 +130,7 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 
 			//Deepy Copy
 			HashMap<String, CubeColumn> cubeColumnsAux = new HashMap<String, CubeColumn>();
-			//TODO: Modularizar isso melhor
- 
+
 			for (ArrayList<CubeColumn> cubeColumnList : hierarquias.values()) {
 				int auxT = 0;
 				for (CubeColumn cubeColumn : cubeColumnList) {
@@ -124,7 +139,6 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 					cubeColumnsAux.put(cubeColumn.getColumnName(), cubeColumn);
 				}
 				try {
-					
 					FeatureSource<SimpleFeatureType, SimpleFeature> sourceDesti;
 					sourceDesti = CreateCube(cubeColumnsAux,0 ,0, featureSource);
 					MapFrame.getInstance().createLayer(sourceDesti);
@@ -134,10 +148,8 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 				}
 			}
 
-			
 		}
 		catch(Exception ioEx){
-			//textAreaStatus.setText("Cubo gerado com sucesso!");
 			ioEx.printStackTrace();
 		}
 	}
