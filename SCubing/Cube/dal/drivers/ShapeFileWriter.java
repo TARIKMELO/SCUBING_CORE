@@ -80,7 +80,7 @@ public class ShapeFileWriter {
 		b.setName( "CustomLayer" );
 		b.setCRS( source.getSchema().getCoordinateReferenceSystem() ); // set crs first
 
-		//Adicionando as colunas espaciais. Medidas ou n„o.
+		//Adicionando as colunas espaciais. Medidas ou n√£o.
 		for (CubeColumn cubeColumn : cubeColumns.values()) {
 			if (cubeColumn.getColumnName()=="the_geom")
 			{
@@ -104,7 +104,7 @@ public class ShapeFileWriter {
 		
 		
 		for (CubeColumn cubeColumn : cubeColumns.values()) {
-			//A coluna espacial j· foi adicionada no for anterior 
+			//A coluna espacial j√£ foi adicionada no for anterior 
 			if (cubeColumn.getColumnName()!="the_geom")
 			{
 				//add some properties

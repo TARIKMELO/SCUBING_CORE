@@ -68,7 +68,7 @@ public class ExportKmlAction extends AbstractAction{
 		}
 		else
 		{
-			JOptionPane.showMessageDialog(null, "Favor selecione um layer v�lido para exportar!");
+			JOptionPane.showMessageDialog(null, "Favor selecione um layer vãlido para exportar!");
 		}
 
 	}

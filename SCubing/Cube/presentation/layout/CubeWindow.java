@@ -187,18 +187,20 @@ public class CubeWindow {
 
 		buttonImportCubeXML.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
-				if (validacoesGerarCubo())
-				{
-					File file = Util.getFile("xml");
-					gerarCubo(Util.loadCubeColumnsInXml(file));
-					gerarCubo();
-				}
-				else
-				{
-					sShell.setActive();
-					sShell.setFocus();
-					
-				}
+				//				if (validacoesGerarCubo())
+				//				{
+				File file = Util.getFile("xml");
+				preencherTela(Util.loadCubeColumnsInXml(file));
+				//gerarCubo(Util.loadCubeColumnsInXml(file));
+				//sShell.redraw();
+				//gerarCubo();
+				//				} 
+				//				else
+				//				{
+				//					sShell.setActive();
+				//					sShell.setFocus();
+				//					
+				//				}
 			}
 		});
 
@@ -214,9 +216,6 @@ public class CubeWindow {
 
 					if (validacoesGerarCubo())
 					{
-
-
-
 
 						//TODO: Ajustar os parametros
 						sShell.getDisplay().timerExec(10, new Runnable() {
@@ -235,7 +234,7 @@ public class CubeWindow {
 					}
 					else
 					{
-						
+
 						sShell.setFocus();
 						sShell.redraw();
 					}
@@ -272,7 +271,7 @@ public class CubeWindow {
 	 */
 	private void createGroupHierarquias() {
 		groupHierarquias = new Group(compositeGridCube, SWT.NONE);
-		groupHierarquias.setText("Configura��es");
+		groupHierarquias.setText("Configuraãães");
 		groupHierarquias.setBounds(new Rectangle(12, 13, 551, 154));
 		createGroupRegarVizinhanca();
 		checkBoxVisualizar = new Button(groupHierarquias, SWT.CHECK);
@@ -286,7 +285,7 @@ public class CubeWindow {
 	 */
 	private void createGroupRegarVizinhanca() {
 		groupRegarVizinhanca = new Group(groupHierarquias, SWT.NONE);
-		groupRegarVizinhanca.setText("Regra de Vizinha�a");
+		groupRegarVizinhanca.setText("Regra de Vizinhaãa");
 		groupRegarVizinhanca.setLayout(null);
 		groupRegarVizinhanca.setBounds(new Rectangle(18, 19, 164, 83));
 		labelX = new Label(groupRegarVizinhanca, SWT.NONE);
@@ -354,7 +353,7 @@ public class CubeWindow {
 	private void createGroupDimensoes() {
 		groupDimensoes = new Group(compositeRegularCube, SWT.NONE);
 		groupDimensoes.setLayout(null);
-		groupDimensoes.setText("Dimens�es");
+		groupDimensoes.setText("Dimensães");
 		groupDimensoes.setBounds(new Rectangle(8, 5, 561, 228));
 
 		tblDimensao = new Table(groupDimensoes, SWT.CHECK | SWT.NONE);
@@ -475,31 +474,31 @@ public class CubeWindow {
 				}
 			}
 		}
-		
+
 		if (cubeColumns.containsKey(nomeColX))
 		{
-			
+
 			JOptionPane.showMessageDialog(null, "Não é possível usar uma dimensão como medida!");
 			return;
 		}
-		
+
 		if (cubeColumns.containsKey(nomeColY))
 		{
-			
+
 			JOptionPane.showMessageDialog(null, "Não é possível usar uma dimensão como medida!");
 			return;
 		}
-		
+
 		if (cubeColumns.containsKey(nomeColId))
 		{
-			
+
 			JOptionPane.showMessageDialog(null, "Não é possível usar uma dimensão como medida!");
 			return;
 		}
-		
-		
-		
-		
+
+
+
+
 		cubeColumns.put(nomeColX, new CubeColumn(null,false,aux,nomeColX));
 		aux++;
 		cubeColumns.put(nomeColY, new CubeColumn(null,false,aux,nomeColY));
@@ -525,6 +524,51 @@ public class CubeWindow {
 	}
 
 
+
+	public void preencherTela(HashMap<String, CubeColumn> cubeColumns)
+	{
+
+
+		for (CubeColumn  cubeColumn : cubeColumns.values()) {
+
+
+			if(cubeColumn.isMeasure)
+			{	
+
+				for (TableItem measureItem : tblMedidas.getItems()) {
+					if(cubeColumn.getColumnName().equals(measureItem.getText(1)))
+					{	
+						measureItem.setChecked(true);
+						
+						((Combo)measureItem.getData()).setText(cubeColumn.getAggFunction().toString());
+						measureItem.setText(3, cubeColumn.getAggFunction().toString());
+					}
+				}
+			} 
+
+			else
+			{
+
+				for (TableItem dimensionItem : tblDimensao.getItems()) {
+					String nameColumn = dimensionItem.getText(1);
+					if(cubeColumn.getColumnName().equals(nameColumn))
+					{
+						dimensionItem.setChecked(true);
+						TableEditor editorHierarquia = (TableEditor) dimensionItem.getData();
+						((Text)editorHierarquia.getEditor()).setText(cubeColumn.getHierarchy()+"");
+//						if (cubeColumn.getWhere()!=null)
+//						{
+//							dimensionItem.setText(3,cubeColumn.getWhere());
+//						}
+					} 
+				}
+
+			}
+
+
+			//System.out.println(dimensionItem.getChecked());
+		} 
+	}
 
 	public HashMap<String, CubeColumn> generateCubeColumns()
 	{
@@ -690,7 +734,7 @@ public class CubeWindow {
 
 		TableColumn tblColFunAgg = new TableColumn(tableGrid, SWT.NONE,3);
 		tblColFunAgg.setWidth(100);
-		tblColFunAgg.setText("Fun��o de Agg.");
+		tblColFunAgg.setText("Função de Agg.");
 
 
 		TableColumn tblValor = new TableColumn(tableGrid, SWT.NONE,4);
@@ -712,8 +756,6 @@ public class CubeWindow {
 
 				combo.addListener(SWT.Selection, new Listener() {
 					public void handleEvent(Event e) {
-
-
 						tableItem.setText(3,((Combo)e.widget).getText());
 					}
 				});
@@ -741,7 +783,7 @@ public class CubeWindow {
 		TableColumn tblColDim = new TableColumn(tblDimensao, SWT.NONE,1);
 		tblColDim.setWidth(100);
 		//tblColDim.setWidth(tblDimensoes.getGridLineWidth()/tblDimensoes.getColumnCount());
-		tblColDim.setText("Dimens�o");
+		tblColDim.setText("Dimensão");
 
 
 		TableColumn tblColTipDim = new TableColumn(tblDimensao, SWT.NONE,2);
@@ -767,17 +809,17 @@ public class CubeWindow {
 			tableItem.setText(1,hashtable.get("NOME"));
 			tableItem.setText(2,hashtable.get("TIPO"));
 			Text text = new Text(tblDimensao, SWT.LEFT);
-			final TableEditor editor = new TableEditor(tblDimensao);
+			final TableEditor editorHierarquia = new TableEditor(tblDimensao);
 			text.addModifyListener(new ModifyListener() {
 				public void modifyText(ModifyEvent me) {
-					Text text = (Text) editor.getEditor();
-					editor.getItem().setText(4, text.getText());
+					Text text = (Text) editorHierarquia.getEditor();
+					editorHierarquia.getItem().setText(4, text.getText());
 				}
 			});
 
-			editor.minimumWidth = 90;
-			editor.setEditor(text, tableItem, 4);
-
+			editorHierarquia.minimumWidth = 90;
+			editorHierarquia.setEditor(text, tableItem, 4);
+			tableItem.setData(editorHierarquia);
 			text = new Text(tblDimensao, SWT.LEFT);
 			//final TableItem tableItemWhere=new TableItem(tblDimensao,SWT.NONE);
 			final TableEditor editorWhere = new TableEditor(tblDimensao);
@@ -789,7 +831,7 @@ public class CubeWindow {
 			});
 			editorWhere.minimumWidth = 90;
 			editorWhere.setEditor(text, tableItem, 3);
-			tableItem.setText(3,"");
+			//tableItem.setText(3,"");
 
 			/*	Text textH = new Text(tblDimensao, SWT.LEFT);
 
@@ -823,7 +865,7 @@ public class CubeWindow {
 
 		TableColumn tblColFunAgg = new TableColumn(tblMedidas, SWT.NONE,3);
 		tblColFunAgg.setWidth(100);
-		tblColFunAgg.setText("Fun��o de Agg.");
+		tblColFunAgg.setText("Função de Agg.");
 
 
 		TableColumn tblValor = new TableColumn(tblMedidas, SWT.NONE,4);
@@ -856,7 +898,7 @@ public class CubeWindow {
 			editor.minimumWidth = 100;
 			//editor.minimumWidth = combo.getSize ().x;
 			editor.setEditor(combo, tableItem, 3);
-
+			tableItem.setData(combo);
 
 
 			Text text = new Text(tblMedidas, SWT.LEFT);
@@ -882,7 +924,7 @@ public class CubeWindow {
 			if (funcAggGeo==null)
 			{
 				funcAggGeo = new ArrayList<String>();
-				//TODO: O que � esse 1 fixo aqui
+				//TODO: O que  esse 1 fixo aqui
 				funcAggGeo.add((new SAFDistance(1)).toString());
 				funcAggGeo.add((new SAFDiference()).toString());
 				funcAggGeo.add((new SAFBuffer(1)).toString());
@@ -902,7 +944,7 @@ public class CubeWindow {
 			if (funcAggGeo==null)
 			{
 				funcAggGeo = new ArrayList<String>();
-				//TODO: O que � esse 1 fixo aqui
+				//TODO: O que ã esse 1 fixo aqui
 				funcAggGeo.add((new SAFDistance(1)).toString());
 				funcAggGeo.add((new SAFDiference()).toString());
 				funcAggGeo.add((new SAFBuffer(1)).toString());

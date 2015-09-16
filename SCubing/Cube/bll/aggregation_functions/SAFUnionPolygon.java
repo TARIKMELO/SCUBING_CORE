@@ -31,6 +31,6 @@ public class SAFUnionPolygon  extends ISpatialAggFunction implements IAggFunctio
 
 	@Override
 	public String toString() {
-		return "Uni�o Pol�gono";
+		return "União Polígono";
 	}
 }

@@ -51,7 +51,7 @@ public class Consumer extends Thread{
 					for (MeasureTypeValue measureTypeValue : entry.getValue()) 
 					{
 						String measureValue = measureTypeValue.getValue();
-						//TODO: J· parte do pressuposto que ta tudo certo caso a funÁ„o de agregaÁ„o seja espacial
+						//TODO: J√£ parte do pressuposto que ta tudo certo caso a fun√£√£o de agrega√£√£o seja espacial
 						if ((cubeColumns.get(measureTypeValue.getType()).getAggFunction() instanceof ISpatialAggFunction))
 						{
 							//TODO
@@ -60,12 +60,12 @@ public class Consumer extends Thread{
 						}
 						else
 						{
-							//Atualizando a medida numÈrica
+							//Atualizando a medida num√£rica
 							featureBuilder.set(measureTypeValue.getType(), measureTypeValue.getValue());
 						}
 
 					}
-					//Atualizando as dimensıes
+					//Atualizando as dimens√£es
 					for (DimensionTypeValue dimensionTypeValue : entry.getKey()) 
 					{
 						//inserindo o valor da dimensao na nova linha

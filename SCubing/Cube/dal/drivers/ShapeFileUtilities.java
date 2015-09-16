@@ -131,7 +131,7 @@ public class ShapeFileUtilities {
 			}
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
-			System.out.println("Erro no m�todo getData()");
+			System.out.println("Erro no mãtodo getData()");
 			System.exit(-1);
 		}
 		return rs;

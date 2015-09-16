@@ -63,7 +63,7 @@ public class SAFDistance extends ISpatialAggFunction implements IAggFunction{
 
 	@Override
 	public String toString() {
-		return "Dist�ncia";
+		return "Distância";
 	}
 
 }

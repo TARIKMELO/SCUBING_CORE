@@ -35,7 +35,7 @@ public class CubeGrid {
 		while (source.getFeatures().size()>1)
 		{
 			HashMap<ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>> result  = new HashMap<ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>();
-			//N�o uso o tipo abaixo pois nao tem a fun�o contains
+			//Não uso o tipo abaixo pois nao tem a funão contains
 			//ResourceII<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> result =new  ResourceII<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>>();
 
 			ShapeFileWriter shapeFileWriter = new ShapeFileWriter(cubeColumns);

@@ -151,7 +151,7 @@ public class SimpleFeatureLayer extends RenderableLayer implements PositionListe
 
 		if (originalCRS == null)
 		{
-			JOptionPane.showMessageDialog(null, "N�o � poss�vel gerar o visualiza��o.\nO mapa n�o possui Sistemas de refer�ncia de coordenadas.");
+			JOptionPane.showMessageDialog(null, "Não ã possãvel gerar o visualizaãão.\nO mapa não possui Sistemas de referãncia de coordenadas.");
 			return ;
 		}
 

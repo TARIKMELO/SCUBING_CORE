@@ -38,8 +38,8 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 	public ICubeSimple<DimensionTypeValue> createBaseCuboide(IResultSetText<DimensionTypeValue> rs,HashMap<String, CubeColumn> cubeColumns )
 	{
 
-		//TODO: Olhar o padrao adapter para colocar o nome da coluna ao invés do indice
-		//-1 por causa da coluna que é a medida
+		//TODO: Olhar o padrao adapter para colocar o nome da coluna ao invÃ£s do indice
+		//-1 por causa da coluna que Ã£ a medida
 		ICubeSimple<DimensionTypeValue> cube = new CubeSimple<DimensionTypeValue>(cubeColumns,cubeColumns.size());
 
 

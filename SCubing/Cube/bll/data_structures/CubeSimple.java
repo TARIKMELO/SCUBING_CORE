@@ -118,7 +118,7 @@ public class CubeSimple <T> implements ICubeSimple<T>, Serializable{
 	ResourceII<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource;
 
 	//HashMap<ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>> hashResult;
-	//Percorre o cubo que est· em uma ·rvore e insere os registro em uma table(HashMap)
+	//Percorre o cubo que est√£ em uma √£rvore e insere os registro em uma table(HashMap)
 	public ResourceII<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> cubeToTable()
 	{
 		DimensionTypeValue value;
@@ -163,7 +163,7 @@ public class CubeSimple <T> implements ICubeSimple<T>, Serializable{
 
 			lineAux.set(cubeColumns.get(valueAux.getType()).getIndex(), value);
 
-			//Estrutura que gera a visualizaÁ„o depois
+			//Estrutura que gera a visualiza√£√£o depois
 			resource.putRegister(new AbstractMap.SimpleEntry (deepCopy(lineAux), new ArrayList<MeasureTypeValue>(oneDescendant.getValue().getMeasures())))	;
 			//hashResult.put(deepCopy(lineAux), new ArrayList<MeasureTypeValue>(oneDescendant.getValue().getMeasures()));
 			cubeToTable(oneDescendant.getValue(), lineAux);

@@ -25,7 +25,7 @@ public class Util {
 		}
 
 		File newFile = chooser.getSelectedFile();
-		//Colocando a extens„o no arquivo caso o usu·rio n„o coloque
+		//Colocando a extens√£o no arquivo caso o usu√£rio n√£o coloque
 		if (!newFile.getName().toString().toUpperCase().endsWith("."+fileExtension.toUpperCase()))
 		{
 			return new File( newFile.getPath().concat("."+fileExtension)) ;
@@ -44,7 +44,7 @@ public class Util {
 			System.exit(0);
 		}
 		File newFile = chooser.getSelectedFile();
-		//Colocando a extens„o no arquivo caso o usu·rio n„o coloque
+		//Colocando a extens√£o no arquivo caso o usu√£rio n√£o coloque
 		if (!newFile.getName().toString().toUpperCase().endsWith("."+fileExtension.toUpperCase()))
 		{
 			return new File( newFile.getPath().concat("."+fileExtension)) ;
@@ -99,7 +99,7 @@ public class Util {
 			FileOutputStream fs = new FileOutputStream(file);
 			xstream.toXML(cubeColumns, fs);
 			fs.close();
-			JOptionPane.showMessageDialog(null, "File exported!");
+			JOptionPane.showMessageDialog(null, "Arquivo Exportado!");
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}

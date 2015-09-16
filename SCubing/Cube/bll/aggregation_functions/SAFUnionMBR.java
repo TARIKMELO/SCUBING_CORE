@@ -34,7 +34,7 @@ public class SAFUnionMBR  extends ISpatialAggFunction implements IAggFunction{
 
 	@Override
 	public String toString() {
-		return "Uni�o MBR";
+		return "União MBR";
 
 	}
 }

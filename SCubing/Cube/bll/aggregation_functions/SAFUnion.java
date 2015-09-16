@@ -34,7 +34,7 @@ public class SAFUnion  extends ISpatialAggFunction implements IAggFunction{
 
 	@Override
 	public String toString() {
-		return "Uni�o";
+		return "União";
 
 	}
 }
@@ -73,14 +73,14 @@ public class SAFUnion  extends ISpatialAggFunction implements IAggFunction{
 		}
 		catch(Exception ex)
 		{
-			System.err.print("Erro ao aplicar a fun��o de agrega��o");
+			System.err.print("Erro ao aplicar a funãão de agregaãão");
 			return null;
 		}
 	}
 
 	@Override
 	public String toString() {
-		return "Uni�o";
+		return "União";
 
 	}
 }

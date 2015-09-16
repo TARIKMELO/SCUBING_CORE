@@ -300,7 +300,7 @@ public class AttributeTable extends JPanel {
 	 *
 	 * @param IDs identifiers of currently selected features
 	 */
-	//TODO: Refazer este método
+	//TODO: Refazer este mÃ£todo
 
 
 	public void selectTableRow(String id, boolean sel) {

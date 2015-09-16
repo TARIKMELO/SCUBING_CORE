@@ -10,16 +10,16 @@ public class aggFuncFactory {
 	        else if( aggFunctionType.equals("Max") ) return new AFMax();  
 	        else if( aggFunctionType.equals("Min") ) return new AFMin();
 	        else if( aggFunctionType.equals("Soma") ) return new AFSum();
-	        else if( aggFunctionType.equals("Dist‚ncia") ) return new SAFDistance(Double.parseDouble(parameter.toString()));
+	        else if( aggFunctionType.equals("Dist√¢ncia") ) return new SAFDistance(Double.parseDouble(parameter.toString()));
 	        else if( aggFunctionType.equals("Buffer") ) return new SAFBuffer(Double.parseDouble(parameter.toString()));
-	        else if( aggFunctionType.equals("DiferenÁa") ) return new SAFDiference();
+	        else if( aggFunctionType.equals("Diferen√£a") ) return new SAFDiference();
 	        else if( aggFunctionType.equals("Count") ) return new AFCount();  
-	        else if( aggFunctionType.equals("InterseÁ„o") ) return new SAFIntersection();  
+	        else if( aggFunctionType.equals("Interse√ß√£o") ) return new SAFIntersection();  
 	        else if( aggFunctionType.equals("Toca") ) return new SAFTouche();  
-	        //else if( aggFunctionType.equals("VizinhaÁa") ) return new SAFNeighborhood();
-	        else if( aggFunctionType.equals("Uni„o") ) return new SAFUnion();
-	        else if( aggFunctionType.equals("Uni„o MBR") ) return new SAFUnionMBR();
-	        else if( aggFunctionType.equals("Uni„o PolÌgono") ) return new SAFUnionPolygon();
+	        //else if( aggFunctionType.equals("Vizinha√£a") ) return new SAFNeighborhood();
+	        else if( aggFunctionType.equals("Uni√£o") ) return new SAFUnion();
+	        else if( aggFunctionType.equals("Uni√£o MBR") ) return new SAFUnionMBR();
+	        else if( aggFunctionType.equals("Uni√£o Pol√≠gono") ) return new SAFUnionPolygon();
 	        else return null;  
 	    }  
 

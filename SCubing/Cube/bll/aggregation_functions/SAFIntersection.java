@@ -61,6 +61,6 @@ public class SAFIntersection  extends ISpatialAggFunction implements IAggFunctio
 
 	@Override
 	public String toString() {
-		return "Interse��o";
+		return "Interseção";
 	}
 }
