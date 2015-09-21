@@ -7,6 +7,7 @@ import java.util.Map.Entry;
 import org.geotools.data.FeatureSource;
 import org.geotools.data.simple.SimpleFeatureCollection;
 import org.geotools.feature.simple.SimpleFeatureBuilder;
+import org.opengis.feature.simple.SimpleFeature;
 import org.opengis.feature.simple.SimpleFeatureType;
 
 import bll.aggregation_functions.ISpatialAggFunction;
@@ -20,10 +21,10 @@ import dal.drivers.ShapeFileUtilities;
 public class Consumer extends Thread{
 
 	private ResourceII<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> re;
-	SimpleFeatureType TYPE;
-	FeatureSource source;
-	HashMap<String, CubeColumn> cubeColumns;
-	SimpleFeatureCollection collection;
+	final SimpleFeatureType TYPE;
+	final FeatureSource source;
+	final HashMap<String, CubeColumn> cubeColumns;
+	private final SimpleFeatureCollection collection;
 	//private LinkedList<S> parteMatriz;
 
 	public Consumer(SimpleFeatureType TYPE,ResourceII<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource ,FeatureSource source, HashMap<String, CubeColumn> cubeColumns, SimpleFeatureCollection collection){
@@ -41,11 +42,11 @@ public class Consumer extends Thread{
 
 			SimpleFeatureBuilder featureBuilder =new SimpleFeatureBuilder(TYPE);
 			Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>> entry= null;;
-		
+			SimpleFeature feature ;
 
 			while((re.isFinished()==false)||(re.getNumOfRegisters()!=0)){
 				if ((entry = re.getRegister())!=null){
-				
+
 
 					//Atualizando as medidas
 					for (MeasureTypeValue measureTypeValue : entry.getValue()) 
@@ -54,7 +55,7 @@ public class Consumer extends Thread{
 						//TODO: Jã parte do pressuposto que ta tudo certo caso a funãão de agregaãão seja espacial
 						if ((cubeColumns.get(measureTypeValue.getType()).getAggFunction() instanceof ISpatialAggFunction))
 						{
-						
+
 							featureBuilder = ShapeFileUtilities.generateVisualization(measureValue, featureBuilder, (ISpatialAggFunction)cubeColumns.get(measureTypeValue.getType()).getAggFunction() , source);
 						}
 						else
@@ -86,8 +87,18 @@ public class Consumer extends Thread{
 							}
 						}
 					}
-					//Gravando o valor na nova linha
-					collection.add(featureBuilder.buildFeature(null));
+
+					try{
+						//Gravando o valor na nova linha
+
+						feature = featureBuilder.buildFeature(null);
+						if (feature!=null)
+							collection.add(feature);
+
+					}
+					catch (Exception e) {
+						e.printStackTrace();
+					}
 
 				}
 			}

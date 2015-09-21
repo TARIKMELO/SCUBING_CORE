@@ -36,7 +36,7 @@ public class ShapeFileWriter {
 
 	public 	SimpleFeatureCollection  insertCubeToCollection(SimpleFeatureType TYPE,ResourceII<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource ,FeatureSource<SimpleFeatureType, SimpleFeature> source ) throws Exception
 	{
-		SimpleFeatureCollection collection = FeatureCollections.newCollection();
+		SimpleFeatureCollection collection =  FeatureCollections.newCollection();
 		
 
 		final int numConsumidores =Integer.parseInt(Util.getConfig().getNumThreads());

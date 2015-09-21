@@ -12,7 +12,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<geotools.version>8.0-M2</geotools.version>
+		<geotools.version>8.0-M4</geotools.version>
 	</properties>
 
 	<dependencies>
@@ -30,11 +30,6 @@
 		<dependency>
 			<groupId>org.geotools</groupId>
 			<artifactId>gt-swing</artifactId>
-			<version>${geotools.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.geotools</groupId>
-			<artifactId>gt-epsg-hsql</artifactId>
 			<version>${geotools.version}</version>
 		</dependency>
 		<dependency>

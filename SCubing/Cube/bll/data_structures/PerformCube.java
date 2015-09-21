@@ -36,17 +36,19 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 		ResourceII<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource= cube.cubeToTable();
 
 
-		//Cálculo do tempo de computação do cubo
-		long tempoFinal = System.currentTimeMillis();  
-		System.out.println("Tempo em milisegundos: "+ (tempoFinal - tempoInicial) );
-		System.out.println("Tempo em segundos: "+ (tempoFinal - tempoInicial) / 1000d);
+
 
 		ShapeFileWriter shapeFileWriter = new ShapeFileWriter(cubeColumns);
+
+
 		//FeatureSource sourceDesti = shapeFileWriter.insertCubeToSource(hashResult, shapeFileReader.getSource());
 		FeatureSource<SimpleFeatureType, SimpleFeature> sourceDesti = shapeFileWriter.insertCubeToSource(resource, shapeFileReader.getSource());
 
 
-
+		//Cálculo do tempo de computação do cubo
+		long tempoFinal = System.currentTimeMillis();  
+		System.out.println("Tempo em milisegundos: "+ (tempoFinal - tempoInicial) );
+		System.out.println("Tempo em segundos: "+ (tempoFinal - tempoInicial) / 1000d);
 
 		return sourceDesti;
 	}
