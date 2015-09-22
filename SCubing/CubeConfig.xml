@@ -1,5 +1,5 @@
 <bll.util.ConfigBean>
-  <numThreads>2</numThreads>
+  <numThreads>1</numThreads>
   <circleRadius>5</circleRadius>
   <geometryColumnName>null</geometryColumnName>
 </bll.util.ConfigBean>
