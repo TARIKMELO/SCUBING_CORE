@@ -43,6 +43,7 @@ public class ShapeFileUtilities {
 
 	public static GeometryCollection selectRegions(String[] fid, FeatureSource<SimpleFeatureType, SimpleFeature> featureSource) throws UnknownHostException, IOException
 	{
+
 		FilterFactory ff = CommonFactoryFinder.getFilterFactory(GeoTools.getDefaultHints());
 		Set<FeatureId> set = new  HashSet<FeatureId>();
 		for (int i = 0; i< fid.length; i++)
@@ -52,17 +53,22 @@ public class ShapeFileUtilities {
 		Filter filter = ff.id(set);
 		FeatureCollection<SimpleFeatureType, SimpleFeature> selectedFeatures = featureSource.getFeatures(filter);
 		FeatureIterator<SimpleFeature> iterator =  selectedFeatures.features();
-		Geometry[] geometries = new Geometry[selectedFeatures.size()];
-		int aux = 0;
-		while (iterator.hasNext()) {
-			SimpleFeature feature = iterator.next();
-			geometries[aux] = (Geometry) feature.getDefaultGeometry(); 
-			aux++;
+		Collection<Geometry> geometryCollection = new ArrayList<Geometry>();
+		try
+		{
+			while (iterator.hasNext()) {
+				SimpleFeature feature = iterator.next();
+				geometryCollection.add((Geometry)feature.getDefaultGeometry());
+			}
 		}
-
+		finally
+		{
+			iterator.close();
+		}
 		GeometryFactory factory = new GeometryFactory();
-		GeometryCollection geometrieCol = new GeometryCollection(geometries, factory);
-		return geometrieCol;
+
+
+		return (GeometryCollection) factory.buildGeometry( geometryCollection );
 	}
 
 

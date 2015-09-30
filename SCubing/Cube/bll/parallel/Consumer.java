@@ -79,7 +79,15 @@ public class Consumer extends Thread{
 								{
 									value.getValue().se = "";
 								}*/
-								featureBuilder = ShapeFileUtilities.generateVisualization(value.getValue(), featureBuilder, new SAFUnion(), source);
+
+								try
+								{
+									featureBuilder = ShapeFileUtilities.generateVisualization(value.getValue(), featureBuilder, new SAFUnion(), source);
+								}
+								catch(OutOfMemoryError e)
+								{
+									System.gc();
+								}
 							}
 							else 
 							{
@@ -92,8 +100,8 @@ public class Consumer extends Thread{
 						//Gravando o valor na nova linha
 
 						feature = featureBuilder.buildFeature(null);
-						if (feature!=null)
-							collection.add(feature);
+
+						collection.add(feature);
 
 					}
 					catch (Exception e) {
