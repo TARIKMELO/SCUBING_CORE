@@ -57,7 +57,7 @@ public class SAFDiference  extends ISpatialAggFunction implements IAggFunction{
 
 	@Override
 	public String toString() {
-		return "Diferenãa";
+		return "Diferença";
 
 	}
 }

@@ -12,8 +12,7 @@ public class aggFuncFactory {
 	        else if( aggFunctionType.equals("Soma") ) return new AFSum();
 	        else if( aggFunctionType.equals("Distância") ) return new SAFDistance(Double.parseDouble(parameter.toString()));
 	        else if( aggFunctionType.equals("Buffer") ) return new SAFBuffer(Double.parseDouble(parameter.toString()));
-	        else if( aggFunctionType.equals("Diferenãa") ) return new SAFDiference();
-	        else if( aggFunctionType.equals("Count") ) return new AFCount();  
+	        else if( aggFunctionType.equals("Diferença") ) return new SAFDiference(); 
 	        else if( aggFunctionType.equals("Interseção") ) return new SAFIntersection();  
 	        else if( aggFunctionType.equals("Toca") ) return new SAFTouche();  
 	        //else if( aggFunctionType.equals("Vizinhança") ) return new SAFNeighborhood();

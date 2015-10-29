@@ -52,19 +52,25 @@ public class ShapeFileUtilities {
 		}
 		Filter filter = ff.id(set);
 		FeatureCollection<SimpleFeatureType, SimpleFeature> selectedFeatures = featureSource.getFeatures(filter);
-		FeatureIterator<SimpleFeature> iterator =  selectedFeatures.features();
+		SimpleFeature[] selectedFeaturesArray =  (SimpleFeature[]) selectedFeatures.toArray();
 		Collection<Geometry> geometryCollection = new ArrayList<Geometry>();
-		try
-		{
-			while (iterator.hasNext()) {
-				SimpleFeature feature = iterator.next();
-				geometryCollection.add((Geometry)feature.getDefaultGeometry());
-			}
-		}
-		finally
-		{
-			iterator.close();
-		}
+		for (SimpleFeature geometry : selectedFeaturesArray) {
+			geometryCollection.add((Geometry)geometry.getDefaultGeometry());
+		} 
+		//		FeatureIterator<SimpleFeature> iterator =  selectedFeatures.features();
+		//		Collection<Geometry> geometryCollection = new ArrayList<Geometry>();
+		//		try
+		//		{
+		//			while (iterator.hasNext()) {
+		//				SimpleFeature feature = iterator.next();
+		//				geometryCollection.add((Geometry)feature.getDefaultGeometry());
+		//			}
+		//		}
+		//		finally
+		//		{
+		//			iterator.close();
+		//		}
+
 		GeometryFactory factory = new GeometryFactory();
 
 
@@ -85,10 +91,16 @@ public class ShapeFileUtilities {
 		FeatureIterator<SimpleFeature> iterator =  selectedFeatures.features();
 		Collection<Geometry> geometries = new ArrayList<Geometry>();
 		int aux = 0;
-		while (iterator.hasNext()) {
-			SimpleFeature feature = iterator.next();
-			geometries.add((Geometry) feature.getDefaultGeometry()); 
-			aux++;
+
+		try{
+			while (iterator.hasNext()) {
+				SimpleFeature feature = iterator.next();
+				geometries.add((Geometry) feature.getDefaultGeometry()); 
+				aux++;
+			}
+		}
+		finally{
+			iterator.close();
 		}
 
 
@@ -96,9 +108,10 @@ public class ShapeFileUtilities {
 	}
 
 
-	public static <T> IResultSetText<T> getData(FeatureSource<SimpleFeatureType, SimpleFeature> featureSource,HashMap<String, CubeColumn> cubeColumns2 ) throws CQLException {
+	public static <T> IResultSetText<T> getData(FeatureSource<SimpleFeatureType, SimpleFeature> featureSource,HashMap<String, CubeColumn> cubeColumns2 ) throws Exception {
 		IResultSetText<T> rs = new ResultSetText<T>();
 		rs.configure(cubeColumns2);
+	
 		DimensionTypeValue[] str ;	
 		try {
 			String where="";
@@ -124,20 +137,27 @@ public class ShapeFileUtilities {
 			//FeatureCollection collection = featureSource.getFeatures();
 			FeatureIterator<SimpleFeature> iterator =  collection.features();
 			SimpleFeature feature;
-			while( iterator.hasNext() ){
-				feature = iterator.next();
-				str = formatShapefileLine(feature,cubeColumns2);
-				for(int i=0; i<str.length; i++)
-				{
-					rs.updateData(i, (T)(str[i]));
-				}
-				//REFRESH
-				rs.insertRow();
 
+			try{
+				while( iterator.hasNext() ){
+					feature = iterator.next();
+					str = formatShapefileLine(feature,cubeColumns2);
+					for(int i=0; i<str.length; i++)
+					{
+						rs.updateData(i, (T)(str[i]));
+					}
+					//REFRESH
+					rs.insertRow();
+
+				}
+			}
+			finally{
+				iterator.close();
+				
 			}
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
-			System.out.println("Erro no mãtodo getData()");
+			System.out.println("Erro no método getData()");
 			System.exit(-1);
 		}
 		return rs;
@@ -150,7 +170,10 @@ public class ShapeFileUtilities {
 		for (CubeColumn cubeColumn : cubeColumns2.values()) {
 			if (cubeColumn.getColumnName().equals("the_geom"))
 			{ 
-				row[cubeColumn.getIndex()] = new DimensionTypeValue(feature.getIdentifier().getID().toString(),cubeColumn.columnName);
+				
+				//aquiiiii
+				//row[cubeColumn.getIndex()] = new DimensionTypeValue(feature.getIdentifier().getID().toString(),cubeColumn.columnName);
+				row[cubeColumn.getIndex()] = new DimensionTypeValue(feature.getIdentifier().getID().toString(),cubeColumn.columnName, (Geometry)feature.getDefaultGeometry());
 			}
 			else
 			{

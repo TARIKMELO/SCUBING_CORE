@@ -430,7 +430,7 @@ public class ApplicationTemplate
 
 			else{
 				FileDataStore store = FileDataStoreFinder.getDataStore(sourceFile);
-
+		
 				//Se quiser mudar par ao modo mais simples
 				//int retVal = AppFrame.this.fc.showOpenDialog(this);
 				//if (retVal != JFileChooser.APPROVE_OPTION)
@@ -441,6 +441,7 @@ public class ApplicationTemplate
 				Thread t = new BuildLayerWorkerThread(featureSource, this);
 				t.start();
 				getWwd().setCursor(new Cursor(Cursor.WAIT_CURSOR));
+				
 
 			}
 			//updateUI();            

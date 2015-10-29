@@ -1,14 +1,33 @@
 package bll.data_structures.nodes;
 
+import com.vividsolutions.jts.geom.Geometry;
+
 public class DimensionTypeValue<T> implements Comparable<T>{
 
 	String value;
 	String type;
+	Geometry geometry;
+	public Geometry getGeometry() {
+		return geometry;
+	}
+
+	public void setGeometry(Geometry geometry) {
+		this.geometry = geometry;
+	}
+
 	public DimensionTypeValue(String value, String type) {
 		super();
 		this.value = value;
 		this.type = type;
 	}
+	
+	public DimensionTypeValue(String value, String type, Geometry geometry) {
+		super(); 
+		this.value = value;
+		this.type = type;
+		this.geometry = geometry;
+	}
+	
 
 	public String getValue() {
 		return value;
@@ -28,7 +47,7 @@ public class DimensionTypeValue<T> implements Comparable<T>{
 
 	public String toString()
 	{
-		return value;
+		return value+"";
 	}
 
 	

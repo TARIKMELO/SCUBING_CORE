@@ -6,9 +6,12 @@ import java.util.Map.Entry;
 
 import org.geotools.data.FeatureSource;
 import org.geotools.data.simple.SimpleFeatureCollection;
+import org.geotools.feature.DefaultFeatureCollection;
 import org.geotools.feature.simple.SimpleFeatureBuilder;
 import org.opengis.feature.simple.SimpleFeature;
 import org.opengis.feature.simple.SimpleFeatureType;
+
+import com.vividsolutions.jts.geom.Geometry;
 
 import bll.aggregation_functions.ISpatialAggFunction;
 import bll.aggregation_functions.SAFUnion;
@@ -24,10 +27,10 @@ public class Consumer extends Thread{
 	final SimpleFeatureType TYPE;
 	final FeatureSource source;
 	final HashMap<String, CubeColumn> cubeColumns;
-	private final SimpleFeatureCollection collection;
+	private final DefaultFeatureCollection collection;
 	//private LinkedList<S> parteMatriz;
 
-	public Consumer(SimpleFeatureType TYPE,ResourceII<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource ,FeatureSource source, HashMap<String, CubeColumn> cubeColumns, SimpleFeatureCollection collection){
+	public Consumer(SimpleFeatureType TYPE,ResourceII<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource ,FeatureSource source, HashMap<String, CubeColumn> cubeColumns, DefaultFeatureCollection collection){
 		this.TYPE = TYPE;
 		this.source = source;
 		this.cubeColumns = cubeColumns;
@@ -60,7 +63,7 @@ public class Consumer extends Thread{
 						}
 						else
 						{
-							//Atualizando a medida numãrica
+							//Atualizando a medida numérica
 							featureBuilder.set(measureTypeValue.getType(), measureTypeValue.getValue());
 						}
 
@@ -74,20 +77,10 @@ public class Consumer extends Thread{
 						if (value.getType()!="")
 						{
 							if (dimensionTypeValue.getType()== "the_geom")
-							{
-								/*if(value.getValue()=="ALL")
-								{
-									value.getValue().se = "";
-								}*/
-
-								try
-								{
-									featureBuilder = ShapeFileUtilities.generateVisualization(value.getValue(), featureBuilder, new SAFUnion(), source);
-								}
-								catch(OutOfMemoryError e)
-								{
-									System.gc();
-								}
+							{								//uma região só
+								//featureBuilder = ShapeFileUtilities.generateVisualization(value.getValue(), featureBuilder, new SAFUnion(), source);
+								featureBuilder.set("the_geom", value.getGeometry());
+								
 							}
 							else 
 							{
@@ -102,7 +95,6 @@ public class Consumer extends Thread{
 						feature = featureBuilder.buildFeature(null);
 
 						collection.add(feature);
-
 					}
 					catch (Exception e) {
 						e.printStackTrace();

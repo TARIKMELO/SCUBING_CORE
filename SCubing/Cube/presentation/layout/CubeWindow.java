@@ -515,7 +515,12 @@ public class CubeWindow {
 			CubeGrid cubeGrid = new CubeGrid(nomeColX,nomeColY,nomeColId); 
 			cubeGrid.performHierarchies(x, y, rs, shapeFileReader.getSource(),cubeColumns);
 
+			rs.close();
+
+
 			doExit();
+
+
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -539,7 +544,7 @@ public class CubeWindow {
 					if(cubeColumn.getColumnName().equals(measureItem.getText(1)))
 					{	
 						measureItem.setChecked(true);
-						
+
 						((Combo)measureItem.getData()).setText(cubeColumn.getAggFunction().toString());
 						measureItem.setText(3, cubeColumn.getAggFunction().toString());
 					}
@@ -556,10 +561,10 @@ public class CubeWindow {
 						dimensionItem.setChecked(true);
 						TableEditor editorHierarquia = (TableEditor) dimensionItem.getData();
 						((Text)editorHierarquia.getEditor()).setText(cubeColumn.getHierarchy()+"");
-//						if (cubeColumn.getWhere()!=null)
-//						{
-//							dimensionItem.setText(3,cubeColumn.getWhere());
-//						}
+						//						if (cubeColumn.getWhere()!=null)
+						//						{
+						//							dimensionItem.setText(3,cubeColumn.getWhere());
+						//						}
 					} 
 				}
 
@@ -964,7 +969,7 @@ public class CubeWindow {
 			if (funcAggStr==null)
 			{
 				funcAggStr = new ArrayList<String>();
-				funcAggStr.add((new AFCount()).toString());
+				//funcAggStr.add((new AFCount()).toString());
 				funcAggStr.add((new AFAppend()).toString());
 
 			}
@@ -979,7 +984,7 @@ public class CubeWindow {
 				funcAgg.add((new AFMax()).toString());
 				funcAgg.add((new AFMin()).toString());
 				funcAgg.add((new AFSum()).toString());
-				funcAgg.add((new AFCount()).toString());
+				//funcAgg.add((new AFCount()).toString());
 			}
 			return funcAgg.toArray(new String[funcAgg.size()]);
 		}

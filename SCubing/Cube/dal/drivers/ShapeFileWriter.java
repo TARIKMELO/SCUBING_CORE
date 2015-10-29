@@ -1,6 +1,6 @@
 package dal.drivers;
 
-import java.util.ArrayList;
+	import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map.Entry;
 
@@ -8,6 +8,7 @@ import org.geotools.data.DataUtilities;
 import org.geotools.data.FeatureSource;
 import org.geotools.data.simple.SimpleFeatureCollection;
 import org.geotools.data.simple.SimpleFeatureSource;
+import org.geotools.feature.DefaultFeatureCollection;
 import org.geotools.feature.FeatureCollections;
 import org.geotools.feature.SchemaException;
 import org.geotools.feature.simple.SimpleFeatureTypeBuilder;
@@ -34,9 +35,10 @@ public class ShapeFileWriter {
 		this.cubeColumns = cubeColumns;
 	}
 
-	public 	SimpleFeatureCollection  insertCubeToCollection(SimpleFeatureType TYPE,ResourceII<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource ,FeatureSource<SimpleFeatureType, SimpleFeature> source ) throws Exception
+	public 	DefaultFeatureCollection	  insertCubeToCollection(SimpleFeatureType TYPE,ResourceII<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource ,FeatureSource<SimpleFeatureType, SimpleFeature> source ) throws Exception
 	{
-		SimpleFeatureCollection collection =  FeatureCollections.newCollection();
+		//collectin com o cubo resultante
+		DefaultFeatureCollection collection =  new DefaultFeatureCollection();
 		
 
 		final int numConsumidores =Integer.parseInt(Util.getConfig().getNumThreads());

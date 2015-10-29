@@ -40,63 +40,72 @@ public class CubeGrid {
 
 			ShapeFileWriter shapeFileWriter = new ShapeFileWriter(cubeColumns);
 			Object[] tuple;
-			while((tuple=rs.next())!=null){
+			try
+			{
+				while((tuple=rs.next())!=null){
 
-				ArrayList<DimensionTypeValue> dimensions =  new ArrayList<DimensionTypeValue>();
-				ArrayList<MeasureTypeValue> measures =  new ArrayList<MeasureTypeValue>();
-				ArrayList<MeasureTypeValue> measuresAux =  new ArrayList<MeasureTypeValue>();	
-				double xData = Double.parseDouble(tuple[cubeColumns.get(nomeColX).getIndex() ].toString());
+					ArrayList<DimensionTypeValue> dimensions =  new ArrayList<DimensionTypeValue>();
+					ArrayList<MeasureTypeValue> measures =  new ArrayList<MeasureTypeValue>();
+					ArrayList<MeasureTypeValue> measuresAux =  new ArrayList<MeasureTypeValue>();	
+					double xData = Double.parseDouble(tuple[cubeColumns.get(nomeColX).getIndex() ].toString());
 
-				double yData = Double.parseDouble(tuple[cubeColumns.get(nomeColY).getIndex()].toString());
-				int newXData = (int) Math.ceil(xData/x);
-				int newYData = (int) Math.ceil(yData/y);
-				String key = "C"+newXData+"L"+newYData;
+					double yData = Double.parseDouble(tuple[cubeColumns.get(nomeColY).getIndex()].toString());
+					int newXData = (int) Math.ceil(xData/x);
+					int newYData = (int) Math.ceil(yData/y);
+					String key = "C"+newXData+"L"+newYData;
 
-				dimensions.add(new DimensionTypeValue(key,nomeColId));
-				dimensions.add(new DimensionTypeValue(newXData+"",nomeColX));
-				dimensions.add(new DimensionTypeValue(newYData+"",nomeColY));
-				//System.out.println("Key: "+key+" Col: "+newXData+" Lin: "+newYData);
-				if (result.containsKey(dimensions))
-				{
+					dimensions.add(new DimensionTypeValue(key,nomeColId));
+					dimensions.add(new DimensionTypeValue(newXData+"",nomeColX));
+					dimensions.add(new DimensionTypeValue(newYData+"",nomeColY));
+					//System.out.println("Key: "+key+" Col: "+newXData+" Lin: "+newYData);
+					if (result.containsKey(dimensions))
+					{
 
-					measuresAux = result.get(dimensions);
-					measures = new ArrayList<MeasureTypeValue>();
-					for (Object objectTuple : tuple) {
-						DimensionTypeValue tupleItem = (DimensionTypeValue)objectTuple;
-						CubeColumn cubeColumn = cubeColumns.get(tupleItem.getType());
-						if (cubeColumn.isMeasure())
-						{
-							int index = cubeColumn.getIndex();
-							String value = cubeColumn.getAggFunction().updateMeasure(measuresAux.get(index),tupleItem.getValue()).toString();
-							//System.out.println(value);
-							measures.add(new MeasureTypeValue(value,cubeColumn.getColumnName()));
+						measuresAux = result.get(dimensions);
+						measures = new ArrayList<MeasureTypeValue>();
+						for (Object objectTuple : tuple) {
+							DimensionTypeValue tupleItem = (DimensionTypeValue)objectTuple;
+							CubeColumn cubeColumn = cubeColumns.get(tupleItem.getType());
+							if (cubeColumn.isMeasure())
+							{
+								int index = cubeColumn.getIndex();
+								String value = cubeColumn.getAggFunction().updateMeasure(measuresAux.get(index),tupleItem.getValue()).toString();
+								//System.out.println(value);
+								measures.add(new MeasureTypeValue(value,cubeColumn.getColumnName()));
+							}
 						}
+						result.put(dimensions, measures);
+						//resource.putRegister(new AbstractMap.SimpleEntry (dimensions, measures));
 					}
-					result.put(dimensions, measures);
-					//resource.putRegister(new AbstractMap.SimpleEntry (dimensions, measures));
+					else
+					{
+
+						measures = new ArrayList<MeasureTypeValue>();
+
+						for (Object objectTuple : tuple) {
+							DimensionTypeValue tupleItem = (DimensionTypeValue)objectTuple;
+							CubeColumn cubeColumn = cubeColumns.get(tupleItem.getType());
+							if (cubeColumn.isMeasure())
+							{
+								//aquiiiiiiiiiiii
+								//measures.add(new MeasureTypeValue(tupleItem.getValue(), tupleItem.getType()));	
+							}
+
+						}			
+						result.put(dimensions, measures);
+						//resource.putRegister(new AbstractMap.SimpleEntry (dimensions, measures));
+					}
 				}
-				else
-				{
 
-					measures = new ArrayList<MeasureTypeValue>();
-
-					for (Object objectTuple : tuple) {
-						DimensionTypeValue tupleItem = (DimensionTypeValue)objectTuple;
-						CubeColumn cubeColumn = cubeColumns.get(tupleItem.getType());
-						if (cubeColumn.isMeasure())
-						{
-							measures.add(new MeasureTypeValue(tupleItem.getValue(), tupleItem.getType()));	
-						}
-
-					}			
-					result.put(dimensions, measures);
-					//resource.putRegister(new AbstractMap.SimpleEntry (dimensions, measures));
-				}
+			}
+			finally
+			{
+				rs.close();
 			}
 
-			FeatureCollection collection = source.getFeatures();
-			FeatureIterator<Feature> iterator =  collection.features();
-			Feature feature;
+			//FeatureCollection collection = source.getFeatures();
+			//FeatureIterator<Feature> iterator =  collection.features();
+			//Feature feature;
 			/*while( iterator.hasNext() ){
 				feature = iterator.next();
 				//System.out.println(feature.getIdentifier().getID().toString());
@@ -112,12 +121,12 @@ public class CubeGrid {
 				FeatureSource sourceDesti = shapeFileWriter.insertCubeToSource(hashToResourceII(result), source);
 				//shapeFileWriter.insertCubeToShapefile(result, source,"D:\\data\\Amazonia\\Amazonia"+sourceDesti.getFeatures().size()+".shp");
 				IResultSetText<DimensionTypeValue> rsDesti = ShapeFileUtilities.getData(sourceDesti, cubeColumns);
-				
-			
+
+
 				MapFrame.getInstance().createLayer (sourceDesti);
 				//Para salvar em arquivos
 				source = null;
-				System.gc();
+				//System.gc();
 				rs = rsDesti;
 				source = sourceDesti;
 

@@ -42,7 +42,7 @@
     <!-- The following lists the sites to test for public network access. Specify an empty string, "", for no sites.-->
     <!-- Don't specify the property at all to use the default list. -->
     <Property name="gov.nasa.worldwind.avkey.NetworkStatusTestSites"
-              value="google.com, microsoft.com, yahoo.com"/>
+              value="google.com.br, microsoft.com, yahoo.com"/>
     <Property name="gov.nasa.worldwind.avkey.TaskServiceClassName" value="gov.nasa.worldwind.util.ThreadedTaskService"/>
     <Property name="gov.nasa.worldwind.avkey.DataFileStoreClassName"
               value="gov.nasa.worldwind.cache.BasicDataFileStore"/>
@@ -52,15 +52,14 @@
     <Property name="gov.nasa.worldwind.avkey.WorldMapImagePath" value="images/earth-map-512x256.dds"/>
     <Property name="gov.nasa.worldwind.StarsLayer.StarsFileName" value="config/Hipparcos_Stars_Mag6x5044.dat"/>
     <!--The following are tuning parameters for various World Wind internals-->
-    <Property name="gov.nasa.worldwind.avkey.RetrievalPoolSize" value="4"/>
-    <Property name="gov.nasa.worldwind.avkey.RetrievalQueueSize" value="200"/>
+    <Property name="gov.nasa.worldwind.avkey.RetrievalPoolSize" value="8"/>
+    <Property name="gov.nasa.worldwind.avkey.RetrievalQueueSize" value="400"/>
     <Property name="gov.nasa.worldwind.avkey.RetrievalStaleRequestLimit" value="9000"/>
-    <Property name="gov.nasa.worldwind.avkey.TaskPoolSize" value="4"/>
-    <Property name="gov.nasa.worldwind.avkey.TaskQueueSize" value="20"/>
+    <Property name="gov.nasa.worldwind.avkey.TaskPoolSize" value="8"/>
+    <Property name="gov.nasa.worldwind.avkey.TaskQueueSize" value="40"/>
     <Property name="gov.nasa.worldwind.avkey.ScheduledTaskPoolSize" value="1"/>
     <Property name="gov.nasa.worldwind.avkey.VerticalExaggeration" value="1"/>
-    <Property name="gov.nasa.worldwind.avkey.URLConnectTimeout" value="8000"/>
-    <Property name="gov.nasa.worldwind.avkey.URLReadTimeout" value="10000"/>
+    <Property name="gov.nasa.worldwind.avkey.URLConnectTimeout" value="800000"/>
     <Property name="gov.nasa.worldwind.avkey.TextureCacheSize" value="300000000"/>
     <Property name="gov.nasa.worldwind.avkey.ElevationTileCacheSize" value="10000000"/>
     <Property name="gov.nasa.worldwind.avkey.SectorGeometryCacheSize" value="60000000"/>
@@ -69,7 +68,7 @@
     <Property name="gov.nasa.worldwind.avkey.AirspaceGeometryCacheSize" value="32000000"/>
     <Property name="gov.nasa.worldwind.avkey.VBOUsage" value="true"/>
     <Property name="gov.nasa.worldwind.avkey.VBOThreshold" value="30"/>
-    <Property name="gov.nasa.worldwind.avkey.OfflineMode" value="false"/>
+    <Property name="gov.nasa.worldwind.avkey.OfflineMode" value="true"/>
     <Property name="gov.nasa.worldwind.avkey.RectangularTessellatorMaxLevel" value="30"/>
     <Property name="gov.nasa.worldwind.StereoFocusAngle" value="1.6"/>
     <!-- Here's one way to specify proxy settings -->

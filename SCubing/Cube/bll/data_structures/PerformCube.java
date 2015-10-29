@@ -1,5 +1,6 @@
 package bll.data_structures;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map.Entry;
@@ -53,7 +54,7 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 		return sourceDesti;
 	}
 
-	public ICubeSimple<DimensionTypeValue> createBaseCuboide(IResultSetText<DimensionTypeValue> rs,HashMap<String, CubeColumn> cubeColumns )
+	public ICubeSimple<DimensionTypeValue> createBaseCuboide(IResultSetText<DimensionTypeValue> rs,HashMap<String, CubeColumn> cubeColumns ) throws SQLException
 	{
 
 		//TODO: Olhar o padrao adapter para colocar o nome da coluna ao invés do indice
@@ -64,37 +65,43 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 		Object[] tuple;
 		ArrayList<MeasureTypeValue>  measures;
 		String measureValue;
-		while((tuple=rs.next())!=null){
 
-			measures = new ArrayList<MeasureTypeValue>();
-			for (Entry<String, CubeColumn> cubeColumn: cubeColumns.entrySet())
-			{
-				if(cubeColumn.getValue().isMeasure())
+		try{
+			while((tuple=rs.next())!=null){
+
+				measures = new ArrayList<MeasureTypeValue>();
+				for (Entry<String, CubeColumn> cubeColumn: cubeColumns.entrySet())
 				{
-					//measures = new ArrayList<MeasureTypeValue>();
-					measureValue = tuple[cubeColumn.getValue().getIndex()].toString().trim();
-					measures.add(new MeasureTypeValue(  measureValue,cubeColumn.getValue().getColumnName()));
-				}
-			}
-			for (Entry<String, CubeColumn> cubeColumn: cubeColumns.entrySet())
-			{
-				if(!cubeColumn.getValue().isMeasure())
-				{
-					Object attributeO = tuple[cubeColumn.getValue().getIndex()];
-					String attribute = attributeO.toString();
-					DimensionTypeValue typeValu = new DimensionTypeValue(attribute, cubeColumn.getKey());
-					NodeSimple<DimensionTypeValue> n = cube.findNode(typeValu);
-					if(n == null){
-						n = new NodeSimple<DimensionTypeValue>(cubeColumns, measures);
-						cube.insertNode(typeValu, n);
-					}
-					else
+					if(cubeColumn.getValue().isMeasure())
 					{
-						n.updateMeasure(measures);
+						//measures = new ArrayList<MeasureTypeValue>();
+						measureValue = tuple[cubeColumn.getValue().getIndex()].toString().trim();
+						measures.add(new MeasureTypeValue(  measureValue,cubeColumn.getValue().getColumnName()));
 					}
 				}
+				for (Entry<String, CubeColumn> cubeColumn: cubeColumns.entrySet())
+				{
+					if(!cubeColumn.getValue().isMeasure())
+					{
+						Object attributeO = tuple[cubeColumn.getValue().getIndex()];
+						String attribute = attributeO.toString();
+						DimensionTypeValue typeValu = new DimensionTypeValue(attribute, cubeColumn.getKey());
+						NodeSimple<DimensionTypeValue> n = cube.findNode(typeValu);
+						if(n == null){
+							n = new NodeSimple<DimensionTypeValue>(cubeColumns, measures);
+							cube.insertNode(typeValu, n);
+						}
+						else
+						{
+							n.updateMeasure(measures);
+						}
+					}
+				}
+				cube.refresh();
 			}
-			cube.refresh();
+		}
+		finally{
+			rs.close();
 		}
 
 		return cube;
