@@ -29,7 +29,7 @@ public class SAFDistance extends ISpatialAggFunction implements IAggFunction{
 		return oldMeasure.toString() +"&&"+  oldMeasureTwo.toString();
 	}
 
-	@Override
+	
 	public Geometry applyAggFunction(String[] fid, FeatureSource<SimpleFeatureType, SimpleFeature>  featureSource) 
 	{
 		try

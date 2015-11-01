@@ -24,7 +24,7 @@ public class SAFIntersection  extends ISpatialAggFunction implements IAggFunctio
 		return oldMeasure.toString() +"&&"+  oldMeasureTwo.toString();
 	}
 
-	@Override
+	
 	public Geometry applyAggFunction(String[] fid, FeatureSource<SimpleFeatureType, SimpleFeature> featureSource) 
 	{
 		try

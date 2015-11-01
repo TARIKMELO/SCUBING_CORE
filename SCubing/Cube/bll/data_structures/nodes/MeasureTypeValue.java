@@ -2,19 +2,19 @@ package bll.data_structures.nodes;
 
 public class MeasureTypeValue {
 	
-	String value;
+	Object value;
 	String type;
-	public MeasureTypeValue(String value, String type) {
+	public MeasureTypeValue(Object value, String type) {
 		super();
 		this.value = value;
 		this.type = type;
 	}
 
-	public String getValue() {
+	public Object getValue() {
 		return value;
 	}
 
-	public void setValue(String value) {
+	public void setValue(Object value) {
 		this.value = value;
 	}
 
@@ -28,6 +28,6 @@ public class MeasureTypeValue {
 
 	public String toString()
 	{
-		return value;
+		return value+"";
 	}
 }

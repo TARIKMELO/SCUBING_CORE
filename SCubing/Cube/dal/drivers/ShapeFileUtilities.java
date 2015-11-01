@@ -32,14 +32,14 @@ import com.vividsolutions.jts.geom.GeometryFactory;
 
 public class ShapeFileUtilities {
 
-	public static SimpleFeatureBuilder generateVisualization(String ids, SimpleFeatureBuilder  newFeature, ISpatialAggFunction spatialAggFunc, FeatureSource source) throws IOException
-	{	
-		//TODO: Mudar isso urgente
-		String[] idArray = ids.split("&&");
-		Geometry resultantPolygon = spatialAggFunc.applyAggFunction(idArray, source);
-		newFeature.set("the_geom", resultantPolygon);
-		return newFeature;
-	}
+//	public static SimpleFeatureBuilder generateVisualization(String ids, SimpleFeatureBuilder  newFeature, ISpatialAggFunction spatialAggFunc) throws IOException
+//	{	
+//		//TODO: Mudar isso urgente
+//		String[] idArray = ids.split("&&");
+//		Geometry resultantPolygon = spatialAggFunc.applyAggFunction(idArray);
+//		newFeature.set("the_geom", resultantPolygon);
+//		return newFeature;
+//	}
 
 	public static GeometryCollection selectRegions(String[] fid, FeatureSource<SimpleFeatureType, SimpleFeature> featureSource) throws UnknownHostException, IOException
 	{
@@ -173,7 +173,8 @@ public class ShapeFileUtilities {
 				
 				//aquiiiii
 				//row[cubeColumn.getIndex()] = new DimensionTypeValue(feature.getIdentifier().getID().toString(),cubeColumn.columnName);
-				row[cubeColumn.getIndex()] = new DimensionTypeValue(feature.getIdentifier().getID().toString(),cubeColumn.columnName, (Geometry)feature.getDefaultGeometry());
+				//row[cubeColumn.getIndex()] = new DimensionTypeValue(feature.getIdentifier().getID().toString(),cubeColumn.columnName, (Geometry)feature.getDefaultGeometry());
+				row[cubeColumn.getIndex()] = new DimensionTypeValue(feature.getDefaultGeometry(),cubeColumn.columnName);
 			}
 			else
 			{

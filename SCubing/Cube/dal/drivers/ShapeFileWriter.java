@@ -1,19 +1,20 @@
 package dal.drivers;
 
-	import java.util.ArrayList;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map.Entry;
 
 import org.geotools.data.DataUtilities;
 import org.geotools.data.FeatureSource;
-import org.geotools.data.simple.SimpleFeatureCollection;
 import org.geotools.data.simple.SimpleFeatureSource;
-import org.geotools.feature.DefaultFeatureCollection;
-import org.geotools.feature.FeatureCollections;
 import org.geotools.feature.SchemaException;
 import org.geotools.feature.simple.SimpleFeatureTypeBuilder;
 import org.opengis.feature.simple.SimpleFeature;
 import org.opengis.feature.simple.SimpleFeatureType;
+
+import com.vividsolutions.jts.geom.MultiPoint;
+import com.vividsolutions.jts.geom.Point;
+import com.vividsolutions.jts.geom.Polygon;
 
 import bll.aggregation_functions.SAFUnion;
 import bll.aggregation_functions.SAFUnionMBR;
@@ -23,10 +24,6 @@ import bll.data_structures.nodes.MeasureTypeValue;
 import bll.parallel.Consumer;
 import bll.parallel.ResourceII;
 import bll.util.Util;
-
-import com.vividsolutions.jts.geom.MultiPoint;
-import com.vividsolutions.jts.geom.Point;
-import com.vividsolutions.jts.geom.Polygon;
 public class ShapeFileWriter {
 	HashMap<String, CubeColumn> cubeColumns;
 
@@ -35,45 +32,61 @@ public class ShapeFileWriter {
 		this.cubeColumns = cubeColumns;
 	}
 
-	public 	DefaultFeatureCollection	  insertCubeToCollection(SimpleFeatureType TYPE,ResourceII<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource ,FeatureSource<SimpleFeatureType, SimpleFeature> source ) throws Exception
+	public 	ArrayList<SimpleFeature>	  insertCubeToCollection(SimpleFeatureType TYPE,ResourceII<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource ) throws Exception
 	{
-		//collectin com o cubo resultante
-		DefaultFeatureCollection collection =  new DefaultFeatureCollection();
-		
-
+		ArrayList<SimpleFeature> list = new ArrayList<SimpleFeature>();
 		final int numConsumidores =Integer.parseInt(Util.getConfig().getNumThreads());
+
+		
 		//criamos os consumidores
 		Consumer[] consumidores = new Consumer[numConsumidores];
 		for(int i=0; i<consumidores.length; i++)
 			//TODO: Voltar para parametrizado
-			consumidores[i] = new Consumer(TYPE,resource,source,cubeColumns,collection);
+			consumidores[i] = new Consumer(TYPE,resource,cubeColumns);
 		for(int i=0; i<consumidores.length; i++)
 			consumidores[i].start();
 		//finalizamos
 		try{
 			resource.setFinished();
+
+			
 			for(int i=0; i<consumidores.length; i++)
+			{
 				consumidores[i].join();
+
+			}
+			
+			for(int i=0; i<consumidores.length; i++)
+			{
+
+				list.addAll(consumidores[i].getDefaultFeatureCollection());
+			
+			}
 		}catch (Exception e){
 			e.printStackTrace();
 		}
-		return collection;
+
+		return list;
+	
+			
+		
 	}
 
 
-	
+
 
 	public FeatureSource<SimpleFeatureType, SimpleFeature> insertCubeToSource(ResourceII<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource , FeatureSource<SimpleFeatureType, SimpleFeature> source) throws  Exception
 	{
 		final SimpleFeatureType TYPE = createCubeSchema(source);
-		SimpleFeatureCollection collection = insertCubeToCollection(TYPE, resource, source);
-		SimpleFeatureSource sourceResult = DataUtilities.source( collection );
+		ArrayList<SimpleFeature> collection = insertCubeToCollection(TYPE, resource);
+		
+		SimpleFeatureSource sourceResult = DataUtilities.source(DataUtilities.collection(collection));
 		return sourceResult;
 	}
 
-	
 
-	
+
+
 	private SimpleFeatureType createCubeSchema(FeatureSource<SimpleFeatureType, SimpleFeature> source) throws SchemaException {
 
 		SimpleFeatureTypeBuilder b = new SimpleFeatureTypeBuilder();
@@ -103,8 +116,8 @@ public class ShapeFileWriter {
 				}
 			}
 		}
-		
-		
+
+
 		for (CubeColumn cubeColumn : cubeColumns.values()) {
 			//A coluna espacial jã foi adicionada no for anterior 
 			if (cubeColumn.getColumnName()!="the_geom")

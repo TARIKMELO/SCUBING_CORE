@@ -43,7 +43,7 @@ public class NodeSimple <T> implements INodeSimple<T>, Serializable{
 	}
 
 	public void updateMeasure(ArrayList<MeasureTypeValue> newValues) {
-		String atualizedValue;
+		Object atualizedValue;
 		//for (MeasureTypeValue measureTypeValue : newValues) {
 		if (measureValues.size()>0)
 		{
@@ -54,7 +54,7 @@ public class NodeSimple <T> implements INodeSimple<T>, Serializable{
 				atualizedValue = new String();
 				IAggFunction aggFunction = cubeColumns.get(newValues.get(i).getType()).getAggFunction();
 				//TODO: Ainda tem indice aqui
-				atualizedValue = aggFunction.updateMeasure(this.measureValues.get(i).getValue(), newValues.get(i).getValue()).toString();
+				atualizedValue = aggFunction.updateMeasure(this.measureValues.get(i).getValue(), newValues.get(i).getValue());
 				this.measureValues.set(i, new MeasureTypeValue( atualizedValue,newValues.get(i).getType()));
 			}
 		}

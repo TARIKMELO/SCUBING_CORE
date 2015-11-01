@@ -16,55 +16,10 @@ public class SAFUnion  extends ISpatialAggFunction implements IAggFunction{
 
 
 	public Object updateMeasure(Object oldMeasure, Object oldMeasureTwo) {
-		return oldMeasure.toString() +"&&"+  oldMeasureTwo.toString();
+		return ((Geometry)oldMeasure).union(((Geometry)oldMeasureTwo));
 	}
 
-	public Geometry applyAggFunction(String[] fid, FeatureSource<SimpleFeatureType, SimpleFeature> featureSource) 
-	{
-		try
-		{
-
-
-			//Necessário para gerar a uniao de grandes regioes
-//			if (fid.length>3000)
-//			{
-//
-//				String[] fid1 = new String[fid.length/2];
-//				String[] fid2 = new String[fid.length/2];
-//
-//				System.arraycopy(fid, 0, fid1, 0, fid1.length);
-//
-//				GeometryCollection geometrieCol1 = ShapeFileUtilities.selectRegions(fid1, featureSource);
-//
-//				Geometry geoUnionOne = UnaryUnionOp.union(geometrieCol1);
-//				geometrieCol1 = null;
-//
-//				System.arraycopy(fid, fid1.length, fid2, 0, fid2.length);
-//				GeometryCollection geometrieCol2 = ShapeFileUtilities.selectRegions(fid2, featureSource);
-//				Geometry geoUnionTwo =   UnaryUnionOp.union(geometrieCol2);
-//				geometrieCol2 = null;
-//				return geoUnionOne.union(geoUnionTwo);
-//
-//
-//			}
-//			else
-//			{
-				GeometryCollection geometrieCol = ShapeFileUtilities.selectRegions(fid, featureSource);
-				return geometrieCol.union();
-				//return	UnaryUnionOp.union(geometrieCol);
-
-//			}
-
-
-		}
-		catch(Exception ex)
-		{
-			System.out.println("Número total de regiãos à ser resgatada: "+ fid.length+ "  FID: "+fid); 
-			System.out.println();
-			ex.printStackTrace();
-			return null;
-		}
-	}
+	
 
 	@Override
 	public String toString() {

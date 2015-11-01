@@ -64,7 +64,7 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 
 		Object[] tuple;
 		ArrayList<MeasureTypeValue>  measures;
-		String measureValue;
+		Object measureValue;
 
 		try{
 			while((tuple=rs.next())!=null){
@@ -75,17 +75,17 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 					if(cubeColumn.getValue().isMeasure())
 					{
 						//measures = new ArrayList<MeasureTypeValue>();
-						measureValue = tuple[cubeColumn.getValue().getIndex()].toString().trim();
-						measures.add(new MeasureTypeValue(  measureValue,cubeColumn.getValue().getColumnName()));
+						measureValue = tuple[cubeColumn.getValue().getIndex()];
+						measures.add(new MeasureTypeValue( ((DimensionTypeValue)measureValue).getValue(),cubeColumn.getValue().getColumnName()));
 					}
-				}
+				} 
 				for (Entry<String, CubeColumn> cubeColumn: cubeColumns.entrySet())
 				{
 					if(!cubeColumn.getValue().isMeasure())
 					{
 						Object attributeO = tuple[cubeColumn.getValue().getIndex()];
-						String attribute = attributeO.toString();
-						DimensionTypeValue typeValu = new DimensionTypeValue(attribute, cubeColumn.getKey());
+						
+						DimensionTypeValue typeValu = new DimensionTypeValue(((DimensionTypeValue)attributeO).getValue(), cubeColumn.getKey());
 						NodeSimple<DimensionTypeValue> n = cube.findNode(typeValu);
 						if(n == null){
 							n = new NodeSimple<DimensionTypeValue>(cubeColumns, measures);
@@ -148,9 +148,8 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 					cubeColumnsAux.put(cubeColumn.getColumnName(), cubeColumn);
 				}
 				try {
-					FeatureSource<SimpleFeatureType, SimpleFeature> sourceDesti;
-					sourceDesti = CreateCube(cubeColumnsAux,0 ,0, featureSource);
-					MapFrame.getInstance().createLayer(sourceDesti);
+			
+					MapFrame.getInstance().createLayer( CreateCube(cubeColumnsAux,0 ,0, featureSource));
 					cubeColumnsAux = new HashMap<String, CubeColumn>();
 				} catch (Exception e) {
 					e.printStackTrace();

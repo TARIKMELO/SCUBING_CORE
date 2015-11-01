@@ -9,7 +9,7 @@ import com.vividsolutions.jts.geom.Geometry;
 
 public abstract class ISpatialAggFunction {
 		
-	public abstract Geometry applyAggFunction(String[] fid, FeatureSource<SimpleFeatureType, SimpleFeature> featureClass);
+	//public abstract Geometry applyAggFunction(String[] fid);
 	
 	
 }

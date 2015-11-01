@@ -136,6 +136,8 @@ public class CubeSimple <T> implements ICubeSimple<T>, Serializable{
 			}
 			//Retirando o ultima caractere que indica a coluna
 			valueAux = (DimensionTypeValue) oneDescendant.getKey();
+			//aqui 
+			//value = new DimensionTypeValue(valueAux.getValue(),valueAux.getType(), valueAux.getGeometry());
 			value = new DimensionTypeValue(valueAux.getValue(),valueAux.getType());
 			line.set(cubeColumns.get(valueAux.getType()).getIndex(), value);
 			

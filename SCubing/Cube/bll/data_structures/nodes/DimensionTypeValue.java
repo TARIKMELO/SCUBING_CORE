@@ -4,7 +4,7 @@ import com.vividsolutions.jts.geom.Geometry;
 
 public class DimensionTypeValue<T> implements Comparable<T>{
 
-	String value;
+	Object value;
 	String type;
 	Geometry geometry;
 	public Geometry getGeometry() {
@@ -15,13 +15,13 @@ public class DimensionTypeValue<T> implements Comparable<T>{
 		this.geometry = geometry;
 	}
 
-	public DimensionTypeValue(String value, String type) {
-		super();
-		this.value = value;
-		this.type = type;
-	}
+//	public DimensionTypeValue(String value, String type) {
+//		super();
+//		this.value = value;
+//		this.type = type;
+//	}
 	
-	public DimensionTypeValue(String value, String type, Geometry geometry) {
+	public DimensionTypeValue(Object value, String type) {
 		super(); 
 		this.value = value;
 		this.type = type;
@@ -29,11 +29,11 @@ public class DimensionTypeValue<T> implements Comparable<T>{
 	}
 	
 
-	public String getValue() {
+	public Object getValue() {
 		return value;
 	}
 
-	public void setValue(String value) {
+	public void setValue(Object value) {
 		this.value = value;
 	}
 
