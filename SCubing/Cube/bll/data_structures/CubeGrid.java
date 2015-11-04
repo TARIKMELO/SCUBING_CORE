@@ -118,7 +118,7 @@ public class CubeGrid {
 				//TODO: Nao precisa dessa linha
 				//Passar o nome como parametro
 				//FeatureSource sourceDesti = shapeFileWriter.insertCubeToShapefile(hashToResourceII(result), source);
-				FeatureSource sourceDesti = shapeFileWriter.insertCubeToSource(hashToResourceII(result), source);
+				FeatureSource sourceDesti = shapeFileWriter.insertCubeToSource(hashToResourceII(result), source,0);
 				//shapeFileWriter.insertCubeToShapefile(result, source,"D:\\data\\Amazonia\\Amazonia"+sourceDesti.getFeatures().size()+".shp");
 				IResultSetText<DimensionTypeValue> rsDesti = ShapeFileUtilities.getData(sourceDesti, cubeColumns);
 

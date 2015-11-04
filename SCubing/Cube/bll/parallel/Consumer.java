@@ -24,7 +24,7 @@ public class Consumer extends Thread{
 	//final FeatureSource source;
 	final HashMap<String, CubeColumn> cubeColumns;
 	private DefaultFeatureCollection collection;
-	
+
 	//SimpleFeatureCollection collection = new ListFeatureCollection(TYPE,list);
 	//private LinkedList<S> parteMatriz;
 
@@ -33,7 +33,7 @@ public class Consumer extends Thread{
 		//this.source = source;
 		this.cubeColumns = cubeColumns;
 		this.re = resource;
-		
+
 		//collection resultante
 		//this.collection =  collection;
 		//parteMatriz = new LinkedList<S>();
@@ -45,9 +45,9 @@ public class Consumer extends Thread{
 
 			SimpleFeatureBuilder featureBuilder =new SimpleFeatureBuilder(TYPE);
 			Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>> entry= null;;
-			SimpleFeature feature ;
+
 			collection = new DefaultFeatureCollection();
-			
+
 			while((re.isFinished()==false)||(re.getNumOfRegisters()!=0)){
 				if ((entry = re.getRegister())!=null){
 
@@ -55,7 +55,7 @@ public class Consumer extends Thread{
 					//Atualizando as medidas
 					for (MeasureTypeValue measureTypeValue : entry.getValue()) 
 					{
-						Object measureValue = measureTypeValue.getValue();
+						//Object measureValue = measureTypeValue.getValue();
 						//TODO: Jã parte do pressuposto que ta tudo certo caso a funãão de agregaãão seja espacial
 						if ((cubeColumns.get(measureTypeValue.getType()).getAggFunction() instanceof ISpatialAggFunction))
 						{
@@ -82,7 +82,7 @@ public class Consumer extends Thread{
 							{								//uma região só
 								//featureBuilder = ShapeFileUtilities.generateVisualization(value.getValue(), featureBuilder, new SAFUnion(), source);
 								featureBuilder.set("the_geom", (Geometry)value.getValue());
-								
+
 							}
 							else 
 							{
@@ -93,8 +93,8 @@ public class Consumer extends Thread{
 
 					try{
 						//Gravando o valor na nova linha
-						feature = featureBuilder.buildFeature(null);
-						collection.add(feature);
+
+						collection.add(featureBuilder.buildFeature(null));
 					}
 					catch (Exception e) {
 						e.printStackTrace();
@@ -111,7 +111,7 @@ public class Consumer extends Thread{
 
 		//System.err.println("parte da matriz com: " + parteMatriz.size()+ " colunas");
 	}
-	
+
 	public DefaultFeatureCollection getDefaultFeatureCollection()
 	{
 		return  collection;

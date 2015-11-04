@@ -34,16 +34,21 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 		ICubeSimple<DimensionTypeValue> cube = createBaseCuboide(rs, cubeColumns);
 		//cubeGrid.performHierarchies(x,y,rs, shapeFileReader.getSource(),cubeColumns);
 		cube.generateAggregations();
+		
+		long tempoIntermediario = System.currentTimeMillis();  
+		System.out.println("(Parcial 1 - Gerou as agregações) Tempo em milisegundos para calcular o cubo: "+ (tempoIntermediario - tempoInicial) );
+
+		
 		ResourceII<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource= cube.cubeToTable();
 
-
-
+		long tempoIntermediario2 = System.currentTimeMillis();  
+		System.out.println("(Parcial 2 - Tempo cubeToTable) Tempo em milisegundos para calcular o cubo: "+ (tempoIntermediario2 - tempoInicial) );
 
 		ShapeFileWriter shapeFileWriter = new ShapeFileWriter(cubeColumns);
 
 
 		//FeatureSource sourceDesti = shapeFileWriter.insertCubeToSource(hashResult, shapeFileReader.getSource());
-		FeatureSource<SimpleFeatureType, SimpleFeature> sourceDesti = shapeFileWriter.insertCubeToSource(resource, shapeFileReader.getSource());
+		FeatureSource<SimpleFeatureType, SimpleFeature> sourceDesti = shapeFileWriter.insertCubeToSource(resource, shapeFileReader.getSource(), tempoInicial);
 
 
 		//Cálculo do tempo de computação do cubo
@@ -65,7 +70,10 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 		Object[] tuple;
 		ArrayList<MeasureTypeValue>  measures;
 		Object measureValue;
-
+		Object attributeO;
+		DimensionTypeValue typeValu;
+		
+		NodeSimple<DimensionTypeValue> n;
 		try{
 			while((tuple=rs.next())!=null){
 
@@ -83,10 +91,10 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 				{
 					if(!cubeColumn.getValue().isMeasure())
 					{
-						Object attributeO = tuple[cubeColumn.getValue().getIndex()];
+						attributeO = tuple[cubeColumn.getValue().getIndex()];
 						
-						DimensionTypeValue typeValu = new DimensionTypeValue(((DimensionTypeValue)attributeO).getValue(), cubeColumn.getKey());
-						NodeSimple<DimensionTypeValue> n = cube.findNode(typeValu);
+						typeValu = new DimensionTypeValue(((DimensionTypeValue)attributeO).getValue(), cubeColumn.getKey());
+						n = cube.findNode(typeValu);
 						if(n == null){
 							n = new NodeSimple<DimensionTypeValue>(cubeColumns, measures);
 							cube.insertNode(typeValu, n);

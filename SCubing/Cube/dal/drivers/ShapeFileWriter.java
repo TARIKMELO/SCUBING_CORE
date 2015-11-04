@@ -75,12 +75,32 @@ public class ShapeFileWriter {
 
 
 
-	public FeatureSource<SimpleFeatureType, SimpleFeature> insertCubeToSource(ResourceII<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource , FeatureSource<SimpleFeatureType, SimpleFeature> source) throws  Exception
+	public FeatureSource<SimpleFeatureType, SimpleFeature> insertCubeToSource(ResourceII<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource , FeatureSource<SimpleFeatureType, SimpleFeature> source, long tempoInicial) throws  Exception
 	{
+		
+		
+		
 		final SimpleFeatureType TYPE = createCubeSchema(source);
+		
+		long tempoIntermediario3 = System.currentTimeMillis();  
+		System.out.println("(Parcial 3 - Tempo createCubeSchema) Tempo em milisegundos para calcular o cubo: "+ (tempoIntermediario3 - tempoInicial) );
+
+		
+		
 		ArrayList<SimpleFeature> collection = insertCubeToCollection(TYPE, resource);
 		
+
+		long tempoIntermediario4 = System.currentTimeMillis(); 
+		System.out.println("(Parcial 4 - Tempo insertCubeToCollection) Tempo em milisegundos para calcular o cubo: "+ (tempoIntermediario4 - tempoInicial) );
+
+		
 		SimpleFeatureSource sourceResult = DataUtilities.source(DataUtilities.collection(collection));
+		
+		
+		long tempoIntermediario5 = System.currentTimeMillis(); 
+		System.out.println("(Parcial 5 - Tempo source) Tempo em milisegundos para calcular o cubo: "+ (tempoIntermediario5 - tempoInicial) );
+
+		
 		return sourceResult;
 	}
 
