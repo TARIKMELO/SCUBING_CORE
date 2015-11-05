@@ -5,27 +5,27 @@ public class DimensionTypeValue<T> implements Comparable<T>{
 	Object value;
 	String type;
 	//Geometry geometry;
-//	public Geometry getGeometry() {
-//		return geometry;
-//	}
-//
-//	public void setGeometry(Geometry geometry) {
-//		this.geometry = geometry;
-//	}
+	//	public Geometry getGeometry() {
+	//		return geometry;
+	//	}
+	//
+	//	public void setGeometry(Geometry geometry) {
+	//		this.geometry = geometry;
+	//	}
 
-//	public DimensionTypeValue(String value, String type) {
-//		super();
-//		this.value = value;
-//		this.type = type;
-//	}
-	
+	//	public DimensionTypeValue(String value, String type) {
+	//		super();
+	//		this.value = value;
+	//		this.type = type;
+	//	}
+
 	public DimensionTypeValue(Object value, String type) {
 		super(); 
 		this.value = value;
 		this.type = type;
-		
+
 	}
-	
+
 
 	public Object getValue() {
 		return value;
@@ -45,14 +45,17 @@ public class DimensionTypeValue<T> implements Comparable<T>{
 
 	public String toString()
 	{
-		return value+"";
+		if (type.equals("the_geom"))
+			return value.hashCode()+"";
+		else
+			return value+"";
 	}
 
-	
+
 	public int compareTo(T o) {
 		DimensionTypeValue a = (DimensionTypeValue) o;
-		String aux = a.value+""+a.type;
-		int result = aux.compareTo(this.value+""+this.type);
+		String aux = a.value.hashCode()+""+a.type;
+		int result = aux.compareTo(this.value.hashCode()+""+this.type);
 		return result;
 
 
@@ -89,8 +92,8 @@ public class DimensionTypeValue<T> implements Comparable<T>{
 		return true;
 	}
 
-	
 
-	
-	
+
+
+
 }

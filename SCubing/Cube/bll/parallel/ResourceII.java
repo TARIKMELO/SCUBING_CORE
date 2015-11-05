@@ -1,13 +1,13 @@
 package bll.parallel;
 
 
-import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.LinkedBlockingQueue;
 
 public class ResourceII<S> extends Resource<S>{
-	private ConcurrentLinkedQueue<S> registers;
+	private LinkedBlockingQueue<S> registers;
 	
 	public ResourceII(){
-		this.registers = new ConcurrentLinkedQueue<S>();
+		this.registers = new LinkedBlockingQueue<S>();
 		finished= false;	
 	}
 	
