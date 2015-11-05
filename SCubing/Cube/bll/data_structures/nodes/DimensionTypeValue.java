@@ -45,11 +45,9 @@ public class DimensionTypeValue<T> implements Comparable<T>{
 
 	public String toString()
 	{
-		if (type.equals("the_geom"))
-			return value.hashCode()+"";
-		else
-			return value+"";
+		return value.toString();
 	}
+
 
 
 	public int compareTo(T o) {
