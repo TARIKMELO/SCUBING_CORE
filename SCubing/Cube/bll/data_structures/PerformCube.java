@@ -25,18 +25,28 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 
 	private FeatureSource<SimpleFeatureType, SimpleFeature> CreateCube(HashMap<String, CubeColumn> cubeColumns, int x, int y, FeatureSource<SimpleFeatureType, SimpleFeature> featureSource) throws Exception{
 		//conectar
+		//Cálculo do tempo de computação do cubo
+	     long tempoInicial = System.currentTimeMillis(); 
+	     System.out.println("Iníciou ");
 		ShapeFileReader<DimensionTypeValue> shapeFileReader = new ShapeFileReader<DimensionTypeValue>(featureSource,cubeColumns);
 		IResultSetText<DimensionTypeValue> rs = shapeFileReader.getData();
 
-		//Cálculo do tempo de computação do cubo
-		long tempoInicial = System.currentTimeMillis();  
+		 
+		
+		
+		long tempoIntermediario0 = System.currentTimeMillis();  
+		System.out.println("(Parcial  - GetData do Shapefile) Tempo em milisegundos para ler os dados: "+ (tempoIntermediario0 - tempoInicial) );
 
 		ICubeSimple<DimensionTypeValue> cube = createBaseCuboide(rs, cubeColumns);
 		//cubeGrid.performHierarchies(x,y,rs, shapeFileReader.getSource(),cubeColumns);
+		
+		long tempoIntermediario1 = System.currentTimeMillis();  
+		System.out.println("(Parcial 0 - Criar o cubo base - createBaseCuboide) Tempo em milisegundos para ler os dados: "+ (tempoIntermediario1 - tempoInicial) );
+		
 		cube.generateAggregations();
 		
 		long tempoIntermediario = System.currentTimeMillis();  
-		System.out.println("(Parcial 1 - Gerou as agregações) Tempo em milisegundos para calcular o cubo: "+ (tempoIntermediario - tempoInicial) );
+		System.out.println("(Parcial 1 - Gerou as agregações - cube.generateAggregations()) Tempo em milisegundos para calcular o cubo: "+ (tempoIntermediario - tempoInicial) );
 
 		
 		ResourceII<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource= cube.cubeToTable();
