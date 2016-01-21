@@ -1,55 +1,63 @@
 package bll.data_structures;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Map.Entry;
 
-import javax.management.timer.TimerMBean;
+import javax.swing.JOptionPane;
 
+import org.geotools.data.DataStore;
+import org.geotools.data.DataStoreFinder;
+import org.geotools.data.DataUtilities;
+import org.geotools.data.DefaultTransaction;
 import org.geotools.data.FeatureSource;
+import org.geotools.data.FeatureWriter;
+import org.geotools.data.Transaction;
+import org.geotools.data.simple.SimpleFeatureSource;
+import org.geotools.data.simple.SimpleFeatureStore;
 import org.opengis.feature.simple.SimpleFeature;
 import org.opengis.feature.simple.SimpleFeatureType;
 
-import presentation.layout.MapFrame;
 import bll.data_structures.nodes.DimensionTypeValue;
 import bll.data_structures.nodes.MeasureTypeValue;
 import bll.data_structures.nodes.NodeSimple;
-import bll.parallel.ResourceII;
+import bll.parallel.Resource;
 import dal.drivers.CubeColumn;
 import dal.drivers.IResultSetText;
 import dal.drivers.ShapeFileReader;
 import dal.drivers.ShapeFileWriter;
+import presentation.layout.MapFrame;
 
 public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 
 	private FeatureSource<SimpleFeatureType, SimpleFeature> CreateCube(HashMap<String, CubeColumn> cubeColumns, int x, int y, FeatureSource<SimpleFeatureType, SimpleFeature> featureSource) throws Exception{
 		//conectar
 		//Cálculo do tempo de computação do cubo
-	     long tempoInicial = System.currentTimeMillis(); 
-	     System.out.println("Iníciou ");
+		long tempoInicial = System.currentTimeMillis(); 
+		System.out.println("Iníciou ");
 		ShapeFileReader<DimensionTypeValue> shapeFileReader = new ShapeFileReader<DimensionTypeValue>(featureSource,cubeColumns);
 		IResultSetText<DimensionTypeValue> rs = shapeFileReader.getData();
 
-		 
-		
-		
 		long tempoIntermediario0 = System.currentTimeMillis();  
 		System.out.println("(Parcial  - GetData do Shapefile) Tempo em milisegundos para ler os dados: "+ (tempoIntermediario0 - tempoInicial) );
 
+
 		ICubeSimple<DimensionTypeValue> cube = createBaseCuboide(rs, cubeColumns);
 		//cubeGrid.performHierarchies(x,y,rs, shapeFileReader.getSource(),cubeColumns);
-		
+
 		long tempoIntermediario1 = System.currentTimeMillis();  
 		System.out.println("(Parcial 0 - Criar o cubo base - createBaseCuboide) Tempo em milisegundos para ler os dados: "+ (tempoIntermediario1 - tempoInicial) );
-		
+
 		cube.generateAggregations();
-		
+
 		long tempoIntermediario = System.currentTimeMillis();  
 		System.out.println("(Parcial 1 - Gerou as agregações - cube.generateAggregations()) Tempo em milisegundos para calcular o cubo: "+ (tempoIntermediario - tempoInicial) );
 
-		
-		ResourceII<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource= cube.cubeToTable();
+
+		Resource<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource= cube.cubeToTable();
 
 		long tempoIntermediario2 = System.currentTimeMillis();  
 		System.out.println("(Parcial 2 - Tempo cubeToTable) Tempo em milisegundos para calcular o cubo: "+ (tempoIntermediario2 - tempoInicial) );
@@ -65,7 +73,13 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 		long tempoFinal = System.currentTimeMillis();  
 		System.out.println("Tempo em milisegundos: "+ (tempoFinal - tempoInicial) );
 		System.out.println("Tempo em segundos: "+ (tempoFinal - tempoInicial) / 1000d);
+		String tempoTotal = "Tempo em segundos: "+ (tempoFinal - tempoInicial) / 1000d;
+		JOptionPane.showMessageDialog(null, tempoTotal);
+		
+		//Expoertar para o postgis aqui
 
+		insertToPostGis(sourceDesti);
+		
 		return sourceDesti;
 	}
 
@@ -82,7 +96,7 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 		Object measureValue;
 		Object attributeO;
 		DimensionTypeValue typeValu;
-		
+
 		NodeSimple<DimensionTypeValue> n;
 		try{
 			while((tuple=rs.next())!=null){
@@ -102,7 +116,7 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 					if(!cubeColumn.getValue().isMeasure())
 					{
 						attributeO = tuple[cubeColumn.getValue().getIndex()];
-						
+
 						typeValu = new DimensionTypeValue(((DimensionTypeValue)attributeO).getValue(), cubeColumn.getKey());
 						n = cube.findNode(typeValu);
 						if(n == null){
@@ -166,8 +180,17 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 					cubeColumnsAux.put(cubeColumn.getColumnName(), cubeColumn);
 				}
 				try {
-			
-					MapFrame.getInstance().createLayer( CreateCube(cubeColumnsAux,0 ,0, featureSource));
+
+					FeatureSource<SimpleFeatureType, SimpleFeature> featureSourceCube =  CreateCube(cubeColumnsAux,0 ,0, featureSource);
+
+
+
+
+					MapFrame.getInstance().createLayer(featureSourceCube);
+
+					
+
+
 					cubeColumnsAux = new HashMap<String, CubeColumn>();
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -178,6 +201,50 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 		catch(Exception ioEx){
 			ioEx.printStackTrace();
 		}
+	}
+
+
+
+	public void insertToPostGis(FeatureSource<SimpleFeatureType, SimpleFeature> featureSourceCube ) throws IOException{
+
+		
+		Map<String, Object> connectionParameters = new HashMap<String, Object>();
+
+		connectionParameters.put("dbtype", "postgis");
+		connectionParameters.put("host", "localhost");
+		connectionParameters.put("port", 5432);
+		connectionParameters.put("schema", "public");
+		connectionParameters.put("user", "postgres");
+		connectionParameters.put("passwd", "postgre");
+		connectionParameters.put("database", "scubing");
+		//Map<String, Object> connectionParameters = wizard.getConnectionParameters();
+		DataStore dataStore = DataStoreFinder.getDataStore(connectionParameters);
+		
+		
+		
+		Transaction transaction = new DefaultTransaction("create");
+//		DataStore newDataStore = MapFrame.getInstance().getDataStore();
+		String typeName = dataStore.getTypeNames()[0];
+		SimpleFeatureSource featureSource = dataStore.getFeatureSource(typeName);
+		if (featureSource instanceof SimpleFeatureStore) {
+			SimpleFeatureStore featureStore = (SimpleFeatureStore) featureSource;
+
+			featureStore.setTransaction(transaction);
+			try {
+				featureStore.addFeatures(featureSourceCube.getFeatures());
+				transaction.commit();
+			} catch (Exception problem) {
+				problem.printStackTrace();
+				transaction.rollback();
+			} finally {
+				transaction.close();
+			}
+			//System.exit(0); // success!
+		} else {
+			System.out.println(typeName + " does not support read/write access");
+			System.exit(1);
+		}
+
 	}
 
 }

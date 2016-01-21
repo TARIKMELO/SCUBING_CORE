@@ -5,18 +5,15 @@ import java.util.HashMap;
 import java.util.Map.Entry;
 
 import org.geotools.data.FeatureSource;
-import org.geotools.feature.FeatureCollection;
-import org.geotools.feature.FeatureIterator;
-import org.opengis.feature.Feature;
 
-import presentation.layout.MapFrame;
 import bll.data_structures.nodes.DimensionTypeValue;
 import bll.data_structures.nodes.MeasureTypeValue;
-import bll.parallel.ResourceII;
+import bll.parallel.Resource;
 import dal.drivers.CubeColumn;
 import dal.drivers.IResultSetText;
 import dal.drivers.ShapeFileUtilities;
 import dal.drivers.ShapeFileWriter;
+import presentation.layout.MapFrame;
 
 
 public class CubeGrid {
@@ -141,9 +138,9 @@ public class CubeGrid {
 		/*}*/
 	}
 
-	public ResourceII<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> hashToResourceII (HashMap<ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>> entrada)
+	public Resource<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> hashToResourceII (HashMap<ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>> entrada)
 	{
-		ResourceII<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> result =new  ResourceII<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>>();
+		Resource<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> result =new  Resource<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>>();
 		for (Entry<ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>> entry : entrada.entrySet()) {
 			result.putRegister(entry);
 		}

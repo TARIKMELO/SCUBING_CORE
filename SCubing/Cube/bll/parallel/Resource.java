@@ -1,53 +1,57 @@
 package bll.parallel;
 
-import java.util.LinkedList;
+import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.LinkedBlockingQueue;
 
 
 public class Resource<S> {
-	
-	private LinkedList<S> registers;
+
+	private LinkedBlockingQueue<S> registers;
 	protected boolean finished;
-		
+
 	public Resource(){
-		this.registers = new LinkedList<S>();
+		this.registers = new LinkedBlockingQueue<S>();
 		this.finished = false;		
 	}
-		
-	public synchronized void putRegister(S register){
-		this.registers.addLast(register);
+
+	public void putRegister(S register){
+
+		this.registers.offer(register);
 		wakeup();
+
 	}
-	
+
 	protected synchronized void wakeup(){
 		this.notify();
 	}
-							
-	public synchronized S getRegister() throws Exception{
-		if(!this.registers.isEmpty())
-			return this.registers.removeFirst();
-		else {
-			if(finished==false)
-				suspend();
-			return null;		
-		}
+
+	public S getRegister() throws Exception{
+		//if(!this.registers.isEmpty())
+			return this.registers.poll();
+		//else {
+		//	if(finished==false)
+		//		suspend();
+		//	return null;		
+		//}
 	}
-	
+
 	protected synchronized void suspend()throws Exception{
 		if(finished == false)
 			wait();
 	}
-	
+
 	public int getNumOfRegisters(){
 		return this.registers.size();
 	}
-	
+
 	public synchronized void setFinished(){
 		this.finished = true;
 		this.notifyAll();
 	}
-	
+
 	public boolean isFinished(){
 		return this.finished;
 	}
-	
+
 }

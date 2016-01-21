@@ -31,6 +31,7 @@ import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -56,6 +57,7 @@ import org.geotools.swing.action.SafeAction;
 import org.geotools.swing.data.JDataStoreWizard;
 import org.geotools.swing.data.JFileDataStoreChooser;
 import org.geotools.swing.wizard.JWizard;
+import org.opengis.feature.type.Name;
 
 import presentation.action.CubeConfigurationAction;
 import presentation.action.ExportKmlAction;
@@ -110,7 +112,7 @@ public class ApplicationTemplate
 
 			// Create the WorldWindow.
 			this.wwjPanel = this.createAppPanel(this.canvasSize, includeStatusBar);
-			
+
 			this.wwjPanel.setSize(this.canvasSize);
 			//this.wwjPanel.setPreferredSize(canvasSize);
 			if (includeLayerPanel)
@@ -132,23 +134,23 @@ public class ApplicationTemplate
 			this.getWwd().addSelectListener(new ViewControlsSelectListener(this.getWwd(), viewControlsLayer));
 
 			// Register a rendering exception listener that's notified when exceptions occur during rendering.
-			this.wwjPanel.getWwd().addRenderingExceptionListener(new RenderingExceptionListener()
-			{
-				public void exceptionThrown(Throwable t)
-				{
-					if (t instanceof WWAbsentRequirementException)
-					{
-						String message = "Computer does not meet minimum graphics requirements.\n";
-						message += "Please install up-to-date graphics driver and try again.\n";
-						message += "Reason: " + t.getMessage() + "\n";
-						message += "This program will end when you press OK.";
-
-						JOptionPane.showMessageDialog(AppFrame.this, message, "Unable to Start Program",
-								JOptionPane.ERROR_MESSAGE);
-						System.exit(-1);
-					}
-				}
-			});
+			//			this.wwjPanel.getWwd().addRenderingExceptionListener(new RenderingExceptionListener()
+			//			{
+			//				public void exceptionThrown(Throwable t)
+			//				{
+			//					if (t instanceof WWAbsentRequirementException)
+			//					{
+			//						String message = "Computer does not meet minimum graphics requirements.\n";
+			//						message += "Please install up-to-date graphics driver and try again.\n";
+			//						message += "Reason: " + t.getMessage() + "\n";
+			//						message += "This program will end when you press OK.";
+			//
+			//						JOptionPane.showMessageDialog(AppFrame.this, message, "Unable to Start Program",
+			//								JOptionPane.ERROR_MESSAGE);
+			//						//System.exit(-1);
+			//					}
+			//				}
+			//			});
 
 			// Search the layer list for layers that are also select listeners and register them with the World
 			// Window. This enables interactive layers to be included without specific knowledge of them here.
@@ -430,18 +432,18 @@ public class ApplicationTemplate
 
 			else{
 				FileDataStore store = FileDataStoreFinder.getDataStore(sourceFile);
-		
+
 				//Se quiser mudar par ao modo mais simples
 				//int retVal = AppFrame.this.fc.showOpenDialog(this);
 				//if (retVal != JFileChooser.APPROVE_OPTION)
 				//	return;
-				
+
 				//FileDataStore store = FileDataStoreFinder.getDataStore(this.fc.getSelectedFile());
 				SimpleFeatureSource featureSource = store.getFeatureSource(store.getNames().get(0));
 				Thread t = new BuildLayerWorkerThread(featureSource, this);
 				t.start();
 				getWwd().setCursor(new Cursor(Cursor.WAIT_CURSOR));
-				
+
 
 			}
 			//updateUI();            
@@ -451,31 +453,55 @@ public class ApplicationTemplate
 
 
 		private void connectToSourcePostGis(DataStoreFactorySpi format, boolean isPolygon) throws Exception {
-			JDataStoreWizard wizard = new JDataStoreWizard(format);
-			int result = wizard.showModalDialog();
-			if (result == JWizard.FINISH) {
-				Map<String, Object> connectionParameters = wizard.getConnectionParameters();
-				DataStore dataStore = DataStoreFinder.getDataStore(connectionParameters);
-				if (dataStore == null) {
-					JOptionPane.showMessageDialog(null, "Could not connect - check parameters");
-				}
-				else{
 
-					//Se quiser mudar par ao modo mais simples
-					//int retVal = AppFrame.this.fc.showOpenDialog(this);
-					//if (retVal != JFileChooser.APPROVE_OPTION)
-					//	return;
 
-					//TODO: Adicionar por aquSi
-					//FileDataStore store = FileDataStoreFinder.getDataStore(this.fc.getSelectedFile());
-					SimpleFeatureSource featureSource = dataStore.getFeatureSource(dataStore.getNames().get(0));
+
+			//JDataStoreWizard wizard = new JDataStoreWizard(format);
+			//int result = wizard.showModalDialog();
+
+			//if (result == JWizard.FINISH) {
+			Map<String, Object> connectionParameters = new HashMap<String, Object>();
+
+			connectionParameters.put("dbtype", "postgis");
+			connectionParameters.put("host", "localhost");
+			connectionParameters.put("port", 5432);
+			connectionParameters.put("schema", "public");
+			connectionParameters.put("user", "postgres");
+			connectionParameters.put("passwd", "postgre");
+			connectionParameters.put("database", "scubing");
+			//Map<String, Object> connectionParameters = wizard.getConnectionParameters();
+			DataStore dataStore = DataStoreFinder.getDataStore(connectionParameters);
+
+
+			if (dataStore == null) {
+				JOptionPane.showMessageDialog(null, "Could not connect - check parameters");
+			}
+			else{
+
+
+				//Setando a conexão ativa do Postgre para ser usada na exportação dos dados
+				MapFrame.getInstance().setDataStore(dataStore);
+				//Se quiser mudar par ao modo mais simples
+				//int retVal = AppFrame.this.fc.showOpenDialog(this);
+				//if (retVal != JFileChooser.APPROVE_OPTION)
+				//	return;
+
+				//TODO: Adicionar por aquSi
+				//FileDataStore store = FileDataStoreFinder.getDataStore(this.fc.getSelectedFile());
+
+
+				for (Name name : dataStore.getNames()) {
+					SimpleFeatureSource featureSource = dataStore.getFeatureSource(name);
 					Thread t = new BuildLayerWorkerThread(featureSource, this);
 					t.start();
 					getWwd().setCursor(new Cursor(Cursor.WAIT_CURSOR));
+				} 
 
-				}
-				//updateUI();            
+
+
 			}
+			//updateUI();            
+			//}
 		}
 
 

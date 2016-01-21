@@ -50,7 +50,7 @@ public class ConfigurationWindow {
 		 * -Djava.library.path="installation_directory\plugins\org.eclipse.swt.win32_3.0.0\os\win32\x86"
 		 */
 		org.eclipse.swt.widgets.Display display = org.eclipse.swt.widgets.Display
-		.getDefault();
+				.getDefault();
 		ConfigurationWindow thisClass = new ConfigurationWindow();
 		thisClass.createSShell();
 		thisClass.sShell.open();
@@ -123,8 +123,8 @@ public class ConfigurationWindow {
 
 	}
 	//CubeConfig cubeConfig;  //  @jve:decl-index=0:
-	
-	
+
+
 	private void saveFile() {
 		ConfigBean configBean = Util.getConfig();
 		try {
@@ -133,8 +133,8 @@ public class ConfigurationWindow {
 				Field field;
 
 				field = configBean.getClass().getField(measureItem.getText(0));
-				
-				
+
+
 				field.set(configBean,measureItem.getText(1));
 				Util.saveConfig();
 			}
@@ -183,31 +183,32 @@ public class ConfigurationWindow {
 		tblColDim.setText("Valor");
 
 		ConfigBean configBean = Util.getConfig();
-		for (Field field : configBean.getClass().getDeclaredFields()) {
+		if (configBean!=null && configBean.getClass()!=null)
+			for (Field field : configBean.getClass().getDeclaredFields()) {
 
-			final TableItem  tableItem=new TableItem(tableConfiguration,SWT.NONE);
-			tableItem.setText(0,field.getName());
-			String value = field.get(configBean)+"";
-			tableItem.setText(1,value);
+				final TableItem  tableItem=new TableItem(tableConfiguration,SWT.NONE);
+				tableItem.setText(0,field.getName());
+				String value = field.get(configBean)+"";
+				tableItem.setText(1,value);
 
-			Text text = new Text(tableConfiguration, SWT.LEFT);
-			text.setText(value);
-			final TableEditor editor = new TableEditor(tableConfiguration);
+				Text text = new Text(tableConfiguration, SWT.LEFT);
+				text.setText(value);
+				final TableEditor editor = new TableEditor(tableConfiguration);
 
-			text.addModifyListener(new ModifyListener() {
-				public void modifyText(ModifyEvent me) {
-					Text text = (Text) editor.getEditor();
-					editor.getItem().setText(1, text.getText());
-				}
-			});
-			//editor.getItem().setText(1,(int)field.getInt(configBean)+"");
-			editor.minimumWidth = 140;
-
-
-			editor.setEditor(text, tableItem, 1);
+				text.addModifyListener(new ModifyListener() {
+					public void modifyText(ModifyEvent me) {
+						Text text = (Text) editor.getEditor();
+						editor.getItem().setText(1, text.getText());
+					}
+				});
+				//editor.getItem().setText(1,(int)field.getInt(configBean)+"");
+				editor.minimumWidth = 140;
 
 
-		}
+				editor.setEditor(text, tableItem, 1);
+
+
+			}
 
 
 	}

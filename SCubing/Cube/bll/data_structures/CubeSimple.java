@@ -5,14 +5,14 @@ import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Set;
 import java.util.Map.Entry;
+import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import bll.data_structures.nodes.DimensionTypeValue;
 import bll.data_structures.nodes.MeasureTypeValue;
 import bll.data_structures.nodes.NodeSimple;
-import bll.parallel.ResourceII;
+import bll.parallel.Resource;
 import dal.drivers.CubeColumn;
 
 public class CubeSimple <T> implements ICubeSimple<T>, Serializable{
@@ -115,15 +115,15 @@ public class CubeSimple <T> implements ICubeSimple<T>, Serializable{
 	}
 
 
-	ResourceII<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource;
+	Resource<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource;
 
 	//HashMap<ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>> hashResult;
 	//Percorre o cubo que estã em uma ãrvore e insere os registro em uma table(HashMap)
-	public ResourceII<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> cubeToTable()
+	public Resource<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> cubeToTable()
 	{
 		DimensionTypeValue value;
 		DimensionTypeValue valueAux;
-		resource =new  ResourceII<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>>();
+		resource =new  Resource<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>>();
 		ArrayList<DimensionTypeValue> line = new ArrayList<DimensionTypeValue>(numColumns);
 		NodeSimple<T> oneNode = root;
 		Set<Entry<T, NodeSimple<T>>> a = oneNode.getDescendants().entrySet();

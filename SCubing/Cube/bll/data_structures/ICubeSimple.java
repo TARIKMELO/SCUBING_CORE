@@ -6,7 +6,7 @@ import java.util.Map.Entry;
 import bll.data_structures.nodes.DimensionTypeValue;
 import bll.data_structures.nodes.MeasureTypeValue;
 import bll.data_structures.nodes.NodeSimple;
-import bll.parallel.ResourceII;
+import bll.parallel.Resource;
 
 
 public interface ICubeSimple <T>{
@@ -15,6 +15,6 @@ public interface ICubeSimple <T>{
 	public void insertNode(T id, NodeSimple<T> oneNode);
 	public void generateAggregations();
 	public long countNumofNodes();
-	public ResourceII<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> cubeToTable();
+	public Resource<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> cubeToTable();
 //	public N getRoot();
 }

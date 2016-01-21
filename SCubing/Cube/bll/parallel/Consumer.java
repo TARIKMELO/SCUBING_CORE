@@ -19,7 +19,7 @@ import dal.drivers.CubeColumn;
 
 public class Consumer extends Thread{
 
-	private ResourceII<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> re;
+	private Resource<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> re;
 	final SimpleFeatureType TYPE;
 	//final FeatureSource source;
 	final HashMap<String, CubeColumn> cubeColumns;
@@ -28,7 +28,7 @@ public class Consumer extends Thread{
 	//SimpleFeatureCollection collection = new ListFeatureCollection(TYPE,list);
 	//private LinkedList<S> parteMatriz;
 
-	public Consumer(SimpleFeatureType TYPE,ResourceII<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource , HashMap<String, CubeColumn> cubeColumns){
+	public Consumer(SimpleFeatureType TYPE,Resource<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource , HashMap<String, CubeColumn> cubeColumns){
 		this.TYPE = TYPE;
 		//this.source = source;
 		this.cubeColumns = cubeColumns;
@@ -48,8 +48,8 @@ public class Consumer extends Thread{
 
 			collection = new DefaultFeatureCollection();
 
-			while((re.isFinished()==false)||(re.getNumOfRegisters()!=0)){
-				if ((entry = re.getRegister())!=null){
+			//while((re.isFinished()==false)||(re.getNumOfRegisters()!=0)){
+				while ((entry = re.getRegister())!=null){
 
 
 					//Atualizando as medidas
@@ -100,7 +100,7 @@ public class Consumer extends Thread{
 						e.printStackTrace();
 					}
 
-				}
+				//}
 			}
 
 

@@ -4,6 +4,7 @@ import java.awt.Cursor;
 import java.io.File;
 import java.io.IOException;
 
+import org.geotools.data.DataStore;
 import org.geotools.data.FeatureSource;
 import org.geotools.data.simple.SimpleFeatureSource;
 import org.geotools.map.MapContent;
@@ -22,6 +23,8 @@ public class MapFrame {
 	private AppPanel wwpanel;
 	private ApplicationTemplate.AppFrame appFrame;
 
+	private DataStore dataStore;
+	
 	public ApplicationTemplate.AppFrame getAppFrame() {
 		return appFrame;
 	}
@@ -108,6 +111,16 @@ public class MapFrame {
 			t.start();
 			getAppFrame().getWwd().setCursor(new Cursor(Cursor.WAIT_CURSOR));
 		}
+	}
+
+
+	public DataStore getDataStore() {
+		return dataStore;
+	}
+
+
+	public void setDataStore(DataStore dataStore) {
+		this.dataStore = dataStore;
 	}
 
 

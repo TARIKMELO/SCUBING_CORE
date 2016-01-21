@@ -22,7 +22,7 @@ import bll.aggregation_functions.SAFUnionPolygon;
 import bll.data_structures.nodes.DimensionTypeValue;
 import bll.data_structures.nodes.MeasureTypeValue;
 import bll.parallel.Consumer;
-import bll.parallel.ResourceII;
+import bll.parallel.Resource;
 import bll.util.Util;
 public class ShapeFileWriter {
 	HashMap<String, CubeColumn> cubeColumns;
@@ -32,16 +32,16 @@ public class ShapeFileWriter {
 		this.cubeColumns = cubeColumns;
 	}
 
-	public 	ArrayList<SimpleFeature>	  insertCubeToCollection(SimpleFeatureType TYPE,ResourceII<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource ) throws Exception
+	public 	ArrayList<SimpleFeature>	  insertCubeToCollection(SimpleFeatureType TYPE,Resource<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource ) throws Exception
 	{
 		ArrayList<SimpleFeature> list = new ArrayList<SimpleFeature>();
 		final int numConsumidores =Integer.parseInt(Util.getConfig().getNumThreads());
-
-		
+		System.out.println("Número de consumidores: "+ numConsumidores);
+		System.out.println("Começou os CONSUMIDORES");
+		//resource.setFinished();
 		//criamos os consumidores
 		Consumer[] consumidores = new Consumer[numConsumidores];
 		for(int i=0; i<consumidores.length; i++)
-			//TODO: Voltar para parametrizado
 			consumidores[i] = new Consumer(TYPE,resource,cubeColumns);
 		for(int i=0; i<consumidores.length; i++)
 			consumidores[i].start();
@@ -49,58 +49,58 @@ public class ShapeFileWriter {
 		try{
 			resource.setFinished();
 
-			
+
 			for(int i=0; i<consumidores.length; i++)
 			{
 				consumidores[i].join();
 
 			}
-			
+			System.out.println("Terminou os CONSUMIDORES");
 			for(int i=0; i<consumidores.length; i++)
 			{
 
 				list.addAll(consumidores[i].getDefaultFeatureCollection());
-			
+				
 			}
 		}catch (Exception e){
 			e.printStackTrace();
 		}
 
 		return list;
-	
-			
-		
+
+
+
 	}
 
 
 
 
-	public FeatureSource<SimpleFeatureType, SimpleFeature> insertCubeToSource(ResourceII<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource , FeatureSource<SimpleFeatureType, SimpleFeature> source, long tempoInicial) throws  Exception
+	public FeatureSource<SimpleFeatureType, SimpleFeature> insertCubeToSource(Resource<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource , FeatureSource<SimpleFeatureType, SimpleFeature> source, long tempoInicial) throws  Exception
 	{
-		
-		
-		
+
+
+
 		final SimpleFeatureType TYPE = createCubeSchema(source);
-		
+
 		long tempoIntermediario3 = System.currentTimeMillis();  
 		System.out.println("(Parcial 3 - Tempo createCubeSchema) Tempo em milisegundos para calcular o cubo: "+ (tempoIntermediario3 - tempoInicial) );
 
-		
-		
+		System.out.println("Número de registros:  "+ resource.getNumOfRegisters()) ;
+
 		ArrayList<SimpleFeature> collection = insertCubeToCollection(TYPE, resource);
-		
+
 
 		long tempoIntermediario4 = System.currentTimeMillis(); 
 		System.out.println("(Parcial 4 - Tempo insertCubeToCollection) Tempo em milisegundos para calcular o cubo: "+ (tempoIntermediario4 - tempoInicial) );
 
-		
+
 		SimpleFeatureSource sourceResult = DataUtilities.source(DataUtilities.collection(collection));
-		
-		
+
+
 		long tempoIntermediario5 = System.currentTimeMillis(); 
 		System.out.println("(Parcial 5 - Tempo source) Tempo em milisegundos para calcular o cubo: "+ (tempoIntermediario5 - tempoInicial) );
 
-		
+
 		return sourceResult;
 	}
 

@@ -10,6 +10,7 @@ import javax.swing.AbstractAction;
 
 import org.geotools.data.DefaultTransaction;
 import org.geotools.data.Transaction;
+import org.geotools.data.postgis.PostgisNGDataStoreFactory;
 import org.geotools.data.shapefile.ShapefileDataStore;
 import org.geotools.data.shapefile.ShapefileDataStoreFactory;
 import org.geotools.data.simple.SimpleFeatureSource;
@@ -55,6 +56,39 @@ public class ExportShapefileAction extends AbstractAction{
 		ShapefileDataStore newDataStore = (ShapefileDataStore) dataStoreFactory.createNewDataStore(params);
 		newDataStore.createSchema(MapFrame.getInstance().getSelectedLayerFeatureSource().getSchema());
 
+		
+		/*
+		 * You can comment out this line if you are using the createFeatureType method (at end of
+		 * class file) rather than DataUtilities.createType
+		 */
+		newDataStore.forceSchemaCRS(DefaultGeographicCRS.WGS84);
+
+		/*
+		 * Write the features to the shapefile
+		 */
+		
+	}
+
+
+	
+	private void exportToPostgis() throws Exception {
+
+		/*
+		/*
+		 * Get an output file name and create the new shapefile
+		 */
+		File newFile =Util.getNewFile("shp");
+
+		ShapefileDataStoreFactory dataStoreFactory = new ShapefileDataStoreFactory();
+		Map<String, Serializable> params = new HashMap<String, Serializable>();
+
+		params.put("url", newFile.toURI().toURL());
+		params.put("create spatial index", Boolean.TRUE);
+
+		ShapefileDataStore newDataStore = (ShapefileDataStore) dataStoreFactory.createNewDataStore(params);
+		newDataStore.createSchema(MapFrame.getInstance().getSelectedLayerFeatureSource().getSchema());
+
+		
 		/*
 		 * You can comment out this line if you are using the createFeatureType method (at end of
 		 * class file) rather than DataUtilities.createType
@@ -87,8 +121,6 @@ public class ExportShapefileAction extends AbstractAction{
 			System.exit(1);
 		}
 	}
-
-
 
 
 
