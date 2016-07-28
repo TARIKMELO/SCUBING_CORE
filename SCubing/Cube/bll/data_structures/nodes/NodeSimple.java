@@ -51,7 +51,7 @@ public class NodeSimple <T> implements INodeSimple<T>, Serializable{
 			measureValues = (ArrayList<MeasureTypeValue>) auxArray.clone();
 			for (int i=0;i<newValues.size(); i++)
 			{
-				atualizedValue = new String();
+				atualizedValue = new Object();
 				IAggFunction aggFunction = cubeColumns.get(newValues.get(i).getType()).getAggFunction();
 				//TODO: Ainda tem indice aqui
 				atualizedValue = aggFunction.updateMeasure(this.measureValues.get(i).getValue(), newValues.get(i).getValue());

@@ -37,7 +37,7 @@ public class ShapeFileUtilities {
 //		//TODO: Mudar isso urgente
 //		String[] idArray = ids.split("&&");
 //		Geometry resultantPolygon = spatialAggFunc.applyAggFunction(idArray);
-//		newFeature.set("the_geom", resultantPolygon);
+//		newFeature.set("geom", resultantPolygon);
 //		return newFeature;
 //	}
 
@@ -168,7 +168,7 @@ public class ShapeFileUtilities {
 	private static DimensionTypeValue[] formatShapefileLine(SimpleFeature feature,HashMap<String, CubeColumn> cubeColumns2 ) throws IOException {
 		DimensionTypeValue[]  row = new DimensionTypeValue[cubeColumns2.size()];
 		for (CubeColumn cubeColumn : cubeColumns2.values()) {
-			if (cubeColumn.getColumnName().equals("the_geom"))
+			if (cubeColumn.getColumnName().equals("geom"))
 			{ 
 				
 				//aquiiiii

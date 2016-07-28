@@ -77,34 +77,18 @@ public class ExportShapefileAction extends AbstractAction{
 		/*
 		 * Get an output file name and create the new shapefile
 		 */
-		File newFile =Util.getNewFile("shp");
-
-		ShapefileDataStoreFactory dataStoreFactory = new ShapefileDataStoreFactory();
-		Map<String, Serializable> params = new HashMap<String, Serializable>();
-
-		params.put("url", newFile.toURI().toURL());
-		params.put("create spatial index", Boolean.TRUE);
-
-		ShapefileDataStore newDataStore = (ShapefileDataStore) dataStoreFactory.createNewDataStore(params);
-		newDataStore.createSchema(MapFrame.getInstance().getSelectedLayerFeatureSource().getSchema());
-
 		
-		/*
-		 * You can comment out this line if you are using the createFeatureType method (at end of
-		 * class file) rather than DataUtilities.createType
-		 */
-		newDataStore.forceSchemaCRS(DefaultGeographicCRS.WGS84);
+		
 
 		/*
 		 * Write the features to the shapefile
 		 */
 		Transaction transaction = new DefaultTransaction("create");
 
-		String typeName = newDataStore.getTypeNames()[0];
-		SimpleFeatureSource featureSource = newDataStore.getFeatureSource(typeName);
+		String typeName = MapFrame.getInstance().getDataStore().getTypeNames()[0];
+		SimpleFeatureSource featureSource = MapFrame.getInstance().getDataStore().getFeatureSource(typeName);
 		if (featureSource instanceof SimpleFeatureStore) {
 			SimpleFeatureStore featureStore = (SimpleFeatureStore) featureSource;
-
 			featureStore.setTransaction(transaction);
 			try {
 				featureStore.addFeatures(MapFrame.getInstance().getSelectedLayerFeatureSource().getFeatures());

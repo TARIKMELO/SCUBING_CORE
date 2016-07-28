@@ -147,7 +147,7 @@ public class GeoToolsUtils {
 
 			String fieldname = featureSource.getSchema().getGeometryDescriptor().getName().getLocalPart();
 			if (fieldname.equals("")) {
-				fieldname = "the_geom";
+				fieldname = "geom";
 			}
 			BinarySpatialOperator filter = ff.intersects(ff.property(fieldname), ff.literal(mouseBox));
 			//BinarySpatialOperator filter = ff.contains(ff.property(fieldname), ff.literal(point));

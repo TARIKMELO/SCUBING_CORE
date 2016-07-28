@@ -6,7 +6,6 @@ import java.util.Map.Entry;
 
 import org.geotools.feature.DefaultFeatureCollection;
 import org.geotools.feature.simple.SimpleFeatureBuilder;
-import org.opengis.feature.simple.SimpleFeature;
 import org.opengis.feature.simple.SimpleFeatureType;
 
 import com.vividsolutions.jts.geom.Geometry;
@@ -61,7 +60,7 @@ public class Consumer extends Thread{
 						{
 
 							//featureBuilder = ShapeFileUtilities.generateVisualization(measureValue, featureBuilder, (ISpatialAggFunction)cubeColumns.get(measureTypeValue.getType()).getAggFunction());
-							featureBuilder.set("the_geom", (Geometry)measureTypeValue.getValue());
+							featureBuilder.set("geom", (Geometry)measureTypeValue.getValue());
 						}
 						else
 						{
@@ -78,10 +77,10 @@ public class Consumer extends Thread{
 						//TODO: Consertar la no cubeToTable
 						if (value.getType()!="")
 						{
-							if (dimensionTypeValue.getType()== "the_geom")
+							if (dimensionTypeValue.getType()== "geom")
 							{								//uma região só
 								//featureBuilder = ShapeFileUtilities.generateVisualization(value.getValue(), featureBuilder, new SAFUnion(), source);
-								featureBuilder.set("the_geom", (Geometry)value.getValue());
+								featureBuilder.set("geom", (Geometry)value.getValue());
 
 							}
 							else 

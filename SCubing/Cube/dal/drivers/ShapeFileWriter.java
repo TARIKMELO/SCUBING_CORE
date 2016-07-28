@@ -95,8 +95,9 @@ public class ShapeFileWriter {
 
 
 		SimpleFeatureSource sourceResult = DataUtilities.source(DataUtilities.collection(collection));
-
-
+		
+		
+		
 		long tempoIntermediario5 = System.currentTimeMillis(); 
 		System.out.println("(Parcial 5 - Tempo source) Tempo em milisegundos para calcular o cubo: "+ (tempoIntermediario5 - tempoInicial) );
 
@@ -117,7 +118,7 @@ public class ShapeFileWriter {
 
 		//Adicionando as colunas espaciais. Medidas ou não.
 		for (CubeColumn cubeColumn : cubeColumns.values()) {
-			if (cubeColumn.getColumnName()=="the_geom")
+			if (cubeColumn.getColumnName()=="geom")
 			{
 				if (cubeColumn.getAggFunction()!=null && cubeColumn.getAggFunction() instanceof SAFUnionMBR){
 					b.add(source.getSchema().getGeometryDescriptor().getName().getLocalPart(), Polygon.class); // then add geometry
@@ -140,7 +141,7 @@ public class ShapeFileWriter {
 
 		for (CubeColumn cubeColumn : cubeColumns.values()) {
 			//A coluna espacial jã foi adicionada no for anterior 
-			if (cubeColumn.getColumnName()!="the_geom")
+			if (cubeColumn.getColumnName()!="geom")
 			{
 				//add some properties
 				b.add( source.getSchema().getDescriptor(cubeColumn.getColumnName()).getName().getLocalPart(), String.class );

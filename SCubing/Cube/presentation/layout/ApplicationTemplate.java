@@ -6,25 +6,6 @@ All Rights Reserved.
  */
 package presentation.layout;
 
-import gov.nasa.worldwind.Configuration;
-import gov.nasa.worldwind.WorldWindow;
-import gov.nasa.worldwind.avlist.AVKey;
-import gov.nasa.worldwind.awt.WorldWindowGLCanvas;
-import gov.nasa.worldwind.event.RenderingExceptionListener;
-import gov.nasa.worldwind.event.SelectListener;
-import gov.nasa.worldwind.exception.WWAbsentRequirementException;
-import gov.nasa.worldwind.layers.CompassLayer;
-import gov.nasa.worldwind.layers.Layer;
-import gov.nasa.worldwind.layers.LayerList;
-import gov.nasa.worldwind.layers.ViewControlsLayer;
-import gov.nasa.worldwind.layers.ViewControlsSelectListener;
-import gov.nasa.worldwind.util.BasicDragger;
-import gov.nasa.worldwind.util.StatisticsPanel;
-import gov.nasa.worldwind.util.StatusBar;
-import gov.nasa.worldwind.util.WWUtil;
-import gov.nasa.worldwindx.examples.util.HighlightController;
-import gov.nasa.worldwindx.examples.util.ToolTipController;
-
 import java.awt.BorderLayout;
 import java.awt.Cursor;
 import java.awt.Dimension;
@@ -50,15 +31,28 @@ import org.geotools.data.DataStoreFactorySpi;
 import org.geotools.data.DataStoreFinder;
 import org.geotools.data.FileDataStore;
 import org.geotools.data.FileDataStoreFinder;
-import org.geotools.data.postgis.PostgisNGDataStoreFactory;
 import org.geotools.data.shapefile.ShapefileDataStoreFactory;
 import org.geotools.data.simple.SimpleFeatureSource;
 import org.geotools.swing.action.SafeAction;
-import org.geotools.swing.data.JDataStoreWizard;
 import org.geotools.swing.data.JFileDataStoreChooser;
-import org.geotools.swing.wizard.JWizard;
 import org.opengis.feature.type.Name;
 
+import gov.nasa.worldwind.Configuration;
+import gov.nasa.worldwind.WorldWindow;
+import gov.nasa.worldwind.avlist.AVKey;
+import gov.nasa.worldwind.awt.WorldWindowGLCanvas;
+import gov.nasa.worldwind.event.SelectListener;
+import gov.nasa.worldwind.layers.CompassLayer;
+import gov.nasa.worldwind.layers.Layer;
+import gov.nasa.worldwind.layers.LayerList;
+import gov.nasa.worldwind.layers.ViewControlsLayer;
+import gov.nasa.worldwind.layers.ViewControlsSelectListener;
+import gov.nasa.worldwind.util.BasicDragger;
+import gov.nasa.worldwind.util.StatisticsPanel;
+import gov.nasa.worldwind.util.StatusBar;
+import gov.nasa.worldwind.util.WWUtil;
+import gov.nasa.worldwindx.examples.util.HighlightController;
+import gov.nasa.worldwindx.examples.util.ToolTipController;
 import presentation.action.CubeConfigurationAction;
 import presentation.action.ExportKmlAction;
 
@@ -358,7 +352,10 @@ public class ApplicationTemplate
 			JMenuItem connectPostGis = new JMenuItem("Connect to PostGis");
 			connectPostGis.addActionListener(new SafeAction("Connect to PostGIS database...") {
 				public void action(ActionEvent e) throws Throwable {
-					connectToSourcePostGis(new PostgisNGDataStoreFactory(),false);
+					connectToSourcePostGis();
+
+
+
 
 				}
 			});
@@ -452,7 +449,7 @@ public class ApplicationTemplate
 
 
 
-		private void connectToSourcePostGis(DataStoreFactorySpi format, boolean isPolygon) throws Exception {
+		private void connectToSourcePostGis( ) throws Exception {
 
 
 
@@ -467,7 +464,7 @@ public class ApplicationTemplate
 			connectionParameters.put("port", 5432);
 			connectionParameters.put("schema", "public");
 			connectionParameters.put("user", "postgres");
-			connectionParameters.put("passwd", "postgre");
+			connectionParameters.put("passwd", "postgres");
 			connectionParameters.put("database", "scubing");
 			//Map<String, Object> connectionParameters = wizard.getConnectionParameters();
 			DataStore dataStore = DataStoreFinder.getDataStore(connectionParameters);

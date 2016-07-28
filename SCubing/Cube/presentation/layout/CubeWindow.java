@@ -690,7 +690,7 @@ public class CubeWindow {
 				}
 			};
 			computeThread.start();	
-			//teste
+			//testee
 		}
 		catch(Exception ioEx){
 			//textAreaStatus.setText("Cubo gerado com sucesso!");

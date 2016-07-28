@@ -12,7 +12,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<geotools.version>13.3</geotools.version>
+		<geotools.version>13.2</geotools.version>
 	</properties>
 
 	<dependencies>
@@ -37,11 +37,11 @@
 			<artifactId>gt-xsd-kml</artifactId>
 			<version>${geotools.version}</version>
 		</dependency>
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.geotools</groupId> -->
-<!-- 			<artifactId>gt-process</artifactId> -->
-<!-- 			<version>8.0-M2</version> -->
-<!-- 		</dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>org.geotools</groupId> -->
+		<!-- <artifactId>gt-process</artifactId> -->
+		<!-- <version>8.0-M2</version> -->
+		<!-- </dependency> -->
 		<dependency>
 			<groupId>com.thoughtworks.xstream</groupId>
 			<artifactId>xstream</artifactId>
@@ -49,11 +49,7 @@
 		</dependency>
 
 
-		<dependency>
-			<groupId>gov.nasa</groupId>
-			<artifactId>worldwind</artifactId>
-			<version>2.0.0-986</version>
-		</dependency>
+
 		<dependency>
 			<groupId>org.jogamp.gluegen</groupId>
 			<artifactId>gluegen-rt-main</artifactId>
@@ -64,17 +60,8 @@
 			<artifactId>jogl-all-main</artifactId>
 			<version>2.1.5-01</version>
 		</dependency>
-		<dependency>
-			<groupId>gov.nasa</groupId>
-			<artifactId>worldwindx</artifactId>
-			<version>2.0.0-986</version>
-		</dependency>
+		
 
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.eclipse.swt.win32.win32</groupId> -->
-<!-- 			<artifactId>x86</artifactId> -->
-<!-- 			<version>3.3.0-v3346</version> -->
-<!-- 		</dependency> -->
 
 
 		<dependency>
@@ -83,6 +70,7 @@
 			<version>4.4</version>
 		</dependency>
 
+		
 
 	</dependencies>
 
@@ -111,9 +99,14 @@
 			<url>https://raw.githubusercontent.com/maven-eclipse/swt-repo/master/</url>
 		</repository>
 
+		<repository>
+			<id>worldwind</id>
+			<url>https://mvnrepository.com/artifact/gov.nasa/worldwind </url>
+		</repository>
 
 
 	</repositories>
+
 
 
 

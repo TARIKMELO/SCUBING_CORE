@@ -75,11 +75,11 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 		System.out.println("Tempo em segundos: "+ (tempoFinal - tempoInicial) / 1000d);
 		String tempoTotal = "Tempo em segundos: "+ (tempoFinal - tempoInicial) / 1000d;
 		JOptionPane.showMessageDialog(null, tempoTotal);
-		
+
 		//Expoertar para o postgis aqui
 
 		insertToPostGis(sourceDesti);
-		
+
 		return sourceDesti;
 	}
 
@@ -188,7 +188,7 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 
 					MapFrame.getInstance().createLayer(featureSourceCube);
 
-					
+
 
 
 					cubeColumnsAux = new HashMap<String, CubeColumn>();
@@ -207,7 +207,7 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 
 	public void insertToPostGis(FeatureSource<SimpleFeatureType, SimpleFeature> featureSourceCube ) throws IOException{
 
-		
+
 		Map<String, Object> connectionParameters = new HashMap<String, Object>();
 
 		connectionParameters.put("dbtype", "postgis");
@@ -215,22 +215,23 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 		connectionParameters.put("port", 5432);
 		connectionParameters.put("schema", "public");
 		connectionParameters.put("user", "postgres");
-		connectionParameters.put("passwd", "postgre");
+		connectionParameters.put("passwd", "postgres");
 		connectionParameters.put("database", "scubing");
 		//Map<String, Object> connectionParameters = wizard.getConnectionParameters();
 		DataStore dataStore = DataStoreFinder.getDataStore(connectionParameters);
-		
-		
-		
+
+
 		Transaction transaction = new DefaultTransaction("create");
-//		DataStore newDataStore = MapFrame.getInstance().getDataStore();
-		String typeName = dataStore.getTypeNames()[0];
-		SimpleFeatureSource featureSource = dataStore.getFeatureSource(typeName);
-		if (featureSource instanceof SimpleFeatureStore) {
-			SimpleFeatureStore featureStore = (SimpleFeatureStore) featureSource;
+		//		DataStore newDataStore = MapFrame.getInstance().getDataStore();
+		//String typeName = dataStore.getTypeNames()[0];
+		//SimpleFeatureSource featureSource = dataStore.getFeatureSource(typeName);
+		if (featureSourceCube instanceof SimpleFeatureStore) {
+			SimpleFeatureStore featureStore = (SimpleFeatureStore) featureSourceCube;
 
 			featureStore.setTransaction(transaction);
-			try {
+
+			try { 
+			
 				featureStore.addFeatures(featureSourceCube.getFeatures());
 				transaction.commit();
 			} catch (Exception problem) {
@@ -241,7 +242,7 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 			}
 			//System.exit(0); // success!
 		} else {
-			System.out.println(typeName + " does not support read/write access");
+			System.out.println("Table does not support read/write access");
 			System.exit(1);
 		}
 
