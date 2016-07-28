@@ -451,7 +451,7 @@ public class CubeWindow {
 		int aux=0;
 		HashMap<String, CubeColumn> cubeColumns = new HashMap<String, CubeColumn>();
 
-		cubeColumns.put("the_geom", new CubeColumn(new SAFUnion(),true,aux,"the_geom"));
+		cubeColumns.put("geom", new CubeColumn(new SAFUnion(),true,aux,"geom"));
 		aux++;
 
 		for (TableItem measureItem : tableGrid.getItems()) {
@@ -690,6 +690,7 @@ public class CubeWindow {
 				}
 			};
 			computeThread.start();	
+			//teste
 		}
 		catch(Exception ioEx){
 			//textAreaStatus.setText("Cubo gerado com sucesso!");
@@ -748,7 +749,7 @@ public class CubeWindow {
 
 		for (Hashtable<String, String> hashtable : columnsInfo) {
 			//TODO:
-			if (!hashtable.get("NOME").equals("the_geom") && !hashtable.get("NOME").equals(textNomeColX.getText().trim())  && !hashtable.get("NOME").equals(textNomeColY.getText().trim()) && !hashtable.get("NOME").equals(textNomeId.getText().trim()))
+			if (!hashtable.get("NOME").equals("geom") && !hashtable.get("NOME").equals(textNomeColX.getText().trim())  && !hashtable.get("NOME").equals(textNomeColY.getText().trim()) && !hashtable.get("NOME").equals(textNomeId.getText().trim()))
 			{
 				final TableItem tableItem=new TableItem(tableGrid,SWT.NONE);
 
