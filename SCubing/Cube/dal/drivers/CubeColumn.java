@@ -78,6 +78,6 @@ public class CubeColumn {
 				"- isMeasure " + isMeasure +
 				"- columnName " + columnName +
 				"- where " + where +
-				"- hierarchy " + hierarchy;
+				"- hierarchy " + hierarchy; 
 	}
 }
