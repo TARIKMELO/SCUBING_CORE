@@ -5,7 +5,20 @@ public class ConfigBean {
 	public ConfigBean(){}
 	//Todas as propriedades devem ser strings
 	public String numThreads;
+	public String nomeLayer;
 	public String circleRadius;
+	
+	
+	
+	
+	public String getNomeLayer() {
+		return nomeLayer;
+	}
+
+	public void setNomeLayer(String nomeLayer) {
+		this.nomeLayer = nomeLayer;
+	}
+
 	public String getCircleRadius() {
 		return circleRadius;
 	}

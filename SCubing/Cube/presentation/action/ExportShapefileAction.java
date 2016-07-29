@@ -85,8 +85,10 @@ public class ExportShapefileAction extends AbstractAction{
 		 */
 		Transaction transaction = new DefaultTransaction("create");
 
-		String typeName = MapFrame.getInstance().getDataStore().getTypeNames()[0];
-		SimpleFeatureSource featureSource = MapFrame.getInstance().getDataStore().getFeatureSource(typeName);
+		
+		
+		MapFrame.getInstance().getDataStore().createSchema(MapFrame.getInstance().getSelectedLayerFeatureSource().getSchema());
+		SimpleFeatureSource featureSource = MapFrame.getInstance().getDataStore().getFeatureSource(MapFrame.getInstance().getSelectedLayerFeatureSource().getSchema().getTypeName());
 		if (featureSource instanceof SimpleFeatureStore) {
 			SimpleFeatureStore featureStore = (SimpleFeatureStore) featureSource;
 			featureStore.setTransaction(transaction);
@@ -101,7 +103,7 @@ public class ExportShapefileAction extends AbstractAction{
 			}
 			//System.exit(0); // success!
 		} else {
-			System.out.println(typeName + " does not support read/write access");
+			System.out.println(MapFrame.getInstance().getSelectedLayerFeatureSource().getSchema().getTypeName() + " does not support read/write access");
 			System.exit(1);
 		}
 	}

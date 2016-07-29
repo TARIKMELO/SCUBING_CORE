@@ -1,6 +1,9 @@
 package dal.drivers;
 
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map.Entry;
 
@@ -55,12 +58,13 @@ public class ShapeFileWriter {
 				consumidores[i].join();
 
 			}
+
 			System.out.println("Terminou os CONSUMIDORES");
 			for(int i=0; i<consumidores.length; i++)
 			{
 
 				list.addAll(consumidores[i].getDefaultFeatureCollection());
-				
+
 			}
 		}catch (Exception e){
 			e.printStackTrace();
@@ -77,31 +81,9 @@ public class ShapeFileWriter {
 
 	public FeatureSource<SimpleFeatureType, SimpleFeature> insertCubeToSource(Resource<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource , FeatureSource<SimpleFeatureType, SimpleFeature> source, long tempoInicial) throws  Exception
 	{
-
-
-
 		final SimpleFeatureType TYPE = createCubeSchema(source);
-
-		long tempoIntermediario3 = System.currentTimeMillis();  
-		System.out.println("(Parcial 3 - Tempo createCubeSchema) Tempo em milisegundos para calcular o cubo: "+ (tempoIntermediario3 - tempoInicial) );
-
-		System.out.println("Número de registros:  "+ resource.getNumOfRegisters()) ;
-
 		ArrayList<SimpleFeature> collection = insertCubeToCollection(TYPE, resource);
-
-
-		long tempoIntermediario4 = System.currentTimeMillis(); 
-		System.out.println("(Parcial 4 - Tempo insertCubeToCollection) Tempo em milisegundos para calcular o cubo: "+ (tempoIntermediario4 - tempoInicial) );
-
-
 		SimpleFeatureSource sourceResult = DataUtilities.source(DataUtilities.collection(collection));
-		
-		
-		
-		long tempoIntermediario5 = System.currentTimeMillis(); 
-		System.out.println("(Parcial 5 - Tempo source) Tempo em milisegundos para calcular o cubo: "+ (tempoIntermediario5 - tempoInicial) );
-
-
 		return sourceResult;
 	}
 
@@ -112,10 +94,22 @@ public class ShapeFileWriter {
 
 		SimpleFeatureTypeBuilder b = new SimpleFeatureTypeBuilder();
 
-		//TODO:set the name
-		b.setName( "CustomLayer" );
-		b.setCRS( source.getSchema().getCoordinateReferenceSystem() ); // set crs first
+		//Definindo o nome do layer criado
+		String nameLayer = Util.getConfig().getNomeLayer();
 
+		if(  (nameLayer != null && !nameLayer.isEmpty())){
+			b.setName(nameLayer);
+		}
+		else
+		{
+			nameLayer = new SimpleDateFormat("ddMMyyyy_HHmm").format(new Date());
+			b.setName( "CustomLayer"+nameLayer+" ");
+
+		}
+		
+		Util.getLogger().info("Nome da tabela: "+b.getName());
+
+		b.setCRS( source.getSchema().getCoordinateReferenceSystem() ); // set crs first
 		//Adicionando as colunas espaciais. Medidas ou não.
 		for (CubeColumn cubeColumn : cubeColumns.values()) {
 			if (cubeColumn.getColumnName()=="geom")

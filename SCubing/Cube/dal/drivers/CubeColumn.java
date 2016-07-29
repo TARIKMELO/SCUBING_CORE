@@ -69,4 +69,15 @@ public class CubeColumn {
 	public void setMeasure(boolean isMeasure) {
 		this.isMeasure = isMeasure;
 	}
+	
+	
+	public String toString()
+	{
+			
+		return "\n CUbeColumn:  "+ 	"\n IAggFunction " + aggFunction +
+				"- isMeasure " + isMeasure +
+				"- columnName " + columnName +
+				"- where " + where +
+				"- hierarchy " + hierarchy;
+	}
 }

@@ -9,6 +9,8 @@ import java.util.Map.Entry;
 
 import javax.swing.JOptionPane;
 
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Logger;
 import org.geotools.swing.data.JFileDataStoreChooser;
 
 import com.thoughtworks.xstream.XStream;
@@ -16,6 +18,30 @@ import com.thoughtworks.xstream.XStream;
 import dal.drivers.CubeColumn;
 
 public class Util {
+	
+	static Logger logger = Logger.getLogger("scubing");
+	
+	
+	public static void beginLog()
+	{
+		
+		logger.info("------------------------------Iniciou o log da execução------------------------------");
+		final int numConsumidores =Integer.parseInt(Util.getConfig().getNumThreads());
+		logger.info("Número de consumidores: "+ numConsumidores);
+		logger.info("Iniciou o log da execução");
+	}
+	
+	
+	public static Logger getLogger() {
+		return logger;
+	}
+
+
+	public static void setLogger(Logger logger) {
+		Util.logger = logger;
+	}
+
+
 	public static File getNewFile(String fileExtension) {
 		JFileDataStoreChooser chooser = new JFileDataStoreChooser(fileExtension);
 		chooser.setDialogTitle("Save...");
@@ -72,7 +98,7 @@ public class Util {
 			config = (ConfigBean)xstream.fromXML(xmlFile);
 		} catch (Exception e) {
 			ConfigBean defaultConfig = new ConfigBean();
-			defaultConfig.setNumThreads("4");
+			defaultConfig.setNumThreads("1");
 			defaultConfig.setCircleRadius("5");
 			return defaultConfig;
 		}
@@ -133,4 +159,7 @@ public class Util {
 		}
 		return cubeColumns;
 	}
+	
+	
+	
 }
