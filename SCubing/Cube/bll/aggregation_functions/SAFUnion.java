@@ -2,15 +2,7 @@ package bll.aggregation_functions;
 
 
 
-import org.geotools.data.FeatureSource;
-import org.opengis.feature.simple.SimpleFeature;
-import org.opengis.feature.simple.SimpleFeatureType;
-
 import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.geom.GeometryCollection;
-import com.vividsolutions.jts.operation.union.UnaryUnionOp;
-
-import dal.drivers.ShapeFileUtilities;
 
 public class SAFUnion  extends ISpatialAggFunction implements IAggFunction{
 

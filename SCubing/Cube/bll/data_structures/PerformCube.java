@@ -240,7 +240,8 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 			featureStore.setTransaction(transaction);
 
 			try { 
-
+				
+				
 				featureStore.addFeatures(featureSourceCube.getFeatures());
 				transaction.commit();
 			} catch (Exception problem) {

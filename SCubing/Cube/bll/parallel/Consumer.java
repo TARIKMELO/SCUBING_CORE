@@ -6,9 +6,14 @@ import java.util.Map.Entry;
 
 import org.geotools.feature.DefaultFeatureCollection;
 import org.geotools.feature.simple.SimpleFeatureBuilder;
+import org.geotools.geometry.jts.FactoryFinder;
+import org.geotools.geometry.jts.JTSFactoryFinder;
 import org.opengis.feature.simple.SimpleFeatureType;
 
 import com.vividsolutions.jts.geom.Geometry;
+import com.vividsolutions.jts.geom.GeometryCollection;
+import com.vividsolutions.jts.geom.GeometryFactory;
+import com.vividsolutions.jts.operation.union.UnaryUnionOp;
 
 import bll.aggregation_functions.ISpatialAggFunction;
 import bll.data_structures.nodes.DimensionTypeValue;
@@ -58,9 +63,26 @@ public class Consumer extends Thread{
 						//TODO: Jã parte do pressuposto que ta tudo certo caso a funãão de agregaãão seja espacial
 						if ((cubeColumns.get(measureTypeValue.getType()).getAggFunction() instanceof ISpatialAggFunction))
 						{
+							
+							if (measureTypeValue.getValue() instanceof ArrayList)
+							{
+								
+								
+																
+								UnaryUnionOp union = new UnaryUnionOp((ArrayList<Geometry>)measureTypeValue.getValue());
+//							
+//								
+//								
+								featureBuilder.set("geom", union.union());
+							}
+							
+							else
+							{
+								featureBuilder.set("geom", (Geometry)measureTypeValue.getValue());
+							}
 
 							//featureBuilder = ShapeFileUtilities.generateVisualization(measureValue, featureBuilder, (ISpatialAggFunction)cubeColumns.get(measureTypeValue.getType()).getAggFunction());
-							featureBuilder.set("geom", (Geometry)measureTypeValue.getValue());
+							
 						}
 						else
 						{
@@ -77,8 +99,11 @@ public class Consumer extends Thread{
 						//TODO: Consertar la no cubeToTable
 						if (value.getType()!="")
 						{
-							if (dimensionTypeValue.getType()== "geom")
+							if (dimensionTypeValue.getType().equals("geom"))
 							{								//uma região só
+								
+								
+									
 								//featureBuilder = ShapeFileUtilities.generateVisualization(value.getValue(), featureBuilder, new SAFUnion(), source);
 								featureBuilder.set("geom", (Geometry)value.getValue());
 

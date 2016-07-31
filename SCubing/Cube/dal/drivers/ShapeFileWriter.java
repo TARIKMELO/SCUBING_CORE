@@ -12,8 +12,11 @@ import org.geotools.data.FeatureSource;
 import org.geotools.data.simple.SimpleFeatureSource;
 import org.geotools.feature.SchemaException;
 import org.geotools.feature.simple.SimpleFeatureTypeBuilder;
+import org.geotools.geometry.jts.FactoryFinder;
+import org.geotools.referencing.CRS;
 import org.opengis.feature.simple.SimpleFeature;
 import org.opengis.feature.simple.SimpleFeatureType;
+import org.opengis.referencing.FactoryException;
 
 import com.vividsolutions.jts.geom.MultiPoint;
 import com.vividsolutions.jts.geom.Point;
@@ -22,6 +25,7 @@ import com.vividsolutions.jts.geom.Polygon;
 import bll.aggregation_functions.SAFUnion;
 import bll.aggregation_functions.SAFUnionMBR;
 import bll.aggregation_functions.SAFUnionPolygon;
+
 import bll.data_structures.nodes.DimensionTypeValue;
 import bll.data_structures.nodes.MeasureTypeValue;
 import bll.parallel.Consumer;
@@ -102,17 +106,34 @@ public class ShapeFileWriter {
 		}
 		else
 		{
-			nameLayer = new SimpleDateFormat("ddMMyyyy_HHmm").format(new Date());
+			nameLayer = new SimpleDateFormat("ddMMyyyy_HH:mm").format(new Date());
 			b.setName( "CustomLayer"+nameLayer+" ");
 
 		}
-		
+
 		Util.getLogger().info("Nome da tabela: "+b.getName());
 
-		b.setCRS( source.getSchema().getCoordinateReferenceSystem() ); // set crs first
+
+
+		if (source.getSchema().getCoordinateReferenceSystem()==null)
+		{
+			try {
+				final String EPSG4326 = "GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.01745329251994328,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]]";
+				b.setCRS( CRS.parseWKT(EPSG4326));
+			} catch (FactoryException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		else
+		{
+
+			b.setCRS( source.getSchema().getCoordinateReferenceSystem() ); // set crs first
+
+		}
 		//Adicionando as colunas espaciais. Medidas ou não.
 		for (CubeColumn cubeColumn : cubeColumns.values()) {
-			if (cubeColumn.getColumnName()=="geom")
+			if (cubeColumn.getColumnName().equals("geom"))
 			{
 				if (cubeColumn.getAggFunction()!=null && cubeColumn.getAggFunction() instanceof SAFUnionMBR){
 					b.add(source.getSchema().getGeometryDescriptor().getName().getLocalPart(), Polygon.class); // then add geometry
@@ -135,7 +156,7 @@ public class ShapeFileWriter {
 
 		for (CubeColumn cubeColumn : cubeColumns.values()) {
 			//A coluna espacial jã foi adicionada no for anterior 
-			if (cubeColumn.getColumnName()!="geom")
+			if (!cubeColumn.getColumnName().equals("geom"))
 			{
 				//add some properties
 				b.add( source.getSchema().getDescriptor(cubeColumn.getColumnName()).getName().getLocalPart(), String.class );

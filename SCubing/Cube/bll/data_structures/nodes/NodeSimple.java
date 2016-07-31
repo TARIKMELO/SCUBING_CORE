@@ -6,7 +6,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
+import com.vividsolutions.jts.geom.Geometry;
+
 import bll.aggregation_functions.IAggFunction;
+import bll.aggregation_functions.SAFUnion;
 import dal.drivers.CubeColumn;
 
 
@@ -17,11 +20,28 @@ public class NodeSimple <T> implements INodeSimple<T>, Serializable{
 	protected Map<T, NodeSimple<T>> descendants;
 	protected ArrayList<MeasureTypeValue> measureValues;
 	protected HashMap<String, CubeColumn> cubeColumns;
+	ArrayList<Geometry> geometries = new ArrayList<Geometry>();
 
 	public NodeSimple(	HashMap<String, CubeColumn> cubeColumns, ArrayList<MeasureTypeValue> measureValues){
 		descendants = new TreeMap<T, NodeSimple<T>>();		
 		this.cubeColumns = cubeColumns;
 		this.measureValues = measureValues;
+		
+		if (measureValues.size()>0)
+		{
+	
+			for (int i=0;i<measureValues.size(); i++)
+			{
+				
+				IAggFunction aggFunction = cubeColumns.get(measureValues.get(i).getType()).getAggFunction();
+				//TODO: Ainda tem indice aqui
+				if (aggFunction instanceof SAFUnion)
+				{
+					geometries.add((Geometry) measureValues.get(i).getValue());
+					this.measureValues.set(i, new MeasureTypeValue( geometries,measureValues.get(i).getType()));
+				}
+			}
+		}
 
 	}
 
@@ -54,8 +74,21 @@ public class NodeSimple <T> implements INodeSimple<T>, Serializable{
 				atualizedValue = new Object();
 				IAggFunction aggFunction = cubeColumns.get(newValues.get(i).getType()).getAggFunction();
 				//TODO: Ainda tem indice aqui
-				atualizedValue = aggFunction.updateMeasure(this.measureValues.get(i).getValue(), newValues.get(i).getValue());
-				this.measureValues.set(i, new MeasureTypeValue( atualizedValue,newValues.get(i).getType()));
+				if (aggFunction instanceof SAFUnion)
+				{
+					geometries.add((Geometry) newValues.get(i).getValue());
+					this.measureValues.set(i, new MeasureTypeValue( geometries,newValues.get(i).getType()));
+				}
+
+				else
+				{
+					atualizedValue = aggFunction.updateMeasure(this.measureValues.get(i).getValue(), newValues.get(i).getValue());
+					this.measureValues.set(i, new MeasureTypeValue( atualizedValue,newValues.get(i).getType()));
+				}
+
+
+
+
 			}
 		}
 	}	
