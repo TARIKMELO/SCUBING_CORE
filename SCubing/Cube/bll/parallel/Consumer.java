@@ -66,9 +66,7 @@ public class Consumer extends Thread{
 							
 							if (measureTypeValue.getValue() instanceof ArrayList)
 							{
-								
-								
-																
+																								
 								UnaryUnionOp union = new UnaryUnionOp((ArrayList<Geometry>)measureTypeValue.getValue());
 //							
 //								

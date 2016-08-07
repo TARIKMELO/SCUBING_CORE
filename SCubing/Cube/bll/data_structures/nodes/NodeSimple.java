@@ -26,18 +26,26 @@ public class NodeSimple <T> implements INodeSimple<T>, Serializable{
 		descendants = new TreeMap<T, NodeSimple<T>>();		
 		this.cubeColumns = cubeColumns;
 		this.measureValues = measureValues;
-		
+
 		if (measureValues.size()>0)
 		{
-	
+
 			for (int i=0;i<measureValues.size(); i++)
 			{
-				
+
 				IAggFunction aggFunction = cubeColumns.get(measureValues.get(i).getType()).getAggFunction();
 				//TODO: Ainda tem indice aqui
 				if (aggFunction instanceof SAFUnion)
 				{
-					geometries.add((Geometry) measureValues.get(i).getValue());
+
+					if (measureValues.get(i).getValue() instanceof ArrayList)
+					{
+						geometries.addAll((ArrayList) measureValues.get(i).getValue());
+					}
+					else
+					{
+						geometries.add((Geometry) measureValues.get(i).getValue());
+					}
 					this.measureValues.set(i, new MeasureTypeValue( geometries,measureValues.get(i).getType()));
 				}
 			}

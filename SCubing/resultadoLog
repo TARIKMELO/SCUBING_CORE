@@ -768,3 +768,248 @@ INFO  - 2016-07-29 11:56:06.209; bll.data_structures.PerformCube; (Parcial 3 - P
 31-07-2016 00:02:17 INFO  scubing:85 - RESULTADO: Tempo total em milisegundos: 8865
 31-07-2016 00:02:17 INFO  scubing:86 - RESULTADO: Tempo total em segundos: 8.865
 31-07-2016 00:02:17 INFO  scubing:89 - ------------------------------Termínou o log da execução------------------------------
+31-07-2016 00:13:48 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+31-07-2016 00:13:49 INFO  scubing:30 - Número de consumidores: 1
+31-07-2016 00:13:49 INFO  scubing:31 - Iniciou o log da execução
+07-08-2016 11:47:59 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+07-08-2016 11:47:59 INFO  scubing:30 - Número de consumidores: 1
+07-08-2016 11:47:59 INFO  scubing:31 - Iniciou o log da execução
+07-08-2016 12:05:24 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+07-08-2016 12:05:24 INFO  scubing:30 - Número de consumidores: 1
+07-08-2016 12:05:24 INFO  scubing:31 - Iniciou o log da execução
+07-08-2016 12:06:23 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+07-08-2016 12:06:23 INFO  scubing:30 - Número de consumidores: 1
+07-08-2016 12:06:23 INFO  scubing:31 - Iniciou o log da execução
+07-08-2016 12:07:08 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+07-08-2016 12:07:08 INFO  scubing:30 - Número de consumidores: 1
+07-08-2016 12:07:08 INFO  scubing:31 - Iniciou o log da execução
+07-08-2016 12:07:35 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+07-08-2016 12:07:36 INFO  scubing:30 - Número de consumidores: 1
+07-08-2016 12:07:36 INFO  scubing:31 - Iniciou o log da execução
+07-08-2016 12:16:44 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+07-08-2016 12:16:44 INFO  scubing:30 - Número de consumidores: 1
+07-08-2016 12:16:44 INFO  scubing:31 - Iniciou o log da execução
+07-08-2016 12:17:46 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+07-08-2016 12:17:46 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 0
+07-08-2016 12:17:46 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 0
+07-08-2016 12:17:46 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 0
+07-08-2016 12:17:46 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c6- where null- hierarchy 0
+07-08-2016 12:17:46 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 0
+07-08-2016 12:17:46 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 0
+07-08-2016 12:18:00 INFO  scubing:40 - (Parcial  - GetData do Shapefile) Tempo em milisegundos para ler os dados: 14620
+07-08-2016 12:18:00 INFO  scubing:42 - Número de linhas da entrada: 100000
+07-08-2016 12:18:51 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+07-08-2016 12:18:51 INFO  scubing:30 - Número de consumidores: 1
+07-08-2016 12:18:51 INFO  scubing:31 - Iniciou o log da execução
+07-08-2016 12:19:27 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+07-08-2016 12:19:27 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 0
+07-08-2016 12:19:27 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 0
+07-08-2016 12:19:27 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 0
+07-08-2016 12:19:27 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c6- where null- hierarchy 0
+07-08-2016 12:19:27 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 0
+07-08-2016 12:19:27 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 0
+07-08-2016 12:19:41 INFO  scubing:40 - (Parcial  - GetData do Shapefile) Tempo em milisegundos para ler os dados: 14057
+07-08-2016 12:19:41 INFO  scubing:42 - Número de linhas da entrada: 100000
+07-08-2016 12:24:43 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+07-08-2016 12:24:43 INFO  scubing:30 - Número de consumidores: 1
+07-08-2016 12:24:43 INFO  scubing:31 - Iniciou o log da execução
+07-08-2016 12:27:25 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+07-08-2016 12:27:25 INFO  scubing:30 - Número de consumidores: 1
+07-08-2016 12:27:25 INFO  scubing:31 - Iniciou o log da execução
+07-08-2016 12:27:56 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+07-08-2016 12:27:56 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 0
+07-08-2016 12:27:56 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 0
+07-08-2016 12:27:56 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 0
+07-08-2016 12:27:56 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c6- where null- hierarchy 0
+07-08-2016 12:27:56 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 0
+07-08-2016 12:27:56 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 0
+07-08-2016 12:28:11 INFO  scubing:40 - (Parcial  - GetData do Shapefile) Tempo em milisegundos para ler os dados: 15307
+07-08-2016 12:28:11 INFO  scubing:42 - Número de linhas da entrada: 100000
+07-08-2016 12:28:18 INFO  scubing:48 - (Parcial 0 - Criar o cubo base - createBaseCuboide) Tempo em milisegundos para calcular o base cuboide: 7258
+07-08-2016 12:28:21 INFO  scubing:55 - (Parcial 1 - Gerou as agregações - cube.generateAggregations()) Tempo em milisegundos para calcular o cubo: 3080
+07-08-2016 12:28:21 INFO  scubing:61 - (Parcial 2 - Tempo cubeToTable) Tempo em milisegundos para calcular o cubo: 25794
+07-08-2016 12:28:21 INFO  scubing:114 - Nome da tabela: CustomLayer07082016_12:28 
+07-08-2016 12:46:00 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+07-08-2016 12:46:00 INFO  scubing:30 - Número de consumidores: 1
+07-08-2016 12:46:00 INFO  scubing:31 - Iniciou o log da execução
+07-08-2016 12:46:29 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+07-08-2016 12:46:29 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName uf- where null- hierarchy 0
+07-08-2016 12:46:29 INFO  scubing:40 - (Parcial  - GetData do Shapefile) Tempo em milisegundos para ler os dados: 352
+07-08-2016 12:46:29 INFO  scubing:42 - Número de linhas da entrada: 5564
+07-08-2016 12:46:29 INFO  scubing:48 - (Parcial 0 - Criar o cubo base - createBaseCuboide) Tempo em milisegundos para calcular o base cuboide: 43
+07-08-2016 12:46:29 INFO  scubing:55 - (Parcial 1 - Gerou as agregações - cube.generateAggregations()) Tempo em milisegundos para calcular o cubo: 0
+07-08-2016 12:46:29 INFO  scubing:61 - (Parcial 2 - Tempo cubeToTable) Tempo em milisegundos para calcular o cubo: 400
+07-08-2016 12:46:29 INFO  scubing:114 - Nome da tabela: CustomLayer07082016_12:46 
+07-08-2016 12:46:39 INFO  scubing:69 - (Parcial 3 - PARTE PARALELIZADA: Tempo insertCubeToSource) Tempo em milisegundos para calcular o cubo: 10439
+07-08-2016 12:46:42 INFO  scubing:78 - (Parcial 4 - Tempo para inserir no Postgis): 2746
+07-08-2016 12:46:42 INFO  scubing:84 - RESULTADO: Número de registros:  27
+07-08-2016 12:46:42 INFO  scubing:85 - RESULTADO: Tempo total em milisegundos: 13589
+07-08-2016 12:46:42 INFO  scubing:86 - RESULTADO: Tempo total em segundos: 13.589
+07-08-2016 12:46:42 INFO  scubing:89 - ------------------------------Termínou o log da execução------------------------------
+07-08-2016 12:47:53 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+07-08-2016 12:47:53 INFO  scubing:30 - Número de consumidores: 1
+07-08-2016 12:47:53 INFO  scubing:31 - Iniciou o log da execução
+07-08-2016 12:50:14 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+07-08-2016 12:50:14 INFO  scubing:30 - Número de consumidores: 1
+07-08-2016 12:50:14 INFO  scubing:31 - Iniciou o log da execução
+07-08-2016 12:50:28 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+07-08-2016 12:50:28 INFO  scubing:30 - Número de consumidores: 1
+07-08-2016 12:50:28 INFO  scubing:31 - Iniciou o log da execução
+07-08-2016 12:58:33 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+07-08-2016 12:58:33 INFO  scubing:30 - Número de consumidores: 1
+07-08-2016 12:58:33 INFO  scubing:31 - Iniciou o log da execução
+07-08-2016 12:58:58 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+07-08-2016 12:58:58 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 0
+07-08-2016 12:58:58 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 0
+07-08-2016 12:58:58 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 0
+07-08-2016 12:59:11 INFO  scubing:40 - (Parcial  - GetData do Shapefile) Tempo em milisegundos para ler os dados: 12905
+07-08-2016 12:59:11 INFO  scubing:42 - Número de linhas da entrada: 100000
+07-08-2016 12:59:16 INFO  scubing:48 - (Parcial 0 - Criar o cubo base - createBaseCuboide) Tempo em milisegundos para calcular o base cuboide: 4886
+07-08-2016 12:59:16 INFO  scubing:55 - (Parcial 1 - Gerou as agregações - cube.generateAggregations()) Tempo em milisegundos para calcular o cubo: 36
+07-08-2016 12:59:16 INFO  scubing:61 - (Parcial 2 - Tempo cubeToTable) Tempo em milisegundos para calcular o cubo: 17847
+07-08-2016 12:59:16 INFO  scubing:114 - Nome da tabela: CustomLayer07082016_12:59 
+07-08-2016 13:44:18 INFO  scubing:69 - (Parcial 3 - PARTE PARALELIZADA: Tempo insertCubeToSource) Tempo em milisegundos para calcular o cubo: 2701941
+07-08-2016 18:25:47 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+07-08-2016 18:25:47 INFO  scubing:30 - Número de consumidores: 1
+07-08-2016 18:25:47 INFO  scubing:31 - Iniciou o log da execução
+07-08-2016 18:27:03 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+07-08-2016 18:27:03 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 0
+07-08-2016 18:27:03 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 0
+07-08-2016 18:27:03 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 0
+07-08-2016 18:27:19 INFO  scubing:40 - (Parcial  - GetData do Shapefile) Tempo em milisegundos para ler os dados: 16079
+07-08-2016 18:27:19 INFO  scubing:42 - Número de linhas da entrada: 100000
+07-08-2016 18:27:23 INFO  scubing:48 - (Parcial 0 - Criar o cubo base - createBaseCuboide) Tempo em milisegundos para calcular o base cuboide: 4614
+07-08-2016 18:27:23 INFO  scubing:55 - (Parcial 1 - Gerou as agregações - cube.generateAggregations()) Tempo em milisegundos para calcular o cubo: 43
+07-08-2016 18:27:23 INFO  scubing:61 - (Parcial 2 - Tempo cubeToTable) Tempo em milisegundos para calcular o cubo: 20766
+07-08-2016 18:27:23 INFO  scubing:114 - Nome da tabela: CustomLayer07082016_18:27 
+07-08-2016 19:11:48 INFO  scubing:69 - (Parcial 3 - PARTE PARALELIZADA: Tempo insertCubeToSource) Tempo em milisegundos para calcular o cubo: 2664559
+07-08-2016 19:12:33 INFO  scubing:78 - (Parcial 4 - Tempo para inserir no Postgis): 45514
+07-08-2016 19:12:33 INFO  scubing:84 - RESULTADO: Número de registros:  7000
+07-08-2016 19:12:33 INFO  scubing:85 - RESULTADO: Tempo total em milisegundos: 2730852
+07-08-2016 19:12:33 INFO  scubing:86 - RESULTADO: Tempo total em segundos: 2730.852
+07-08-2016 19:12:33 INFO  scubing:89 - ------------------------------Termínou o log da execução------------------------------
+07-08-2016 19:34:33 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+07-08-2016 19:34:34 INFO  scubing:30 - Número de consumidores: 1
+07-08-2016 19:34:34 INFO  scubing:31 - Iniciou o log da execução
+07-08-2016 19:35:19 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+07-08-2016 19:35:19 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName uf- where null- hierarchy 0
+07-08-2016 19:35:19 INFO  scubing:40 - (Parcial  - GetData do Shapefile) Tempo em milisegundos para ler os dados: 422
+07-08-2016 19:35:19 INFO  scubing:42 - Número de linhas da entrada: 5564
+07-08-2016 19:35:19 INFO  scubing:48 - (Parcial 0 - Criar o cubo base - createBaseCuboide) Tempo em milisegundos para calcular o base cuboide: 168
+07-08-2016 19:35:19 INFO  scubing:55 - (Parcial 1 - Gerou as agregações - cube.generateAggregations()) Tempo em milisegundos para calcular o cubo: 0
+07-08-2016 19:35:19 INFO  scubing:61 - (Parcial 2 - Tempo cubeToTable) Tempo em milisegundos para calcular o cubo: 613
+07-08-2016 19:35:19 INFO  scubing:114 - Nome da tabela: CustomLayer07082016_19:35 
+07-08-2016 19:35:27 INFO  scubing:69 - (Parcial 3 - PARTE PARALELIZADA: Tempo insertCubeToSource) Tempo em milisegundos para calcular o cubo: 7498
+07-08-2016 19:35:28 INFO  scubing:78 - (Parcial 4 - Tempo para inserir no Postgis): 1632
+07-08-2016 19:35:28 INFO  scubing:84 - RESULTADO: Número de registros:  27
+07-08-2016 19:35:28 INFO  scubing:85 - RESULTADO: Tempo total em milisegundos: 9763
+07-08-2016 19:35:28 INFO  scubing:86 - RESULTADO: Tempo total em segundos: 9.763
+07-08-2016 19:35:28 INFO  scubing:89 - ------------------------------Termínou o log da execução------------------------------
+07-08-2016 19:37:02 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+07-08-2016 19:37:02 INFO  scubing:30 - Número de consumidores: 1
+07-08-2016 19:37:02 INFO  scubing:31 - Iniciou o log da execução
+07-08-2016 19:37:39 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+07-08-2016 19:37:39 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName uf- where null- hierarchy 0
+07-08-2016 19:37:40 INFO  scubing:40 - (Parcial  - GetData do Shapefile) Tempo em milisegundos para ler os dados: 346
+07-08-2016 19:37:40 INFO  scubing:42 - Número de linhas da entrada: 5564
+07-08-2016 19:37:40 INFO  scubing:48 - (Parcial 0 - Criar o cubo base - createBaseCuboide) Tempo em milisegundos para calcular o base cuboide: 38
+07-08-2016 19:37:40 INFO  scubing:55 - (Parcial 1 - Gerou as agregações - cube.generateAggregations()) Tempo em milisegundos para calcular o cubo: 0
+07-08-2016 19:37:40 INFO  scubing:61 - (Parcial 2 - Tempo cubeToTable) Tempo em milisegundos para calcular o cubo: 390
+07-08-2016 19:37:53 INFO  scubing:114 - Nome da tabela: CustomLayer07082016_19:37 
+07-08-2016 19:38:08 INFO  scubing:69 - (Parcial 3 - PARTE PARALELIZADA: Tempo insertCubeToSource) Tempo em milisegundos para calcular o cubo: 27848
+07-08-2016 19:39:14 INFO  scubing:78 - (Parcial 4 - Tempo para inserir no Postgis): 66559
+07-08-2016 19:39:14 INFO  scubing:84 - RESULTADO: Número de registros:  27
+07-08-2016 19:39:14 INFO  scubing:85 - RESULTADO: Tempo total em milisegundos: 94815
+07-08-2016 19:39:14 INFO  scubing:86 - RESULTADO: Tempo total em segundos: 94.815
+07-08-2016 19:39:14 INFO  scubing:89 - ------------------------------Termínou o log da execução------------------------------
+07-08-2016 19:49:27 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+07-08-2016 19:49:27 INFO  scubing:30 - Número de consumidores: 1
+07-08-2016 19:49:27 INFO  scubing:31 - Iniciou o log da execução
+07-08-2016 19:49:57 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+07-08-2016 19:49:57 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName uf- where null- hierarchy 0
+07-08-2016 19:49:58 INFO  scubing:40 - (Parcial  - GetData do Shapefile) Tempo em milisegundos para ler os dados: 600
+07-08-2016 19:49:58 INFO  scubing:42 - Número de linhas da entrada: 5564
+07-08-2016 19:49:58 INFO  scubing:48 - (Parcial 0 - Criar o cubo base - createBaseCuboide) Tempo em milisegundos para calcular o base cuboide: 43
+07-08-2016 19:49:58 INFO  scubing:55 - (Parcial 1 - Gerou as agregações - cube.generateAggregations()) Tempo em milisegundos para calcular o cubo: 1
+07-08-2016 19:49:58 INFO  scubing:61 - (Parcial 2 - Tempo cubeToTable) Tempo em milisegundos para calcular o cubo: 646
+07-08-2016 19:49:58 INFO  scubing:114 - Nome da tabela: CustomLayer07082016_19:49 
+07-08-2016 19:50:07 INFO  scubing:69 - (Parcial 3 - PARTE PARALELIZADA: Tempo insertCubeToSource) Tempo em milisegundos para calcular o cubo: 9318
+07-08-2016 19:50:09 INFO  scubing:78 - (Parcial 4 - Tempo para inserir no Postgis): 1482
+07-08-2016 19:50:09 INFO  scubing:84 - RESULTADO: Número de registros:  27
+07-08-2016 19:50:09 INFO  scubing:85 - RESULTADO: Tempo total em milisegundos: 11448
+07-08-2016 19:50:09 INFO  scubing:86 - RESULTADO: Tempo total em segundos: 11.448
+07-08-2016 19:50:09 INFO  scubing:89 - ------------------------------Termínou o log da execução------------------------------
