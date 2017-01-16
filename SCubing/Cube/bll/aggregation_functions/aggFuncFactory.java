@@ -17,6 +17,8 @@ public class aggFuncFactory {
 	        else if( aggFunctionType.equals("Toca") ) return new SAFTouche();  
 	        //else if( aggFunctionType.equals("Vizinhança") ) return new SAFNeighborhood();
 	        else if( aggFunctionType.equals("União") ) return new SAFUnion();
+	        
+	        else if( aggFunctionType.equals("Distância Euclidiana") ) return new MAFEuclideDistance();
 	        else if( aggFunctionType.equals("União MBR") ) return new SAFUnionMBR();
 	        else if( aggFunctionType.equals("União Polígono") ) return new SAFUnionPolygon();
 	        else return null;  

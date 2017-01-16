@@ -29,7 +29,7 @@ public class CubeGrid {
 	}
 	public void performHierarchies(int x, int y, IResultSetText<DimensionTypeValue> rs, FeatureSource source, HashMap<String, CubeColumn> cubeColumns) throws Exception
 	{
-		while (source.getFeatures().size()>1)
+		while (source.getFeatures().size()>3)
 		{
 			HashMap<ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>> result  = new HashMap<ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>();
 			//Não uso o tipo abaixo pois nao tem a funão contains
@@ -58,20 +58,20 @@ public class CubeGrid {
 					if (result.containsKey(dimensions))
 					{
 
-						measuresAux = result.get(dimensions);
-						measures = new ArrayList<MeasureTypeValue>();
-						for (Object objectTuple : tuple) {
-							DimensionTypeValue tupleItem = (DimensionTypeValue)objectTuple;
-							CubeColumn cubeColumn = cubeColumns.get(tupleItem.getType());
-							if (cubeColumn.isMeasure())
-							{
-								int index = cubeColumn.getIndex();
-								String value = cubeColumn.getAggFunction().updateMeasure(measuresAux.get(index),tupleItem.getValue()).toString();
-								//System.out.println(value);
-								measures.add(new MeasureTypeValue(value,cubeColumn.getColumnName()));
-							}
-						}
-						result.put(dimensions, measures);
+//						measuresAux = result.get(dimensions);
+//						measures = new ArrayList<MeasureTypeValue>();
+//						for (Object objectTuple : tuple) {
+//							DimensionTypeValue tupleItem = (DimensionTypeValue)objectTuple;
+//							CubeColumn cubeColumn = cubeColumns.get(tupleItem.getType());
+//							if (cubeColumn.isMeasure())
+//							{
+//								int index = cubeColumn.getIndex();
+//								String value = cubeColumn.getAggFunction().updateMeasure(measuresAux.get(index),tupleItem.getValue()).toString();
+//								//System.out.println(value);
+//								measures.add(new MeasureTypeValue(value,cubeColumn.getColumnName()));
+//							}
+//						}
+//						result.put(dimensions, measures);
 						//resource.putRegister(new AbstractMap.SimpleEntry (dimensions, measures));
 					}
 					else
@@ -109,7 +109,7 @@ public class CubeGrid {
 				System.out.println(feature.getDefaultGeometryProperty().getValue());
 				System.out.println(feature.getValue());
 			}*/
-			if (source.getFeatures().size()>1)
+			if (source.getFeatures().size()>3)
 			{
 
 				//TODO: Nao precisa dessa linha
@@ -119,8 +119,10 @@ public class CubeGrid {
 				//shapeFileWriter.insertCubeToShapefile(result, source,"D:\\data\\Amazonia\\Amazonia"+sourceDesti.getFeatures().size()+".shp");
 				IResultSetText<DimensionTypeValue> rsDesti = ShapeFileUtilities.getData(sourceDesti, cubeColumns);
 
-
-				MapFrame.getInstance().createLayer (sourceDesti);
+				//Não quero visualizar
+				//MapFrame.getInstance().createLayer (sourceDesti);
+				//inserir no postgi
+				
 				//Para salvar em arquivos
 				source = null;
 				//System.gc();

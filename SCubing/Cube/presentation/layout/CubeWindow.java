@@ -45,6 +45,7 @@ import bll.aggregation_functions.AFMax;
 import bll.aggregation_functions.AFMin;
 import bll.aggregation_functions.AFSum;
 import bll.aggregation_functions.IAggFunction;
+import bll.aggregation_functions.MAFEuclideDistance;
 import bll.aggregation_functions.SAFBuffer;
 import bll.aggregation_functions.SAFDiference;
 import bll.aggregation_functions.SAFDistance;
@@ -985,6 +986,7 @@ public class CubeWindow {
 				funcAgg.add((new AFMax()).toString());
 				funcAgg.add((new AFMin()).toString());
 				funcAgg.add((new AFSum()).toString());
+				funcAgg.add((new MAFEuclideDistance()).toString());
 				//funcAgg.add((new AFCount()).toString());
 			}
 			return funcAgg.toArray(new String[funcAgg.size()]);

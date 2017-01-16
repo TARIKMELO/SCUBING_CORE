@@ -6,13 +6,13 @@ import java.util.Map.Entry;
 
 import org.geotools.feature.DefaultFeatureCollection;
 import org.geotools.feature.simple.SimpleFeatureBuilder;
-import org.geotools.geometry.jts.FactoryFinder;
 import org.geotools.geometry.jts.JTSFactoryFinder;
 import org.opengis.feature.simple.SimpleFeatureType;
 
+import com.vividsolutions.jts.geom.Coordinate;
 import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.geom.GeometryCollection;
 import com.vividsolutions.jts.geom.GeometryFactory;
+import com.vividsolutions.jts.geom.Point;
 import com.vividsolutions.jts.operation.union.UnaryUnionOp;
 
 import bll.aggregation_functions.ISpatialAggFunction;
@@ -48,79 +48,125 @@ public class Consumer extends Thread{
 			DimensionTypeValue value ;
 
 			SimpleFeatureBuilder featureBuilder =new SimpleFeatureBuilder(TYPE);
-			Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>> entry= null;;
+			Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>> entry= null;
+
+			//select st_astext(st_centroid(geom)) from municipios_poligonos_10000 where nome_muni like 'Brasília'
+			//"POINT(-47.7972188300436 -15.7811008579831)"
+
+
+			GeometryFactory gf = JTSFactoryFinder.getGeometryFactory();
+
+
+			Point brasiliaPoint =  gf.createPoint(new Coordinate(-47.7972188300436,-15.7811008579831));
 
 			collection = new DefaultFeatureCollection();
-
+			Geometry currentGeometry = null;
 			//while((re.isFinished()==false)||(re.getNumOfRegisters()!=0)){
-				while ((entry = re.getRegister())!=null){
+			while ((entry = re.getRegister())!=null){
 
 
-					//Atualizando as medidas
-					for (MeasureTypeValue measureTypeValue : entry.getValue()) 
+				//Atualizando as medidas
+				for (MeasureTypeValue measureTypeValue : entry.getValue()) 
+				{
+					//Object measureValue = measureTypeValue.getValue();
+					//TODO: Jã parte do pressuposto que ta tudo certo caso a funãão de agregaãão seja espacial
+					if ((cubeColumns.get(measureTypeValue.getType()).getAggFunction() instanceof ISpatialAggFunction))
 					{
-						//Object measureValue = measureTypeValue.getValue();
-						//TODO: Jã parte do pressuposto que ta tudo certo caso a funãão de agregaãão seja espacial
-						if ((cubeColumns.get(measureTypeValue.getType()).getAggFunction() instanceof ISpatialAggFunction))
-						{
-							
-							if (measureTypeValue.getValue() instanceof ArrayList)
-							{
-																								
-								UnaryUnionOp union = new UnaryUnionOp((ArrayList<Geometry>)measureTypeValue.getValue());
-//							
-//								
-//								
-								featureBuilder.set("geom", union.union());
-							}
-							
-							else
-							{
-								featureBuilder.set("geom", (Geometry)measureTypeValue.getValue());
-							}
 
-							//featureBuilder = ShapeFileUtilities.generateVisualization(measureValue, featureBuilder, (ISpatialAggFunction)cubeColumns.get(measureTypeValue.getType()).getAggFunction());
-							
+						if (measureTypeValue.getValue() instanceof ArrayList)
+						{
+
+							UnaryUnionOp union = new UnaryUnionOp((ArrayList<Geometry>)measureTypeValue.getValue());
+							//							
+							//															
+							currentGeometry = union.union();
+							featureBuilder.set("geom", currentGeometry);
+
+//							double distancia = currentGeometry.distance(brasiliaPoint);
+//
+//							featureBuilder.set("distbrasilia", distancia);		
+
 						}
+
 						else
 						{
-							//Atualizando a medida numérica
-							featureBuilder.set(measureTypeValue.getType(), measureTypeValue.getValue());
+							currentGeometry = (Geometry)measureTypeValue.getValue();
+							featureBuilder.set("geom", currentGeometry);
+
+//							double distancia = currentGeometry.distance(brasiliaPoint);
+//
+//							featureBuilder.set("distbrasilia", distancia);		
+
 						}
 
+						//featureBuilder = ShapeFileUtilities.generateVisualization(measureValue, featureBuilder, (ISpatialAggFunction)cubeColumns.get(measureTypeValue.getType()).getAggFunction());
+
 					}
-					//Atualizando as dimensães
-					for (DimensionTypeValue dimensionTypeValue : entry.getKey()) 
+
+
+					else
 					{
-						//inserindo o valor da dimensao na nova linha
-						value =dimensionTypeValue;
-						//TODO: Consertar la no cubeToTable
-						if (value.getType()!="")
-						{
-							if (dimensionTypeValue.getType().equals("geom"))
-							{								//uma região só
-								
-								
-									
-								//featureBuilder = ShapeFileUtilities.generateVisualization(value.getValue(), featureBuilder, new SAFUnion(), source);
-								featureBuilder.set("geom", (Geometry)value.getValue());
+						//Atualizando a medida numérica
+						featureBuilder.set(measureTypeValue.getType(), measureTypeValue.getValue());
+					}
 
-							}
-							else 
-							{
-								featureBuilder.set(dimensionTypeValue.getType(), value);
-							}
+				}
+
+
+
+				//Essa parte do código é somente para calcular medidas do tipo IMAggFunction
+
+
+
+
+
+
+
+
+
+				//Atualizando as dimensães
+				for (DimensionTypeValue dimensionTypeValue : entry.getKey()) 
+				{
+					//inserindo o valor da dimensao na nova linha
+					value =dimensionTypeValue;
+					//TODO: Consertar la no cubeToTable
+					if (value.getType()!="")
+					{
+						if (dimensionTypeValue.getType().equals("geom"))
+						{								//uma região só
+
+
+
+							//featureBuilder = ShapeFileUtilities.generateVisualization(value.getValue(), featureBuilder, new SAFUnion(), source);
+							currentGeometry = (Geometry)value.getValue();
+							featureBuilder.set("geom", currentGeometry);
+
+						}
+						else 
+						{
+							featureBuilder.set(dimensionTypeValue.getType(), value);
 						}
 					}
+				}
 
-					try{
-						//Gravando o valor na nova linha
 
-						collection.add(featureBuilder.buildFeature(null));
-					}
-					catch (Exception e) {
-						e.printStackTrace();
-					}
+
+
+
+				//Geomtry brasilia = new Point(coordinates, factory); 
+				//Atualizando as medidas
+
+
+
+
+				try{
+					//Gravando o valor na nova linha
+
+					collection.add(featureBuilder.buildFeature(null));
+				}
+				catch (Exception e) {
+					e.printStackTrace();
+				}
 
 				//}
 			}

@@ -9,6 +9,7 @@ import java.util.TreeMap;
 import com.vividsolutions.jts.geom.Geometry;
 
 import bll.aggregation_functions.IAggFunction;
+import bll.aggregation_functions.IMAggFunction;
 import bll.aggregation_functions.SAFUnion;
 import dal.drivers.CubeColumn;
 
@@ -86,6 +87,11 @@ public class NodeSimple <T> implements INodeSimple<T>, Serializable{
 				{
 					geometries.add((Geometry) newValues.get(i).getValue());
 					this.measureValues.set(i, new MeasureTypeValue( geometries,newValues.get(i).getType()));
+				}
+				
+				else if (aggFunction instanceof IMAggFunction)
+				{
+					//Não faz nada
 				}
 
 				else
