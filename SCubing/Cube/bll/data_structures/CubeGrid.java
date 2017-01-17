@@ -1,10 +1,22 @@
 package bll.data_structures;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Map.Entry;
 
+import org.geotools.data.DataStore;
+import org.geotools.data.DataStoreFinder;
+import org.geotools.data.DefaultTransaction;
 import org.geotools.data.FeatureSource;
+import org.geotools.data.Transaction;
+import org.geotools.data.simple.SimpleFeatureSource;
+import org.geotools.data.simple.SimpleFeatureStore;
+import org.opengis.feature.simple.SimpleFeature;
+import org.opengis.feature.simple.SimpleFeatureType;
+
+import com.vividsolutions.jts.geom.Geometry;
 
 import bll.data_structures.nodes.DimensionTypeValue;
 import bll.data_structures.nodes.MeasureTypeValue;
@@ -47,9 +59,21 @@ public class CubeGrid {
 					double xData = Double.parseDouble(tuple[cubeColumns.get(nomeColX).getIndex() ].toString());
 
 					double yData = Double.parseDouble(tuple[cubeColumns.get(nomeColY).getIndex()].toString());
+					
+					
+					
+					//Aqui está implementado a regra de vizinhaça. 
+					//Regra de vizinhaça de Moore
 					int newXData = (int) Math.ceil(xData/x);
 					int newYData = (int) Math.ceil(yData/y);
 					String key = "C"+newXData+"L"+newYData;
+					
+					
+					//Regra de vizinhaça de Von Neumann - distância de Mahatan
+					
+					
+					
+					
 
 					dimensions.add(new DimensionTypeValue(key,nomeColId));
 					dimensions.add(new DimensionTypeValue(newXData+"",nomeColX));
@@ -58,20 +82,21 @@ public class CubeGrid {
 					if (result.containsKey(dimensions))
 					{
 
-//						measuresAux = result.get(dimensions);
-//						measures = new ArrayList<MeasureTypeValue>();
-//						for (Object objectTuple : tuple) {
-//							DimensionTypeValue tupleItem = (DimensionTypeValue)objectTuple;
-//							CubeColumn cubeColumn = cubeColumns.get(tupleItem.getType());
-//							if (cubeColumn.isMeasure())
-//							{
-//								int index = cubeColumn.getIndex();
-//								String value = cubeColumn.getAggFunction().updateMeasure(measuresAux.get(index),tupleItem.getValue()).toString();
-//								//System.out.println(value);
-//								measures.add(new MeasureTypeValue(value,cubeColumn.getColumnName()));
-//							}
-//						}
-//						result.put(dimensions, measures);
+						measuresAux = result.get(dimensions);
+						measures = new ArrayList<MeasureTypeValue>();
+						for (Object objectTuple : tuple) {
+							DimensionTypeValue tupleItem = (DimensionTypeValue)objectTuple;
+							CubeColumn cubeColumn = cubeColumns.get(tupleItem.getType());
+							if (cubeColumn.isMeasure())
+							{
+								int index = cubeColumn.getIndex();
+								//String value = cubeColumn.getAggFunction().updateMeasure(measuresAux.get(index),tupleItem.getValue()).toString();
+								Geometry value = (Geometry) cubeColumn.getAggFunction().updateMeasure(measuresAux.get(index).getValue(),tupleItem.getValue());
+								//System.out.println(value);
+								measures.add(new MeasureTypeValue(value,cubeColumn.getColumnName()));
+							}
+						}
+						result.put(dimensions, measures);
 						//resource.putRegister(new AbstractMap.SimpleEntry (dimensions, measures));
 					}
 					else
@@ -85,7 +110,7 @@ public class CubeGrid {
 							if (cubeColumn.isMeasure())
 							{
 								//aquiiiiiiiiiiii
-								//measures.add(new MeasureTypeValue(tupleItem.getValue(), tupleItem.getType()));	
+								measures.add(new MeasureTypeValue(tupleItem.getValue(), tupleItem.getType()));	
 							}
 
 						}			
@@ -100,15 +125,21 @@ public class CubeGrid {
 				rs.close();
 			}
 
-			//FeatureCollection collection = source.getFeatures();
-			//FeatureIterator<Feature> iterator =  collection.features();
-			//Feature feature;
-			/*while( iterator.hasNext() ){
-				feature = iterator.next();
-				//System.out.println(feature.getIdentifier().getID().toString());
-				System.out.println(feature.getDefaultGeometryProperty().getValue());
-				System.out.println(feature.getValue());
-			}*/
+			
+//			Aqui faz a uniao
+//			FeatureCollection collection = source.getFeatures();
+//			FeatureIterator<Feature> iterator =  collection.features();
+//			Feature feature;
+//			while( iterator.hasNext() ){
+//				feature = iterator.next();
+//				//System.out.println(feature.getIdentifier().getID().toString());
+//				System.out.println(feature.getDefaultGeometryProperty().getValue());
+//				System.out.println(feature.getValue());
+//			}
+			
+			
+			
+			
 			if (source.getFeatures().size()>3)
 			{
 
@@ -120,6 +151,7 @@ public class CubeGrid {
 				IResultSetText<DimensionTypeValue> rsDesti = ShapeFileUtilities.getData(sourceDesti, cubeColumns);
 
 				//Não quero visualizar
+				insertToPostGis(sourceDesti);
 				//MapFrame.getInstance().createLayer (sourceDesti);
 				//inserir no postgi
 				
@@ -127,6 +159,9 @@ public class CubeGrid {
 				source = null;
 				//System.gc();
 				rs = rsDesti;
+				//Não quero visualizar
+			
+				
 				source = sourceDesti;
 
 
@@ -147,5 +182,56 @@ public class CubeGrid {
 			result.putRegister(entry);
 		}
 		return result;
+	}
+	
+	
+	
+	public void insertToPostGis(FeatureSource<SimpleFeatureType, SimpleFeature> featureSourceCube ) throws IOException{
+
+
+		Map<String, Object> connectionParameters = new HashMap<String, Object>();
+
+		connectionParameters.put("dbtype", "postgis");
+		connectionParameters.put("host", "localhost");
+		connectionParameters.put("port", 5432);
+		connectionParameters.put("schema", "public");
+		connectionParameters.put("user", "postgres");
+		connectionParameters.put("passwd", "postgres");
+		connectionParameters.put("database", "scubing");
+		//Map<String, Object> connectionParameters = wizard.getConnectionParameters();
+		DataStore dataStore = DataStoreFinder.getDataStore(connectionParameters);
+
+		
+		//Aqui que define o nome também
+		dataStore.createSchema(featureSourceCube.getSchema());
+
+		
+		Transaction transaction = new DefaultTransaction("create");
+		
+		
+		SimpleFeatureSource source = dataStore.getFeatureSource(featureSourceCube.getSchema().getTypeName());
+
+		if (source instanceof SimpleFeatureStore) {
+			SimpleFeatureStore featureStore = (SimpleFeatureStore) source;
+
+			featureStore.setTransaction(transaction);
+
+			try { 
+				
+				
+				featureStore.addFeatures(featureSourceCube.getFeatures());
+				transaction.commit();
+			} catch (Exception problem) {
+				problem.printStackTrace();
+				transaction.rollback();
+			} finally {
+				transaction.close();
+			}
+			//System.exit(0); // success!
+		} else {
+			System.out.println("Table does not support read/write access");
+			System.exit(1);
+		}
+
 	}
 }

@@ -107,7 +107,7 @@ public class ShapeFileWriter {
 		else
 		{
 			nameLayer = new SimpleDateFormat("ddMMyyyy_HH:mm").format(new Date());
-			b.setName( "CustomLayer"+nameLayer+" ");
+			b.setName( "GridCustomLayer"+nameLayer+" ");
 
 		}
 

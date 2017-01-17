@@ -3387,3 +3387,24 @@ INFO  - 2016-07-29 11:56:06.209; bll.data_structures.PerformCube; (Parcial 3 - P
 15-01-2017 18:24:13 INFO  scubing:114 - Nome da tabela: CustomLayer15012017_18:24 
 15-01-2017 18:24:16 INFO  scubing:114 - Nome da tabela: CustomLayer15012017_18:24 
 15-01-2017 18:24:17 INFO  scubing:114 - Nome da tabela: CustomLayer15012017_18:24 
+16-01-2017 19:30:31 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+16-01-2017 19:30:32 INFO  scubing:30 - Número de consumidores: 1
+16-01-2017 19:30:32 INFO  scubing:31 - Iniciou o log da execução
+16-01-2017 19:31:06 INFO  scubing:114 - Nome da tabela: GridCustomLayer16012017_19:31 
+16-01-2017 19:31:07 INFO  scubing:114 - Nome da tabela: GridCustomLayer16012017_19:31 
+16-01-2017 19:45:30 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+16-01-2017 19:45:30 INFO  scubing:30 - Número de consumidores: 1
+16-01-2017 19:45:30 INFO  scubing:31 - Iniciou o log da execução
+16-01-2017 19:49:42 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+16-01-2017 19:49:42 INFO  scubing:30 - Número de consumidores: 1
+16-01-2017 19:49:42 INFO  scubing:31 - Iniciou o log da execução
+16-01-2017 19:51:40 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+16-01-2017 19:51:40 INFO  scubing:30 - Número de consumidores: 1
+16-01-2017 19:51:40 INFO  scubing:31 - Iniciou o log da execução
+16-01-2017 19:55:00 INFO  scubing:114 - Nome da tabela: GridCustomLayer16012017_19:55 
+16-01-2017 19:55:02 INFO  scubing:114 - Nome da tabela: GridCustomLayer16012017_19:55 
+16-01-2017 20:21:12 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+16-01-2017 20:21:13 INFO  scubing:30 - Número de consumidores: 1
+16-01-2017 20:21:13 INFO  scubing:31 - Iniciou o log da execução
+16-01-2017 20:21:39 INFO  scubing:114 - Nome da tabela: GridCustomLayer16012017_20:21 
+16-01-2017 20:21:40 INFO  scubing:114 - Nome da tabela: GridCustomLayer16012017_20:21 
