@@ -3408,3 +3408,96 @@ INFO  - 2016-07-29 11:56:06.209; bll.data_structures.PerformCube; (Parcial 3 - P
 16-01-2017 20:21:13 INFO  scubing:31 - Iniciou o log da execução
 16-01-2017 20:21:39 INFO  scubing:114 - Nome da tabela: GridCustomLayer16012017_20:21 
 16-01-2017 20:21:40 INFO  scubing:114 - Nome da tabela: GridCustomLayer16012017_20:21 
+17-01-2017 19:34:36 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+17-01-2017 19:34:37 INFO  scubing:30 - Número de consumidores: 1
+17-01-2017 19:34:37 INFO  scubing:31 - Iniciou o log da execução
+17-01-2017 19:36:03 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+17-01-2017 19:36:03 INFO  scubing:30 - Número de consumidores: 1
+17-01-2017 19:36:03 INFO  scubing:31 - Iniciou o log da execução
+17-01-2017 19:36:39 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:36:39_0
+17-01-2017 19:36:40 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:36:40_0
+17-01-2017 19:36:41 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:36:41_0
+17-01-2017 19:36:41 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:36:41_0
+17-01-2017 19:40:52 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+17-01-2017 19:40:53 INFO  scubing:30 - Número de consumidores: 1
+17-01-2017 19:40:53 INFO  scubing:31 - Iniciou o log da execução
+17-01-2017 19:42:11 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:42:11_0
+17-01-2017 19:42:12 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:42:12_0
+17-01-2017 19:42:12 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:42:12_0
+17-01-2017 19:45:48 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+17-01-2017 19:45:48 INFO  scubing:30 - Número de consumidores: 1
+17-01-2017 19:45:48 INFO  scubing:31 - Iniciou o log da execução
+17-01-2017 19:48:00 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+17-01-2017 19:48:00 INFO  scubing:30 - Número de consumidores: 1
+17-01-2017 19:48:00 INFO  scubing:31 - Iniciou o log da execução
+17-01-2017 19:49:30 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:49:30:268_0
+17-01-2017 19:49:31 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:49:31:111_0
+17-01-2017 19:49:31 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:49:31:580_0
+17-01-2017 19:49:31 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:49:31:991_0
+17-01-2017 19:49:32 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:49:32:372_0
+17-01-2017 19:49:32 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:49:32:728_0
+17-01-2017 19:49:33 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:49:33:027_0
+17-01-2017 19:49:33 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:49:33:358_0
+17-01-2017 19:49:33 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:49:33:659_0
+17-01-2017 19:49:33 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:49:33:969_0
+17-01-2017 19:49:34 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:49:34:260_0
+17-01-2017 19:49:34 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:49:34:561_0
+17-01-2017 19:49:34 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:49:34:830_0
+17-01-2017 19:49:35 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:49:35:174_0
+17-01-2017 19:49:35 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:49:35:462_0
+17-01-2017 19:49:35 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:49:35:731_0
+17-01-2017 19:49:36 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:49:36:031_0
+17-01-2017 19:49:36 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:49:36:314_0
+17-01-2017 19:49:36 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:49:36:610_0
+17-01-2017 19:49:36 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:49:36:948_0
+17-01-2017 19:49:37 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:49:37:322_0
+17-01-2017 19:49:37 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:49:37:649_0
+17-01-2017 19:49:37 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:49:37:965_0
+17-01-2017 19:49:38 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:49:38:266_0
+17-01-2017 19:49:38 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:49:38:566_0
+17-01-2017 19:49:38 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:49:38:851_0
+17-01-2017 19:49:39 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:49:39:152_0
+17-01-2017 19:49:39 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:49:39:596_0
+17-01-2017 19:49:39 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:49:39:899_0
+17-01-2017 19:49:40 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:49:40:215_0
+17-01-2017 19:49:40 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:49:40:915_0
+17-01-2017 19:49:41 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:49:41:216_0
+17-01-2017 19:49:41 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:49:41:535_0
+17-01-2017 19:52:39 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+17-01-2017 19:52:39 INFO  scubing:30 - Número de consumidores: 1
+17-01-2017 19:52:39 INFO  scubing:31 - Iniciou o log da execução
+17-01-2017 19:53:15 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:53:15:828_0
+17-01-2017 19:53:16 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:53:16:928_0
+17-01-2017 19:53:17 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:53:17:522_0
+17-01-2017 19:53:17 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:53:17:936_0
+17-01-2017 19:53:18 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:53:18:307_0
+17-01-2017 19:53:18 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:53:18:657_0
+17-01-2017 19:53:19 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_19:53:19:029_0
+17-01-2017 19:59:46 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+17-01-2017 19:59:46 INFO  scubing:30 - Número de consumidores: 1
+17-01-2017 19:59:47 INFO  scubing:31 - Iniciou o log da execução
+17-01-2017 20:00:27 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_20:00:27:408_0
+17-01-2017 20:00:28 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_20:00:28:182_0
+17-01-2017 20:00:28 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_20:00:28:641_0
+17-01-2017 20:00:29 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_20:00:29:031_0
+17-01-2017 20:00:29 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_20:00:29:396_0
+17-01-2017 20:01:11 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+17-01-2017 20:01:11 INFO  scubing:30 - Número de consumidores: 1
+17-01-2017 20:01:11 INFO  scubing:31 - Iniciou o log da execução
+17-01-2017 20:01:46 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_20:01:46:903_0
+17-01-2017 20:01:48 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_20:01:48:176_0
+17-01-2017 20:01:48 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_20:01:48:632_0
+17-01-2017 20:01:49 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_20:01:49:027_0
+17-01-2017 20:01:49 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_20:01:49:432_0
+17-01-2017 20:02:58 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+17-01-2017 20:02:58 INFO  scubing:30 - Número de consumidores: 1
+17-01-2017 20:02:58 INFO  scubing:31 - Iniciou o log da execução
+17-01-2017 20:04:18 INFO  scubing:117 - Nome da tabela: GridCustomLayer17012017_20:04:18:738_0
+17-01-2017 20:05:00 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+17-01-2017 20:05:00 INFO  scubing:30 - Número de consumidores: 1
+17-01-2017 20:05:00 INFO  scubing:31 - Iniciou o log da execução
+17-01-2017 20:05:32 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_20:05:32:961_1
+17-01-2017 20:05:33 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_20:05:33:711_2
+17-01-2017 20:05:34 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_20:05:34:161_3
+17-01-2017 20:05:34 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_20:05:34:563_4
+17-01-2017 20:05:34 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_20:05:34:902_4

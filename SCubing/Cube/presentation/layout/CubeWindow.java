@@ -514,7 +514,7 @@ public class CubeWindow {
 			//ShapeFileReader<DimensionTypeValue> shapeFileReader = new ShapeFileReader<DimensionTypeValue>("d:\\data\\Grid\\brasilGrid_pol.shp",cubeColumns);
 			IResultSetText<DimensionTypeValue> rs = shapeFileReader.getData();
 			CubeGrid cubeGrid = new CubeGrid(nomeColX,nomeColY,nomeColId); 
-			cubeGrid.performHierarchies(x, y, rs, shapeFileReader.getSource(),cubeColumns);
+			cubeGrid.performHierarchies(x, y, rs, shapeFileReader.getSource(),cubeColumns,0);
 
 			rs.close();
 

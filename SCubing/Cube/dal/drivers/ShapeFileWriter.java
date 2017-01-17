@@ -33,7 +33,7 @@ import bll.parallel.Resource;
 import bll.util.Util;
 public class ShapeFileWriter {
 	HashMap<String, CubeColumn> cubeColumns;
-
+	int hierarquia;
 	public ShapeFileWriter(HashMap<String, CubeColumn>  cubeColumns)
 	{
 		this.cubeColumns = cubeColumns;
@@ -83,13 +83,17 @@ public class ShapeFileWriter {
 
 
 
-	public FeatureSource<SimpleFeatureType, SimpleFeature> insertCubeToSource(Resource<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource , FeatureSource<SimpleFeatureType, SimpleFeature> source, long tempoInicial) throws  Exception
+	public FeatureSource<SimpleFeatureType, SimpleFeature> insertCubeToSource(Resource<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource , FeatureSource<SimpleFeatureType, SimpleFeature> source, int hierarquia) throws  Exception
 	{
+		this.hierarquia =  hierarquia;
 		final SimpleFeatureType TYPE = createCubeSchema(source);
+
+
 		ArrayList<SimpleFeature> collection = insertCubeToCollection(TYPE, resource);
 		SimpleFeatureSource sourceResult = DataUtilities.source(DataUtilities.collection(collection));
 		return sourceResult;
 	}
+
 
 
 
@@ -106,8 +110,8 @@ public class ShapeFileWriter {
 		}
 		else
 		{
-			nameLayer = new SimpleDateFormat("ddMMyyyy_HH:mm").format(new Date());
-			b.setName( "GridCustomLayer"+nameLayer+" ");
+			nameLayer = new SimpleDateFormat("ddMMyyyy_HH:mm:ss:SSS").format(new Date());
+			b.setName( "GridCustomLayer"+nameLayer+"_"+hierarquia);
 
 		}
 
