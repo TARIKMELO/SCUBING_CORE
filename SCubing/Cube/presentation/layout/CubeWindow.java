@@ -315,20 +315,20 @@ public class CubeWindow {
 		labelNomeColunaX.setText("Nome da Coluna X:");
 		labelNomeColunaX.setBounds(new Rectangle(8, 23, 103, 15));
 		textNomeColX = new Text(groupColXY, SWT.BORDER);
-		textNomeColX.setText("COL");
+		textNomeColX.setText("col");
 		textNomeColX.setBounds(new Rectangle(119, 20, 97, 21));
 		labelNomeColunaY = new Label(groupColXY, SWT.NONE);
 		labelNomeColunaY.setText("Nome da Coluna Y:");
 		labelNomeColunaY.setBounds(new Rectangle(8, 49, 103, 15));
 		textNomeColY = new Text(groupColXY, SWT.BORDER);
-		textNomeColY.setText("LIN");
+		textNomeColY.setText("lin");
 		textNomeColY.setBounds(new Rectangle(119, 46, 97, 21));
 		labelNomeId = new Label(groupColXY, SWT.NONE);
 
 		labelNomeId.setText("Nome Identificador:");
 		labelNomeId.setBounds(new Rectangle(8, 75, 106, 15));
 		textNomeId = new Text(groupColXY, SWT.BORDER);
-		textNomeId.setText("OBJECT_ID0");
+		textNomeId.setText("id");
 		textNomeId.setBounds(new Rectangle(119, 72, 97, 21));
 	}
 	/**
@@ -514,7 +514,16 @@ public class CubeWindow {
 			//ShapeFileReader<DimensionTypeValue> shapeFileReader = new ShapeFileReader<DimensionTypeValue>("d:\\data\\Grid\\brasilGrid_pol.shp",cubeColumns);
 			IResultSetText<DimensionTypeValue> rs = shapeFileReader.getData();
 			CubeGrid cubeGrid = new CubeGrid(nomeColX,nomeColY,nomeColId); 
+			
+			long tempoInicial = System.currentTimeMillis(); 
+	
+			
 			cubeGrid.performHierarchies(x, y, rs, shapeFileReader.getSource(),cubeColumns,0);
+			
+			//Cálculo do tempo de computação do cubo
+			long tempoFinal = System.currentTimeMillis();  
+			Util.getLogger().info("RESULTADO: Tempo total em milisegundos: "+ (tempoFinal - tempoInicial) );
+			Util.getLogger().info("RESULTADO: Tempo total em segundos: "+ (tempoFinal - tempoInicial) / 1000d);
 
 			rs.close();
 

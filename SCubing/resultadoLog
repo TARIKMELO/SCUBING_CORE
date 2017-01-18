@@ -3501,3 +3501,161 @@ INFO  - 2016-07-29 11:56:06.209; bll.data_structures.PerformCube; (Parcial 3 - P
 17-01-2017 20:05:34 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_20:05:34:161_3
 17-01-2017 20:05:34 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_20:05:34:563_4
 17-01-2017 20:05:34 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_20:05:34:902_4
+17-01-2017 21:37:42 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+17-01-2017 21:37:42 INFO  scubing:30 - Número de consumidores: 1
+17-01-2017 21:37:42 INFO  scubing:31 - Iniciou o log da execução
+17-01-2017 21:38:46 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+17-01-2017 21:38:46 INFO  scubing:30 - Número de consumidores: 1
+17-01-2017 21:38:46 INFO  scubing:31 - Iniciou o log da execução
+17-01-2017 21:39:31 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_21:39:31:109_1
+17-01-2017 21:39:36 INFO  scubing:179 - Tempo total em milisegundos para calcular a hierarquia: 1 6126
+17-01-2017 21:39:36 INFO  scubing:180 - Tempo total em SEGUNDOS para calcular a hierarquia: 1 6.126
+17-01-2017 21:39:36 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_21:39:36:879_2
+17-01-2017 21:39:37 INFO  scubing:179 - Tempo total em milisegundos para calcular a hierarquia: 2 616
+17-01-2017 21:39:37 INFO  scubing:180 - Tempo total em SEGUNDOS para calcular a hierarquia: 2 0.616
+17-01-2017 21:39:37 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_21:39:37:413_3
+17-01-2017 21:39:37 INFO  scubing:179 - Tempo total em milisegundos para calcular a hierarquia: 3 577
+17-01-2017 21:39:37 INFO  scubing:180 - Tempo total em SEGUNDOS para calcular a hierarquia: 3 0.577
+17-01-2017 21:39:37 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_21:39:37:977_4
+17-01-2017 21:39:38 INFO  scubing:179 - Tempo total em milisegundos para calcular a hierarquia: 4 424
+17-01-2017 21:39:38 INFO  scubing:180 - Tempo total em SEGUNDOS para calcular a hierarquia: 4 0.424
+17-01-2017 21:39:38 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_21:39:38:401_5
+17-01-2017 21:39:38 INFO  scubing:179 - Tempo total em milisegundos para calcular a hierarquia: 5 513
+17-01-2017 21:39:38 INFO  scubing:180 - Tempo total em SEGUNDOS para calcular a hierarquia: 5 0.513
+17-01-2017 21:39:38 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_21:39:38:916_6
+17-01-2017 21:39:39 INFO  scubing:179 - Tempo total em milisegundos para calcular a hierarquia: 6 392
+17-01-2017 21:39:39 INFO  scubing:180 - Tempo total em SEGUNDOS para calcular a hierarquia: 6 0.392
+17-01-2017 21:39:39 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_21:39:39:303_6
+17-01-2017 21:41:45 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+17-01-2017 21:41:46 INFO  scubing:30 - Número de consumidores: 1
+17-01-2017 21:41:46 INFO  scubing:31 - Iniciou o log da execução
+17-01-2017 21:42:06 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+17-01-2017 21:42:07 INFO  scubing:30 - Número de consumidores: 1
+17-01-2017 21:42:07 INFO  scubing:31 - Iniciou o log da execução
+17-01-2017 21:43:00 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_21:43:00:746_1
+17-01-2017 21:43:01 INFO  scubing:180 - Tempo total em milisegundos para calcular a hierarquia: 1 1252
+17-01-2017 21:43:01 INFO  scubing:181 - Tempo total em SEGUNDOS para calcular a hierarquia: 1 1.252
+17-01-2017 21:43:01 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_21:43:01:586_2
+17-01-2017 21:43:02 INFO  scubing:180 - Tempo total em milisegundos para calcular a hierarquia: 2 483
+17-01-2017 21:43:02 INFO  scubing:181 - Tempo total em SEGUNDOS para calcular a hierarquia: 2 0.483
+17-01-2017 21:43:02 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_21:43:02:026_3
+17-01-2017 21:43:02 INFO  scubing:180 - Tempo total em milisegundos para calcular a hierarquia: 3 376
+17-01-2017 21:43:02 INFO  scubing:181 - Tempo total em SEGUNDOS para calcular a hierarquia: 3 0.376
+17-01-2017 21:43:02 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_21:43:02:395_4
+17-01-2017 21:43:02 INFO  scubing:180 - Tempo total em milisegundos para calcular a hierarquia: 4 400
+17-01-2017 21:43:02 INFO  scubing:181 - Tempo total em SEGUNDOS para calcular a hierarquia: 4 0.4
+17-01-2017 21:43:02 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_21:43:02:795_4
+17-01-2017 21:43:40 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_21:43:40:926_1
+17-01-2017 21:43:41 INFO  scubing:180 - Tempo total em milisegundos para calcular a hierarquia: 1 876
+17-01-2017 21:43:41 INFO  scubing:181 - Tempo total em SEGUNDOS para calcular a hierarquia: 1 0.876
+17-01-2017 21:43:41 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_21:43:41:686_2
+17-01-2017 21:43:42 INFO  scubing:180 - Tempo total em milisegundos para calcular a hierarquia: 2 511
+17-01-2017 21:43:42 INFO  scubing:181 - Tempo total em SEGUNDOS para calcular a hierarquia: 2 0.511
+17-01-2017 21:43:42 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_21:43:42:163_3
+17-01-2017 21:43:42 INFO  scubing:180 - Tempo total em milisegundos para calcular a hierarquia: 3 448
+17-01-2017 21:43:42 INFO  scubing:181 - Tempo total em SEGUNDOS para calcular a hierarquia: 3 0.448
+17-01-2017 21:43:42 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_21:43:42:600_4
+17-01-2017 21:43:43 INFO  scubing:180 - Tempo total em milisegundos para calcular a hierarquia: 4 412
+17-01-2017 21:43:43 INFO  scubing:181 - Tempo total em SEGUNDOS para calcular a hierarquia: 4 0.412
+17-01-2017 21:43:43 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_21:43:43:010_4
+17-01-2017 21:44:25 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+17-01-2017 21:44:25 INFO  scubing:30 - Número de consumidores: 1
+17-01-2017 21:44:25 INFO  scubing:31 - Iniciou o log da execução
+17-01-2017 21:45:06 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_21:45:05:169_1
+17-01-2017 21:45:18 INFO  scubing:180 - Tempo total em milisegundos para calcular a hierarquia: 1 27475
+17-01-2017 21:45:18 INFO  scubing:181 - Tempo total em SEGUNDOS para calcular a hierarquia: 1 27.475
+17-01-2017 21:45:19 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_21:45:19:842_2
+17-01-2017 21:45:31 INFO  scubing:180 - Tempo total em milisegundos para calcular a hierarquia: 2 13639
+17-01-2017 21:45:31 INFO  scubing:181 - Tempo total em SEGUNDOS para calcular a hierarquia: 2 13.639
+17-01-2017 21:45:49 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_21:45:47:289_3
+17-01-2017 21:45:56 INFO  scubing:180 - Tempo total em milisegundos para calcular a hierarquia: 3 24612
+17-01-2017 21:45:56 INFO  scubing:181 - Tempo total em SEGUNDOS para calcular a hierarquia: 3 24.612
+17-01-2017 21:46:04 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_21:46:02:062_4
+17-01-2017 21:46:17 INFO  scubing:180 - Tempo total em milisegundos para calcular a hierarquia: 4 20619
+17-01-2017 21:46:17 INFO  scubing:181 - Tempo total em SEGUNDOS para calcular a hierarquia: 4 20.619
+17-01-2017 21:46:40 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_21:46:38:445_4
+17-01-2017 21:46:54 INFO  scubing:180 - Tempo total em milisegundos para calcular a hierarquia: 4 82006
+17-01-2017 21:46:54 INFO  scubing:181 - Tempo total em SEGUNDOS para calcular a hierarquia: 4 82.006
+17-01-2017 21:46:58 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_21:46:58:912_3
+17-01-2017 21:46:58 INFO  scubing:180 - Tempo total em milisegundos para calcular a hierarquia: 3 100583
+17-01-2017 21:46:58 INFO  scubing:181 - Tempo total em SEGUNDOS para calcular a hierarquia: 3 100.583
+17-01-2017 21:46:59 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_21:46:59:966_2
+17-01-2017 21:46:59 INFO  scubing:180 - Tempo total em milisegundos para calcular a hierarquia: 2 129116
+17-01-2017 21:46:59 INFO  scubing:181 - Tempo total em SEGUNDOS para calcular a hierarquia: 2 129.116
+17-01-2017 21:46:59 INFO  scubing:525 - RESULTADO: Tempo total em milisegundos: 129116
+17-01-2017 21:46:59 INFO  scubing:526 - RESULTADO: Tempo total em segundos: 129.116
+17-01-2017 21:47:32 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+17-01-2017 21:47:32 INFO  scubing:30 - Número de consumidores: 1
+17-01-2017 21:47:32 INFO  scubing:31 - Iniciou o log da execução
+17-01-2017 21:47:56 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_21:47:56:667_1
+17-01-2017 21:47:57 INFO  scubing:180 - Tempo total em milisegundos para calcular a hierarquia: 1 1235
+17-01-2017 21:47:57 INFO  scubing:181 - Tempo total em SEGUNDOS para calcular a hierarquia: 1 1.235
+17-01-2017 21:47:57 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_21:47:57:482_2
+17-01-2017 21:47:57 INFO  scubing:180 - Tempo total em milisegundos para calcular a hierarquia: 2 455
+17-01-2017 21:47:57 INFO  scubing:181 - Tempo total em SEGUNDOS para calcular a hierarquia: 2 0.455
+17-01-2017 21:47:57 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_21:47:57:907_3
+17-01-2017 21:47:58 INFO  scubing:180 - Tempo total em milisegundos para calcular a hierarquia: 3 422
+17-01-2017 21:47:58 INFO  scubing:181 - Tempo total em SEGUNDOS para calcular a hierarquia: 3 0.422
+17-01-2017 21:47:58 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_21:47:58:319_4
+17-01-2017 21:47:58 INFO  scubing:180 - Tempo total em milisegundos para calcular a hierarquia: 4 426
+17-01-2017 21:47:58 INFO  scubing:181 - Tempo total em SEGUNDOS para calcular a hierarquia: 4 0.426
+17-01-2017 21:47:58 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_21:47:58:741_4
+17-01-2017 21:47:58 INFO  scubing:180 - Tempo total em milisegundos para calcular a hierarquia: 4 859
+17-01-2017 21:47:58 INFO  scubing:181 - Tempo total em SEGUNDOS para calcular a hierarquia: 4 0.859
+17-01-2017 21:47:58 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_21:47:58:750_3
+17-01-2017 21:47:58 INFO  scubing:180 - Tempo total em milisegundos para calcular a hierarquia: 3 1322
+17-01-2017 21:47:58 INFO  scubing:181 - Tempo total em SEGUNDOS para calcular a hierarquia: 3 1.322
+17-01-2017 21:47:58 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_21:47:58:758_2
+17-01-2017 21:47:58 INFO  scubing:180 - Tempo total em milisegundos para calcular a hierarquia: 2 2566
+17-01-2017 21:47:58 INFO  scubing:181 - Tempo total em SEGUNDOS para calcular a hierarquia: 2 2.566
+17-01-2017 21:47:58 INFO  scubing:525 - RESULTADO: Tempo total em milisegundos: 2567
+17-01-2017 21:47:58 INFO  scubing:526 - RESULTADO: Tempo total em segundos: 2.567
+17-01-2017 21:51:51 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+17-01-2017 21:51:51 INFO  scubing:30 - Número de consumidores: 1
+17-01-2017 21:51:51 INFO  scubing:31 - Iniciou o log da execução
+17-01-2017 21:52:18 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_21:52:18:565_1
+17-01-2017 21:53:10 INFO  scubing:180 - Tempo total em milisegundos para calcular a hierarquia: 1 57064
+17-01-2017 21:53:10 INFO  scubing:181 - Tempo total em SEGUNDOS para calcular a hierarquia: 1 57.064
+17-01-2017 21:53:10 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_21:53:10:330_2
+17-01-2017 21:53:10 INFO  scubing:180 - Tempo total em milisegundos para calcular a hierarquia: 2 529
+17-01-2017 21:53:10 INFO  scubing:181 - Tempo total em SEGUNDOS para calcular a hierarquia: 2 0.529
+17-01-2017 21:53:10 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_21:53:10:823_3
+17-01-2017 21:53:11 INFO  scubing:180 - Tempo total em milisegundos para calcular a hierarquia: 3 440
+17-01-2017 21:53:11 INFO  scubing:181 - Tempo total em SEGUNDOS para calcular a hierarquia: 3 0.44
+17-01-2017 21:53:11 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_21:53:11:253_4
+17-01-2017 21:53:11 INFO  scubing:180 - Tempo total em milisegundos para calcular a hierarquia: 4 413
+17-01-2017 21:53:11 INFO  scubing:181 - Tempo total em SEGUNDOS para calcular a hierarquia: 4 0.413
+17-01-2017 21:53:11 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_21:53:11:663_4
+17-01-2017 21:53:11 INFO  scubing:180 - Tempo total em milisegundos para calcular a hierarquia: 4 880
+17-01-2017 21:53:11 INFO  scubing:181 - Tempo total em SEGUNDOS para calcular a hierarquia: 4 0.88
+17-01-2017 21:53:11 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_21:53:11:689_3
+17-01-2017 21:53:11 INFO  scubing:180 - Tempo total em milisegundos para calcular a hierarquia: 3 1434
+17-01-2017 21:53:11 INFO  scubing:181 - Tempo total em SEGUNDOS para calcular a hierarquia: 3 1.434
+17-01-2017 21:53:11 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_21:53:11:719_2
+17-01-2017 21:53:11 INFO  scubing:180 - Tempo total em milisegundos para calcular a hierarquia: 2 58532
+17-01-2017 21:53:11 INFO  scubing:181 - Tempo total em SEGUNDOS para calcular a hierarquia: 2 58.532
+17-01-2017 21:53:11 INFO  scubing:525 - RESULTADO: Tempo total em milisegundos: 58534
+17-01-2017 21:53:11 INFO  scubing:526 - RESULTADO: Tempo total em segundos: 58.534
+17-01-2017 22:00:44 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+17-01-2017 22:00:44 INFO  scubing:30 - Número de consumidores: 1
+17-01-2017 22:00:44 INFO  scubing:31 - Iniciou o log da execução
+17-01-2017 22:01:04 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_22:01:04:982_1
+17-01-2017 22:01:05 INFO  scubing:180 - Tempo total em milisegundos para calcular a hierarquia: 1 1181
+17-01-2017 22:01:05 INFO  scubing:181 - Tempo total em SEGUNDOS para calcular a hierarquia: 1 1.181
+17-01-2017 22:01:05 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_22:01:05:742_2
+17-01-2017 22:01:06 INFO  scubing:180 - Tempo total em milisegundos para calcular a hierarquia: 2 415
+17-01-2017 22:01:06 INFO  scubing:181 - Tempo total em SEGUNDOS para calcular a hierarquia: 2 0.415
+17-01-2017 22:01:06 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_22:01:06:107_3
+17-01-2017 22:01:06 INFO  scubing:180 - Tempo total em milisegundos para calcular a hierarquia: 3 388
+17-01-2017 22:01:06 INFO  scubing:181 - Tempo total em SEGUNDOS para calcular a hierarquia: 3 0.388
+17-01-2017 22:01:06 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_22:01:06:499_3
+17-01-2017 22:01:06 INFO  scubing:180 - Tempo total em milisegundos para calcular a hierarquia: 3 811
+17-01-2017 22:01:06 INFO  scubing:181 - Tempo total em SEGUNDOS para calcular a hierarquia: 3 0.811
+17-01-2017 22:01:06 INFO  scubing:118 - Nome da tabela: GridCustomLayer17012017_22:01:06:508_2
+17-01-2017 22:01:06 INFO  scubing:180 - Tempo total em milisegundos para calcular a hierarquia: 2 2003
+17-01-2017 22:01:06 INFO  scubing:181 - Tempo total em SEGUNDOS para calcular a hierarquia: 2 2.003
+17-01-2017 22:01:06 INFO  scubing:525 - RESULTADO: Tempo total em milisegundos: 2004
+17-01-2017 22:01:06 INFO  scubing:526 - RESULTADO: Tempo total em segundos: 2.004
+17-01-2017 22:01:16 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+17-01-2017 22:01:17 INFO  scubing:30 - Número de consumidores: 1
+17-01-2017 22:01:17 INFO  scubing:31 - Iniciou o log da execução

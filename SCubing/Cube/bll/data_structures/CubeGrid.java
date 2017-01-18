@@ -21,6 +21,7 @@ import com.vividsolutions.jts.geom.Geometry;
 import bll.data_structures.nodes.DimensionTypeValue;
 import bll.data_structures.nodes.MeasureTypeValue;
 import bll.parallel.Resource;
+import bll.util.Util;
 import dal.drivers.CubeColumn;
 import dal.drivers.IResultSetText;
 import dal.drivers.ShapeFileUtilities;
@@ -42,7 +43,13 @@ public class CubeGrid {
 	}
 	public void performHierarchies(int x, int y, IResultSetText<DimensionTypeValue> rs, FeatureSource source, HashMap<String, CubeColumn> cubeColumns, int hierarquia) throws Exception
 	{
-		while (source.getFeatures().size()>4)
+
+		long tempoInicial = System.currentTimeMillis(); 
+
+
+
+
+		while (source.getFeatures().size()>8)
 		{
 			HashMap<ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>> result  = new HashMap<ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>();
 			//Não uso o tipo abaixo pois nao tem a funão contains
@@ -141,7 +148,7 @@ public class CubeGrid {
 
 
 
-			if (source.getFeatures().size()>4)
+			if (source.getFeatures().size()>8)
 			{
 
 				//TODO: Nao precisa dessa linha
@@ -154,7 +161,8 @@ public class CubeGrid {
 				IResultSetText<DimensionTypeValue> rsDesti = ShapeFileUtilities.getData(sourceDesti, cubeColumns);
 
 				//Não quero visualizar
-				insertToPostGis(sourceDesti);
+				if (sourceDesti!=null && sourceDesti.getSchema()!=null)
+					insertToPostGis(sourceDesti);
 				//MapFrame.getInstance().createLayer (sourceDesti);
 				//inserir no postgi
 
@@ -167,6 +175,10 @@ public class CubeGrid {
 
 				source = sourceDesti;
 
+				//Cálculo do tempo de computação do cubo
+				long tempoFinal = System.currentTimeMillis();  
+				Util.getLogger().info("Tempo total em milisegundos para calcular a hierarquia: "+hierarquia +" "+(tempoFinal - tempoInicial) );
+				Util.getLogger().info("Tempo total em SEGUNDOS para calcular a hierarquia: "+hierarquia +" "+ (tempoFinal - tempoInicial) / 1000d);
 
 				performHierarchies(x, y, rsDesti, sourceDesti, cubeColumns, hierarquia);
 			}
