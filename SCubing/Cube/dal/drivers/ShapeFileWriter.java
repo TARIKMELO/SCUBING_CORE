@@ -44,7 +44,7 @@ public class ShapeFileWriter {
 		ArrayList<SimpleFeature> list = new ArrayList<SimpleFeature>();
 		final int numConsumidores =Integer.parseInt(Util.getConfig().getNumThreads());
 		System.out.println("Número de consumidores: "+ numConsumidores);
-		System.out.println("Começou os CONSUMIDORES");
+		//System.out.println("Começou os CONSUMIDORES");
 		//resource.setFinished();
 		//criamos os consumidores
 		Consumer[] consumidores = new Consumer[numConsumidores];
@@ -63,7 +63,7 @@ public class ShapeFileWriter {
 
 			}
 
-			System.out.println("Terminou os CONSUMIDORES");
+			//System.out.println("Terminou os CONSUMIDORES");
 			for(int i=0; i<consumidores.length; i++)
 			{
 
@@ -90,6 +90,8 @@ public class ShapeFileWriter {
 
 
 		ArrayList<SimpleFeature> collection = insertCubeToCollection(TYPE, resource);
+		
+		
 		SimpleFeatureSource sourceResult = DataUtilities.source(DataUtilities.collection(collection));
 		return sourceResult;
 	}

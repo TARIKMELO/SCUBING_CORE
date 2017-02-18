@@ -5,7 +5,7 @@ public class MAFEuclideDistance extends IMAggFunction implements IAggFunction{
 	@Override
 	public Object updateMeasure(Object aggMeasure, Object newMeasure) {
 		// TODO Auto-generated method stub
-		return null;
+		return aggMeasure;
 	}
 	
 	@Override

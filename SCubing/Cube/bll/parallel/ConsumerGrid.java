@@ -21,7 +21,7 @@ import bll.data_structures.nodes.MeasureTypeValue;
 import dal.drivers.CubeColumn;
 
 
-public class Consumer extends Thread{
+public class ConsumerGrid extends Thread{
 
 	private Resource<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> re;
 	final SimpleFeatureType TYPE;
@@ -32,7 +32,7 @@ public class Consumer extends Thread{
 	//SimpleFeatureCollection collection = new ListFeatureCollection(TYPE,list);
 	//private LinkedList<S> parteMatriz;
 
-	public Consumer(SimpleFeatureType TYPE,Resource<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource , HashMap<String, CubeColumn> cubeColumns){
+	public ConsumerGrid(SimpleFeatureType TYPE,Resource<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource , HashMap<String, CubeColumn> cubeColumns){
 		this.TYPE = TYPE;
 		//this.source = source;
 		this.cubeColumns = cubeColumns;
@@ -80,18 +80,21 @@ public class Consumer extends Thread{
 							//							
 							//															
 							currentGeometry = union.union();
-							featureBuilder.set("geom", currentGeometry);
+							featureBuilder.set("geom", measureTypeValue.getValue());
+
 							double distancia = currentGeometry.distance(brasiliaPoint);
-							//double distancia = 0;
+
 							featureBuilder.set("distbrasilia", distancia);		
+
 						}
 
 						else
 						{
 							currentGeometry = (Geometry)measureTypeValue.getValue();
 							featureBuilder.set("geom", currentGeometry);
+
 							double distancia = currentGeometry.distance(brasiliaPoint);
-							//double distancia = 0;
+
 							featureBuilder.set("distbrasilia", distancia);		
 
 						}
