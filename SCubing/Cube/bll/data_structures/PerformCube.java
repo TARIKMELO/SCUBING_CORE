@@ -193,7 +193,7 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 
 
 
-					MapFrame.getInstance().createLayer(featureSourceCube);
+					//MapFrame.getInstance().createLayer(featureSourceCube);
 
 
 

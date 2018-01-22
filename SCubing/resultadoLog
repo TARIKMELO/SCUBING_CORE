@@ -8144,3 +8144,6 @@ INFO  - 2016-07-29 11:56:06.209; bll.data_structures.PerformCube; (Parcial 3 - P
 22-01-2018 16:55:29 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
 22-01-2018 16:55:29 INFO  scubing:30 - Número de consumidores: 1
 22-01-2018 16:55:29 INFO  scubing:31 - Iniciou o log da execução
+22-01-2018 17:13:52 INFO  scubing:32 - ------------------------------Iniciou o log da execução------------------------------
+22-01-2018 17:13:52 INFO  scubing:34 - Número de consumidores: 1
+22-01-2018 17:13:52 INFO  scubing:35 - Iniciou o log da execução

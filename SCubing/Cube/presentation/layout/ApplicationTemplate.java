@@ -74,7 +74,7 @@ public class ApplicationTemplate
 		private Dimension canvasSize = new Dimension(800, 500);
 
 		protected AppPanel wwjPanel;
-		protected LayerPanel layerPanel;
+		
 		protected StatisticsPanel statsPanel;
 		protected AttributeTable bottomPanel;
 		public AppFrame()
@@ -109,11 +109,7 @@ public class ApplicationTemplate
 
 			this.wwjPanel.setSize(this.canvasSize);
 			//this.wwjPanel.setPreferredSize(canvasSize);
-			if (includeLayerPanel)
-			{
-				this.layerPanel = new LayerPanel(this, null);
-				//this.getContentPane().add(this.layerPanel, BorderLayout.WEST);
-			}
+		
 
 			if (includeStatsPanel || System.getProperty("gov.nasa.worldwind.showStatistics") != null)
 			{
@@ -187,7 +183,7 @@ public class ApplicationTemplate
 
 			JSplitPane horizontalSplitPane = new JSplitPane();
 			horizontalSplitPane.setOrientation(JSplitPane.HORIZONTAL_SPLIT);
-			horizontalSplitPane.setLeftComponent(layerPanel);
+			
 			horizontalSplitPane.setRightComponent(verticalSplitPane);
 			horizontalSplitPane.setOneTouchExpandable(true);
 			horizontalSplitPane.setContinuousLayout(true); // prevents the pane's being obscured when expanding right
@@ -241,7 +237,7 @@ public class ApplicationTemplate
 
 			JSplitPane horizontalSplitPane = new JSplitPane();
 			horizontalSplitPane.setOrientation(JSplitPane.HORIZONTAL_SPLIT);
-			horizontalSplitPane.setLeftComponent(layerPanel);
+		
 			horizontalSplitPane.setRightComponent(verticalSplitPane);
 			horizontalSplitPane.setOneTouchExpandable(true);
 			horizontalSplitPane.setContinuousLayout(true); // prevents the pane's being obscured when expanding right
@@ -303,10 +299,7 @@ public class ApplicationTemplate
 			return this.wwjPanel.getStatusBar();
 		}
 
-		public LayerPanel getLayerPanel()
-		{
-			return layerPanel;
-		}
+	
 
 		public StatisticsPanel getStatsPanel()
 		{
@@ -437,10 +430,7 @@ public class ApplicationTemplate
 
 				//FileDataStore store = FileDataStoreFinder.getDataStore(this.fc.getSelectedFile());
 				SimpleFeatureSource featureSource = store.getFeatureSource(store.getNames().get(0));
-				Thread t = new BuildLayerWorkerThread(featureSource, this);
-				t.start();
-				getWwd().setCursor(new Cursor(Cursor.WAIT_CURSOR));
-
+	
 
 			}
 			//updateUI();            
@@ -489,9 +479,7 @@ public class ApplicationTemplate
 
 				for (Name name : dataStore.getNames()) {
 					SimpleFeatureSource featureSource = dataStore.getFeatureSource(name);
-					Thread t = new BuildLayerWorkerThread(featureSource, this);
-					t.start();
-					getWwd().setCursor(new Cursor(Cursor.WAIT_CURSOR));
+		
 				} 
 
 

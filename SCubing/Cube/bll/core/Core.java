@@ -15,18 +15,20 @@ public class Core {
 	{
 		try
 		{
-			File file = Util.getFile("xml");
-			final HashMap<String, CubeColumn> cubeColumns = Util.loadCubeColumnsFromXml(file);
-			System.out.println("Colunas carregadas...");
+		
 			//Deepy Copy
 			//HashMap<String, CubeColumn> cubeColumnsAux = new HashMap<String, CubeColumn>();
 			//TODO: Modularizar isso melhor
 			FeatureSource featureSource = Util.connectToSourcePostGis(Util.getConfig().getPostgisTable());
 			System.out.println("Conectado ao Postgis...");
 			System.out.println("Feature Source carregado: "+featureSource.getName());
-			PerformCube performCube = new PerformCube();
-			performCube.gerarCubo(cubeColumns, featureSource);
-
+			
+			
+			File file = Util.getFile("xml");
+			final HashMap<String, CubeColumn> cubeColumns = Util.loadCubeColumnsFromXml(file);
+			System.out.println("Colunas carregadas...");
+			//PerformCube performCube = new PerformCube();
+			//performCube.gerarCubo(cubeColumns, featureSource);
 		}
 		catch(Exception ioEx){
 			//textAreaStatus.setText("Cubo gerado com sucesso!");

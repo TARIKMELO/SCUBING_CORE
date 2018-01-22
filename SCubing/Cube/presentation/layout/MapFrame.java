@@ -103,17 +103,6 @@ public class MapFrame {
 	}*/
 
 
-	public void createLayer(FeatureSource<SimpleFeatureType, SimpleFeature> source) throws IOException
-	{
-		if (source.getFeatures()!=null & source.getFeatures().size()>0)
-		{
-			Thread t = new BuildLayerWorkerThread(source, getAppFrame());
-			t.start();
-			getAppFrame().getWwd().setCursor(new Cursor(Cursor.WAIT_CURSOR));
-		}
-	}
-
-
 	public DataStore getDataStore() {
 		return dataStore;
 	}
