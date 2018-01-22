@@ -8120,3 +8120,27 @@ INFO  - 2016-07-29 11:56:06.209; bll.data_structures.PerformCube; (Parcial 3 - P
 18-02-2017 13:36:35 INFO  scubing:298 - Tempo em SEGUNDOS para INSERIR NO POSTGIS: http://www.opengis.net/gml:GridCustomLayer18022017_13:36:35:055_6 0.446
 18-02-2017 13:36:35 INFO  scubing:525 - RESULTADO: Tempo total em milisegundos: 5254
 18-02-2017 13:36:35 INFO  scubing:526 - RESULTADO: Tempo total em segundos: 5.254
+22-01-2018 15:42:05 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+22-01-2018 15:42:05 INFO  scubing:30 - Número de consumidores: 1
+22-01-2018 15:42:05 INFO  scubing:31 - Iniciou o log da execução
+22-01-2018 16:47:19 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+22-01-2018 16:47:19 INFO  scubing:30 - Número de consumidores: 1
+22-01-2018 16:47:19 INFO  scubing:31 - Iniciou o log da execução
+22-01-2018 16:48:03 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+22-01-2018 16:48:03 INFO  scubing:30 - Número de consumidores: 1
+22-01-2018 16:48:03 INFO  scubing:31 - Iniciou o log da execução
+22-01-2018 16:49:02 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+22-01-2018 16:49:02 INFO  scubing:30 - Número de consumidores: 1
+22-01-2018 16:49:02 INFO  scubing:31 - Iniciou o log da execução
+22-01-2018 16:51:29 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+22-01-2018 16:51:29 INFO  scubing:30 - Número de consumidores: 1
+22-01-2018 16:51:29 INFO  scubing:31 - Iniciou o log da execução
+22-01-2018 16:53:15 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+22-01-2018 16:53:15 INFO  scubing:30 - Número de consumidores: 1
+22-01-2018 16:53:15 INFO  scubing:31 - Iniciou o log da execução
+22-01-2018 16:54:32 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+22-01-2018 16:54:32 INFO  scubing:30 - Número de consumidores: 1
+22-01-2018 16:54:32 INFO  scubing:31 - Iniciou o log da execução
+22-01-2018 16:55:29 INFO  scubing:28 - ------------------------------Iniciou o log da execução------------------------------
+22-01-2018 16:55:29 INFO  scubing:30 - Número de consumidores: 1
+22-01-2018 16:55:29 INFO  scubing:31 - Iniciou o log da execução

@@ -191,7 +191,7 @@ public class CubeWindow {
 				//				if (validacoesGerarCubo())
 				//				{
 				File file = Util.getFile("xml");
-				preencherTela(Util.loadCubeColumnsInXml(file));
+				preencherTela(Util.loadCubeColumnsFromXml(file));
 				//gerarCubo(Util.loadCubeColumnsInXml(file));
 				//sShell.redraw();
 				//gerarCubo();

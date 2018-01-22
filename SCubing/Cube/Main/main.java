@@ -2,6 +2,7 @@ package Main;
 
 import java.io.IOException;
 
+import bll.core.Core;
 import bll.util.Util;
 import presentation.layout.ApplicationTemplate;
 import presentation.layout.ApplicationTemplate.AppFrame;
@@ -19,7 +20,9 @@ public class main {
 		
 	
 		Util.beginLog();
-		ApplicationTemplate.start("World Wind Application", AppFrame.class);
+		Core core = new Core();
+		core.gerarCubo();
+		//ApplicationTemplate.start("World Wind Application", AppFrame.class);
 		
 		
 	}

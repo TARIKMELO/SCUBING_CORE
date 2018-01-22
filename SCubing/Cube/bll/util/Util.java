@@ -5,12 +5,16 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Map.Entry;
 
 import javax.swing.JOptionPane;
 
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
+import org.geotools.data.DataStore;
+import org.geotools.data.DataStoreFinder;
+import org.geotools.data.simple.SimpleFeatureSource;
 import org.geotools.swing.data.JFileDataStoreChooser;
 
 import com.thoughtworks.xstream.XStream;
@@ -147,12 +151,11 @@ public class Util {
 	}
 
 
-	public static HashMap<String, CubeColumn> loadCubeColumnsInXml(File file)
+	public static HashMap<String, CubeColumn> loadCubeColumnsFromXml(File file)
 	{
 		HashMap<String, CubeColumn> cubeColumns = null;
 		try {
 			XStream xstream = new XStream();
-
 			cubeColumns = (HashMap<String, CubeColumn>)xstream.fromXML(file);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -160,6 +163,41 @@ public class Util {
 		return cubeColumns;
 	}
 	
+	
+	public static SimpleFeatureSource connectToSourcePostGis(String featureSourceName) throws Exception {
+
+		SimpleFeatureSource featureSource = null;
+
+		//JDataStoreWizard wizard = new JDataStoreWizard(format);
+		//int result = wizard.showModalDialog();
+
+		//if (result == JWizard.FINISH) {
+		Map<String, Object> connectionParameters = new HashMap<String, Object>();
+		ConfigBean configBean = getConfig();
+		connectionParameters.put("dbtype", configBean.getPostgisDbtype());
+		connectionParameters.put("host", configBean.getPostgisHost());
+		connectionParameters.put("port", configBean.getPostgisPort());
+		connectionParameters.put("schema", configBean.getPostgisSchema());
+		connectionParameters.put("user", configBean.getPostgisUser());
+		connectionParameters.put("passwd", configBean.getPostgisPasswd());
+		connectionParameters.put("database", configBean.getPostgisDatabase());
+		//Map<String, Object> connectionParameters = wizard.getConnectionParameters();
+		DataStore dataStore = DataStoreFinder.getDataStore(connectionParameters);
+		if (dataStore == null) {
+			System.out.println("Could not connect - check parameters");
+		}
+		else{
+			//Setando a conexão ativa do Postgre para ser usada na exportação dos dados
+			//MapFrame.getInstance().setDataStore(dataStore);
+			
+			featureSource = dataStore.getFeatureSource(featureSourceName);
+			
+			
+
+
+		}
+		return featureSource;
+	}
 	
 	
 }

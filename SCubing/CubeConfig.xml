@@ -1,5 +1,14 @@
 <bll.util.ConfigBean>
   <numThreads>1</numThreads>
+  <nomeLayer>null</nomeLayer>
   <circleRadius>5</circleRadius>
+  <postgisDbtype>postgis</postgisDbtype>
+  <postgisHost>localhost</postgisHost>
+  <postgisPort>5432</postgisPort>
+  <postgisSchema>public</postgisSchema>
+  <postgisUser>postgres</postgisUser>
+  <postgisPasswd>postgre</postgisPasswd>
+  <postgisDatabase>scubing</postgisDatabase>
+  <postgisTable>municipios_poligonos</postgisTable>
   <geometryColumnName>null</geometryColumnName>
 </bll.util.ConfigBean>
