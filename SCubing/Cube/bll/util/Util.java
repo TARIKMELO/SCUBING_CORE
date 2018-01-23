@@ -22,20 +22,20 @@ import com.thoughtworks.xstream.XStream;
 import dal.drivers.CubeColumn;
 
 public class Util {
-	
+
 	static Logger logger = Logger.getLogger("scubing");
-	
-	
+
+
 	public static void beginLog()
 	{
-		
+
 		logger.info("------------------------------Iniciou o log da execução------------------------------");
 		final int numConsumidores =Integer.parseInt(Util.getConfig().getNumThreads());
 		logger.info("Número de consumidores: "+ numConsumidores);
 		logger.info("Iniciou o log da execução");
 	}
-	
-	
+
+
 	public static Logger getLogger() {
 		return logger;
 	}
@@ -162,16 +162,11 @@ public class Util {
 		}
 		return cubeColumns;
 	}
-	
-	
-	public static SimpleFeatureSource connectToSourcePostGis(String featureSourceName) throws Exception {
 
-		SimpleFeatureSource featureSource = null;
 
-		//JDataStoreWizard wizard = new JDataStoreWizard(format);
-		//int result = wizard.showModalDialog();
 
-		//if (result == JWizard.FINISH) {
+	public static DataStore connectPostGis() throws IOException
+	{
 		Map<String, Object> connectionParameters = new HashMap<String, Object>();
 		ConfigBean configBean = getConfig();
 		connectionParameters.put("dbtype", configBean.getPostgisDbtype());
@@ -181,23 +176,37 @@ public class Util {
 		connectionParameters.put("user", configBean.getPostgisUser());
 		connectionParameters.put("passwd", configBean.getPostgisPasswd());
 		connectionParameters.put("database", configBean.getPostgisDatabase());
-		//Map<String, Object> connectionParameters = wizard.getConnectionParameters();
+
 		DataStore dataStore = DataStoreFinder.getDataStore(connectionParameters);
 		if (dataStore == null) {
 			System.out.println("Could not connect - check parameters");
 		}
-		else{
+
+		return 	dataStore;
+	}
+
+
+	public static SimpleFeatureSource connectToSourcePostGis(String featureSourceName) throws Exception {
+
+		SimpleFeatureSource featureSource = null;
+
+
+		DataStore dataStore = connectPostGis();
+
+
+		if (dataStore != null) {
+			
 			//Setando a conexão ativa do Postgre para ser usada na exportação dos dados
 			//MapFrame.getInstance().setDataStore(dataStore);
-			
+
 			featureSource = dataStore.getFeatureSource(featureSourceName);
-			
-			
+
+
 
 
 		}
 		return featureSource;
 	}
-	
-	
+
+
 }

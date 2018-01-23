@@ -85,10 +85,18 @@ public class NodeSimple <T> implements INodeSimple<T>, Serializable{
 				//TODO: Ainda tem indice aqui
 				if (aggFunction instanceof SAFUnion)
 				{
-					geometries.add((Geometry) newValues.get(i).getValue());
-					this.measureValues.set(i, new MeasureTypeValue( geometries,newValues.get(i).getType()));
+					if ((newValues.get(i).getValue() instanceof ArrayList)) {
+						geometries.addAll((ArrayList<Geometry>) newValues.get(i).getValue());
+						this.measureValues.set(i, new MeasureTypeValue( geometries,newValues.get(i).getType()));
+					}
+
+					else
+					{
+						geometries.add((Geometry) newValues.get(i).getValue());
+						this.measureValues.set(i, new MeasureTypeValue( geometries,newValues.get(i).getType()));
+					}
 				}
-				
+
 				else if (aggFunction instanceof IMAggFunction)
 				{
 					//Não faz nada

@@ -8147,3 +8147,52 @@ INFO  - 2016-07-29 11:56:06.209; bll.data_structures.PerformCube; (Parcial 3 - P
 22-01-2018 17:13:52 INFO  scubing:32 - ------------------------------Iniciou o log da execução------------------------------
 22-01-2018 17:13:52 INFO  scubing:34 - Número de consumidores: 1
 22-01-2018 17:13:52 INFO  scubing:35 - Iniciou o log da execução
+23-01-2018 10:53:32 INFO  scubing:32 - ------------------------------Iniciou o log da execução------------------------------
+23-01-2018 10:53:32 INFO  scubing:34 - Número de consumidores: 1
+23-01-2018 10:53:32 INFO  scubing:35 - Iniciou o log da execução
+23-01-2018 10:54:00 INFO  scubing:32 - ------------------------------Iniciou o log da execução------------------------------
+23-01-2018 10:54:00 INFO  scubing:34 - Número de consumidores: 1
+23-01-2018 10:54:00 INFO  scubing:35 - Iniciou o log da execução
+23-01-2018 10:54:43 INFO  scubing:32 - ------------------------------Iniciou o log da execução------------------------------
+23-01-2018 10:54:43 INFO  scubing:34 - Número de consumidores: 1
+23-01-2018 10:54:43 INFO  scubing:35 - Iniciou o log da execução
+23-01-2018 10:55:06 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+23-01-2018 10:55:06 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName uf- where null- hierarchy 1
+23-01-2018 10:55:06 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName cod_ufmeso- where null- hierarchy 1
+23-01-2018 10:55:06 INFO  scubing:40 - (Parcial  - GetData do Shapefile) Tempo em milisegundos para ler os dados: 410
+23-01-2018 10:55:06 INFO  scubing:42 - Número de linhas da entrada: 5564
+23-01-2018 10:55:07 INFO  scubing:48 - (Parcial 0 - Criar o cubo base - createBaseCuboide) Tempo em milisegundos para calcular o base cuboide: 57
+23-01-2018 10:55:07 INFO  scubing:55 - (Parcial 1 - Gerou as agregações - cube.generateAggregations()) Tempo em milisegundos para calcular o cubo: 0
+23-01-2018 10:55:07 INFO  scubing:61 - (Parcial 2 - Tempo cubeToTable) Tempo em milisegundos para calcular o cubo: 471
+23-01-2018 10:55:07 INFO  scubing:120 - Nome da tabela: null3
+23-01-2018 10:55:19 INFO  scubing:69 - (Parcial 3 - PARTE PARALELIZADA: Tempo insertCubeToSource) Tempo em milisegundos para calcular o cubo: 12499
+23-01-2018 11:00:06 INFO  scubing:32 - ------------------------------Iniciou o log da execução------------------------------
+23-01-2018 11:00:06 INFO  scubing:34 - Número de consumidores: 1
+23-01-2018 11:00:06 INFO  scubing:35 - Iniciou o log da execução
+23-01-2018 11:00:36 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+23-01-2018 11:00:36 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName uf- where null- hierarchy 1
+23-01-2018 11:00:36 INFO  scubing:188 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName cod_ufmeso- where null- hierarchy 1
+23-01-2018 11:00:37 INFO  scubing:40 - (Parcial  - GetData do Shapefile) Tempo em milisegundos para ler os dados: 291
+23-01-2018 11:00:37 INFO  scubing:42 - Número de linhas da entrada: 5564
+23-01-2018 11:00:37 INFO  scubing:48 - (Parcial 0 - Criar o cubo base - createBaseCuboide) Tempo em milisegundos para calcular o base cuboide: 26
+23-01-2018 11:00:37 INFO  scubing:55 - (Parcial 1 - Gerou as agregações - cube.generateAggregations()) Tempo em milisegundos para calcular o cubo: 1
+23-01-2018 11:00:37 INFO  scubing:61 - (Parcial 2 - Tempo cubeToTable) Tempo em milisegundos para calcular o cubo: 319
+23-01-2018 11:00:37 INFO  scubing:120 - Nome da tabela: null4
+23-01-2018 11:00:49 INFO  scubing:69 - (Parcial 3 - PARTE PARALELIZADA: Tempo insertCubeToSource) Tempo em milisegundos para calcular o cubo: 12463
+23-01-2018 11:00:51 INFO  scubing:78 - (Parcial 4 - Tempo para inserir no Postgis): 1612
+23-01-2018 11:00:51 INFO  scubing:84 - RESULTADO: Número de registros:  55
+23-01-2018 11:00:51 INFO  scubing:85 - RESULTADO: Tempo total em milisegundos: 14395
+23-01-2018 11:00:51 INFO  scubing:86 - RESULTADO: Tempo total em segundos: 14.395
+23-01-2018 11:00:51 INFO  scubing:89 - ------------------------------Termínou o log da execução------------------------------

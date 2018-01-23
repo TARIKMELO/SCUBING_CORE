@@ -27,8 +27,8 @@ public class Core {
 			File file = Util.getFile("xml");
 			final HashMap<String, CubeColumn> cubeColumns = Util.loadCubeColumnsFromXml(file);
 			System.out.println("Colunas carregadas...");
-			//PerformCube performCube = new PerformCube();
-			//performCube.gerarCubo(cubeColumns, featureSource);
+			PerformCube performCube = new PerformCube();
+			performCube.gerarCubo(cubeColumns, featureSource);
 		}
 		catch(Exception ioEx){
 			//textAreaStatus.setText("Cubo gerado com sucesso!");

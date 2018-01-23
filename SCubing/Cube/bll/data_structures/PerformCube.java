@@ -213,18 +213,8 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 
 	public void insertToPostGis(FeatureSource<SimpleFeatureType, SimpleFeature> featureSourceCube ) throws IOException{
 
-
-		Map<String, Object> connectionParameters = new HashMap<String, Object>();
-
-		connectionParameters.put("dbtype", "postgis");
-		connectionParameters.put("host", "localhost");
-		connectionParameters.put("port", 5432);
-		connectionParameters.put("schema", "public");
-		connectionParameters.put("user", "postgres");
-		connectionParameters.put("passwd", "postgres");
-		connectionParameters.put("database", "scubing");
 		//Map<String, Object> connectionParameters = wizard.getConnectionParameters();
-		DataStore dataStore = DataStoreFinder.getDataStore(connectionParameters);
+		DataStore dataStore = Util.connectPostGis();
 
 		dataStore.createSchema(featureSourceCube.getSchema());
 

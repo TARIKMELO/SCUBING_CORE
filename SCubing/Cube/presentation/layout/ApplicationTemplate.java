@@ -211,64 +211,8 @@ public class ApplicationTemplate
 		}
 
 
-		protected void showGoogleMaps(boolean includeStatusBar, boolean includeLayerPanel, boolean includeStatsPanel)throws Exception
-		{
-			GoogleMapsPanel panel = new GoogleMapsPanel(canvasSize, includeStatusBar);
-
-
-
-
-			// Create a panel for the bottom component of a vertical split-pane.
-			//JPanel bottomPanel = new JPanel(new BorderLayout());
-			this.bottomPanel = new AttributeTable();
-			// JLabel label = new JLabel("Bottom Panel");
-			// label.setBorder(new EmptyBorder(10, 10, 10, 10));
-			//label.setHorizontalAlignment(SwingConstants.CENTER);
-			//bottomPanel.add(label, BorderLayout.CENTER);
-			// Create a vertical split-pane containing the horizontal split plane and the button panel.
-			JSplitPane verticalSplitPane = new JSplitPane();
-			verticalSplitPane.setOrientation(JSplitPane.VERTICAL_SPLIT);
-			verticalSplitPane.setTopComponent(panel);
-			verticalSplitPane.setBottomComponent(this.bottomPanel);
-			verticalSplitPane.setOneTouchExpandable(true);
-			verticalSplitPane.setContinuousLayout(true);
-			verticalSplitPane.setResizeWeight(1);
-
-
-			JSplitPane horizontalSplitPane = new JSplitPane();
-			horizontalSplitPane.setOrientation(JSplitPane.HORIZONTAL_SPLIT);
-		
-			horizontalSplitPane.setRightComponent(verticalSplitPane);
-			horizontalSplitPane.setOneTouchExpandable(true);
-			horizontalSplitPane.setContinuousLayout(true); // prevents the pane's being obscured when expanding right
-
-
-
-			// Put the pieces together.
-			this.getContentPane().add(horizontalSplitPane, BorderLayout.CENTER);
-
-
-
-
-
-
-			// Add our Menu control.
-			this.makeMenu();
-
-			// Create a select listener for shape dragging but do not add it yet. Dragging can be enabled via the user
-			// interface.
-			//this.dragger = new BasicDragger(this.getWwd());
-
-			// Setup file chooser
-			this.fc = new JFileChooser();
-			this.fc.addChoosableFileFilter(new FileNameExtensionFilter("ESRI Shapefile", "shp"));
-		}
-
-
-
 		protected void initialize(boolean includeStatusBar, boolean includeLayerPanel, boolean includeStatsPanel) throws Exception
 		{
-
 			//showGoogleMaps(includeStatusBar, includeLayerPanel, includeStatsPanel);
 			ShowWW(includeStatusBar, includeLayerPanel, includeStatsPanel);
 

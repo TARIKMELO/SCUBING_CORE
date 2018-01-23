@@ -57,7 +57,7 @@ public class Consumer extends Thread{
 			GeometryFactory gf = JTSFactoryFinder.getGeometryFactory();
 
 
-			Point brasiliaPoint =  gf.createPoint(new Coordinate(-47.7972188300436,-15.7811008579831));
+			//Point brasiliaPoint =  gf.createPoint(new Coordinate(-47.7972188300436,-15.7811008579831));
 
 			collection = new DefaultFeatureCollection();
 			Geometry currentGeometry = null;
@@ -81,22 +81,22 @@ public class Consumer extends Thread{
 							//															
 							currentGeometry = union.union();
 							featureBuilder.set("geom", currentGeometry);
-							double distancia = currentGeometry.distance(brasiliaPoint);
-							//double distancia = 0;
-							featureBuilder.set("distbrasilia", distancia);		
+							//							double distancia = currentGeometry.distance(brasiliaPoint);
+							//							//double distancia = 0;
+							//							featureBuilder.set("distbrasilia", distancia);		
 						}
 
 						else
 						{
 							currentGeometry = (Geometry)measureTypeValue.getValue();
 							featureBuilder.set("geom", currentGeometry);
-							double distancia = currentGeometry.distance(brasiliaPoint);
-							//double distancia = 0;
-							featureBuilder.set("distbrasilia", distancia);		
+							//							double distancia = currentGeometry.distance(brasiliaPoint);
+							//							//double distancia = 0;
+							//							featureBuilder.set("distbrasilia", distancia);		
 
 						}
 
-						//featureBuilder = ShapeFileUtilities.generateVisualization(measureValue, featureBuilder, (ISpatialAggFunction)cubeColumns.get(measureTypeValue.getType()).getAggFunction());
+
 
 					}
 
