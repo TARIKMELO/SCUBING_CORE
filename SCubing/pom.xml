@@ -55,37 +55,7 @@
 			<version>1.4.2</version>
 		</dependency>
 
-
-
-		<dependency>
-			<groupId>org.jogamp.gluegen</groupId>
-			<artifactId>gluegen-rt-main</artifactId>
-			<version>2.1.5-01</version>
-		</dependency>
-		<dependency>
-			<groupId>org.jogamp.jogl</groupId>
-			<artifactId>jogl-all-main</artifactId>
-			<version>2.1.5-01</version>
-		</dependency>
-
-
-
-
-		<dependency>
-			<groupId>org.eclipse.swt</groupId>
-			<artifactId>org.eclipse.swt.win32.win32.x86_64</artifactId>
-			<version>4.4</version>
-		</dependency>
-
-
-
 	</dependencies>
-
-
-
-
-
-
 	<repositories>
 		<repository>
 			<id>maven2-repository.dev.java.net</id>
@@ -105,17 +75,5 @@
 			<id>swt-repo</id>
 			<url>https://raw.githubusercontent.com/maven-eclipse/swt-repo/master/</url>
 		</repository>
-
-		<repository>
-			<id>worldwind</id>
-			<url>https://mvnrepository.com/artifact/gov.nasa/worldwind </url>
-		</repository>
-
-
 	</repositories>
-
-
-
-
-
 </project>

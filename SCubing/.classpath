@@ -9,8 +9,6 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="libs/libgeowind.jar"/>
 	<classpathentry kind="lib" path="libs/jai_core-1.1.3.jar"/>
-	<classpathentry kind="lib" path="libs/worldwind.jar"/>
-	<classpathentry kind="lib" path="libs/worldwindx.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

@@ -6,11 +6,10 @@ import java.util.HashMap;
 import java.util.Hashtable;
 
 import org.geotools.data.FeatureSource;
-import org.geotools.filter.text.cql2.CQLException;
 import org.opengis.feature.simple.SimpleFeature;
 import org.opengis.feature.simple.SimpleFeatureType;
 
-import presentation.layers.SimpleFeatureLayer;
+import gw.layers.SimpleFeatureLayer;
 import presentation.layout.MapFrame;
 
 public class ShapeFileReader<T>  {
@@ -30,7 +29,7 @@ public class ShapeFileReader<T>  {
 	public ArrayList< Hashtable<String, String>> getColumnsInfo() 
 	{
 		
-		source = ((SimpleFeatureLayer)MapFrame.getInstance().getSelectedLayer()).getFeatureSource();
+	
 		ArrayList< Hashtable<String, String>> columnsInfo =  new ArrayList<Hashtable<String,String>>();
 		Hashtable<String, String > columnInfo ;
 		for (org.opengis.feature.type.PropertyDescriptor field : source.getSchema().getDescriptors()) {

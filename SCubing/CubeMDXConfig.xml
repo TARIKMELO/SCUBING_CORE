@@ -1,0 +1,30 @@
+<map>
+  <entry>
+    <string>uf</string>
+    <dal.drivers.CubeColumn>
+      <isMeasure>false</isMeasure>
+      <index>0</index>
+      <columnName>uf</columnName>
+      <hierarchy>1</hierarchy>
+    </dal.drivers.CubeColumn>
+  </entry>
+  <entry>
+    <string>cod_uf</string>
+    <dal.drivers.CubeColumn>
+      <aggFunction class="bll.aggregation_functions.AFSum"/>
+      <isMeasure>true</isMeasure>
+      <index>0</index>
+      <columnName>cod_uf</columnName>
+      <hierarchy>1</hierarchy>
+    </dal.drivers.CubeColumn>
+  </entry>
+  <entry>
+    <string>nome_meso</string>
+    <dal.drivers.CubeColumn>
+      <isMeasure>false</isMeasure>
+      <index>0</index>
+      <columnName>nome_meso</columnName>
+      <hierarchy>1</hierarchy>
+    </dal.drivers.CubeColumn>
+  </entry>
+</map>

@@ -36,9 +36,10 @@ public class NodeSimple <T> implements INodeSimple<T>, Serializable{
 
 				IAggFunction aggFunction = cubeColumns.get(measureValues.get(i).getType()).getAggFunction();
 				//TODO: Ainda tem indice aqui
+				
+				
 				if (aggFunction instanceof SAFUnion)
 				{
-
 					if (measureValues.get(i).getValue() instanceof ArrayList)
 					{
 						geometries.addAll((ArrayList) measureValues.get(i).getValue());
@@ -87,14 +88,13 @@ public class NodeSimple <T> implements INodeSimple<T>, Serializable{
 				{
 					if ((newValues.get(i).getValue() instanceof ArrayList)) {
 						geometries.addAll((ArrayList<Geometry>) newValues.get(i).getValue());
-						this.measureValues.set(i, new MeasureTypeValue( geometries,newValues.get(i).getType()));
 					}
 
 					else
 					{
 						geometries.add((Geometry) newValues.get(i).getValue());
-						this.measureValues.set(i, new MeasureTypeValue( geometries,newValues.get(i).getType()));
 					}
+					this.measureValues.set(i, new MeasureTypeValue( geometries,newValues.get(i).getType()));
 				}
 
 				else if (aggFunction instanceof IMAggFunction)
@@ -107,9 +107,6 @@ public class NodeSimple <T> implements INodeSimple<T>, Serializable{
 					atualizedValue = aggFunction.updateMeasure(this.measureValues.get(i).getValue(), newValues.get(i).getValue());
 					this.measureValues.set(i, new MeasureTypeValue( atualizedValue,newValues.get(i).getType()));
 				}
-
-
-
 
 			}
 		}

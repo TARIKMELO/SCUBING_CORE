@@ -10,7 +10,6 @@ import java.util.Map.Entry;
 
 import javax.swing.JOptionPane;
 
-import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 import org.geotools.data.DataStore;
 import org.geotools.data.DataStoreFinder;
@@ -151,12 +150,16 @@ public class Util {
 	}
 
 
-	public static HashMap<String, CubeColumn> loadCubeColumnsFromXml(File file)
+	public static HashMap<String, CubeColumn> loadCubeColumnsFromXml()
 	{
 		HashMap<String, CubeColumn> cubeColumns = null;
 		try {
+			//Pergunta onde está o arquivo
+			//File file = Util.getFile("xml");
+			
+			File xmlFile = new File("CubeMDXConfig.xml");
 			XStream xstream = new XStream();
-			cubeColumns = (HashMap<String, CubeColumn>)xstream.fromXML(file);
+			cubeColumns = (HashMap<String, CubeColumn>)xstream.fromXML(xmlFile);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

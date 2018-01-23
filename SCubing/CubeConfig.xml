@@ -1,6 +1,6 @@
 <bll.util.ConfigBean>
   <numThreads>1</numThreads>
-  <nomeLayer>null4</nomeLayer>
+  <nomeLayer>null9</nomeLayer>
   <circleRadius>5</circleRadius>
   <postgisDbtype>postgis</postgisDbtype>
   <postgisHost>localhost</postgisHost>

@@ -13,33 +13,21 @@ import org.geotools.factory.CommonFactoryFinder;
 import org.geotools.factory.GeoTools;
 import org.geotools.feature.FeatureCollection;
 import org.geotools.feature.FeatureIterator;
-import org.geotools.feature.simple.SimpleFeatureBuilder;
 import org.geotools.filter.text.cql2.CQL;
-import org.geotools.filter.text.cql2.CQLException;
 import org.opengis.feature.simple.SimpleFeature;
 import org.opengis.feature.simple.SimpleFeatureType;
 import org.opengis.filter.Filter;
 import org.opengis.filter.FilterFactory;
 import org.opengis.filter.identity.FeatureId;
 
-import bll.aggregation_functions.ISpatialAggFunction;
-import bll.data_structures.nodes.DimensionTypeValue;
-
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.GeometryCollection;
 import com.vividsolutions.jts.geom.GeometryFactory;
 
+import bll.data_structures.nodes.DimensionTypeValue;
+
 
 public class ShapeFileUtilities {
-
-//	public static SimpleFeatureBuilder generateVisualization(String ids, SimpleFeatureBuilder  newFeature, ISpatialAggFunction spatialAggFunc) throws IOException
-//	{	
-//		//TODO: Mudar isso urgente
-//		String[] idArray = ids.split("&&");
-//		Geometry resultantPolygon = spatialAggFunc.applyAggFunction(idArray);
-//		newFeature.set("geom", resultantPolygon);
-//		return newFeature;
-//	}
 
 	public static GeometryCollection selectRegions(String[] fid, FeatureSource<SimpleFeatureType, SimpleFeature> featureSource) throws UnknownHostException, IOException
 	{
@@ -57,19 +45,8 @@ public class ShapeFileUtilities {
 		for (SimpleFeature geometry : selectedFeaturesArray) {
 			geometryCollection.add((Geometry)geometry.getDefaultGeometry());
 		} 
-		//		FeatureIterator<SimpleFeature> iterator =  selectedFeatures.features();
-		//		Collection<Geometry> geometryCollection = new ArrayList<Geometry>();
-		//		try
-		//		{
-		//			while (iterator.hasNext()) {
-		//				SimpleFeature feature = iterator.next();
-		//				geometryCollection.add((Geometry)feature.getDefaultGeometry());
-		//			}
-		//		}
-		//		finally
-		//		{
-		//			iterator.close();
-		//		}
+
+
 
 		GeometryFactory factory = new GeometryFactory();
 

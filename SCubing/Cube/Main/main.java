@@ -4,8 +4,6 @@ import java.io.IOException;
 
 import bll.core.Core;
 import bll.util.Util;
-import presentation.layout.ApplicationTemplate;
-import presentation.layout.ApplicationTemplate.AppFrame;
 
 
 public class main {

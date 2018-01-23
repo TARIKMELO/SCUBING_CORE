@@ -4,11 +4,9 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Map.Entry;
 
 import org.geotools.data.DataStore;
-import org.geotools.data.DataStoreFinder;
 import org.geotools.data.DefaultTransaction;
 import org.geotools.data.FeatureSource;
 import org.geotools.data.Transaction;
@@ -26,7 +24,6 @@ import dal.drivers.CubeColumn;
 import dal.drivers.IResultSetText;
 import dal.drivers.ShapeFileReader;
 import dal.drivers.ShapeFileWriter;
-import presentation.layout.MapFrame;
 
 public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 
@@ -37,10 +34,10 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 		ShapeFileReader<DimensionTypeValue> shapeFileReader = new ShapeFileReader<DimensionTypeValue>(featureSource,cubeColumns);
 		IResultSetText<DimensionTypeValue> rs = shapeFileReader.getData();
 		long tempoIntermediario0 = System.currentTimeMillis();  
-		Util.getLogger().info("(Parcial  - GetData do Shapefile) Tempo em milisegundos para ler os dados: "+ (tempoIntermediario0 - tempoInicial) );
-				
+		Util.getLogger().info("Tempo em milisegundos para ler os dados: "+ (tempoIntermediario0 - tempoInicial) );
+
 		Util.getLogger().info("Número de linhas da entrada: "+rs.getFetchSize());
-		
+			
 		long inicialBaseCuboide = System.currentTimeMillis(); 
 		ICubeSimple<DimensionTypeValue> cube = createBaseCuboide(rs, cubeColumns);
 		//cubeGrid.performHierarchies(x,y,rs, shapeFileReader.getSource(),cubeColumns);
@@ -76,16 +73,16 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 		insertToPostGis(sourceDesti);
 		long tempoPostGisFinal = System.currentTimeMillis(); 
 		Util.getLogger().info("(Parcial 4 - Tempo para inserir no Postgis): "+ (tempoPostGisFinal - tempoPostGisInicial));
-		
+
 
 		//Cálculo do tempo de computação do cubo
 		long tempoFinal = System.currentTimeMillis();  
-		
+
 		Util.getLogger().info("RESULTADO: Número de registros:  "+ sourceDesti.getFeatures().size());
 		Util.getLogger().info("RESULTADO: Tempo total em milisegundos: "+ (tempoFinal - tempoInicial) );
 		Util.getLogger().info("RESULTADO: Tempo total em segundos: "+ (tempoFinal - tempoInicial) / 1000d);
 
-		
+
 		Util.getLogger().info("------------------------------Termínou o log da execução------------------------------");
 		return sourceDesti;
 	}
@@ -190,13 +187,6 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 				try {
 
 					FeatureSource<SimpleFeatureType, SimpleFeature> featureSourceCube =  CreateCube(cubeColumnsAux,0 ,0, featureSource);
-
-
-
-					//MapFrame.getInstance().createLayer(featureSourceCube);
-
-
-
 					cubeColumnsAux = new HashMap<String, CubeColumn>();
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -212,26 +202,14 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 
 
 	public void insertToPostGis(FeatureSource<SimpleFeatureType, SimpleFeature> featureSourceCube ) throws IOException{
-
-		//Map<String, Object> connectionParameters = wizard.getConnectionParameters();
 		DataStore dataStore = Util.connectPostGis();
-
 		dataStore.createSchema(featureSourceCube.getSchema());
-
-		
 		Transaction transaction = new DefaultTransaction("create");
-		
-		
 		SimpleFeatureSource source = dataStore.getFeatureSource(featureSourceCube.getSchema().getTypeName());
-
 		if (source instanceof SimpleFeatureStore) {
 			SimpleFeatureStore featureStore = (SimpleFeatureStore) source;
-
 			featureStore.setTransaction(transaction);
-
 			try { 
-				
-				
 				featureStore.addFeatures(featureSourceCube.getFeatures());
 				transaction.commit();
 			} catch (Exception problem) {
