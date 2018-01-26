@@ -8,7 +8,9 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.geotools.data.DataUtilities;
 import org.geotools.data.FeatureSource;
+import org.geotools.data.simple.SimpleFeatureCollection;
 import org.geotools.factory.CommonFactoryFinder;
 import org.geotools.factory.GeoTools;
 import org.geotools.feature.FeatureCollection;
@@ -111,13 +113,43 @@ public class ShapeFileUtilities {
 				collection = featureSource.getFeatures(filter);
 			}
 
+			
+			
+			//DESSA MANEIRA TODO O DADO É CARREGADO NA MEMÓRIA
+			SimpleFeatureCollection memory = DataUtilities.collection( collection );
+			
+			System.out.println("Sizeeeeeeeeeeeeee "+memory.size());
+			collection = null;
+			
+//			try (FeatureIterator<SimpleFeature> iterator = memory.features()){
+//			     while( iterator.hasNext() ){
+//			           SimpleFeature feature = iterator.next();
+//			           str = formatShapefileLine(feature,cubeColumns2);
+//						for(int i=0; i<str.length; i++)
+//						{
+//							rs.updateData(i, (T)(str[i]));
+//						}
+//						//REFRESH
+//						rs.insertRow();
+//			           
+//			     }
+//			}
+			
+						
+			//-------------------------------------------------//
+			
+			
+			
+			
+			//DESSA MANEIRA - TODO O DADO NÃO É CARREGADO NA MEMÓRIA, ELE LÊ SOB DEMANDA DO POSTGRE, PODE DAR ERRO DE GARBAGE COLLECTOR
 			//FeatureCollection collection = featureSource.getFeatures();
-			FeatureIterator<SimpleFeature> iterator =  collection.features();
-			SimpleFeature feature;
+			FeatureIterator<SimpleFeature> iterator =  memory.features();
+//			SimpleFeature feature;
 
+			
 			try{
 				while( iterator.hasNext() ){
-					feature = iterator.next();
+					SimpleFeature feature = iterator.next();
 					str = formatShapefileLine(feature,cubeColumns2);
 					for(int i=0; i<str.length; i++)
 					{
@@ -137,6 +169,8 @@ public class ShapeFileUtilities {
 			System.out.println("Erro no método getData()");
 			System.exit(-1);
 		}
+		
+		
 		return rs;
 	}
 

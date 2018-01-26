@@ -11,19 +11,8 @@ public class MapFrame {
 	
 	File fileSource;
 
-
-	
-
-
 	private DataStore dataStore;
 	
-	
-
-
-
-
-
-
 	public File getFileSource() {
 		return fileSource;
 	}
@@ -53,7 +42,6 @@ public class MapFrame {
 	}
 
 
-
 	public Object clone() throws CloneNotSupportedException
 	{
 		throw new CloneNotSupportedException(); 
@@ -78,7 +66,5 @@ public class MapFrame {
 	public void setDataStore(DataStore dataStore) {
 		this.dataStore = dataStore;
 	}
-
-
 
 }

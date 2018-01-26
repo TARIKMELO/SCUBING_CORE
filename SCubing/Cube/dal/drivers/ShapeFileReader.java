@@ -9,9 +9,6 @@ import org.geotools.data.FeatureSource;
 import org.opengis.feature.simple.SimpleFeature;
 import org.opengis.feature.simple.SimpleFeatureType;
 
-import gw.layers.SimpleFeatureLayer;
-import presentation.layout.MapFrame;
-
 public class ShapeFileReader<T>  {
 
 	FeatureSource<SimpleFeatureType, SimpleFeature> source;

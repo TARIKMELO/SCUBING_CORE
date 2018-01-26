@@ -1,29 +1,56 @@
 <map>
   <entry>
-    <string>uf</string>
+    <string>c3</string>
     <dal.drivers.CubeColumn>
       <isMeasure>false</isMeasure>
       <index>0</index>
-      <columnName>uf</columnName>
+      <columnName>c3</columnName>
       <hierarchy>1</hierarchy>
     </dal.drivers.CubeColumn>
   </entry>
   <entry>
-    <string>cod_uf</string>
+    <string>c4</string>
     <dal.drivers.CubeColumn>
-      <aggFunction class="bll.aggregation_functions.AFSum"/>
+      <isMeasure>false</isMeasure>
+      <index>0</index>
+      <columnName>c4</columnName>
+      <hierarchy>1</hierarchy>
+    </dal.drivers.CubeColumn>
+  </entry>
+  <entry>
+    <string>c5</string>
+    <dal.drivers.CubeColumn>
+      <isMeasure>false</isMeasure>
+      <index>0</index>
+      <columnName>c5</columnName>
+      <hierarchy>1</hierarchy>
+    </dal.drivers.CubeColumn>
+  </entry>
+  <entry>
+    <string>geom</string>
+    <dal.drivers.CubeColumn>
+      <aggFunction class="bll.aggregation_functions.SAFUnion"/>
       <isMeasure>true</isMeasure>
       <index>0</index>
-      <columnName>cod_uf</columnName>
+      <columnName>geom</columnName>
+      <hierarchy>0</hierarchy>
+    </dal.drivers.CubeColumn>
+  </entry>
+  <entry>
+    <string>c1</string>
+    <dal.drivers.CubeColumn>
+      <isMeasure>false</isMeasure>
+      <index>0</index>
+      <columnName>c1</columnName>
       <hierarchy>1</hierarchy>
     </dal.drivers.CubeColumn>
   </entry>
   <entry>
-    <string>nome_meso</string>
+    <string>c2</string>
     <dal.drivers.CubeColumn>
       <isMeasure>false</isMeasure>
       <index>0</index>
-      <columnName>nome_meso</columnName>
+      <columnName>c2</columnName>
       <hierarchy>1</hierarchy>
     </dal.drivers.CubeColumn>
   </entry>

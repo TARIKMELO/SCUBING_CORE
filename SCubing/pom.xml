@@ -12,7 +12,8 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<geotools.version>13.2</geotools.version>
+		<geotools.version>18.2</geotools.version>
+<!-- 		<geotools.version>13.2</geotools.version> -->
 	</properties>
 
 	<dependencies>
@@ -39,11 +40,11 @@
 			<version>${geotools.version}</version>
 		</dependency>
 
-		<dependency>
-			<groupId>org.geotools.xsd</groupId>
-			<artifactId>gt-xsd-kml</artifactId>
-			<version>${geotools.version}</version>
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.geotools.xsd</groupId> -->
+<!-- 			<artifactId>gt-xsd-kml</artifactId> -->
+<!-- 			<version>${geotools.version}</version> -->
+<!-- 		</dependency> -->
 		<!-- <dependency> -->
 		<!-- <groupId>org.geotools</groupId> -->
 		<!-- <artifactId>gt-process</artifactId> -->

@@ -12,7 +12,6 @@ import org.geotools.data.FeatureSource;
 import org.geotools.data.simple.SimpleFeatureSource;
 import org.geotools.feature.SchemaException;
 import org.geotools.feature.simple.SimpleFeatureTypeBuilder;
-import org.geotools.geometry.jts.FactoryFinder;
 import org.geotools.referencing.CRS;
 import org.opengis.feature.simple.SimpleFeature;
 import org.opengis.feature.simple.SimpleFeatureType;
@@ -25,7 +24,6 @@ import com.vividsolutions.jts.geom.Polygon;
 import bll.aggregation_functions.SAFUnion;
 import bll.aggregation_functions.SAFUnionMBR;
 import bll.aggregation_functions.SAFUnionPolygon;
-
 import bll.data_structures.nodes.DimensionTypeValue;
 import bll.data_structures.nodes.MeasureTypeValue;
 import bll.parallel.Consumer;

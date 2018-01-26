@@ -1,6 +1,6 @@
 <bll.util.ConfigBean>
-  <numThreads>1</numThreads>
-  <nomeLayer>null9</nomeLayer>
+  <numThreads>2</numThreads>
+  <nomeLayer>testeFeatureNovo3</nomeLayer>
   <circleRadius>5</circleRadius>
   <postgisDbtype>postgis</postgisDbtype>
   <postgisHost>localhost</postgisHost>
@@ -9,6 +9,6 @@
   <postgisUser>postgres</postgisUser>
   <postgisPasswd>postgre</postgisPasswd>
   <postgisDatabase>scubing</postgisDatabase>
-  <postgisTable>municipios_2010</postgisTable>
-  <geometryColumnName>null</geometryColumnName>
+  <postgisTable>teste1_5m</postgisTable>
+  <geometryColumnName>geom</geometryColumnName>
 </bll.util.ConfigBean>

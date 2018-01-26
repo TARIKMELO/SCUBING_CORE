@@ -1,0 +1,61 @@
+26-01-2018 10:33:31 INFO  scubing:31 - ------------------------------Iniciou o log da execução------------------------------
+26-01-2018 10:33:31 INFO  scubing:33 - Número de consumidores: 2
+26-01-2018 10:33:31 INFO  scubing:34 - Iniciou o log da execução
+26-01-2018 10:33:32 INFO  scubing:185 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+26-01-2018 10:33:32 INFO  scubing:185 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 1
+26-01-2018 10:33:32 INFO  scubing:185 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 1
+26-01-2018 10:33:32 INFO  scubing:185 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 1
+26-01-2018 10:33:32 INFO  scubing:185 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 1
+26-01-2018 10:33:32 INFO  scubing:185 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 1
+26-01-2018 10:33:35 INFO  scubing:37 - Tempo em milisegundos para ler os dados: 2480
+26-01-2018 10:33:35 INFO  scubing:39 - Número de linhas da entrada: 50000
+26-01-2018 10:33:35 INFO  scubing:45 - (Parcial 0 - Criar o cubo base - createBaseCuboide) Tempo em milisegundos para calcular o base cuboide: 381
+26-01-2018 10:33:35 INFO  scubing:52 - (Parcial 1 - Gerou as agregações - cube.generateAggregations()) Tempo em milisegundos para calcular o cubo: 7
+26-01-2018 10:33:35 INFO  scubing:58 - (Parcial 2 - Tempo cubeToTable) Tempo em milisegundos para calcular o cubo: 2880
+26-01-2018 10:33:35 INFO  scubing:120 - Nome da tabela: testeFeatureNovo3
+26-01-2018 10:39:57 INFO  scubing:66 - (Parcial 3 - PARTE PARALELIZADA: Tempo insertCubeToSource) Tempo em milisegundos para calcular o cubo: 382039
+26-01-2018 10:40:00 INFO  scubing:75 - (Parcial 4 - Tempo para inserir no Postgis): 3208
+26-01-2018 10:40:00 INFO  scubing:81 - RESULTADO: Número de registros:  3100
+26-01-2018 10:40:00 INFO  scubing:82 - RESULTADO: Tempo total em milisegundos: 388129
+26-01-2018 10:40:00 INFO  scubing:83 - RESULTADO: Tempo total em segundos: 388.129
+26-01-2018 10:40:00 INFO  scubing:86 - ------------------------------Termínou o log da execução------------------------------
+26-01-2018 10:56:47 INFO  scubing:31 - ------------------------------Iniciou o log da execução------------------------------
+26-01-2018 10:56:47 INFO  scubing:33 - Número de consumidores: 2
+26-01-2018 10:56:47 INFO  scubing:34 - Iniciou o log da execução
+26-01-2018 10:56:48 INFO  scubing:185 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+26-01-2018 10:56:48 INFO  scubing:185 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 1
+26-01-2018 10:56:48 INFO  scubing:185 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 1
+26-01-2018 10:56:48 INFO  scubing:185 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 1
+26-01-2018 10:56:48 INFO  scubing:185 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 1
+26-01-2018 10:56:48 INFO  scubing:185 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 1
+26-01-2018 10:56:50 INFO  scubing:37 - Tempo em milisegundos para ler os dados: 2576
+26-01-2018 10:56:50 INFO  scubing:39 - Número de linhas da entrada: 50000
+26-01-2018 10:56:51 INFO  scubing:45 - (Parcial 0 - Criar o cubo base - createBaseCuboide) Tempo em milisegundos para calcular o base cuboide: 399
+26-01-2018 10:56:51 INFO  scubing:52 - (Parcial 1 - Gerou as agregações - cube.generateAggregations()) Tempo em milisegundos para calcular o cubo: 8
+26-01-2018 10:56:51 INFO  scubing:58 - (Parcial 2 - Tempo cubeToTable) Tempo em milisegundos para calcular o cubo: 2995
+26-01-2018 10:56:51 INFO  scubing:120 - Nome da tabela: testeFeatureNovo3
+26-01-2018 11:03:03 INFO  scubing:66 - (Parcial 3 - PARTE PARALELIZADA: Tempo insertCubeToSource) Tempo em milisegundos para calcular o cubo: 371852
