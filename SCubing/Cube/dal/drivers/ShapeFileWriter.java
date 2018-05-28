@@ -85,11 +85,9 @@ public class ShapeFileWriter {
 	{
 		this.hierarquia =  hierarquia;
 		final SimpleFeatureType TYPE = createCubeSchema(source);
-
-
+		System.out.println("(Parcial 2.1) Entrando insertCubeToCollection ");
 		ArrayList<SimpleFeature> collection = insertCubeToCollection(TYPE, resource);
-		
-		
+		System.out.println("(Parcial 2.2) Entrando DataUtilities.source(DataUtilities.collection(collection))");
 		SimpleFeatureSource sourceResult = DataUtilities.source(DataUtilities.collection(collection));
 		return sourceResult;
 	}
@@ -99,9 +97,7 @@ public class ShapeFileWriter {
 
 
 	private SimpleFeatureType createCubeSchema(FeatureSource<SimpleFeatureType, SimpleFeature> source) throws SchemaException {
-
 		SimpleFeatureTypeBuilder b = new SimpleFeatureTypeBuilder();
-
 		//Definindo o nome do layer criado
 		String nameLayer = Util.getConfig().getNomeLayer();
 

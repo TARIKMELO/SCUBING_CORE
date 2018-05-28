@@ -56,9 +56,7 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 
 		long tempoIntermediario2 = System.currentTimeMillis();  
 		Util.getLogger().info("(Parcial 2 - Tempo cubeToTable) Tempo em milisegundos para calcular o cubo: "+ (tempoIntermediario2 - tempoInicial) );
-
 		ShapeFileWriter shapeFileWriter = new ShapeFileWriter(cubeColumns);
-
 		long insertCubeToSourceInicial = System.currentTimeMillis(); 
 		//FeatureSource sourceDesti = shapeFileWriter.insertCubeToSource(hashResult, shapeFileReader.getSource());
 		FeatureSource<SimpleFeatureType, SimpleFeature> sourceDesti = shapeFileWriter.insertCubeToSource(resource, shapeFileReader.getSource(), 0);
