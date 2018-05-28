@@ -59,3 +59,81 @@
 26-01-2018 10:56:51 INFO  scubing:58 - (Parcial 2 - Tempo cubeToTable) Tempo em milisegundos para calcular o cubo: 2995
 26-01-2018 10:56:51 INFO  scubing:120 - Nome da tabela: testeFeatureNovo3
 26-01-2018 11:03:03 INFO  scubing:66 - (Parcial 3 - PARTE PARALELIZADA: Tempo insertCubeToSource) Tempo em milisegundos para calcular o cubo: 371852
+28-05-2018 11:09:18 INFO  scubing:31 - ------------------------------Iniciou o log da execução------------------------------
+28-05-2018 11:09:18 INFO  scubing:33 - Número de consumidores: 2
+28-05-2018 11:09:18 INFO  scubing:34 - Iniciou o log da execução
+28-05-2018 11:09:24 INFO  scubing:201 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+28-05-2018 11:09:24 INFO  scubing:201 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 1
+28-05-2018 11:09:24 INFO  scubing:201 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 1
+28-05-2018 11:09:24 INFO  scubing:201 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 1
+28-05-2018 11:09:24 INFO  scubing:201 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 1
+28-05-2018 11:09:24 INFO  scubing:201 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 1
+28-05-2018 11:09:27 INFO  scubing:38 - Tempo em milisegundos para ler os dados: 2573
+28-05-2018 11:09:27 INFO  scubing:40 - Número de linhas da entrada: 50000
+28-05-2018 11:09:27 INFO  scubing:46 - (Parcial 0 - Criar o cubo base - createBaseCuboide) Tempo em milisegundos para calcular o base cuboide: 356
+28-05-2018 11:09:27 INFO  scubing:53 - (Parcial 1 - Gerou as agregações - cube.generateAggregations()) Tempo em milisegundos para calcular o cubo: 11
+28-05-2018 11:09:27 INFO  scubing:101 - ------------------------------Termínou o log da execução------------------------------
+28-05-2018 11:13:34 INFO  scubing:31 - ------------------------------Iniciou o log da execução------------------------------
+28-05-2018 11:13:34 INFO  scubing:33 - Número de consumidores: 2
+28-05-2018 11:13:34 INFO  scubing:34 - Iniciou o log da execução
+28-05-2018 11:13:35 INFO  scubing:201 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+28-05-2018 11:13:35 INFO  scubing:201 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 1
+28-05-2018 11:13:35 INFO  scubing:201 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 1
+28-05-2018 11:13:35 INFO  scubing:201 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 1
+28-05-2018 11:13:35 INFO  scubing:201 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 1
+28-05-2018 11:13:35 INFO  scubing:201 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 1
+28-05-2018 11:13:37 INFO  scubing:38 - Tempo em milisegundos para ler os dados: 2521
+28-05-2018 11:13:37 INFO  scubing:40 - Número de linhas da entrada: 50000
+28-05-2018 11:13:37 INFO  scubing:46 - (Parcial 0 - Criar o cubo base - createBaseCuboide) Tempo em milisegundos para calcular o base cuboide: 379
+28-05-2018 11:13:37 INFO  scubing:53 - (Parcial 1 - Gerou as agregações - cube.generateAggregations()) Tempo em milisegundos para calcular o cubo: 8
+28-05-2018 11:13:37 INFO  scubing:101 - ------------------------------Termínou o log da execução------------------------------
+28-05-2018 11:14:19 INFO  scubing:31 - ------------------------------Iniciou o log da execução------------------------------
+28-05-2018 11:14:19 INFO  scubing:33 - Número de consumidores: 2
+28-05-2018 11:14:19 INFO  scubing:34 - Iniciou o log da execução
+28-05-2018 11:14:20 INFO  scubing:201 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+28-05-2018 11:14:20 INFO  scubing:201 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 1
+28-05-2018 11:14:20 INFO  scubing:201 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 1
+28-05-2018 11:14:20 INFO  scubing:201 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 1
+28-05-2018 11:14:20 INFO  scubing:201 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 1
+28-05-2018 11:14:20 INFO  scubing:201 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 1
+28-05-2018 11:14:22 INFO  scubing:38 - Tempo em milisegundos para ler os dados: 2510
+28-05-2018 11:14:22 INFO  scubing:40 - Número de linhas da entrada: 50000
+28-05-2018 11:14:22 INFO  scubing:46 - (Parcial 0 - Criar o cubo base - createBaseCuboide) Tempo em milisegundos para calcular o base cuboide: 301
+28-05-2018 11:14:22 INFO  scubing:53 - (Parcial 1 - Gerou as agregações - cube.generateAggregations()) Tempo em milisegundos para calcular o cubo: 8
+28-05-2018 11:14:52 INFO  scubing:101 - ------------------------------Termínou o log da execução------------------------------

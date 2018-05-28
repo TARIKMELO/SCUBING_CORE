@@ -104,6 +104,7 @@ public class NodeSimple <T> implements INodeSimple<T>, Serializable{
 
 				else
 				{
+
 					atualizedValue = aggFunction.updateMeasure(this.measureValues.get(i).getValue(), newValues.get(i).getValue());
 					this.measureValues.set(i, new MeasureTypeValue( atualizedValue,newValues.get(i).getType()));
 				}

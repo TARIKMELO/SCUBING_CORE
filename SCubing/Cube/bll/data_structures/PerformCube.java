@@ -21,13 +21,14 @@ import bll.data_structures.nodes.NodeSimple;
 import bll.parallel.Resource;
 import bll.util.Util;
 import dal.drivers.CubeColumn;
+import dal.drivers.DiskDataUtil;
 import dal.drivers.IResultSetText;
 import dal.drivers.ShapeFileReader;
 import dal.drivers.ShapeFileWriter;
 
 public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 
-	private FeatureSource<SimpleFeatureType, SimpleFeature> CreateCube(HashMap<String, CubeColumn> cubeColumns, int x, int y, FeatureSource<SimpleFeatureType, SimpleFeature> featureSource) throws Exception{
+	private void CreateCube(HashMap<String, CubeColumn> cubeColumns, int x, int y, FeatureSource<SimpleFeatureType, SimpleFeature> featureSource) throws Exception{
 		//conectar
 		//Cálculo do tempo de computação do cubo
 		long tempoInicial = System.currentTimeMillis(); 
@@ -52,8 +53,24 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 		Util.getLogger().info("(Parcial 1 - Gerou as agregações - cube.generateAggregations()) Tempo em milisegundos para calcular o cubo: "+ (finalGenerateAggregations - inicialGenerateAggregations) );
 
 
+		
+		
+		
+				
+		
+		//Criação do Resource - No Restource já vem um vetor com as geometrias. O Consumidor que realiza a união.
 		Resource<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource= cube.cubeToTable();
-
+			
+		//resource.
+		//Gravar/Serializar todo o Resource em um arquivo.
+		
+		//DiskDataUtil.SaveResourceToDisk(resource);  
+		
+		
+		
+		//Lê em porções 
+		
+		
 		long tempoIntermediario2 = System.currentTimeMillis();  
 		Util.getLogger().info("(Parcial 2 - Tempo cubeToTable) Tempo em milisegundos para calcular o cubo: "+ (tempoIntermediario2 - tempoInicial) );
 		ShapeFileWriter shapeFileWriter = new ShapeFileWriter(cubeColumns);
@@ -82,7 +99,8 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 
 
 		Util.getLogger().info("------------------------------Termínou o log da execução------------------------------");
-		return sourceDesti;
+		//return sourceDesti;
+		
 	}
 
 	public ICubeSimple<DimensionTypeValue> createBaseCuboide(IResultSetText<DimensionTypeValue> rs,HashMap<String, CubeColumn> cubeColumns ) throws SQLException
@@ -183,9 +201,7 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 					Util.getLogger().info(cubeColumn);
 				}
 				try {
-
-					FeatureSource<SimpleFeatureType, SimpleFeature> featureSourceCube =  CreateCube(cubeColumnsAux,0 ,0, featureSource);
-					cubeColumnsAux = new HashMap<String, CubeColumn>();
+					CreateCube(cubeColumnsAux,0 ,0, featureSource);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

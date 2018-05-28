@@ -37,7 +37,7 @@ public class ShapeFileWriter {
 		this.cubeColumns = cubeColumns;
 	}
 
-	public 	ArrayList<SimpleFeature>	  insertCubeToCollection(SimpleFeatureType TYPE,Resource<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource ) throws Exception
+	public 	ArrayList<SimpleFeature> insertCubeToCollection(SimpleFeatureType TYPE,Resource<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource ) throws Exception
 	{
 		ArrayList<SimpleFeature> list = new ArrayList<SimpleFeature>();
 		final int numConsumidores =Integer.parseInt(Util.getConfig().getNumThreads());
@@ -85,9 +85,9 @@ public class ShapeFileWriter {
 	{
 		this.hierarquia =  hierarquia;
 		final SimpleFeatureType TYPE = createCubeSchema(source);
-		System.out.println("(Parcial 2.1) Entrando insertCubeToCollection ");
+		//System.out.println("(Parcial 2.1) Entrando insertCubeToCollection ");
 		ArrayList<SimpleFeature> collection = insertCubeToCollection(TYPE, resource);
-		System.out.println("(Parcial 2.2) Entrando DataUtilities.source(DataUtilities.collection(collection))");
+		//System.out.println("(Parcial 2.2) Entrando DataUtilities.source(DataUtilities.collection(collection))");
 		SimpleFeatureSource sourceResult = DataUtilities.source(DataUtilities.collection(collection));
 		return sourceResult;
 	}

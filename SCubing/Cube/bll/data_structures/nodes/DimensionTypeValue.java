@@ -1,7 +1,12 @@
 package bll.data_structures.nodes;
 
-public class DimensionTypeValue<T> implements Comparable<T>{
+public class DimensionTypeValue<T> implements Comparable<T>, java.io.Serializable{
 
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8979689502535173809L;
 	Object value;
 	String type;
 	//Geometry geometry;

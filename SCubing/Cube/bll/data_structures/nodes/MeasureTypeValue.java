@@ -1,7 +1,11 @@
 package bll.data_structures.nodes;
 
-public class MeasureTypeValue {
+public class MeasureTypeValue implements java.io.Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8276406366996617355L;
 	Object value;
 	String type;
 	public MeasureTypeValue(Object value, String type) {

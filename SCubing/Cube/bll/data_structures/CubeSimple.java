@@ -33,8 +33,8 @@ public class CubeSimple <T> implements ICubeSimple<T>, Serializable{
 		currentNode = root;
 		numOfNodes = 0;
 	}
-	
-	
+
+
 
 	public NodeSimple<T> findNode(T id) {
 		NodeSimple<T> aux = currentNode.findDescendant(id);
@@ -117,8 +117,9 @@ public class CubeSimple <T> implements ICubeSimple<T>, Serializable{
 
 	Resource<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource;
 
-	//HashMap<ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>> hashResult;
-	//Percorre o cubo que estã em uma ãrvore e insere os registro em uma table(HashMap)
+
+	//Percorre o cubo que está em uma árvore e insere os registro em uma table(HashMap)
+	//Deve ser colocado em disco
 	public Resource<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> cubeToTable()
 	{
 		DimensionTypeValue value;
@@ -136,11 +137,8 @@ public class CubeSimple <T> implements ICubeSimple<T>, Serializable{
 			}
 			//Retirando o ultima caractere que indica a coluna
 			valueAux = (DimensionTypeValue) oneDescendant.getKey();
-			//aqui 
-			//value = new DimensionTypeValue(valueAux.getValue(),valueAux.getType(), valueAux.getGeometry());
 			value = new DimensionTypeValue(valueAux.getValue(),valueAux.getType());
 			line.set(cubeColumns.get(valueAux.getType()).getIndex(), value);
-			
 			resource.putRegister(new AbstractMap.SimpleEntry (deepCopy(line), oneDescendant.getValue().getMeasures()))	;
 			cubeToTable(oneDescendant.getValue(), line);
 		}
@@ -162,9 +160,7 @@ public class CubeSimple <T> implements ICubeSimple<T>, Serializable{
 			value = new DimensionTypeValue(valueAux.getValue(),valueAux.getType());
 			//lineAux =  new ArrayList<DimensionTypeValue>(numColumns);
 			//			/System.out.println("dddfsdfsdf "+lineAux.size());
-
 			lineAux.set(cubeColumns.get(valueAux.getType()).getIndex(), value);
-
 			//Estrutura que gera a visualizaãão depois
 			resource.putRegister(new AbstractMap.SimpleEntry (deepCopy(lineAux), new ArrayList<MeasureTypeValue>(oneDescendant.getValue().getMeasures())))	;
 			//hashResult.put(deepCopy(lineAux), new ArrayList<MeasureTypeValue>(oneDescendant.getValue().getMeasures()));

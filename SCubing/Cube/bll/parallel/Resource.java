@@ -3,8 +3,12 @@ package bll.parallel;
 import java.util.concurrent.LinkedBlockingQueue;
 
 
-public class Resource<S> {
+public class Resource<S> implements java.io.Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7453120505489300725L;
 	private LinkedBlockingQueue<S> registers;
 	protected boolean finished;
 

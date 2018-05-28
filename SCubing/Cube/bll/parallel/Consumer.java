@@ -93,9 +93,6 @@ public class Consumer extends Thread{
 							//							featureBuilder.set("distbrasilia", distancia);		
 
 						}
-
-
-
 					}
 
 
