@@ -49,18 +49,18 @@ public class SAFBuffer extends ISpatialAggFunction implements IAggFunction{
 	}
 
 
-	public double bufferInKm(Double radiusKm) 
-	{
-		double converted = radiusKm;
-		Unit<?> u = MapFrame.getInstance().getMap().getCoordinateReferenceSystem().getCoordinateSystem().getAxis(0).getUnit();
-		Unit<?> km = Unit.valueOf("km");
-		if (u.isCompatible(km)) {
-			UnitConverter converter =  km.getConverterTo(u);
-			converted = converter.convert(radiusKm);
-		}
-		return converted;
-		//throw new IllegalStateException("Unable to convert between " + u + " and " + km);    
-	}
+//	public double bufferInKm(Double radiusKm) 
+//	{
+//		double converted = radiusKm;
+//		Unit<?> u = MapFrame.getInstance().getMap().getCoordinateReferenceSystem().getCoordinateSystem().getAxis(0).getUnit();
+//		Unit<?> km = Unit.valueOf("km");
+//		if (u.isCompatible(km)) {
+//			UnitConverter converter =  km.getConverterTo(u);
+//			converted = converter.convert(radiusKm);
+//		}
+//		return converted;
+//		//throw new IllegalStateException("Unable to convert between " + u + " and " + km);    
+//	}
 
 	@Override
 	public String toString() {

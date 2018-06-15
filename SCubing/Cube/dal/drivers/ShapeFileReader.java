@@ -43,9 +43,9 @@ public class ShapeFileReader<T>  {
 		return columnsInfo;
 	}
 
-	public IResultSetText<T> getData() throws Exception {
-		return ShapeFileUtilities.getData(source, cubeColumns);
-	}
+//	public IResultSetText<T> getData() throws Exception {
+//		return ShapeFileUtilities.getData(source, cubeColumns);
+//	}
 
 	public 	FeatureSource<SimpleFeatureType, SimpleFeature> getSource()
 	{

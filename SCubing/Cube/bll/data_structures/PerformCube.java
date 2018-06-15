@@ -12,8 +12,13 @@ import org.geotools.data.FeatureSource;
 import org.geotools.data.Transaction;
 import org.geotools.data.simple.SimpleFeatureSource;
 import org.geotools.data.simple.SimpleFeatureStore;
+import org.geotools.feature.FeatureCollection;
+import org.geotools.feature.FeatureIterator;
+import org.geotools.filter.text.cql2.CQL;
+import org.geotools.filter.text.cql2.CQLException;
 import org.opengis.feature.simple.SimpleFeature;
 import org.opengis.feature.simple.SimpleFeatureType;
+import org.opengis.filter.Filter;
 
 import bll.data_structures.nodes.DimensionTypeValue;
 import bll.data_structures.nodes.MeasureTypeValue;
@@ -21,9 +26,8 @@ import bll.data_structures.nodes.NodeSimple;
 import bll.parallel.Resource;
 import bll.util.Util;
 import dal.drivers.CubeColumn;
-import dal.drivers.DiskDataUtil;
-import dal.drivers.IResultSetText;
 import dal.drivers.ShapeFileReader;
+import dal.drivers.ShapeFileUtilities;
 import dal.drivers.ShapeFileWriter;
 
 public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
@@ -33,14 +37,17 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 		//Cálculo do tempo de computação do cubo
 		long tempoInicial = System.currentTimeMillis(); 
 		ShapeFileReader<DimensionTypeValue> shapeFileReader = new ShapeFileReader<DimensionTypeValue>(featureSource,cubeColumns);
-		IResultSetText<DimensionTypeValue> rs = shapeFileReader.getData();
+		//IResultSetText<DimensionTypeValue> rs = shapeFileReader.getData();
 		long tempoIntermediario0 = System.currentTimeMillis();  
 		Util.getLogger().info("Tempo em milisegundos para ler os dados: "+ (tempoIntermediario0 - tempoInicial) );
 
-		Util.getLogger().info("Número de linhas da entrada: "+rs.getFetchSize());
-			
+		//Util.getLogger().info("Número de linhas da entrada: "+rs.getFetchSize());
+
+		//JUNTAR O shapeFileReader.getData() E O createBaseCuboide(rs, cubeColumns)
+
+
 		long inicialBaseCuboide = System.currentTimeMillis(); 
-		ICubeSimple<DimensionTypeValue> cube = createBaseCuboide(rs, cubeColumns);
+		ICubeSimple<DimensionTypeValue> cube = createBaseCuboide(cubeColumns, featureSource);
 		//cubeGrid.performHierarchies(x,y,rs, shapeFileReader.getSource(),cubeColumns);
 		long finalBaseCuboide = System.currentTimeMillis();  
 		Util.getLogger().info("(Parcial 0 - Criar o cubo base - createBaseCuboide) Tempo em milisegundos para calcular o base cuboide: "+ (finalBaseCuboide - inicialBaseCuboide) );
@@ -53,110 +60,156 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 		Util.getLogger().info("(Parcial 1 - Gerou as agregações - cube.generateAggregations()) Tempo em milisegundos para calcular o cubo: "+ (finalGenerateAggregations - inicialGenerateAggregations) );
 
 
-		
-		
-		
-				
-		
 		//Criação do Resource - No Restource já vem um vetor com as geometrias. O Consumidor que realiza a união.
 		Resource<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource= cube.cubeToTable();
-			
+
 		//resource.
 		//Gravar/Serializar todo o Resource em um arquivo.
-		
+
 		//DiskDataUtil.SaveResourceToDisk(resource);  
-		
-		
-		
-		//Lê em porções 
-		
-		
+		//TOOD: Lê em porções 
+
+
 		long tempoIntermediario2 = System.currentTimeMillis();  
 		Util.getLogger().info("(Parcial 2 - Tempo cubeToTable) Tempo em milisegundos para calcular o cubo: "+ (tempoIntermediario2 - tempoInicial) );
 		ShapeFileWriter shapeFileWriter = new ShapeFileWriter(cubeColumns);
 		long insertCubeToSourceInicial = System.currentTimeMillis(); 
 		//FeatureSource sourceDesti = shapeFileWriter.insertCubeToSource(hashResult, shapeFileReader.getSource());
-		FeatureSource<SimpleFeatureType, SimpleFeature> sourceDesti = shapeFileWriter.insertCubeToSource(resource, shapeFileReader.getSource(), 0);
+
+
+		final SimpleFeatureType TYPE = shapeFileWriter.createCubeSchema(shapeFileReader.getSource());
+
+		Util.insertBlanckToPostGis(TYPE);
+		DataStore dataStore = Util.connectPostGis();
+		Transaction transaction = new DefaultTransaction("add");
+		SimpleFeatureSource source = dataStore.getFeatureSource(TYPE.getTypeName());
+		SimpleFeatureStore featureStore = (SimpleFeatureStore) source;
+		featureStore.setTransaction(transaction);
+
+
+
+		shapeFileWriter.applyAggFunctionInStarTree(featureStore,transaction,resource, TYPE, 0);
+		System.out.println("-------------Commit------------");
+		transaction.commit();
+		transaction.close();
 		long insertCubeToSourceFinal = System.currentTimeMillis(); 
-		Util.getLogger().info("(Parcial 3 - PARTE PARALELIZADA: Tempo insertCubeToSource) Tempo em milisegundos para calcular o cubo: "+ (insertCubeToSourceFinal - insertCubeToSourceInicial) );
-
-
-		//dfasdf//JOptionPane.showMessageDialog(null, tempoTotal);
-
-		//Exportar o resultado para o Postgis
-		long tempoPostGisInicial = System.currentTimeMillis();  
-		insertToPostGis(sourceDesti);
-		long tempoPostGisFinal = System.currentTimeMillis(); 
-		Util.getLogger().info("(Parcial 4 - Tempo para inserir no Postgis): "+ (tempoPostGisFinal - tempoPostGisInicial));
-
+		Util.getLogger().info("(Parcial 3 - PARTE PARALELIZADA: Tempo applyAggFunctionInStarTree) Tempo em milisegundos para calcular o cubo e fazer as uniões: "+ (insertCubeToSourceFinal - insertCubeToSourceInicial) );
 
 		//Cálculo do tempo de computação do cubo
 		long tempoFinal = System.currentTimeMillis();  
 
-		Util.getLogger().info("RESULTADO: Número de registros:  "+ sourceDesti.getFeatures().size());
+		//Util.getLogger().info("RESULTADO: Número de registros:  "+ sourceDesti.getFeatures().size());
 		Util.getLogger().info("RESULTADO: Tempo total em milisegundos: "+ (tempoFinal - tempoInicial) );
 		Util.getLogger().info("RESULTADO: Tempo total em segundos: "+ (tempoFinal - tempoInicial) / 1000d);
 
 
 		Util.getLogger().info("------------------------------Termínou o log da execução------------------------------");
 		//return sourceDesti;
-		
+
 	}
 
-	public ICubeSimple<DimensionTypeValue> createBaseCuboide(IResultSetText<DimensionTypeValue> rs,HashMap<String, CubeColumn> cubeColumns ) throws SQLException
+	public ICubeSimple<DimensionTypeValue> createBaseCuboide(HashMap<String, CubeColumn> cubeColumns, FeatureSource<SimpleFeatureType, SimpleFeature> featureSource) throws SQLException, CQLException
 	{
+
+
 
 		//TODO: Olhar o padrao adapter para colocar o nome da coluna ao invés do indice
 		//-1 por causa da coluna que é a medida
 		ICubeSimple<DimensionTypeValue> cube = new CubeSimple<DimensionTypeValue>(cubeColumns,cubeColumns.size());
+		//IResultSetText<DimensionTypeValue> rs;
+		//IResultSetText<T> rs = new ResultSetText<T>();
+		//rs.configure(cubeColumns);
 
-
-		Object[] tuple;
-		ArrayList<MeasureTypeValue>  measures;
-		Object measureValue;
-		Object attributeO;
-		DimensionTypeValue typeValu;
-
-		NodeSimple<DimensionTypeValue> n;
-		try{
-			while((tuple=rs.next())!=null){
-
-				measures = new ArrayList<MeasureTypeValue>();
-				for (Entry<String, CubeColumn> cubeColumn: cubeColumns.entrySet())
+		
+		try {
+			String where="";
+			for (CubeColumn cubeColumn : cubeColumns.values()) {
+				if(cubeColumn.getWhere()!=null)
 				{
-					if(cubeColumn.getValue().isMeasure())
-					{
-						//measures = new ArrayList<MeasureTypeValue>();
-						measureValue = tuple[cubeColumn.getValue().getIndex()];
-						measures.add(new MeasureTypeValue( ((DimensionTypeValue)measureValue).getValue(),cubeColumn.getValue().getColumnName()));
-					}
-				} 
-				for (Entry<String, CubeColumn> cubeColumn: cubeColumns.entrySet())
-				{
-					if(!cubeColumn.getValue().isMeasure())
-					{
-						attributeO = tuple[cubeColumn.getValue().getIndex()];
-
-						typeValu = new DimensionTypeValue(((DimensionTypeValue)attributeO).getValue(), cubeColumn.getKey());
-						n = cube.findNode(typeValu);
-						if(n == null){
-							n = new NodeSimple<DimensionTypeValue>(cubeColumns, measures);
-							cube.insertNode(typeValu, n);
-						}
-						else
-						{
-							n.updateMeasure(measures);
-						}
-					}
+					where+=" AND "+cubeColumn.getColumnName()+" "+cubeColumn.getWhere() ;
 				}
-				cube.refresh();
-			}
-		}
-		finally{
-			rs.close();
-		}
+			} 
+			FeatureCollection<SimpleFeatureType, SimpleFeature> diskMemory;
+			if (where == "")
+			{
 
+				diskMemory = featureSource.getFeatures();
+			}
+			else
+			{
+				where = where.replaceFirst("AND", "");
+				Filter filter = CQL.toFilter(where);
+				diskMemory = featureSource.getFeatures(filter);
+			}
+
+
+
+
+
+
+			ArrayList<MeasureTypeValue>  measures;
+			Object measureValue;
+			Object attributeO;
+			DimensionTypeValue typeValu;
+		
+			NodeSimple<DimensionTypeValue> n;
+
+			try (FeatureIterator<SimpleFeature> iterator = diskMemory.features()){
+				while( iterator.hasNext() ){
+					//System.out.println("iterator");
+					SimpleFeature feature = iterator.next();
+					Object[] tuple = ShapeFileUtilities.formatShapefileLine(feature,cubeColumns);
+//					for(int i=0; i<str.length; i++)
+//					{
+//						rs.updateData(i, (DimensionTypeValue)(str[i]));
+//					}
+//
+//					//REFRESH
+//					rs.insertRow();
+					
+
+
+					
+					measures = new ArrayList<MeasureTypeValue>();
+					for (Entry<String, CubeColumn> cubeColumn: cubeColumns.entrySet())
+					{
+						if(cubeColumn.getValue().isMeasure())
+						{
+							//measures = new ArrayList<MeasureTypeValue>();
+							measureValue = tuple[cubeColumn.getValue().getIndex()];
+							measures.add(new MeasureTypeValue( ((DimensionTypeValue)measureValue).getValue(),cubeColumn.getValue().getColumnName()));
+						}
+					} 
+					for (Entry<String, CubeColumn> cubeColumn: cubeColumns.entrySet())
+					{
+						if(!cubeColumn.getValue().isMeasure())
+						{
+							attributeO = tuple[cubeColumn.getValue().getIndex()];
+							typeValu = new DimensionTypeValue(((DimensionTypeValue)attributeO).getValue(), cubeColumn.getKey());
+							n = cube.findNode(typeValu);
+							if(n == null){
+								n = new NodeSimple<DimensionTypeValue>(cubeColumns, measures);
+								cube.insertNode(typeValu, n);
+							}
+							else
+							{
+								n.updateMeasure(measures);
+							}
+						}
+					}
+					
+					cube.refresh();
+					tuple = null;
+					feature = null;
+				}
+			}
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+			System.out.println("Erro no método getData()");
+			System.exit(-1);
+		}
 		return cube;
+
 	}
 
 	public void gerarCubo(HashMap<String, CubeColumn> cubeColumns, FeatureSource<SimpleFeatureType, SimpleFeature> featureSource) 
@@ -170,15 +223,12 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 				{
 					commonCubeColumns.put(cubeColumn.getColumnName(), cubeColumn);
 				}
-
 			}
-
 
 			for (CubeColumn cubeColumn : cubeColumns.values()) {
 				if (!cubeColumn.isMeasure())
 				{
 					if (cubeColumn.getHierarchy()!=-1){
-
 						if (hierarquias.get(cubeColumn.getHierarchy())==null)
 						{
 							hierarquias.put(cubeColumn.getHierarchy(),new ArrayList<CubeColumn>()); 
@@ -191,7 +241,6 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 
 			//Deepy Copy
 			HashMap<String, CubeColumn> cubeColumnsAux = new HashMap<String, CubeColumn>();
-
 			for (ArrayList<CubeColumn> cubeColumnList : hierarquias.values()) {
 				int auxT = 0;
 				for (CubeColumn cubeColumn : cubeColumnList) {
@@ -206,7 +255,6 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 					e.printStackTrace();
 				}
 			}
-
 		}
 		catch(Exception ioEx){
 			ioEx.printStackTrace();
@@ -215,29 +263,29 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 
 
 
-	public void insertToPostGis(FeatureSource<SimpleFeatureType, SimpleFeature> featureSourceCube ) throws IOException{
-		DataStore dataStore = Util.connectPostGis();
-		dataStore.createSchema(featureSourceCube.getSchema());
-		Transaction transaction = new DefaultTransaction("create");
-		SimpleFeatureSource source = dataStore.getFeatureSource(featureSourceCube.getSchema().getTypeName());
-		if (source instanceof SimpleFeatureStore) {
-			SimpleFeatureStore featureStore = (SimpleFeatureStore) source;
-			featureStore.setTransaction(transaction);
-			try { 
-				featureStore.addFeatures(featureSourceCube.getFeatures());
-				transaction.commit();
-			} catch (Exception problem) {
-				problem.printStackTrace();
-				transaction.rollback();
-			} finally {
-				transaction.close();
-			}
-			//System.exit(0); // success!
-		} else {
-			System.out.println("Table does not support read/write access");
-			System.exit(1);
-		}
-
-	}
+	//	public void insertToPostGis(FeatureSource<SimpleFeatureType, SimpleFeature> featureSourceCube ) throws IOException{
+	//		DataStore dataStore = Util.connectPostGis();
+	//		dataStore.createSchema(featureSourceCube.getSchema());
+	//		Transaction transaction = new DefaultTransaction("create");
+	//		SimpleFeatureSource source = dataStore.getFeatureSource(featureSourceCube.getSchema().getTypeName());
+	//		if (source instanceof SimpleFeatureStore) {
+	//			SimpleFeatureStore featureStore = (SimpleFeatureStore) source;
+	//			featureStore.setTransaction(transaction);
+	//			try { 
+	//				featureStore.addFeatures(featureSourceCube.getFeatures());
+	//				transaction.commit();
+	//			} catch (Exception problem) {
+	//				problem.printStackTrace();
+	//				transaction.rollback();
+	//			} finally {
+	//				transaction.close();
+	//			}
+	//			//System.exit(0); // success!
+	//		} else {
+	//			System.out.println("Table does not support read/write access");
+	//			System.exit(1);
+	//		}
+	//
+	//	}
 
 }

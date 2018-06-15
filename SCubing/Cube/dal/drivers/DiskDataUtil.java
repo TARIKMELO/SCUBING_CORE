@@ -19,6 +19,11 @@ public class DiskDataUtil {
 		try{
 			FileOutputStream fos= new FileOutputStream("D:\\teste\\myfile");
 			ObjectOutputStream oos= new ObjectOutputStream(fos);
+			
+			
+			
+			
+			
 			oos.writeObject(resource);
 			oos.close();
 			fos.close();

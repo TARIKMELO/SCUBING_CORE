@@ -30,6 +30,7 @@ import dal.drivers.CubeColumn;
 import dal.drivers.IResultSetText;
 import dal.drivers.ShapeFileUtilities;
 import dal.drivers.ShapeFileWriter;
+import dal.drivers.ShapeFileWriterGrid;
 import presentation.layout.MapFrame;
 
 
@@ -58,7 +59,7 @@ public class CubeGrid {
 			//Não uso o tipo abaixo pois nao tem a funão contains
 			//ResourceII<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> result =new  ResourceII<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>>();
 			Util.getLogger().info("Regra de vizinhaça: "+x +" x "+y );
-			ShapeFileWriter shapeFileWriter = new ShapeFileWriter(cubeColumns);
+			ShapeFileWriterGrid shapeFileWriterGrid = new ShapeFileWriterGrid(cubeColumns);
 			Object[] tuple;
 			try
 			{
@@ -196,12 +197,12 @@ public class CubeGrid {
 			hierarquia = hierarquia+1;
 
 			//FeatureSource sourceDesti = shapeFileWriter.insertCubeToShapefile(hashToResourceII(result), source);
-			FeatureSource sourceDesti = shapeFileWriter.insertCubeToSource(hashToResourceII(result), source, hierarquia);
+			FeatureSource sourceDesti = shapeFileWriterGrid.insertCubeToSource(hashToResourceII(result), source, hierarquia);
 			//shapeFileWriter.insertCubeToShapefile(result, source,"D:\\data\\Amazonia\\Amazonia"+sourceDesti.getFeatures().size()+".shp");
-			IResultSetText<DimensionTypeValue> rsDesti = ShapeFileUtilities.getData(sourceDesti, cubeColumns);
+			//IResultSetText<DimensionTypeValue> rsDesti = ShapeFileUtilities.getData(sourceDesti, cubeColumns);
 
 
-
+			IResultSetText<DimensionTypeValue> rsDesti = null;
 
 			//Não quero visualizar
 			if (sourceDesti!=null && sourceDesti.getSchema()!=null){

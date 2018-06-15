@@ -13,8 +13,14 @@ import javax.swing.JOptionPane;
 import org.apache.log4j.Logger;
 import org.geotools.data.DataStore;
 import org.geotools.data.DataStoreFinder;
+import org.geotools.data.DefaultTransaction;
+import org.geotools.data.FeatureSource;
+import org.geotools.data.Transaction;
 import org.geotools.data.simple.SimpleFeatureSource;
+import org.geotools.data.simple.SimpleFeatureStore;
 import org.geotools.swing.data.JFileDataStoreChooser;
+import org.opengis.feature.simple.SimpleFeature;
+import org.opengis.feature.simple.SimpleFeatureType;
 
 import com.thoughtworks.xstream.XStream;
 
@@ -187,6 +193,9 @@ public class Util {
 
 		return 	dataStore;
 	}
+	
+	
+	
 
 
 	public static SimpleFeatureSource connectToSourcePostGis(String featureSourceName) throws Exception {
@@ -210,6 +219,81 @@ public class Util {
 		}
 		return featureSource;
 	}
+	
+	
+	
+	public void insertToPostGis(Transaction transaction, SimpleFeatureStore featureStore, FeatureSource<SimpleFeatureType, SimpleFeature> featureSourceCube ) throws IOException{
+		
+			featureStore.setTransaction(transaction);
+			try { 
+				featureStore.addFeatures(featureSourceCube.getFeatures());
+				transaction.commit();
+			} catch (Exception problem) {
+				problem.printStackTrace();
+				transaction.rollback();
+			} finally {
+				transaction.close();
+			}
+			//System.exit(0); // success!
 
+	}
+	
+	
+	
+	
+	//Insere todo o FeatureSource
+	public void insertToPostGis(FeatureSource<SimpleFeatureType, SimpleFeature> featureSourceCube ) throws IOException{
+		DataStore dataStore = Util.connectPostGis();
+		dataStore.createSchema(featureSourceCube.getSchema());
+		Transaction transaction = new DefaultTransaction("create");
+		SimpleFeatureSource source = dataStore.getFeatureSource(featureSourceCube.getSchema().getTypeName());
+		if (source instanceof SimpleFeatureStore) {
+			SimpleFeatureStore featureStore = (SimpleFeatureStore) source;
+			featureStore.setTransaction(transaction);
+			try { 
+				featureStore.addFeatures(featureSourceCube.getFeatures());
+				transaction.commit();
+			} catch (Exception problem) {
+				problem.printStackTrace();
+				transaction.rollback();
+			} finally {
+				transaction.close();
+			}
+			//System.exit(0); // success!
+		} else {
+			System.out.println("Table does not support read/write access");
+			System.exit(1);
+		}
+
+	}
+
+	
+	
+	public static void insertBlanckToPostGis(SimpleFeatureType featureSourceCubeType ) throws IOException{
+		DataStore dataStore = Util.connectPostGis();
+		dataStore.createSchema(featureSourceCubeType);
+		Transaction transaction = new DefaultTransaction("create");
+		SimpleFeatureSource source = dataStore.getFeatureSource(featureSourceCubeType.getTypeName());
+		if (source instanceof SimpleFeatureStore) {
+			SimpleFeatureStore featureStore = (SimpleFeatureStore) source;
+			featureStore.setTransaction(transaction);
+			try { 
+				//featureStore.addFeatures(featureSourceCube.getFeatures());
+				transaction.commit();
+			} catch (Exception problem) {
+				problem.printStackTrace();
+				transaction.rollback();
+			} finally {
+				transaction.close();
+			}
+			//System.exit(0); // success!
+		} else {
+			System.out.println("Table does not support read/write access");
+			System.exit(1);
+		}
+
+		
+		dataStore.dispose();
+	}
 
 }

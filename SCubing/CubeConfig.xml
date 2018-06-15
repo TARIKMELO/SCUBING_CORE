@@ -9,6 +9,6 @@
   <postgisUser>postgres</postgisUser>
   <postgisPasswd>postgre</postgisPasswd>
   <postgisDatabase>scubing</postgisDatabase>
-  <postgisTable>teste1_5m</postgisTable>
+  <postgisTable>teste1_05m</postgisTable>
   <geometryColumnName>geom</geometryColumnName>
 </bll.util.ConfigBean>

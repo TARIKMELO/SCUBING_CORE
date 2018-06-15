@@ -4,9 +4,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map.Entry;
 
+import org.geotools.data.Transaction;
+import org.geotools.data.simple.SimpleFeatureStore;
 import org.geotools.feature.DefaultFeatureCollection;
+import org.geotools.feature.FeatureCollection;
 import org.geotools.feature.simple.SimpleFeatureBuilder;
 import org.geotools.geometry.jts.JTSFactoryFinder;
+import org.opengis.feature.simple.SimpleFeature;
 import org.opengis.feature.simple.SimpleFeatureType;
 
 import com.vividsolutions.jts.geom.Geometry;
@@ -27,14 +31,20 @@ public class Consumer extends Thread{
 	final HashMap<String, CubeColumn> cubeColumns;
 	private DefaultFeatureCollection collection;
 
+	Transaction transaction;
+	SimpleFeatureStore featureStore;
+
 	//SimpleFeatureCollection collection = new ListFeatureCollection(TYPE,list);
 	//private LinkedList<S> parteMatriz;
 
-	public Consumer(SimpleFeatureType TYPE,Resource<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource , HashMap<String, CubeColumn> cubeColumns){
+	public Consumer(SimpleFeatureStore featureStore, Transaction transaction,SimpleFeatureType TYPE,Resource<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource , HashMap<String, CubeColumn> cubeColumns){
 		this.TYPE = TYPE;
 		//this.source = source;
 		this.cubeColumns = cubeColumns;
 		this.re = resource;
+
+		this.transaction = transaction;
+		this.featureStore = featureStore;
 
 		//collection resultante
 		//this.collection =  collection;
@@ -52,12 +62,12 @@ public class Consumer extends Thread{
 			//"POINT(-47.7972188300436 -15.7811008579831)"
 
 
-			GeometryFactory gf = JTSFactoryFinder.getGeometryFactory();
+			//GeometryFactory gf = JTSFactoryFinder.getGeometryFactory();
 
 
 			//Point brasiliaPoint =  gf.createPoint(new Coordinate(-47.7972188300436,-15.7811008579831));
 
-			collection = new DefaultFeatureCollection();
+			//collection = new DefaultFeatureCollection();
 			Geometry currentGeometry = null;
 			//while((re.isFinished()==false)||(re.getNumOfRegisters()!=0)){
 			while ((entry = re.getRegister())!=null){
@@ -153,14 +163,27 @@ public class Consumer extends Thread{
 
 				try{
 					//Gravando o valor na nova linha
+					collection = new DefaultFeatureCollection();
+					SimpleFeature feature = featureBuilder.buildFeature(null);
+					//System.out.println(feature.getID());
+					
+					collection.add(feature);
+					//featureStore.setTransaction(transaction);
+					try {
 
-					collection.add(featureBuilder.buildFeature(null));
+						featureStore.addFeatures(collection);
+
+					} catch (Exception problem) {
+						problem.printStackTrace();
+						transaction.rollback();
+					} 
+
+
+					//collection.add(featureBuilder.buildFeature(null));
 				}
 				catch (Exception e) {
 					e.printStackTrace();
 				}
-
-				//}
 			}
 
 

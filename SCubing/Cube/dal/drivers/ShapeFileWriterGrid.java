@@ -9,9 +9,7 @@ import java.util.Map.Entry;
 
 import org.geotools.data.DataUtilities;
 import org.geotools.data.FeatureSource;
-import org.geotools.data.Transaction;
 import org.geotools.data.simple.SimpleFeatureSource;
-import org.geotools.data.simple.SimpleFeatureStore;
 import org.geotools.feature.SchemaException;
 import org.geotools.feature.simple.SimpleFeatureTypeBuilder;
 import org.geotools.referencing.CRS;
@@ -29,32 +27,28 @@ import bll.aggregation_functions.SAFUnionPolygon;
 import bll.data_structures.nodes.DimensionTypeValue;
 import bll.data_structures.nodes.MeasureTypeValue;
 import bll.parallel.Consumer;
+import bll.parallel.ConsumerGrid;
 import bll.parallel.Resource;
 import bll.util.Util;
-public class ShapeFileWriter {
+public class ShapeFileWriterGrid {
 	HashMap<String, CubeColumn> cubeColumns;
 	int hierarquia;
-	public ShapeFileWriter(HashMap<String, CubeColumn>  cubeColumns)
+	public ShapeFileWriterGrid(HashMap<String, CubeColumn>  cubeColumns)
 	{
 		this.cubeColumns = cubeColumns;
 	}
 
-
-
-
-
-	//Cada consumidor pega a lista de geometrias, nó por nó do starcube, e aplica a função de agragação
-	public 	void applyAggFunctionInStarTree( SimpleFeatureStore featureStore, Transaction transaction,SimpleFeatureType TYPE,Resource<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource ) throws Exception
+	public 	ArrayList<SimpleFeature> insertCubeToCollection(SimpleFeatureType TYPE,Resource<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource ) throws Exception
 	{
-		//ArrayList<SimpleFeature> list = new ArrayList<SimpleFeature>();
+		ArrayList<SimpleFeature> list = new ArrayList<SimpleFeature>();
 		final int numConsumidores =Integer.parseInt(Util.getConfig().getNumThreads());
 		System.out.println("Número de consumidores: "+ numConsumidores);
 		//System.out.println("Começou os CONSUMIDORES");
 		//resource.setFinished();
 		//criamos os consumidores
-		Consumer[] consumidores = new Consumer[numConsumidores];
+		ConsumerGrid[] consumidores = new ConsumerGrid[numConsumidores];
 		for(int i=0; i<consumidores.length; i++)
-			consumidores[i] = new Consumer(featureStore,transaction, TYPE,resource,cubeColumns);
+			consumidores[i] = new ConsumerGrid(TYPE,resource,cubeColumns);
 		for(int i=0; i<consumidores.length; i++)
 			consumidores[i].start();
 		//finalizamos
@@ -69,35 +63,41 @@ public class ShapeFileWriter {
 			}
 
 			//System.out.println("Terminou os CONSUMIDORES");
-			//for(int i=0; i<consumidores.length; i++)
-			//{
-			//	list.addAll(consumidores[i].getDefaultFeatureCollection());
-			//
-			//}
+			for(int i=0; i<consumidores.length; i++)
+			{
+
+				list.addAll(consumidores[i].getDefaultFeatureCollection());
+
+			}
 		}catch (Exception e){
 			e.printStackTrace();
 		}
 
+		return list;
+
+
 
 	}
 
 
 
 
-	public void applyAggFunctionInStarTree(SimpleFeatureStore featureStore, Transaction transaction, Resource<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource , SimpleFeatureType typeDestiny, int hierarquia) throws  Exception
+	public FeatureSource<SimpleFeatureType, SimpleFeature> insertCubeToSource(Resource<Entry <ArrayList<DimensionTypeValue>, ArrayList<MeasureTypeValue>>> resource , FeatureSource<SimpleFeatureType, SimpleFeature> source, int hierarquia) throws  Exception
 	{
 		this.hierarquia =  hierarquia;
-
+		final SimpleFeatureType TYPE = createCubeSchema(source);
 		//System.out.println("(Parcial 2.1) Entrando insertCubeToCollection ");
-		applyAggFunctionInStarTree(featureStore,transaction, typeDestiny, resource);
-
+		ArrayList<SimpleFeature> collection = insertCubeToCollection(TYPE, resource);
+		//System.out.println("(Parcial 2.2) Entrando DataUtilities.source(DataUtilities.collection(collection))");
+		SimpleFeatureSource sourceResult = DataUtilities.source(DataUtilities.collection(collection));
+		return sourceResult;
 	}
 
 
 
 
 
-	public SimpleFeatureType createCubeSchema(FeatureSource<SimpleFeatureType, SimpleFeature> source) throws SchemaException {
+	private SimpleFeatureType createCubeSchema(FeatureSource<SimpleFeatureType, SimpleFeature> source) throws SchemaException {
 		SimpleFeatureTypeBuilder b = new SimpleFeatureTypeBuilder();
 		//Definindo o nome do layer criado
 		String nameLayer = Util.getConfig().getNomeLayer();

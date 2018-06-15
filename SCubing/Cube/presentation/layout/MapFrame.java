@@ -3,7 +3,6 @@ package presentation.layout;
 import java.io.File;
 
 import org.geotools.data.DataStore;
-import org.geotools.map.MapContent;
 
 public class MapFrame {
 
@@ -48,9 +47,9 @@ public class MapFrame {
 	}
 
 
-	public MapContent getMap() {
-		return null;
-	}
+//	public MapContent getMap() {
+//		return null;
+//	}
 
 
 	/*public void setMap(MapContent map) {
