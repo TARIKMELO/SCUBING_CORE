@@ -1,5 +1,5 @@
 <bll.util.ConfigBean>
-  <numThreads>2</numThreads>
+  <numThreads>1</numThreads>
   <nomeLayer>testeFeatureNovo3</nomeLayer>
   <circleRadius>5</circleRadius>
   <postgisDbtype>postgis</postgisDbtype>

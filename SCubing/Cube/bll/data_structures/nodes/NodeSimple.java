@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 import com.vividsolutions.jts.geom.Geometry;
+import com.vividsolutions.jts.operation.union.UnaryUnionOp;
 
 import bll.aggregation_functions.IAggFunction;
 import bll.aggregation_functions.IMAggFunction;
@@ -17,7 +18,11 @@ import dal.drivers.CubeColumn;
 
 public class NodeSimple <T> implements INodeSimple<T>, Serializable{
 
-	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8262546996452331097L;
 	protected Map<T, NodeSimple<T>> descendants;
 	protected ArrayList<MeasureTypeValue> measureValues;
 	protected HashMap<String, CubeColumn> cubeColumns;
@@ -42,7 +47,13 @@ public class NodeSimple <T> implements INodeSimple<T>, Serializable{
 				{
 					if (measureValues.get(i).getValue() instanceof ArrayList)
 					{
-						geometries.addAll((ArrayList) measureValues.get(i).getValue());
+						
+						UnaryUnionOp union = new UnaryUnionOp((ArrayList<Geometry>)measureValues.get(i).getValue());
+						//							
+						//															
+						//currentGeometry = union.union();
+						geometries.add(union.union());
+						//geometries.addAll((ArrayList) measureValues.get(i).getValue());
 					}
 					else
 					{
@@ -69,7 +80,7 @@ public class NodeSimple <T> implements INodeSimple<T>, Serializable{
 
 	public ArrayList<MeasureTypeValue> getMeasures() {
 
-		return deepCopy2(measureValues);
+		return measureValues;
 	}
 
 	public void updateMeasure(ArrayList<MeasureTypeValue> newValues) {
@@ -77,8 +88,10 @@ public class NodeSimple <T> implements INodeSimple<T>, Serializable{
 		//for (MeasureTypeValue measureTypeValue : newValues) {
 		if (measureValues.size()>0)
 		{
-			ArrayList<MeasureTypeValue> auxArray = deepCopy(measureValues);
-			measureValues = (ArrayList<MeasureTypeValue>) auxArray.clone();
+//			ArrayList<MeasureTypeValue> auxArray = deepCopy(measureValues);
+//			measureValues = (ArrayList<MeasureTypeValue>) measureValues.clone();
+			
+			
 			for (int i=0;i<newValues.size(); i++)
 			{
 				atualizedValue = new Object();
@@ -87,7 +100,12 @@ public class NodeSimple <T> implements INodeSimple<T>, Serializable{
 				if (aggFunction instanceof SAFUnion)
 				{
 					if ((newValues.get(i).getValue() instanceof ArrayList)) {
-						geometries.addAll((ArrayList<Geometry>) newValues.get(i).getValue());
+						UnaryUnionOp union = new UnaryUnionOp((ArrayList<Geometry>)measureValues.get(i).getValue());
+						//							
+						//															
+						//currentGeometry = union.union();
+						geometries.add(union.union());
+						//geometries.addAll((ArrayList) measureValues.get(i).getValue());
 					}
 
 					else
@@ -114,15 +132,15 @@ public class NodeSimple <T> implements INodeSimple<T>, Serializable{
 	}	
 
 
-	public ArrayList<MeasureTypeValue> deepCopy(ArrayList<MeasureTypeValue> src)
-	{
-		ArrayList<MeasureTypeValue> clone = new ArrayList<MeasureTypeValue>(src.size());
-		for(MeasureTypeValue item: src)
-		{
-			clone.add(item);
-		}
-		return clone;
-	}
+//	public ArrayList<MeasureTypeValue> deepCopy(ArrayList<MeasureTypeValue> src)
+//	{
+//		ArrayList<MeasureTypeValue> clone = new ArrayList<MeasureTypeValue>(src.size());
+//		for(MeasureTypeValue item: src)
+//		{
+//			clone.add(item);
+//		}
+//		return clone;
+//	}
 
 	public NodeSimple<T> removeNode(T id) {
 		return descendants.remove(id);
@@ -134,13 +152,13 @@ public class NodeSimple <T> implements INodeSimple<T>, Serializable{
 	}
 
 
-	public ArrayList<MeasureTypeValue> deepCopy2(ArrayList<MeasureTypeValue> src)
-	{
-		ArrayList<MeasureTypeValue> clone = new ArrayList<MeasureTypeValue>(src.size());
-		for(MeasureTypeValue item: src)
-		{
-			clone.add(item);
-		}
-		return clone;
-	}
+//	public ArrayList<MeasureTypeValue> deepCopy2(ArrayList<MeasureTypeValue> src)
+//	{
+//		ArrayList<MeasureTypeValue> clone = new ArrayList<MeasureTypeValue>(src.size());
+//		for(MeasureTypeValue item: src)
+//		{
+//			clone.add(item);
+//		}
+//		return clone;
+//	}
 }

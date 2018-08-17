@@ -36,7 +36,7 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 		//conectar
 		//Cálculo do tempo de computação do cubo
 		long tempoInicial = System.currentTimeMillis(); 
-		ShapeFileReader<DimensionTypeValue> shapeFileReader = new ShapeFileReader<DimensionTypeValue>(featureSource,cubeColumns);
+		//ShapeFileReader<DimensionTypeValue> shapeFileReader = new ShapeFileReader<DimensionTypeValue>(featureSource,cubeColumns);
 		//IResultSetText<DimensionTypeValue> rs = shapeFileReader.getData();
 		long tempoIntermediario0 = System.currentTimeMillis();  
 		Util.getLogger().info("Tempo em milisegundos para ler os dados: "+ (tempoIntermediario0 - tempoInicial) );
@@ -77,7 +77,7 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 		//FeatureSource sourceDesti = shapeFileWriter.insertCubeToSource(hashResult, shapeFileReader.getSource());
 
 
-		final SimpleFeatureType TYPE = shapeFileWriter.createCubeSchema(shapeFileReader.getSource());
+		final SimpleFeatureType TYPE = shapeFileWriter.createCubeSchema(featureSource);
 
 		Util.insertBlanckToPostGis(TYPE);
 		DataStore dataStore = Util.connectPostGis();
@@ -121,43 +121,48 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 		//rs.configure(cubeColumns);
 
 		
-		try {
-			String where="";
-			for (CubeColumn cubeColumn : cubeColumns.values()) {
-				if(cubeColumn.getWhere()!=null)
-				{
-					where+=" AND "+cubeColumn.getColumnName()+" "+cubeColumn.getWhere() ;
-				}
-			} 
-			FeatureCollection<SimpleFeatureType, SimpleFeature> diskMemory;
-			if (where == "")
-			{
-
-				diskMemory = featureSource.getFeatures();
-			}
-			else
-			{
-				where = where.replaceFirst("AND", "");
-				Filter filter = CQL.toFilter(where);
-				diskMemory = featureSource.getFeatures(filter);
-			}
-
-
-
-
-
-
-			ArrayList<MeasureTypeValue>  measures;
-			Object measureValue;
-			Object attributeO;
-			DimensionTypeValue typeValu;
+		ArrayList<MeasureTypeValue>  measures;
+		Object measureValue;
+		Object attributeO;
+		DimensionTypeValue typeValu;
+	
+		NodeSimple<DimensionTypeValue> n;
 		
-			NodeSimple<DimensionTypeValue> n;
+		
+		
+		
+		try {
+//			String where="";
+//			for (CubeColumn cubeColumn : cubeColumns.values()) {
+//				if(cubeColumn.getWhere()!=null)
+//				{
+//					where+=" AND "+cubeColumn.getColumnName()+" "+cubeColumn.getWhere() ;
+//				}
+//			} 
+//			FeatureCollection<SimpleFeatureType, SimpleFeature> diskMemory;
+//			if (where == "")
+//			{
+//
+//				diskMemory = featureSource.getFeatures();
+//			}
+//			else
+//			{
+//				where = where.replaceFirst("AND", "");
+//				Filter filter = CQL.toFilter(where);
+//				diskMemory = featureSource.getFeatures(filter);
+//			}
 
-			try (FeatureIterator<SimpleFeature> iterator = diskMemory.features()){
+
+
+
+
+
+			SimpleFeature feature;
+
+			try (FeatureIterator<SimpleFeature> iterator = featureSource.getFeatures().features()){
 				while( iterator.hasNext() ){
 					//System.out.println("iterator");
-					SimpleFeature feature = iterator.next();
+					feature = iterator.next();
 					Object[] tuple = ShapeFileUtilities.formatShapefileLine(feature,cubeColumns);
 //					for(int i=0; i<str.length; i++)
 //					{

@@ -1716,3 +1716,780 @@
  CUbeColumn:  
  IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 1
 15-06-2018 10:30:25 INFO  scubing:42 - Tempo em milisegundos para ler os dados: 1
+15-06-2018 17:17:54 INFO  scubing:37 - ------------------------------Iniciou o log da execução------------------------------
+15-06-2018 17:17:54 INFO  scubing:39 - Número de consumidores: 2
+15-06-2018 17:17:54 INFO  scubing:40 - Iniciou o log da execução
+15-06-2018 17:17:57 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+15-06-2018 17:17:57 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 1
+15-06-2018 17:17:57 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 1
+15-06-2018 17:17:57 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 1
+15-06-2018 17:17:57 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 1
+15-06-2018 17:17:57 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 1
+15-06-2018 17:17:57 INFO  scubing:42 - Tempo em milisegundos para ler os dados: 1
+15-06-2018 17:23:05 INFO  scubing:37 - ------------------------------Iniciou o log da execução------------------------------
+15-06-2018 17:23:05 INFO  scubing:39 - Número de consumidores: 2
+15-06-2018 17:23:05 INFO  scubing:40 - Iniciou o log da execução
+15-06-2018 17:23:06 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+15-06-2018 17:23:06 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 1
+15-06-2018 17:23:06 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 1
+15-06-2018 17:23:06 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 1
+15-06-2018 17:23:06 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 1
+15-06-2018 17:23:06 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 1
+15-06-2018 17:23:06 INFO  scubing:42 - Tempo em milisegundos para ler os dados: 1
+15-06-2018 17:30:53 INFO  scubing:37 - ------------------------------Iniciou o log da execução------------------------------
+15-06-2018 17:30:54 INFO  scubing:39 - Número de consumidores: 2
+15-06-2018 17:30:54 INFO  scubing:40 - Iniciou o log da execução
+15-06-2018 17:30:54 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+15-06-2018 17:30:54 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 1
+15-06-2018 17:30:54 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 1
+15-06-2018 17:30:54 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 1
+15-06-2018 17:30:54 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 1
+15-06-2018 17:30:54 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 1
+15-06-2018 17:30:54 INFO  scubing:42 - Tempo em milisegundos para ler os dados: 1
+19-07-2018 13:53:14 INFO  scubing:37 - ------------------------------Iniciou o log da execução------------------------------
+19-07-2018 13:53:14 INFO  scubing:39 - Número de consumidores: 2
+19-07-2018 13:53:14 INFO  scubing:40 - Iniciou o log da execução
+19-07-2018 13:53:26 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+19-07-2018 13:53:26 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 1
+19-07-2018 13:53:26 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 1
+19-07-2018 13:53:26 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 1
+19-07-2018 13:53:26 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 1
+19-07-2018 13:53:26 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 1
+19-07-2018 13:53:26 INFO  scubing:42 - Tempo em milisegundos para ler os dados: 1
+19-07-2018 13:58:17 INFO  scubing:37 - ------------------------------Iniciou o log da execução------------------------------
+19-07-2018 13:58:17 INFO  scubing:39 - Número de consumidores: 2
+19-07-2018 13:58:17 INFO  scubing:40 - Iniciou o log da execução
+19-07-2018 13:58:18 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+19-07-2018 13:58:18 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 1
+19-07-2018 13:58:18 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 1
+19-07-2018 13:58:18 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 1
+19-07-2018 13:58:18 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 1
+19-07-2018 13:58:18 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 1
+19-07-2018 13:58:18 INFO  scubing:42 - Tempo em milisegundos para ler os dados: 0
+19-07-2018 14:01:19 INFO  scubing:37 - ------------------------------Iniciou o log da execução------------------------------
+19-07-2018 14:01:19 INFO  scubing:39 - Número de consumidores: 2
+19-07-2018 14:01:19 INFO  scubing:40 - Iniciou o log da execução
+19-07-2018 14:01:20 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+19-07-2018 14:01:20 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 1
+19-07-2018 14:01:20 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 1
+19-07-2018 14:01:20 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 1
+19-07-2018 14:01:20 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 1
+19-07-2018 14:01:20 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 1
+19-07-2018 14:01:20 INFO  scubing:42 - Tempo em milisegundos para ler os dados: 1
+19-07-2018 14:02:26 INFO  scubing:37 - ------------------------------Iniciou o log da execução------------------------------
+19-07-2018 14:02:26 INFO  scubing:39 - Número de consumidores: 2
+19-07-2018 14:02:26 INFO  scubing:40 - Iniciou o log da execução
+19-07-2018 14:02:27 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+19-07-2018 14:02:27 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 1
+19-07-2018 14:02:27 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 1
+19-07-2018 14:02:27 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 1
+19-07-2018 14:02:27 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 1
+19-07-2018 14:02:27 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 1
+19-07-2018 14:02:27 INFO  scubing:42 - Tempo em milisegundos para ler os dados: 0
+19-07-2018 14:05:22 INFO  scubing:37 - ------------------------------Iniciou o log da execução------------------------------
+19-07-2018 14:05:22 INFO  scubing:39 - Número de consumidores: 2
+19-07-2018 14:05:22 INFO  scubing:40 - Iniciou o log da execução
+19-07-2018 14:05:23 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+19-07-2018 14:05:23 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 1
+19-07-2018 14:05:23 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 1
+19-07-2018 14:05:23 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 1
+19-07-2018 14:05:23 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 1
+19-07-2018 14:05:23 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 1
+19-07-2018 14:05:23 INFO  scubing:42 - Tempo em milisegundos para ler os dados: 1
+19-07-2018 14:27:13 INFO  scubing:37 - ------------------------------Iniciou o log da execução------------------------------
+19-07-2018 14:27:13 INFO  scubing:39 - Número de consumidores: 2
+19-07-2018 14:27:13 INFO  scubing:40 - Iniciou o log da execução
+19-07-2018 14:27:14 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+19-07-2018 14:27:14 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 1
+19-07-2018 14:27:14 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 1
+19-07-2018 14:27:14 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 1
+19-07-2018 14:27:14 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 1
+19-07-2018 14:27:14 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 1
+19-07-2018 14:27:14 INFO  scubing:42 - Tempo em milisegundos para ler os dados: 4
+19-07-2018 14:32:08 INFO  scubing:37 - ------------------------------Iniciou o log da execução------------------------------
+19-07-2018 14:32:08 INFO  scubing:39 - Número de consumidores: 2
+19-07-2018 14:32:08 INFO  scubing:40 - Iniciou o log da execução
+19-07-2018 14:32:09 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+19-07-2018 14:32:09 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 1
+19-07-2018 14:32:09 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 1
+19-07-2018 14:32:09 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 1
+19-07-2018 14:32:09 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 1
+19-07-2018 14:32:09 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 1
+19-07-2018 14:32:09 INFO  scubing:42 - Tempo em milisegundos para ler os dados: 0
+19-07-2018 14:38:25 INFO  scubing:37 - ------------------------------Iniciou o log da execução------------------------------
+19-07-2018 14:38:25 INFO  scubing:39 - Número de consumidores: 1
+19-07-2018 14:38:25 INFO  scubing:40 - Iniciou o log da execução
+19-07-2018 14:38:26 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+19-07-2018 14:38:26 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 1
+19-07-2018 14:38:26 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 1
+19-07-2018 14:38:26 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 1
+19-07-2018 14:38:26 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 1
+19-07-2018 14:38:26 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 1
+19-07-2018 14:38:26 INFO  scubing:42 - Tempo em milisegundos para ler os dados: 0
+19-07-2018 14:44:18 INFO  scubing:37 - ------------------------------Iniciou o log da execução------------------------------
+19-07-2018 14:44:18 INFO  scubing:39 - Número de consumidores: 1
+19-07-2018 14:44:18 INFO  scubing:40 - Iniciou o log da execução
+19-07-2018 14:44:19 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+19-07-2018 14:44:19 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 1
+19-07-2018 14:44:19 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 1
+19-07-2018 14:44:19 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 1
+19-07-2018 14:44:19 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 1
+19-07-2018 14:44:19 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 1
+19-07-2018 14:44:19 INFO  scubing:42 - Tempo em milisegundos para ler os dados: 0
+19-07-2018 14:47:44 INFO  scubing:37 - ------------------------------Iniciou o log da execução------------------------------
+19-07-2018 14:47:44 INFO  scubing:39 - Número de consumidores: 1
+19-07-2018 14:47:44 INFO  scubing:40 - Iniciou o log da execução
+19-07-2018 14:47:44 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+19-07-2018 14:47:44 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 1
+19-07-2018 14:47:44 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 1
+19-07-2018 14:47:44 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 1
+19-07-2018 14:47:44 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 1
+19-07-2018 14:47:44 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 1
+19-07-2018 14:47:44 INFO  scubing:42 - Tempo em milisegundos para ler os dados: 0
+19-07-2018 14:51:34 INFO  scubing:37 - ------------------------------Iniciou o log da execução------------------------------
+19-07-2018 14:51:34 INFO  scubing:39 - Número de consumidores: 1
+19-07-2018 14:51:34 INFO  scubing:40 - Iniciou o log da execução
+19-07-2018 14:51:35 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+19-07-2018 14:51:35 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 1
+19-07-2018 14:51:35 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 1
+19-07-2018 14:51:35 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 1
+19-07-2018 14:51:35 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 1
+19-07-2018 14:51:35 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 1
+19-07-2018 14:51:35 INFO  scubing:42 - Tempo em milisegundos para ler os dados: 0
+19-07-2018 14:59:15 INFO  scubing:37 - ------------------------------Iniciou o log da execução------------------------------
+19-07-2018 14:59:16 INFO  scubing:39 - Número de consumidores: 1
+19-07-2018 14:59:16 INFO  scubing:40 - Iniciou o log da execução
+19-07-2018 14:59:16 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+19-07-2018 14:59:16 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 1
+19-07-2018 14:59:16 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 1
+19-07-2018 14:59:16 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 1
+19-07-2018 14:59:16 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 1
+19-07-2018 14:59:16 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 1
+19-07-2018 14:59:16 INFO  scubing:42 - Tempo em milisegundos para ler os dados: 1
+19-07-2018 15:15:01 INFO  scubing:37 - ------------------------------Iniciou o log da execução------------------------------
+19-07-2018 15:15:01 INFO  scubing:39 - Número de consumidores: 1
+19-07-2018 15:15:01 INFO  scubing:40 - Iniciou o log da execução
+19-07-2018 15:15:02 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+19-07-2018 15:15:02 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 1
+19-07-2018 15:15:02 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 1
+19-07-2018 15:15:02 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 1
+19-07-2018 15:15:02 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 1
+19-07-2018 15:15:02 INFO  scubing:250 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 1
+19-07-2018 15:15:02 INFO  scubing:42 - Tempo em milisegundos para ler os dados: 0
+19-07-2018 15:24:53 INFO  scubing:37 - ------------------------------Iniciou o log da execução------------------------------
+19-07-2018 15:24:53 INFO  scubing:39 - Número de consumidores: 1
+19-07-2018 15:24:53 INFO  scubing:40 - Iniciou o log da execução
+19-07-2018 15:24:54 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+19-07-2018 15:24:54 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 1
+19-07-2018 15:24:54 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 1
+19-07-2018 15:24:54 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 1
+19-07-2018 15:24:54 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 1
+19-07-2018 15:24:54 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 1
+19-07-2018 15:24:54 INFO  scubing:42 - Tempo em milisegundos para ler os dados: 1
+19-07-2018 16:16:36 INFO  scubing:37 - ------------------------------Iniciou o log da execução------------------------------
+19-07-2018 16:16:36 INFO  scubing:39 - Número de consumidores: 1
+19-07-2018 16:16:36 INFO  scubing:40 - Iniciou o log da execução
+19-07-2018 16:16:37 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+19-07-2018 16:16:37 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 1
+19-07-2018 16:16:37 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 1
+19-07-2018 16:16:37 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 1
+19-07-2018 16:16:37 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 1
+19-07-2018 16:16:37 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 1
+19-07-2018 16:16:37 INFO  scubing:42 - Tempo em milisegundos para ler os dados: 0
+20-07-2018 09:31:31 INFO  scubing:37 - ------------------------------Iniciou o log da execução------------------------------
+20-07-2018 09:31:32 INFO  scubing:39 - Número de consumidores: 1
+20-07-2018 09:31:32 INFO  scubing:40 - Iniciou o log da execução
+20-07-2018 09:31:36 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+20-07-2018 09:31:36 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 1
+20-07-2018 09:31:36 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 1
+20-07-2018 09:31:36 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 1
+20-07-2018 09:31:36 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 1
+20-07-2018 09:31:36 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 1
+20-07-2018 09:31:36 INFO  scubing:42 - Tempo em milisegundos para ler os dados: 0
+23-07-2018 09:20:25 INFO  scubing:37 - ------------------------------Iniciou o log da execução------------------------------
+23-07-2018 09:20:26 INFO  scubing:39 - Número de consumidores: 1
+23-07-2018 09:20:26 INFO  scubing:40 - Iniciou o log da execução
+23-07-2018 09:20:32 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+23-07-2018 09:20:32 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 1
+23-07-2018 09:20:32 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 1
+23-07-2018 09:20:32 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 1
+23-07-2018 09:20:32 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 1
+23-07-2018 09:20:32 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 1
+23-07-2018 09:20:32 INFO  scubing:42 - Tempo em milisegundos para ler os dados: 0
+23-07-2018 09:32:04 INFO  scubing:37 - ------------------------------Iniciou o log da execução------------------------------
+23-07-2018 09:32:04 INFO  scubing:39 - Número de consumidores: 1
+23-07-2018 09:32:04 INFO  scubing:40 - Iniciou o log da execução
+23-07-2018 09:32:05 INFO  scubing:263 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+23-07-2018 09:32:05 INFO  scubing:263 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 1
+23-07-2018 09:32:05 INFO  scubing:263 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 1
+23-07-2018 09:32:05 INFO  scubing:263 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 1
+23-07-2018 09:32:05 INFO  scubing:263 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 1
+23-07-2018 09:32:05 INFO  scubing:263 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 1
+23-07-2018 09:32:05 INFO  scubing:42 - Tempo em milisegundos para ler os dados: 0
+23-07-2018 09:35:10 INFO  scubing:37 - ------------------------------Iniciou o log da execução------------------------------
+23-07-2018 09:35:10 INFO  scubing:39 - Número de consumidores: 1
+23-07-2018 09:35:10 INFO  scubing:40 - Iniciou o log da execução
+23-07-2018 09:35:11 INFO  scubing:264 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+23-07-2018 09:35:11 INFO  scubing:264 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 1
+23-07-2018 09:35:11 INFO  scubing:264 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 1
+23-07-2018 09:35:11 INFO  scubing:264 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 1
+23-07-2018 09:35:11 INFO  scubing:264 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 1
+23-07-2018 09:35:11 INFO  scubing:264 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 1
+23-07-2018 09:35:11 INFO  scubing:42 - Tempo em milisegundos para ler os dados: 0
+23-07-2018 09:39:20 INFO  scubing:37 - ------------------------------Iniciou o log da execução------------------------------
+23-07-2018 09:39:20 INFO  scubing:39 - Número de consumidores: 1
+23-07-2018 09:39:20 INFO  scubing:40 - Iniciou o log da execução
+23-07-2018 09:39:21 INFO  scubing:265 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+23-07-2018 09:39:21 INFO  scubing:265 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 1
+23-07-2018 09:39:21 INFO  scubing:265 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 1
+23-07-2018 09:39:21 INFO  scubing:265 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 1
+23-07-2018 09:39:21 INFO  scubing:265 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 1
+23-07-2018 09:39:21 INFO  scubing:265 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 1
+23-07-2018 09:39:21 INFO  scubing:42 - Tempo em milisegundos para ler os dados: 0
+23-07-2018 09:48:16 INFO  scubing:37 - ------------------------------Iniciou o log da execução------------------------------
+23-07-2018 09:48:16 INFO  scubing:39 - Número de consumidores: 1
+23-07-2018 09:48:16 INFO  scubing:40 - Iniciou o log da execução
+23-07-2018 09:48:17 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+23-07-2018 09:48:17 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 1
+23-07-2018 09:48:17 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 1
+23-07-2018 09:48:17 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 1
+23-07-2018 09:48:17 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 1
+23-07-2018 09:48:17 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 1
+23-07-2018 09:48:17 INFO  scubing:42 - Tempo em milisegundos para ler os dados: 0
+23-07-2018 10:07:12 INFO  scubing:37 - ------------------------------Iniciou o log da execução------------------------------
+23-07-2018 10:07:12 INFO  scubing:39 - Número de consumidores: 1
+23-07-2018 10:07:12 INFO  scubing:40 - Iniciou o log da execução
+23-07-2018 10:07:13 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+23-07-2018 10:07:13 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 1
+23-07-2018 10:07:13 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 1
+23-07-2018 10:07:13 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 1
+23-07-2018 10:07:13 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 1
+23-07-2018 10:07:13 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 1
+23-07-2018 10:07:13 INFO  scubing:42 - Tempo em milisegundos para ler os dados: 0
+23-07-2018 10:11:29 INFO  scubing:37 - ------------------------------Iniciou o log da execução------------------------------
+23-07-2018 10:11:30 INFO  scubing:39 - Número de consumidores: 1
+23-07-2018 10:11:30 INFO  scubing:40 - Iniciou o log da execução
+23-07-2018 10:11:30 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+23-07-2018 10:11:30 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 1
+23-07-2018 10:11:30 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 1
+23-07-2018 10:11:30 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 1
+23-07-2018 10:11:30 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 1
+23-07-2018 10:11:30 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 1
+23-07-2018 10:11:30 INFO  scubing:42 - Tempo em milisegundos para ler os dados: 0
+23-07-2018 10:11:44 INFO  scubing:37 - ------------------------------Iniciou o log da execução------------------------------
+23-07-2018 10:11:44 INFO  scubing:39 - Número de consumidores: 1
+23-07-2018 10:11:44 INFO  scubing:40 - Iniciou o log da execução
+23-07-2018 10:11:45 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+23-07-2018 10:11:45 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 1
+23-07-2018 10:11:45 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 1
+23-07-2018 10:11:45 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 1
+23-07-2018 10:11:45 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 1
+23-07-2018 10:11:45 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 1
+23-07-2018 10:11:45 INFO  scubing:42 - Tempo em milisegundos para ler os dados: 0
+23-07-2018 10:14:12 INFO  scubing:37 - ------------------------------Iniciou o log da execução------------------------------
+23-07-2018 10:14:12 INFO  scubing:39 - Número de consumidores: 1
+23-07-2018 10:14:12 INFO  scubing:40 - Iniciou o log da execução
+23-07-2018 10:14:13 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+23-07-2018 10:14:13 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 1
+23-07-2018 10:14:13 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 1
+23-07-2018 10:14:13 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 1
+23-07-2018 10:14:13 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 1
+23-07-2018 10:14:13 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 1
+23-07-2018 10:14:13 INFO  scubing:42 - Tempo em milisegundos para ler os dados: 0
+23-07-2018 10:17:54 INFO  scubing:37 - ------------------------------Iniciou o log da execução------------------------------
+23-07-2018 10:17:54 INFO  scubing:39 - Número de consumidores: 1
+23-07-2018 10:17:54 INFO  scubing:40 - Iniciou o log da execução
+23-07-2018 10:17:54 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+23-07-2018 10:17:54 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 1
+23-07-2018 10:17:54 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 1
+23-07-2018 10:17:54 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 1
+23-07-2018 10:17:54 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 1
+23-07-2018 10:17:54 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 1
+23-07-2018 10:17:54 INFO  scubing:42 - Tempo em milisegundos para ler os dados: 0
+23-07-2018 10:18:18 INFO  scubing:53 - (Parcial 0 - Criar o cubo base - createBaseCuboide) Tempo em milisegundos para calcular o base cuboide: 24048
+23-07-2018 10:21:59 INFO  scubing:37 - ------------------------------Iniciou o log da execução------------------------------
+23-07-2018 10:21:59 INFO  scubing:39 - Número de consumidores: 1
+23-07-2018 10:21:59 INFO  scubing:40 - Iniciou o log da execução
+23-07-2018 10:21:59 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+23-07-2018 10:21:59 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 1
+23-07-2018 10:21:59 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 1
+23-07-2018 10:21:59 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 1
+23-07-2018 10:21:59 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 1
+23-07-2018 10:21:59 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 1
+23-07-2018 10:21:59 INFO  scubing:42 - Tempo em milisegundos para ler os dados: 0
+23-07-2018 10:22:15 INFO  scubing:53 - (Parcial 0 - Criar o cubo base - createBaseCuboide) Tempo em milisegundos para calcular o base cuboide: 15800
+23-07-2018 10:22:17 INFO  scubing:60 - (Parcial 1 - Gerou as agregações - cube.generateAggregations()) Tempo em milisegundos para calcular o cubo: 1522
+23-07-2018 10:22:18 INFO  scubing:74 - (Parcial 2 - Tempo cubeToTable) Tempo em milisegundos para calcular o cubo: 18976
+23-07-2018 10:22:19 INFO  scubing:115 - Nome da tabela: testeFeatureNovo3
+23-07-2018 10:31:51 INFO  scubing:37 - ------------------------------Iniciou o log da execução------------------------------
+23-07-2018 10:31:51 INFO  scubing:39 - Número de consumidores: 1
+23-07-2018 10:31:51 INFO  scubing:40 - Iniciou o log da execução
+23-07-2018 10:31:52 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+23-07-2018 10:31:52 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 1
+23-07-2018 10:31:52 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 1
+23-07-2018 10:31:52 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 1
+23-07-2018 10:31:52 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 1
+23-07-2018 10:31:52 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 1
+23-07-2018 10:31:52 INFO  scubing:42 - Tempo em milisegundos para ler os dados: 0
+23-07-2018 10:32:09 INFO  scubing:53 - (Parcial 0 - Criar o cubo base - createBaseCuboide) Tempo em milisegundos para calcular o base cuboide: 17478
+23-07-2018 10:37:04 INFO  scubing:60 - (Parcial 1 - Gerou as agregações - cube.generateAggregations()) Tempo em milisegundos para calcular o cubo: 294909
+23-07-2018 10:37:04 INFO  scubing:74 - (Parcial 2 - Tempo cubeToTable) Tempo em milisegundos para calcular o cubo: 312506
+23-07-2018 10:37:05 INFO  scubing:115 - Nome da tabela: testeFeatureNovo3
+23-07-2018 10:47:03 INFO  scubing:37 - ------------------------------Iniciou o log da execução------------------------------
+23-07-2018 10:47:03 INFO  scubing:39 - Número de consumidores: 1
+23-07-2018 10:47:03 INFO  scubing:40 - Iniciou o log da execução
+23-07-2018 10:47:04 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+23-07-2018 10:47:04 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 1
+23-07-2018 10:47:04 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 1
+23-07-2018 10:47:04 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 1
+23-07-2018 10:47:04 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 1
+23-07-2018 10:47:04 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 1
+23-07-2018 10:47:04 INFO  scubing:42 - Tempo em milisegundos para ler os dados: 0
+23-07-2018 10:47:20 INFO  scubing:53 - (Parcial 0 - Criar o cubo base - createBaseCuboide) Tempo em milisegundos para calcular o base cuboide: 16409
+23-07-2018 10:52:10 INFO  scubing:60 - (Parcial 1 - Gerou as agregações - cube.generateAggregations()) Tempo em milisegundos para calcular o cubo: 289500
+23-07-2018 10:52:10 INFO  scubing:74 - (Parcial 2 - Tempo cubeToTable) Tempo em milisegundos para calcular o cubo: 305982
+23-07-2018 10:52:10 INFO  scubing:115 - Nome da tabela: testeFeatureNovo3
+23-07-2018 10:52:35 INFO  scubing:96 - (Parcial 3 - PARTE PARALELIZADA: Tempo applyAggFunctionInStarTree) Tempo em milisegundos para calcular o cubo e fazer as uniões: 25379
+23-07-2018 10:52:35 INFO  scubing:102 - RESULTADO: Tempo total em milisegundos: 331392
+23-07-2018 10:52:35 INFO  scubing:103 - RESULTADO: Tempo total em segundos: 331.392
+23-07-2018 10:52:35 INFO  scubing:106 - ------------------------------Termínou o log da execução------------------------------
+23-07-2018 11:01:51 INFO  scubing:37 - ------------------------------Iniciou o log da execução------------------------------
+23-07-2018 11:01:51 INFO  scubing:39 - Número de consumidores: 1
+23-07-2018 11:01:51 INFO  scubing:40 - Iniciou o log da execução
+23-07-2018 11:01:52 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+23-07-2018 11:01:52 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 1
+23-07-2018 11:01:52 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 1
+23-07-2018 11:01:52 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 1
+23-07-2018 11:01:52 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 1
+23-07-2018 11:01:52 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 1
+23-07-2018 11:01:52 INFO  scubing:42 - Tempo em milisegundos para ler os dados: 0
+23-07-2018 11:02:08 INFO  scubing:53 - (Parcial 0 - Criar o cubo base - createBaseCuboide) Tempo em milisegundos para calcular o base cuboide: 15853
+23-07-2018 11:06:58 INFO  scubing:60 - (Parcial 1 - Gerou as agregações - cube.generateAggregations()) Tempo em milisegundos para calcular o cubo: 289964
+23-07-2018 11:06:58 INFO  scubing:74 - (Parcial 2 - Tempo cubeToTable) Tempo em milisegundos para calcular o cubo: 305886
+23-07-2018 11:06:58 INFO  scubing:115 - Nome da tabela: testeFeatureNovo3
+23-07-2018 11:11:16 INFO  scubing:37 - ------------------------------Iniciou o log da execução------------------------------
+23-07-2018 11:11:16 INFO  scubing:39 - Número de consumidores: 1
+23-07-2018 11:11:16 INFO  scubing:40 - Iniciou o log da execução
+23-07-2018 11:11:17 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction União- isMeasure true- columnName geom- where null- hierarchy 0
+23-07-2018 11:11:17 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c3- where null- hierarchy 1
+23-07-2018 11:11:17 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c4- where null- hierarchy 1
+23-07-2018 11:11:17 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c5- where null- hierarchy 1
+23-07-2018 11:11:17 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c1- where null- hierarchy 1
+23-07-2018 11:11:17 INFO  scubing:255 - 
+ CUbeColumn:  
+ IAggFunction null- isMeasure false- columnName c2- where null- hierarchy 1
+23-07-2018 11:11:17 INFO  scubing:42 - Tempo em milisegundos para ler os dados: 0
+23-07-2018 11:11:33 INFO  scubing:53 - (Parcial 0 - Criar o cubo base - createBaseCuboide) Tempo em milisegundos para calcular o base cuboide: 15597
+23-07-2018 11:16:26 INFO  scubing:60 - (Parcial 1 - Gerou as agregações - cube.generateAggregations()) Tempo em milisegundos para calcular o cubo: 293232
+23-07-2018 11:16:26 INFO  scubing:74 - (Parcial 2 - Tempo cubeToTable) Tempo em milisegundos para calcular o cubo: 308909
+23-07-2018 11:16:26 INFO  scubing:115 - Nome da tabela: testeFeatureNovo3
+23-07-2018 11:16:52 INFO  scubing:96 - (Parcial 3 - PARTE PARALELIZADA: Tempo applyAggFunctionInStarTree) Tempo em milisegundos para calcular o cubo e fazer as uniões: 25967
+23-07-2018 11:16:52 INFO  scubing:102 - RESULTADO: Tempo total em milisegundos: 334891
+23-07-2018 11:16:52 INFO  scubing:103 - RESULTADO: Tempo total em segundos: 334.891
+23-07-2018 11:16:52 INFO  scubing:106 - ------------------------------Termínou o log da execução------------------------------
