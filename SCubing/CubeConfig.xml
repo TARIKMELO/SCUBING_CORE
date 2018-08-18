@@ -7,8 +7,8 @@
   <postgisPort>5432</postgisPort>
   <postgisSchema>public</postgisSchema>
   <postgisUser>postgres</postgisUser>
-  <postgisPasswd>postgre</postgisPasswd>
+  <postgisPasswd>postgres</postgisPasswd>
   <postgisDatabase>scubing</postgisDatabase>
-  <postgisTable>teste1_05m</postgisTable>
+  <postgisTable>teste1_1m</postgisTable>
   <geometryColumnName>geom</geometryColumnName>
 </bll.util.ConfigBean>

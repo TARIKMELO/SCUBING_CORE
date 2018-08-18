@@ -26,7 +26,6 @@ import bll.aggregation_functions.SAFUnionMBR;
 import bll.aggregation_functions.SAFUnionPolygon;
 import bll.data_structures.nodes.DimensionTypeValue;
 import bll.data_structures.nodes.MeasureTypeValue;
-import bll.parallel.Consumer;
 import bll.parallel.ConsumerGrid;
 import bll.parallel.Resource;
 import bll.util.Util;
@@ -120,8 +119,9 @@ public class ShapeFileWriterGrid {
 		{
 			try {
 				final String EPSG4326 = "GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.01745329251994328,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]]";
-				b.setCRS( CRS.parseWKT(EPSG4326));
-			} catch (FactoryException e) {
+				b.setCRS(CRS.parseWKT(EPSG4326));
+				//b.setSRS("EPSG:4326");
+			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}

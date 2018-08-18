@@ -20,6 +20,8 @@ import org.opengis.feature.simple.SimpleFeature;
 import org.opengis.feature.simple.SimpleFeatureType;
 import org.opengis.filter.Filter;
 
+import com.sun.javafx.embed.swing.Disposer;
+
 import bll.data_structures.nodes.DimensionTypeValue;
 import bll.data_structures.nodes.MeasureTypeValue;
 import bll.data_structures.nodes.NodeSimple;
@@ -120,61 +122,66 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 		//IResultSetText<T> rs = new ResultSetText<T>();
 		//rs.configure(cubeColumns);
 
-		
+
 		ArrayList<MeasureTypeValue>  measures;
 		Object measureValue;
 		Object attributeO;
 		DimensionTypeValue typeValu;
-	
+
 		NodeSimple<DimensionTypeValue> n;
-		
-		
-		
-		
+
+
+
+		int i = 0;
 		try {
-//			String where="";
-//			for (CubeColumn cubeColumn : cubeColumns.values()) {
-//				if(cubeColumn.getWhere()!=null)
-//				{
-//					where+=" AND "+cubeColumn.getColumnName()+" "+cubeColumn.getWhere() ;
-//				}
-//			} 
-//			FeatureCollection<SimpleFeatureType, SimpleFeature> diskMemory;
-//			if (where == "")
-//			{
-//
-//				diskMemory = featureSource.getFeatures();
-//			}
-//			else
-//			{
-//				where = where.replaceFirst("AND", "");
-//				Filter filter = CQL.toFilter(where);
-//				diskMemory = featureSource.getFeatures(filter);
-//			}
+			//			String where="";
+			//			for (CubeColumn cubeColumn : cubeColumns.values()) {
+			//				if(cubeColumn.getWhere()!=null)
+			//				{
+			//					where+=" AND "+cubeColumn.getColumnName()+" "+cubeColumn.getWhere() ;
+			//				}
+			//			} 
+			//			FeatureCollection<SimpleFeatureType, SimpleFeature> diskMemory;
+			//			if (where == "")
+			//			{
+			//
+			//				diskMemory = featureSource.getFeatures();
+			//			}
+			//			else
+			//			{
+			//				where = where.replaceFirst("AND", "");
+			//				Filter filter = CQL.toFilter(where);
+			//				diskMemory = featureSource.getFeatures(filter);
+			//			}
 
 
 
 
 
 
-			SimpleFeature feature;
+
 
 			try (FeatureIterator<SimpleFeature> iterator = featureSource.getFeatures().features()){
 				while( iterator.hasNext() ){
+					i++;
+					if ((i%10000)==00) {
+						System.out.println(i);
+				//	System.gc();
+					}
 					//System.out.println("iterator");
-					feature = iterator.next();
+					SimpleFeature feature = iterator.next();
 					Object[] tuple = ShapeFileUtilities.formatShapefileLine(feature,cubeColumns);
-//					for(int i=0; i<str.length; i++)
-//					{
-//						rs.updateData(i, (DimensionTypeValue)(str[i]));
-//					}
-//
-//					//REFRESH
-//					rs.insertRow();
-					
+					//					for(int i=0; i<str.length; i++)
+					//					{
+					//						rs.updateData(i, (DimensionTypeValue)(str[i]));
+					//					}
+					//
+					//					//REFRESH
+					//					rs.insertRow();
 
 
-					
+
+
 					measures = new ArrayList<MeasureTypeValue>();
 					for (Entry<String, CubeColumn> cubeColumn: cubeColumns.entrySet())
 					{
@@ -202,15 +209,23 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 							}
 						}
 					}
-					
+
 					cube.refresh();
 					tuple = null;
+
 					feature = null;
+
+
 				}
 			}
-		} catch (IOException e) {
+
+
+
+
+		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			System.out.println("Erro no método getData()");
+			System.out.println("Parooooou no "+i);
 			System.exit(-1);
 		}
 		return cube;
@@ -254,11 +269,9 @@ public class PerformCube<N extends NodeSimple<DimensionTypeValue>> {
 					cubeColumnsAux.put(cubeColumn.getColumnName(), cubeColumn);
 					Util.getLogger().info(cubeColumn);
 				}
-				try {
-					CreateCube(cubeColumnsAux,0 ,0, featureSource);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
+
+				CreateCube(cubeColumnsAux,0 ,0, featureSource);
+
 			}
 		}
 		catch(Exception ioEx){
